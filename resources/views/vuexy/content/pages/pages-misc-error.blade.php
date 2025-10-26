@@ -3,7 +3,7 @@ $customizerHidden = 'customizer-hide';
 $configData = Helper::appClasses();
 @endphp
 
-@extends('vuexy/layouts/layoutMaster')
+@extends('layouts/layoutMaster')
 
 @section('title', 'Error - Pages')
 

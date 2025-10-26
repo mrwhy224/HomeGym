@@ -4,7 +4,7 @@
 @php
   $configData = Helper::appClasses();
 @endphp
-@extends('vuexy/layouts/commonMaster')
+@extends('layouts/commonMaster')
 
 @php
   /* Display elements */
@@ -39,7 +39,7 @@
     <div class="layout-container">
 
       @if ($isMenu)
-        @include('vuexy/layouts/sections/menu/verticalMenu')
+        @include('layouts/sections/menu/verticalMenu')
       @endif
 
       <!-- Layout page -->
@@ -50,7 +50,7 @@
 
         <!-- BEGIN: Navbar-->
         @if ($isNavbar)
-          @include('vuexy/layouts/sections/navbar/navbar')
+          @include('layouts/sections/navbar/navbar')
         @endif
         <!-- END: Navbar-->
 
@@ -71,7 +71,7 @@
 
         <!-- Footer -->
         @if ($isFooter)
-          @include('vuexy/layouts/sections/footer/footer')
+          @include('layouts/sections/footer/footer')
         @endif
         <!-- / Footer -->
         <div class="content-backdrop fade"></div>

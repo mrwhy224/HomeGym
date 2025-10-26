@@ -36,8 +36,8 @@ class Helpers
       'myTheme' => 'light',
       'mySkins' => 'default',
       'hasSemiDark' => false,
-      'myRTLMode' => true,
-      'hasCustomizer' => true,
+      'myRTLMode' => false,
+      'hasCustomizer' => false,
       'showDropdownOnHover' => true,
       'displayCustomizer' => true,
       'contentLayout' => 'compact',
@@ -57,7 +57,7 @@ class Helpers
         'contentLayout',
         'rtl'
       ],
-      //   'defaultLanguage'=>'en',
+        'defaultLanguage'=>'ar',
     ];
 
     // if any key missing of array from custom.php file it will be merge and set a default value from dataDefault array and store in data variable

@@ -70,7 +70,7 @@
 
   <!-- Include Styles -->
   <!-- $isFront is used to append the front layout styles only on the front layout otherwise the variable will be blank -->
-  @include('vuexy/layouts/sections/styles' . $isFront)
+  @include('layouts/sections/styles' . $isFront)
 
   @if (
       $primaryColorCSS &&
@@ -85,7 +85,7 @@
 
   <!-- Include Scripts for customizer, helper, analytics, config -->
   <!-- $isFront is used to append the front layout scriptsIncludes only on the front layout otherwise the variable will be blank -->
-  @include('vuexy/layouts/sections/scriptsIncludes' . $isFront)
+  @include('layouts/sections/scriptsIncludes' . $isFront)
 </head>
 
 <body>
@@ -93,12 +93,11 @@
   @yield('layoutContent')
   <!--/ Layout Content -->
 
-  {{-- remove while creating package --}}
-  {{-- remove while creating package end --}}
+  
 
   <!-- Include Scripts -->
   <!-- $isFront is used to append the front layout scripts only on the front layout otherwise the variable will be blank -->
-  @include('vuexy/layouts/sections/scripts' . $isFront)
+  @include('layouts/sections/scripts' . $isFront)
 </body>
 
 </html>

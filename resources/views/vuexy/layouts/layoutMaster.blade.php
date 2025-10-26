@@ -8,10 +8,10 @@
 @isset($configData['layout'])
   @include(
       $configData['layout'] === 'horizontal'
-          ? 'vuexy.layouts.horizontalLayout'
+          ? 'layouts.horizontalLayout'
           : ($configData['layout'] === 'blank'
-              ? 'vuexy.layouts.blankLayout'
+              ? 'layouts.blankLayout'
               : ($configData['layout'] === 'front'
-                  ? 'vuexy.layouts.layoutFront'
-                  : 'vuexy.layouts.contentNavbarLayout')))
+                  ? 'layouts.layoutFront'
+                  : 'layouts.contentNavbarLayout')))
 @endisset

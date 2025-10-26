@@ -2,7 +2,7 @@
 $customizerHidden = 'customizer-hide';
 @endphp
 
-@extends('vuexy/layouts/layoutMaster')
+@extends('layouts/layoutMaster')
 
 @section('title', 'Login Basic - Pages')
 
@@ -34,7 +34,7 @@ $customizerHidden = 'customizer-hide';
           <!-- Logo -->
           <div class="app-brand justify-content-center mb-6">
             <a href="{{ url('/') }}" class="app-brand-link">
-              <span class="app-brand-logo demo">@include('vuexy._partials.macros')</span>
+              <span class="app-brand-logo demo">@include('_partials.macros')</span>
               <span class="app-brand-text demo text-heading fw-bold">{{ config('variables.templateName') }}</span>
             </a>
           </div>
@@ -63,7 +63,7 @@ $customizerHidden = 'customizer-hide';
                   <input class="form-check-input" type="checkbox" id="remember-me" />
                   <label class="form-check-label" for="remember-me"> Remember Me </label>
                 </div>
-                <a href="javascript:void(0);">
+                <a href="{{ url('auth/forgot-password-basic') }}">
                   <p class="mb-0">Forgot Password?</p>
                 </a>
               </div>

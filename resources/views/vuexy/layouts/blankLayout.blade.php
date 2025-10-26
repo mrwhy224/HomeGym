@@ -9,7 +9,7 @@
   $customizerHidden = $customizerHidden ?? '';
 @endphp
 
-@extends('vuexy/layouts/commonMaster')
+@extends('layouts/commonMaster')
 
 @section('layoutContent')
   <!-- Content -->
