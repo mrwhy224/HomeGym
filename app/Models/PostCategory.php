@@ -14,7 +14,6 @@ class PostCategory extends Model
     protected $fillable = [
         'name',
         'slug',
-        'parent_id',
     ];
 
     /**
@@ -24,7 +23,7 @@ class PostCategory extends Model
     {
         return 'slug';
     }
-    
+
     // === RELATIONSHIPS ===
 
     /**
@@ -32,25 +31,8 @@ class PostCategory extends Model
      */
     public function posts(): HasMany
     {
-        return $this->hasMany(Post::class);
+      return $this->hasMany(Post::class, 'category_id');
     }
-
-    /**
-     * Get the parent category (if this is a sub-category).
-     */
-    public function parent(): BelongsTo
-    {
-        return $this->belongsTo(Category::class, 'parent_id');
-    }
-
-    /**
-     * Get all children categories.
-     */
-    publics function children(): HasMany
-    {
-        return $this->hasMany(Category::class, 'parent_id');
-    }
-
 
     // multi lang relations
     /**
