@@ -1,340 +1,221 @@
 @extends('layouts/layoutMaster')
 
-@section('title', 'User Profile - Connections')
+@section('title', 'User Management - Crud App')
 
-<!-- Page -->
-@section('page-style')
-@vite(['resources/assets/vendor/scss/pages/page-profile.scss'])
+<!-- Vendor Styles -->
+@section('vendor-style')
+  @vite(['resources/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.scss',
+  'resources/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.scss',
+  'resources/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.scss',
+  'resources/assets/vendor/libs/select2/select2.scss',
+  'resources/assets/vendor/libs/@form-validation/form-validation.scss',
+  'resources/assets/vendor/libs/animate-css/animate.scss', 'resources/assets/vendor/libs/sweetalert2/sweetalert2.scss'])
+@endsection
+
+<!-- Vendor Scripts -->
+@section('vendor-script')
+  @vite(['resources/assets/vendor/libs/moment/moment.js',
+  'resources/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js',
+  'resources/assets/vendor/libs/select2/select2.js', 'resources/assets/vendor/libs/@form-validation/popular.js',
+  'resources/assets/vendor/libs/@form-validation/bootstrap5.js',
+  'resources/assets/vendor/libs/@form-validation/auto-focus.js', 'resources/assets/vendor/libs/cleave-zen/cleave-zen.js',
+  'resources/assets/vendor/libs/sweetalert2/sweetalert2.js'])
+@endsection
+
+<!-- Page Scripts -->
+@section('page-script')
+  @vite(['resources/js/laravel-user-management.js'])
 @endsection
 
 @section('content')
-<!-- Header -->
-<div class="row">
-  <div class="col-12">
-    <div class="card mb-6">
-      <div class="user-profile-header-banner">
-        <img src="{{ asset('assets/img/pages/profile-banner.png') }}" alt="Banner image" class="rounded-top" />
-      </div>
-      <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
-        <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
-          <img src="{{ asset('assets/img/avatars/1.png') }}" alt="user image" class="d-block h-auto ms-0 ms-sm-6 rounded user-profile-img" />
-        </div>
-        <div class="flex-grow-1 mt-3 mt-lg-5">
-          <div class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-5 flex-md-row flex-column gap-4">
-            <div class="user-profile-info">
-              <h4 class="mb-2 mt-lg-6">John Doe</h4>
-              <ul class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4">
-                <li class="list-inline-item"><i class="icon-base ti tabler-palette icon-lg me-2"></i> UX Designer</li>
-                <li class="list-inline-item"><i class="icon-base ti tabler-map-pin icon-lg me-2"></i> Vatican City</li>
-                <li class="list-inline-item"><i class="icon-base ti tabler-calendar icon-lg me-2"></i> Joined April 2021</li>
-              </ul>
+  <div class="row g-6 mb-6">
+    <div class="col-sm-6 col-xl-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start justify-content-between">
+            <div class="content-left">
+              <span class="text-heading">Users</span>
+              <div class="d-flex align-items-center my-1">
+                <h4 class="mb-0 me-2">{{ $totalUser }}</h4>
+                <p class="text-success mb-0">(100%)</p>
+              </div>
+              <small class="mb-0">Total Users</small>
             </div>
-            <a href="javascript:void(0)" class="btn btn-primary mb-1"> <i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected </a>
+            <div class="avatar">
+            <span class="avatar-initial rounded bg-label-primary">
+              <i class="icon-base ti tabler-users icon-26px"></i>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start justify-content-between">
+            <div class="content-left">
+              <span class="text-heading">Verified Users</span>
+              <div class="d-flex align-items-center my-1">
+                <h4 class="mb-0 me-2">{{ $verified }}</h4>
+                <p class="text-success mb-0">(+95%)</p>
+              </div>
+              <small class="mb-0">Recent analytics </small>
+            </div>
+            <div class="avatar">
+            <span class="avatar-initial rounded bg-label-danger">
+              <i class="icon-base ti tabler-user-plus icon-26px"></i>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start justify-content-between">
+            <div class="content-left">
+              <span class="text-heading">Duplicate Users</span>
+              <div class="d-flex align-items-center my-1">
+                <h4 class="mb-0 me-2">{{ $userDuplicates }}</h4>
+                <p class="text-success mb-0">(0%)</p>
+              </div>
+              <small class="mb-0">Recent analytics</small>
+            </div>
+            <div class="avatar">
+            <span class="avatar-initial rounded bg-label-success">
+              <i class="icon-base ti tabler-user-check icon-26px"></i>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start justify-content-between">
+            <div class="content-left">
+              <span class="text-heading">Verification Pending</span>
+              <div class="d-flex align-items-center my-1">
+                <h4 class="mb-0 me-2">{{ $notVerified }}</h4>
+                <p class="text-danger mb-0">(+6%)</p>
+              </div>
+              <small class="mb-0">Recent analytics</small>
+            </div>
+            <div class="avatar">
+            <span class="avatar-initial rounded bg-label-warning">
+              <i class="icon-base ti tabler-user-search icon-26px"></i>
+            </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!--/ Header -->
-
-<!-- Navbar pills -->
-<div class="row">
-  <div class="col-md-12">
-    <div class="nav-align-top">
-      <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('pages/profile-user') }}"><i class="icon-base ti tabler-user icon-sm me-1_5"></i> Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('pages/profile-teams') }}"><i class="icon-base ti tabler-users icon-sm me-1_5"></i> Teams</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('pages/profile-projects') }}"><i class="icon-base ti tabler-layout-grid icon-sm me-1_5"></i> Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="javascript:void(0);"><i class="icon-base ti tabler-link icon-sm me-1_5"></i> Connections</a>
-        </li>
-      </ul>
+  <!-- Users List Table -->
+  <div class="card">
+    <div class="card-header border-bottom">
+      <h5 class="card-title mb-0">Search Filter</h5>
     </div>
-  </div>
-</div>
-<!--/ Navbar pills -->
-
-<!-- Connection Cards -->
-<div class="row g-6">
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-body text-center">
-        <div class="dropdown btn-pinned">
-          <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-22px text-body-secondary"></i></button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="javascript:void(0);">Share connection</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">Block connection</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></li>
-          </ul>
-        </div>
-        <div class="mx-auto my-6">
-          <img src="{{ asset('assets/img/avatars/3.png') }}" alt="Avatar Image" class="rounded-circle w-px-100 h-px-100" />
-        </div>
-        <h5 class="mb-0 card-title">Mark Gilbert</h5>
-        <span>UI Designer</span>
-        <div class="d-flex align-items-center justify-content-center my-6 gap-2">
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-secondary">Figma</span></a>
-          <a href="javascript:;"><span class="badge bg-label-warning">Sketch</span></a>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-around mb-6">
-          <div>
-            <h5 class="mb-0">18</h5>
-            <span>Projects</span>
+    <div class="card-datatable">
+      <table class="datatables-users table border-top">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Id</th>
+          <th>User</th>
+          <th>Email</th>
+          <th>Verified</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- Offcanvas to add new user -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAddUser" aria-labelledby="offcanvasAddUserLabel">
+      <div class="offcanvas-header border-bottom">
+        <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add User</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body mx-0 flex-grow-0 p-6 h-100">
+        <form class="add-new-user pt-0" id="addNewUserForm">
+          <input type="hidden" name="id" id="user_id">
+          <div class="mb-6 form-control-validation">
+            <label class="form-label" for="add-user-fullname">Full Name</label>
+            <input type="text" class="form-control" id="add-user-fullname" placeholder="John Doe" name="name"
+                   aria-label="John Doe" />
           </div>
-          <div>
-            <h5 class="mb-0">834</h5>
-            <span>Tasks</span>
+          <div class="mb-6 form-control-validation">
+            <label class="form-label" for="add-user-email">Email</label>
+            <input type="text" id="add-user-email" class="form-control" placeholder="john.doe@example.com"
+                   aria-label="john.doe@example.com" name="email" />
           </div>
-          <div>
-            <h5 class="mb-0">129</h5>
-            <span>Connections</span>
+          <div class="mb-6">
+            <label class="form-label" for="add-user-contact">Contact</label>
+            <input type="text" id="add-user-contact" class="form-control phone-mask" placeholder="+1 (609) 988-44-11"
+                   aria-label="john.doe@example.com" name="userContact" />
           </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <a href="javascript:;" class="btn btn-primary d-flex align-items-center me-4"><i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected</a>
-          <a href="javascript:;" class="btn btn-label-secondary btn-icon"><i class="icon-base ti tabler-mail icon-22px"></i></a>
-        </div>
+          <div class="mb-6">
+            <label class="form-label" for="add-user-company">Company</label>
+            <input type="text" id="add-user-company" class="form-control" placeholder="Web Developer" aria-label="jdoe1"
+                   name="company" />
+          </div>
+          <div class="mb-6">
+            <label class="form-label" for="country">Country</label>
+            <select id="country" class="select2 form-select">
+              <option value="">Select</option>
+              <option value="Australia">Australia</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Canada">Canada</option>
+              <option value="China">China</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Japan">Japan</option>
+              <option value="Korea">Korea, Republic of</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Russia">Russian Federation</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="form-label" for="user-role">User Role</label>
+            <select id="user-role" class="form-select">
+              <option value="subscriber">Subscriber</option>
+              <option value="editor">Editor</option>
+              <option value="maintainer">Maintainer</option>
+              <option value="author">Author</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="form-label" for="user-plan">Select Plan</label>
+            <select id="user-plan" class="form-select">
+              <option value="basic">Basic</option>
+              <option value="enterprise">Enterprise</option>
+              <option value="company">Company</option>
+              <option value="team">Team</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary me-3 data-submit">Submit</button>
+          <button type="reset" class="btn btn-label-danger" data-bs-dismiss="offcanvas">Cancel</button>
+        </form>
       </div>
     </div>
   </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-body text-center">
-        <div class="dropdown btn-pinned">
-          <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-22px text-body-secondary"></i></button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="javascript:void(0);">Share connection</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">Block connection</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></li>
-          </ul>
-        </div>
-        <div class="mx-auto my-6">
-          <img src="{{ asset('assets/img/avatars/12.png') }}" alt="Avatar Image" class="rounded-circle w-px-100 h-px-100" />
-        </div>
-        <h5 class="mb-0 card-title">Eugenia Parsons</h5>
-        <span>Developer</span>
-        <div class="d-flex align-items-center justify-content-center my-6 gap-2">
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-danger">Angular</span></a>
-          <a href="javascript:;"><span class="badge bg-label-info">React</span></a>
-        </div>
 
-        <div class="d-flex align-items-center justify-content-around mb-6">
-          <div>
-            <h5 class="mb-0">112</h5>
-            <span>Projects</span>
-          </div>
-          <div>
-            <h5 class="mb-0">23.1k</h5>
-            <span>Tasks</span>
-          </div>
-          <div>
-            <h5 class="mb-0">1.28k</h5>
-            <span>Connections</span>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <a href="javascript:;" class="btn btn-label-primary d-flex align-items-center me-4"><i class="icon-base ti tabler-user-plus icon-xs me-2"></i>Connect</a>
-          <a href="javascript:;" class="btn btn-label-secondary btn-icon"><i class="icon-base ti tabler-mail icon-22px"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-body text-center">
-        <div class="dropdown btn-pinned">
-          <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-22px text-body-secondary"></i></button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="javascript:void(0);">Share connection</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">Block connection</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></li>
-          </ul>
-        </div>
-        <div class="mx-auto my-6">
-          <img src="{{ asset('assets/img/avatars/5.png') }}" alt="Avatar Image" class="rounded-circle w-px-100 h-px-100" />
-        </div>
-        <h5 class="mb-0 card-title">Francis Byrd</h5>
-        <span>Developer</span>
-        <div class="d-flex align-items-center justify-content-center my-6 gap-2">
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-primary">React</span></a>
-          <a href="javascript:;"><span class="badge bg-label-info">HTML</span></a>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-around mb-6">
-          <div>
-            <h5 class="mb-0">32</h5>
-            <span>Projects</span>
-          </div>
-          <div>
-            <h5 class="mb-0">1.25k</h5>
-            <span>Tasks</span>
-          </div>
-          <div>
-            <h5 class="mb-0">890</h5>
-            <span>Connections</span>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <a href="javascript:;" class="btn btn-label-primary d-flex align-items-center me-4"><i class="icon-base ti tabler-user-plus icon-xs me-2"></i>Connect</a>
-          <a href="javascript:;" class="btn btn-label-secondary btn-icon"><i class="icon-base ti tabler-mail icon-22px"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-body text-center">
-        <div class="dropdown btn-pinned">
-          <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-22px text-body-secondary"></i></button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="javascript:void(0);">Share connection</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">Block connection</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></li>
-          </ul>
-        </div>
-        <div class="mx-auto my-6">
-          <img src="{{ asset('assets/img/avatars/8.png') }}" alt="Avatar Image" class="rounded-circle w-px-100 h-px-100" />
-        </div>
-        <h5 class="mb-0 card-title">Leon Lucas</h5>
-        <span>UI/UX Designer</span>
-        <div class="d-flex align-items-center justify-content-center my-6 gap-2">
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-secondary">Figma</span></a>
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-warning">Sketch</span></a>
-          <a href="javascript:;"><span class="badge bg-label-primary">Photoshop</span></a>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-around mb-6">
-          <div>
-            <h5 class="mb-0">86</h5>
-            <span>Projects</span>
-          </div>
-          <div>
-            <h5 class="mb-0">12.4k</h5>
-            <span>Tasks</span>
-          </div>
-          <div>
-            <h5 class="mb-0">890</h5>
-            <span>Connections</span>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <a href="javascript:;" class="btn btn-label-primary d-flex align-items-center me-4"><i class="icon-base ti tabler-user-plus icon-xs me-2"></i>Connect</a>
-          <a href="javascript:;" class="btn btn-label-secondary btn-icon"><i class="icon-base ti tabler-mail icon-22px"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-body text-center">
-        <div class="dropdown btn-pinned">
-          <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-22px text-body-secondary"></i></button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="javascript:void(0);">Share connection</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">Block connection</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></li>
-          </ul>
-        </div>
-        <div class="mx-auto my-6">
-          <img src="{{ asset('assets/img/avatars/9.png') }}" alt="Avatar Image" class="rounded-circle w-px-100 h-px-100" />
-        </div>
-        <h5 class="mb-0 card-title">Jayden Rogers</h5>
-        <span>Full Stack Developer</span>
-        <div class="d-flex align-items-center justify-content-center my-6 gap-2">
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-info">React</span></a>
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-warning">Angular</span></a>
-          <a href="javascript:;"><span class="badge bg-label-success">Node.js</span></a>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-around mb-6">
-          <div>
-            <h5 class="mb-0">244</h5>
-            <span>Projects</span>
-          </div>
-          <div>
-            <h5 class="mb-0">23.8k</h5>
-            <span>Tasks</span>
-          </div>
-          <div>
-            <h5 class="mb-0">2.14k</h5>
-            <span>Connections</span>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <a href="javascript:;" class="btn btn-primary d-flex align-items-center me-4"><i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected</a>
-          <a href="javascript:;" class="btn btn-label-secondary btn-icon"><i class="icon-base ti tabler-mail icon-22px"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-body text-center">
-        <div class="dropdown btn-pinned">
-          <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-22px text-body-secondary"></i></button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="javascript:void(0);">Share connection</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">Block connection</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></li>
-          </ul>
-        </div>
-        <div class="mx-auto my-6">
-          <img src="{{ asset('assets/img/avatars/10.png') }}" alt="Avatar Image" class="rounded-circle w-px-100 h-px-100" />
-        </div>
-        <h5 class="mb-0 card-title">Jeanette Powell</h5>
-        <span>SEO</span>
-        <div class="d-flex align-items-center justify-content-center my-6 gap-2">
-          <a href="javascript:;" class="me-2"><span class="badge bg-label-secondary">Analysis</span></a>
-          <a href="javascript:;"><span class="badge bg-label-success">Node.js</span></a>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-around mb-6">
-          <div>
-            <h5 class="mb-0">32</h5>
-            <span>Projects</span>
-          </div>
-          <div>
-            <h5 class="mb-0">1.28k</h5>
-            <span>Tasks</span>
-          </div>
-          <div>
-            <h5 class="mb-0">1.27k</h5>
-            <span>Connections</span>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <a href="javascript:;" class="btn btn-label-primary d-flex align-items-center me-4"><i class="icon-base ti tabler-user-plus icon-xs me-2"></i>Connect</a>
-          <a href="javascript:;" class="btn btn-label-secondary btn-icon"><i class="icon-base ti tabler-mail icon-22px"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--/ Connection Cards -->
 @endsection

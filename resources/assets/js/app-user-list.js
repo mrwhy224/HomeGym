@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   // Users datatable
   if (dt_user_table) {
     const dt_user = new DataTable(dt_user_table, {
-      ajax: assetsPath + 'json/user-list.json', // JSON file to add data
+      ajax: '/user-list', // JSON file to add data
       columns: [
         // columns according to JSON
         { data: 'id' },
@@ -57,20 +57,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             return '';
           }
         },
-        {
-          // For Checkboxes
-          targets: 1,
-          orderable: false,
-          searchable: false,
-          responsivePriority: 4,
-          checkboxes: true,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
-          }
-        },
+
         {
           targets: 2,
           responsivePriority: 3,

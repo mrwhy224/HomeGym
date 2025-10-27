@@ -1,524 +1,446 @@
 @extends('layouts/layoutMaster')
 
-@section('title', 'User Profile - Projects')
+@section('title', 'eCommerce Product Add - Apps')
 
-<!-- Page -->
-@section('page-style')
-@vite(['resources/assets/vendor/scss/pages/page-profile.scss'])
+@section('vendor-style')
+  @vite(['resources/assets/vendor/libs/quill/typography.scss', 'resources/assets/vendor/libs/quill/katex.scss',
+  'resources/assets/vendor/libs/quill/editor.scss', 'resources/assets/vendor/libs/select2/select2.scss',
+  'resources/assets/vendor/libs/dropzone/dropzone.scss', 'resources/assets/vendor/libs/flatpickr/flatpickr.scss',
+  'resources/assets/vendor/libs/tagify/tagify.scss'])
+@endsection
+
+@section('vendor-script')
+  @vite(['resources/assets/vendor/libs/quill/katex.js', 'resources/assets/vendor/libs/quill/quill.js',
+  'resources/assets/vendor/libs/select2/select2.js', 'resources/assets/vendor/libs/dropzone/dropzone.js',
+  'resources/assets/vendor/libs/jquery-repeater/jquery-repeater.js',
+  'resources/assets/vendor/libs/flatpickr/flatpickr.js', 'resources/assets/vendor/libs/tagify/tagify.js'])
+@endsection
+
+@section('page-script')
+  @vite(['resources/assets/js/app-ecommerce-product-add.js'])
 @endsection
 
 @section('content')
-<!-- Header -->
-<div class="row">
-  <div class="col-12">
-    <div class="card mb-6">
-      <div class="user-profile-header-banner">
-        <img src="{{ asset('assets/img/pages/profile-banner.png') }}" alt="Banner image" class="rounded-top" />
+  <div class="app-ecommerce">
+    <!-- Add Product -->
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-6 row-gap-4">
+      <div class="d-flex flex-column justify-content-center">
+        <h4 class="mb-1">Add a new Product</h4>
+        <p class="mb-0">Orders placed across your store</p>
       </div>
-      <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
-        <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
-          <img src="{{ asset('assets/img/avatars/1.png') }}" alt="user image" class="d-block h-auto ms-0 ms-sm-6 rounded user-profile-img" />
-        </div>
-        <div class="flex-grow-1 mt-3 mt-lg-5">
-          <div class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-5 flex-md-row flex-column gap-4">
-            <div class="user-profile-info">
-              <h4 class="mb-2 mt-lg-6">John Doe</h4>
-              <ul class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4 my-2">
-                <li class="list-inline-item"><i class="icon-base ti tabler-palette icon-lg me-2"></i> UX Designer</li>
-                <li class="list-inline-item"><i class="icon-base ti tabler-map-pin icon-lg me-2"></i> Vatican City</li>
-                <li class="list-inline-item"><i class="icon-base ti tabler-calendar icon-lg"></i><span class="fw-medium"> Joined April 2021</span></li>
-              </ul>
-            </div>
-            <a href="javascript:void(0)" class="btn btn-primary mb-1"> <i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected </a>
-          </div>
-        </div>
+      <div class="d-flex align-content-center flex-wrap gap-4">
+        <div class="d-flex gap-4"><button class="btn btn-label-secondary">Discard</button> <button
+            class="btn btn-label-primary">Save draft</button></div>
+        <button type="submit" class="btn btn-primary">Publish product</button>
       </div>
     </div>
-  </div>
-</div>
-<!--/ Header -->
 
-<!-- Navbar pills -->
-<div class="row">
-  <div class="col-md-12">
-    <div class="nav-align-top">
-      <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('pages/profile-user') }}"><i class="icon-base ti tabler-user-check icon-sm me-1_5"></i> Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('pages/profile-teams') }}"><i class="icon-base ti tabler-users icon-sm me-1_5"></i> Teams</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="javascript:void(0);"><i class="icon-base ti tabler-layout-grid icon-sm me-1_5"></i> Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('pages/profile-connections') }}"><i class="icon-base ti tabler-link icon-sm me-1_5"></i> Connections</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<!--/ Navbar pills -->
+    <div class="row">
+      <!-- First column-->
+      <div class="col-12 col-lg-8">
+        <!-- Product Information -->
+        <div class="card mb-6">
+          <div class="card-header">
+            <h5 class="card-tile mb-0">Product information</h5>
+          </div>
+          <div class="card-body">
+            <div class="mb-6">
+              <label class="form-label" for="ecommerce-product-name">Name</label>
+              <input type="text" class="form-control" id="ecommerce-product-name" placeholder="Product title"
+                     name="productTitle" aria-label="Product title" />
+            </div>
+            <div class="row mb-6">
+              <div class="col"><label class="form-label" for="ecommerce-product-sku">SKU</label> <input type="number"
+                                                                                                        class="form-control" id="ecommerce-product-sku" placeholder="SKU" name="productSku"
+                                                                                                        aria-label="Product SKU" /></div>
+              <div class="col"><label class="form-label" for="ecommerce-product-barcode">Barcode</label> <input
+                  type="text" class="form-control" id="ecommerce-product-barcode" placeholder="0123-4567"
+                  name="productBarcode" aria-label="Product barcode" /></div>
+            </div>
+            <!-- Description -->
+            <div>
+              <label class="mb-1">Description (Optional)</label>
+              <div class="form-control p-0">
+                <div class="comment-toolbar border-0 border-bottom">
+                  <div class="d-flex justify-content-start">
+                  <span class="ql-formats me-0">
+                    <button class="ql-bold"></button>
+                    <button class="ql-italic"></button>
+                    <button class="ql-underline"></button>
+                    <button class="ql-list" value="ordered"></button>
+                    <button class="ql-list" value="bullet"></button>
+                    <button class="ql-link"></button>
+                    <button class="ql-image"></button>
+                  </span>
+                  </div>
+                </div>
+                <div class="comment-editor border-0 pb-6" id="ecommerce-category-description"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Product Information -->
+        <!-- Media -->
+        <div class="card mb-6">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 card-title">Product Image</h5>
+            <a href="javascript:void(0);" class="fw-medium">Add media from URL</a>
+          </div>
+          <div class="card-body">
+            <form action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
+              <div class="dz-message needsclick">
+                <p class="h4 needsclick pt-3 mb-2">Drag and drop your image here</p>
+                <p class="h6 text-body-secondary d-block fw-normal mb-2">or</p>
+                <span class="needsclick btn btn-sm btn-label-primary" id="btnBrowse">Browse image</span>
+              </div>
+              <div class="fallback">
+                <input name="file" type="file" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /Media -->
+        <!-- Variants -->
+        <div class="card mb-6">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Variants</h5>
+          </div>
+          <div class="card-body">
+            <form class="form-repeater">
+              <div data-repeater-list="group-a">
+                <div data-repeater-item>
+                  <div class="row g-sm-6 mb-6">
+                    <div class="col-sm-4">
+                      <label class="form-label" for="form-repeater-1-1">Options</label>
+                      <select id="form-repeater-1-1" class="select2 form-select" data-placeholder="Size">
+                        <option value="">Size</option>
+                        <option value="size">Size</option>
+                        <option value="color">Color</option>
+                        <option value="weight">Weight</option>
+                        <option value="smell">Smell</option>
+                      </select>
+                    </div>
 
-<!-- Project Cards -->
-<div class="row g-6">
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card h-100">
-      <div class="card-header pb-4">
-        <div class="d-flex align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="avatar me-4">
-              <img src="{{ asset('assets/img/icons/brands/social-label.png') }}" alt="Avatar" class="rounded-circle" />
+                    <div class="col-sm-8">
+                      <label class="form-label invisible" for="form-repeater-1-2">Not visible</label>
+                      <input type="number" id="form-repeater-1-2" class="form-control" placeholder="Enter size" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-primary" data-repeater-create>
+                  <i class="icon-base ti tabler-plus icon-xs me-2"></i>
+                  Add another option
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /Variants -->
+        <!-- Inventory -->
+        <div class="card mb-6">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Inventory</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!-- Navigation -->
+              <div class="col-12 col-md-4 col-xl-5 col-xxl-4 mx-auto card-separator">
+                <div class="d-flex justify-content-between flex-column mb-4 mb-md-0 pe-md-4">
+                  <div class="nav-align-left">
+                    <ul class="nav nav-pills flex-column w-100">
+                      <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restock">
+                          <i class="icon-base ti tabler-box icon-sm me-1_5"></i>
+                          <span class="align-middle">Restock</span>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#shipping">
+                          <i class="icon-base ti tabler-car icon-sm me-1_5"></i>
+                          <span class="align-middle">Shipping</span>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#global-delivery">
+                          <i class="icon-base ti tabler-world icon-sm me-1_5"></i>
+                          <span class="align-middle">Global Delivery</span>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#attributes">
+                          <i class="icon-base ti tabler-link icon-sm me-1_5"></i>
+                          <span class="align-middle">Attributes</span>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#advanced">
+                          <i class="icon-base ti tabler-lock icon-sm me-1_5"></i>
+                          <span class="align-middle">Advanced</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Navigation -->
+              <!-- Options -->
+              <div class="col-12 col-md-8 col-xl-7 col-xxl-8 pt-6 pt-md-0">
+                <div class="tab-content p-0 ps-md-4">
+                  <!-- Restock Tab -->
+                  <div class="tab-pane fade show active" id="restock" role="tabpanel">
+                    <h6 class="text-body">Options</h6>
+                    <label class="form-label" for="ecommerce-product-stock">Add to Stock</label>
+                    <div class="row mb-4 g-4 pe-md-4">
+                      <div class="col-12 col-sm-9">
+                        <input type="number" class="form-control" id="ecommerce-product-stock" placeholder="Quantity"
+                               name="quantity" aria-label="Quantity" />
+                      </div>
+                      <div class="col-12 col-sm-3">
+                        <button class="btn btn-primary">Confirm</button>
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="mb-2 fw-normal">Product in stock now: 54</h6>
+                      <h6 class="mb-2 fw-normal">Product in transit: 390</h6>
+                      <h6 class="mb-2 fw-normal">Last time restocked: 24th June, 2023</h6>
+                      <h6 class="mb-0 fw-normal">Total stock over lifetime: 2430</h6>
+                    </div>
+                  </div>
+                  <!-- Shipping Tab -->
+                  <div class="tab-pane fade" id="shipping" role="tabpanel">
+                    <h6 class="mb-3 text-body">Shipping Type</h6>
+                    <div>
+                      <div class="form-check mb-4">
+                        <input class="form-check-input" type="radio" name="shippingType" id="seller" />
+                        <label class="form-check-label" for="seller">
+                          <span class="mb-1 h6">Fulfilled by Seller</span><br />
+                          <small>You'll be responsible for product delivery.<br />
+                            Any damage or delay during shipping may cost you a Damage fee.</small>
+                        </label>
+                      </div>
+                      <div class="form-check mb-6">
+                        <input class="form-check-input" type="radio" name="shippingType" id="companyName" checked />
+                        <label class="form-check-label" for="companyName">
+                        <span class="mb-1 h6">Fulfilled by Company name &nbsp;<span
+                            class="badge rounded-2 badge-warning bg-label-warning fs-tiny py-1">RECOMMENDED</span></span><br />
+                          <small>Your product, Our responsibility.<br />
+                            For a measly fee, we will handle the delivery process for you.</small>
+                        </label>
+                      </div>
+                      <p class="mb-0">See our <a href="javascript:void(0);">Delivery terms and conditions</a> for details
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Global Delivery Tab -->
+                  <div class="tab-pane fade" id="global-delivery" role="tabpanel">
+                    <h6 class="mb-3 text-body">Global Delivery</h6>
+                    <!-- Worldwide delivery -->
+                    <div class="form-check mb-4">
+                      <input class="form-check-input" type="radio" name="globalDel" id="worldwide" />
+                      <label class="form-check-label" for="worldwide">
+                        <span class="mb-1 h6">Worldwide delivery</span><br />
+                        <small>Only available with Shipping method: <a href="javascript:void(0);">Fulfilled by Company
+                            name</a></small>
+                      </label>
+                    </div>
+                    <!-- Global delivery -->
+                    <div class="form-check mb-4">
+                      <input class="form-check-input" type="radio" name="globalDel" checked />
+                      <label class="form-check-label w-75 pe-12" for="country-selected">
+                        <span class="mb-2 h6">Selected Countries</span>
+                        <input type="text" class="form-control" placeholder="Type Country name" id="country-selected" />
+                      </label>
+                    </div>
+                    <!-- Local delivery -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="globalDel" id="local" />
+                      <label class="form-check-label" for="local">
+                        <span class="mb-1 h6">Local delivery</span><br />
+                        <small>Deliver to your country of residence : <a href="javascript:void(0);">Change profile
+                            address</a></small>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- Attributes Tab -->
+                  <div class="tab-pane fade" id="attributes" role="tabpanel">
+                    <h6 class="mb-2 text-body">Attributes</h6>
+                    <div>
+                      <!-- Fragile Product -->
+                      <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="fragile" id="fragile" />
+                        <label class="form-check-label" for="fragile">
+                          <span class="fw-medium">Fragile Product</span>
+                        </label>
+                      </div>
+                      <!-- Biodegradable -->
+                      <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="biodegradable" id="biodegradable" />
+                        <label class="form-check-label" for="biodegradable">
+                          <span class="fw-medium">Biodegradable</span>
+                        </label>
+                      </div>
+                      <!-- Frozen Product -->
+                      <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="frozen" checked />
+                        <label class="form-check-label w-75 pe-12" for="frozen">
+                          <span class="mb-1 h6">Frozen Product</span>
+                          <input type="number" class="form-control" placeholder="Max. allowed Temperature" id="frozen" />
+                        </label>
+                      </div>
+                      <!-- Exp Date -->
+                      <div class="form-check mb-6">
+                        <input class="form-check-input" type="checkbox" value="expDate" id="expDate" checked />
+                        <label class="form-check-label w-75 pe-12" for="date-input">
+                          <span class="mb-1 h6">Expiry Date of Product</span>
+                          <input type="date" class="product-date form-control" id="date-input" />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Attributes Tab -->
+                  <!-- Advanced Tab -->
+                  <div class="tab-pane fade" id="advanced" role="tabpanel">
+                    <h6 class="mb-3 text-body">Advanced</h6>
+                    <div class="row">
+                      <!-- Product Id Type -->
+                      <div class="col">
+                        <label class="form-label" for="product-id">
+                          <span class="mb-1 h6">Product ID Type</span>
+                        </label>
+                        <select id="product-id" class="select2 form-select" data-placeholder="ISBN">
+                          <option value="">ISBN</option>
+                          <option value="ISBN">ISBN</option>
+                          <option value="UPC">UPC</option>
+                          <option value="EAN">EAN</option>
+                          <option value="JAN">JAN</option>
+                        </select>
+                      </div>
+                      <!-- Product Id -->
+                      <div class="col">
+                        <label class="form-label" for="product-id-1">
+                          <span class="mb-1 h6">Product ID</span>
+                        </label>
+                        <input type="number" id="product-id-1" class="form-control" placeholder="ISBN Number" />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Advanced Tab -->
+                </div>
+              </div>
+              <!-- /Options-->
             </div>
-            <div class="me-2">
-              <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-heading">Social Banners</a></h5>
-              <div class="client-info text-body"><span class="fw-medium">Client: </span><span>Christian Jimenez</span></div>
+          </div>
+        </div>
+        <!-- /Inventory -->
+      </div>
+      <!-- /Second column -->
+
+      <!-- Second column -->
+      <div class="col-12 col-lg-4">
+        <!-- Pricing Card -->
+        <div class="card mb-6">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Pricing</h5>
+          </div>
+          <div class="card-body">
+            <!-- Base Price -->
+            <div class="mb-6">
+              <label class="form-label" for="ecommerce-product-price">Base Price</label>
+              <input type="number" class="form-control" id="ecommerce-product-price" placeholder="Price"
+                     name="productPrice" aria-label="Product price" />
+            </div>
+            <!-- Discounted Price -->
+            <div class="mb-6">
+              <label class="form-label" for="ecommerce-product-discount-price">Discounted Price</label>
+              <input type="number" class="form-control" id="ecommerce-product-discount-price"
+                     placeholder="Discounted Price" name="productDiscountedPrice" aria-label="Product discounted price" />
+            </div>
+            <!-- Charge tax check box -->
+            <div class="form-check ms-2 mt-2 mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="price-charge-tax" checked />
+              <label class="switch-label" for="price-charge-tax"> Charge tax on this product </label>
+            </div>
+            <!-- Instock switch -->
+            <div class="d-flex justify-content-between align-items-center border-top pt-2">
+              <span class="mb-0">In stock</span>
+              <div class="w-25 d-flex justify-content-end">
+                <div class="form-check form-switch me-n3">
+                  <input type="checkbox" class="form-check-input" checked />
+                </div>
+              </div>
             </div>
           </div>
-          <div class="ms-auto">
-            <div class="dropdown z-2">
-              <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical text-body-secondary"></i></button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
-              </ul>
+        </div>
+        <!-- /Pricing Card -->
+        <!-- Organize Card -->
+        <div class="card mb-6">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Organize</h5>
+          </div>
+          <div class="card-body">
+            <!-- Vendor -->
+            <div class="mb-6 col ecommerce-select2-dropdown">
+              <label class="form-label mb-1" for="vendor"> Vendor </label>
+              <select id="vendor" class="select2 form-select" data-placeholder="Select Vendor">
+                <option value="">Select Vendor</option>
+                <option value="men-clothing">Men's Clothing</option>
+                <option value="women-clothing">Women's-clothing</option>
+                <option value="kid-clothing">Kid's-clothing</option>
+              </select>
+            </div>
+            <!-- Category -->
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="mb-6 col ecommerce-select2-dropdown">
+                <label class="form-label mb-1" for="category-org">
+                  <span>Category</span>
+                </label>
+                <select id="category-org" class="select2 form-select" data-placeholder="Select Category">
+                  <option value="">Select Category</option>
+                  <option value="Household">Household</option>
+                  <option value="Management">Management</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Office">Office</option>
+                  <option value="Automotive">Automotive</option>
+                </select>
+              </div>
+              <a href="javascript:void(0);" class="fw-medium btn btn-icon btn-label-primary ms-4"><i
+                  class="icon-base ti tabler-plus icon-md"></i></a>
+            </div>
+            <!-- Collection -->
+            <div class="mb-6 col ecommerce-select2-dropdown">
+              <label class="form-label mb-1" for="collection">Collection </label>
+              <select id="collection" class="select2 form-select" data-placeholder="Collection">
+                <option value="">Collection</option>
+                <option value="men-clothing">Men's Clothing</option>
+                <option value="women-clothing">Women's-clothing</option>
+                <option value="kid-clothing">Kid's-clothing</option>
+              </select>
+            </div>
+            <!-- Status -->
+            <div class="mb-6 col ecommerce-select2-dropdown">
+              <label class="form-label mb-1" for="status-org">Status </label>
+              <select id="status-org" class="select2 form-select" data-placeholder="Published">
+                <option value="">Published</option>
+                <option value="Published">Published</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <!-- Tags -->
+            <div>
+              <label for="ecommerce-product-tags" class="form-label mb-1">Tags</label>
+              <input id="ecommerce-product-tags" class="form-control" name="ecommerce-product-tags"
+                     value="Normal,Standard,Premium" aria-label="Product Tags" />
             </div>
           </div>
         </div>
+        <!-- /Organize Card -->
       </div>
-      <div class="card-body">
-        <div class="d-flex align-items-center flex-wrap">
-          <div class="bg-lighter px-3 py-2 rounded me-auto mb-4">
-            <p class="mb-1"><span class="fw-medium text-heading">$24.8k</span> / $18.2k</p>
-            <span class="text-body">Total Budget</span>
-          </div>
-          <div class="text-start mb-4">
-            <p class="mb-1"><span class="text-heading fw-medium">Start Date: </span> <span>14/2/21</span></p>
-            <p class="mb-1"><span class="text-heading fw-medium">Deadline: </span> <span>28/2/22</span></p>
-          </div>
-        </div>
-        <p class="mb-0">We are Consulting, Software Development and Web Development Services.</p>
-      </div>
-      <div class="card-body border-top">
-        <div class="d-flex align-items-center mb-4">
-          <p class="mb-1"><span class="text-heading fw-medium">All Hours: </span>380/244</p>
-          <span class="badge bg-label-success ms-auto">28 Days left</span>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <small class="text-body">Task: 290/344</small>
-          <small class="text-body">95% Completed</small>
-        </div>
-        <div class="progress mb-4 rounded" style="height: 8px;">
-          <div class="progress-bar rounded" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Vinnie Mostowy" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/5.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Allen Rieske" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/12.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Julee Rossignol" class="avatar avatar-sm pull-up me-3">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/6.png') }}" alt="Avatar" />
-              </li>
-              <li><small class="text-body-secondary">280 Members</small></li>
-            </ul>
-          </div>
-          <div class="ms-auto">
-            <a href="javascript:void(0);" class="text-body-secondary d-flex align-items-center"><i class="icon-base ti tabler-message-dots icon-lg me-1"></i> 15</a>
-          </div>
-        </div>
-      </div>
+      <!-- /Second column -->
     </div>
   </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card h-100">
-      <div class="card-header pb-4">
-        <div class="d-flex align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="avatar me-4">
-              <img src="{{ asset('assets/img/icons/brands/react-label.png') }}" alt="Avatar" class="rounded-circle" />
-            </div>
-            <div class="me-2">
-              <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-heading">Admin Template</a></h5>
-              <div class="client-info text-body"><span class="fw-medium">Client: </span><span>Jeffrey Phillips</span></div>
-            </div>
-          </div>
-          <div class="ms-auto">
-            <div class="dropdown z-2">
-              <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-md text-body-secondary"></i></button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="d-flex align-items-center flex-wrap">
-          <div class="bg-lighter px-3 py-2 rounded me-auto mb-4">
-            <p class="mb-1"><span class="fw-medium text-heading">$2.4k</span> / 1.8k</p>
-            <span class="text-body">Total Budget</span>
-          </div>
-          <div class="text-start mb-4">
-            <p class="mb-1"><span class="text-heading fw-medium">Start Date: </span> <span>18/8/21</span></p>
-            <p class="mb-1"><span class="text-heading fw-medium">Deadline: </span> <span>21/6/22</span></p>
-          </div>
-        </div>
-        <p class="mb-0">Time is our most valuable asset, that's why we want to help you save it by creating…</p>
-      </div>
-      <div class="card-body border-top">
-        <div class="d-flex align-items-center mb-4">
-          <p class="mb-1"><span class="text-heading fw-medium">All Hours: </span>98/135</p>
-          <span class="badge bg-label-warning ms-auto">15 Days left</span>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <small class="text-body">Task: 12/90</small>
-          <small class="text-body">42% Completed</small>
-        </div>
-        <div class="progress mb-4 rounded" style="height: 8px;">
-          <div class="progress-bar rounded" role="progressbar" style="width: 42%;" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Kaith D'souza" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/5.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="John Doe" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/1.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Alan Walker" class="avatar avatar-sm pull-up me-3">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/6.png') }}" alt="Avatar" />
-              </li>
-              <li><small class="text-body-secondary">1.1k Members</small></li>
-            </ul>
-          </div>
-          <div class="ms-auto">
-            <a href="javascript:void(0);" class="text-body-secondary d-flex align-items-center"><i class="icon-base ti tabler-message-dots icon-lg me-2"></i> 236</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-header pb-4">
-        <div class="d-flex align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="avatar me-4">
-              <img src="{{ asset('assets/img/icons/brands/vue-label.png') }}" alt="Avatar" class="rounded-circle" />
-            </div>
-            <div class="me-2">
-              <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-heading">App Design</a></h5>
-              <div class="client-info text-body"><span class="fw-medium">Client: </span><span>Ricky McDonald</span></div>
-            </div>
-          </div>
-          <div class="ms-auto">
-            <div class="dropdown z-2">
-              <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-md text-body-secondary"></i></button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="d-flex align-items-center flex-wrap">
-          <div class="bg-lighter px-3 py-2 rounded me-auto mb-4">
-            <p class="mb-1"><span class="fw-medium text-heading">$980</span> <span>/ $420</span></p>
-            <span class="text-body">Total Budget</span>
-          </div>
-          <div class="text-start mb-4">
-            <p class="mb-1"><span class="text-heading fw-medium">Start Date: </span> <span>24/7/21</span></p>
-            <p class="mb-1"><span class="text-heading fw-medium">Deadline: </span> <span>8/10/21</span></p>
-          </div>
-        </div>
-        <p class="mb-0">App design combines the user interface (UI) and user experience (UX).</p>
-      </div>
-      <div class="card-body border-top">
-        <div class="d-flex align-items-center mb-4">
-          <p class="mb-1"><span class="text-heading fw-medium">All Hours: </span> <span>880/421</span></p>
-          <span class="badge bg-label-danger ms-auto">45 Days left</span>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <small class="text-body">Task: 22/140</small>
-          <small class="text-body">68% Completed</small>
-        </div>
-        <div class="progress mb-4 rounded" style="height: 8px;">
-          <div class="progress-bar rounded" role="progressbar" style="width: 68%;" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Jimmy Ressula" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/4.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Kristi Lawker" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/2.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Danny Paul" class="avatar avatar-sm pull-up me-3">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/7.png') }}" alt="Avatar" />
-              </li>
-              <li><small class="text-body-secondary">458 Members</small></li>
-            </ul>
-          </div>
-          <div class="ms-auto">
-            <a href="javascript:void(0);" class="text-body-secondary d-flex align-items-center"><i class="icon-base ti tabler-message-dots icon-lg me-1"></i> 98</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-header pb-4">
-        <div class="d-flex align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="avatar me-4">
-              <img src="{{ asset('assets/img/icons/brands/html-label.png') }}" alt="Avatar" class="rounded-circle" />
-            </div>
-            <div class="me-2">
-              <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-heading">Create Website</a></h5>
-              <div class="client-info text-body"><span class="fw-medium">Client: </span><span>Hulda Wright</span></div>
-            </div>
-          </div>
-          <div class="ms-auto">
-            <div class="dropdown z-2">
-              <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-md text-body-secondary"></i></button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="d-flex align-items-center flex-wrap">
-          <div class="bg-lighter px-3 py-2 rounded me-auto mb-4">
-            <p class="mb-1"><span class="fw-medium text-heading">$8.5k</span> <span>/ $2.43k</span></p>
-            <span class="text-body">Total Budget</span>
-          </div>
-          <div class="text-start mb-4">
-            <p class="mb-1"><span class="text-heading fw-medium">Start Date: </span> <span>10/2/19</span></p>
-            <p class="mb-1"><span class="text-heading fw-medium">Deadline: </span> <span>12/9/22</span></p>
-          </div>
-        </div>
-        <p class="mb-0">Your domain name should reflect your products or services so that your...</p>
-      </div>
-      <div class="card-body border-top">
-        <div class="d-flex align-items-center mb-4">
-          <p class="mb-1"><span class="text-heading fw-medium">All Hours: </span> <span>1.2k/820</span></p>
-          <span class="badge bg-label-warning ms-auto">126 Days left</span>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <small class="text-body">Task: 237/420</small>
-          <small class="text-body">72% Completed</small>
-        </div>
-        <div class="progress mb-4 rounded" style="height: 8px;">
-          <div class="progress-bar rounded" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Andrew Tye" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/6.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Rishi Swaat" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/9.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Rossie Kim" class="avatar avatar-sm pull-up me-3">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/12.png') }}" alt="Avatar" />
-              </li>
-              <li><small class="text-body-secondary">137 Members</small></li>
-            </ul>
-          </div>
-          <div class="ms-auto">
-            <a href="javascript:void(0);" class="text-body-secondary d-flex align-items-center"><i class="icon-base ti tabler-message-dots icon-lg me-1"></i> 120</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-header pb-4">
-        <div class="d-flex align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="avatar me-4">
-              <img src="{{ asset('assets/img/icons/brands/figma-label.png') }}" alt="Avatar" class="rounded-circle" />
-            </div>
-            <div class="me-2">
-              <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-heading">Figma Dashboard</a></h5>
-              <div class="client-info text-body"><span class="fw-medium">Client: </span><span>Jerry Greene</span></div>
-            </div>
-          </div>
-          <div class="ms-auto">
-            <div class="dropdown z-2">
-              <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-md text-body-secondary"></i></button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="d-flex align-items-center flex-wrap">
-          <div class="bg-lighter px-3 py-2 rounded me-auto mb-4">
-            <p class="mb-1"><span class="fw-medium text-heading">$52.7k</span> <span>/ $28.4k</span></p>
-            <span class="text-body">Total Budget</span>
-          </div>
-          <div class="text-start mb-4">
-            <p class="mb-1"><span class="text-heading fw-medium">Start Date: </span> <span>12/12/20</span></p>
-            <p class="mb-1"><span class="text-heading fw-medium">Deadline: </span> <span>25/12/21</span></p>
-          </div>
-        </div>
-        <p class="mb-0">Use this template to organize your design project. Some of the key features are…</p>
-      </div>
-      <div class="card-body border-top">
-        <div class="d-flex align-items-center mb-4">
-          <p class="mb-1"><span class="text-heading fw-medium">All Hours: </span> <span>142/420</span></p>
-          <span class="badge bg-label-danger ms-auto">5 Days left</span>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <small class="text-body">Task: 29/285</small>
-          <small class="text-body">35% Completed</small>
-        </div>
-        <div class="progress mb-4 rounded" style="height: 8px;">
-          <div class="progress-bar rounded" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Kim Merchent" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/10.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Sam D'souza" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/13.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Nurvi Karlos" class="avatar avatar-sm pull-up me-3">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/15.png') }}" alt="Avatar" />
-              </li>
-              <li><small class="text-body-secondary">82 Members</small></li>
-            </ul>
-          </div>
-          <div class="ms-auto">
-            <a href="javascript:void(0);" class="text-body-secondary d-flex align-items-center"><i class="icon-base ti tabler-message-dots icon-lg me-1"></i> 20</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-6 col-md-6">
-    <div class="card">
-      <div class="card-header pb-4">
-        <div class="d-flex align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="avatar me-4">
-              <img src="{{ asset('assets/img/icons/brands/xd-label.png') }}" alt="Avatar" class="rounded-circle" />
-            </div>
-            <div class="me-2">
-              <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-heading">Logo Design</a></h5>
-              <div class="client-info text-body"><span class="fw-medium">Client: </span><span>Olive Strickland</span></div>
-            </div>
-          </div>
-          <div class="ms-auto">
-            <div class="dropdown z-2">
-              <button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-base ti tabler-dots-vertical icon-md text-body-secondary"></i></button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="d-flex align-items-center flex-wrap">
-          <div class="bg-lighter px-3 py-2 rounded me-auto mb-4">
-            <p class="mb-1"><span class="fw-medium text-heading">$1.3k</span> <span>/ $655</span></p>
-            <span class="text-body">Total Budget</span>
-          </div>
-          <div class="text-start mb-4">
-            <p class="mb-1"><span class="text-heading fw-medium">Start Date: </span> <span>17/8/21</span></p>
-            <p class="mb-1"><span class="text-heading fw-medium">Deadline: </span> <span>02/11/21</span></p>
-          </div>
-        </div>
-        <p class="mb-0">Premium logo designs created by top logo designers. Create the branding of business.</p>
-      </div>
-      <div class="card-body border-top">
-        <div class="d-flex align-items-center mb-4">
-          <p class="mb-1"><span class="text-heading fw-medium">All Hours: </span> <span>580/445</span></p>
-          <span class="badge bg-label-success ms-auto">4 Days left</span>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <small class="text-body">Task: 290/290</small>
-          <small class="text-body">100% Completed</small>
-        </div>
-        <div class="progress mb-4 rounded" style="height: 8px;">
-          <div class="progress-bar rounded" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Kim Karlos" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/3.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Katy Turner" class="avatar avatar-sm pull-up">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/9.png') }}" alt="Avatar" />
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="Peter Adward" class="avatar avatar-sm pull-up me-3">
-                <img class="rounded-circle" src="{{ asset('assets/img/avatars/15.png') }}" alt="Avatar" />
-              </li>
-              <li><small class="text-body-secondary">16 Members</small></li>
-            </ul>
-          </div>
-          <div class="ms-auto">
-            <a href="javascript:void(0);" class="text-body-secondary d-flex align-items-center"><i class="icon-base ti tabler-message-dots icon-lg me-1"></i> 37</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--/ Project Cards -->
+
 @endsection

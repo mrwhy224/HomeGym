@@ -1,11 +1,11 @@
 <?php
-
-// main code start
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\post\Category;
 use App\Http\Controllers\post\Comment;
 use App\Http\Controllers\post\PostAdd;
 use App\Http\Controllers\post\PostList;
+use App\Http\Controllers\UserController;
+
 
 
 Route::group(['prefix' => 'post','as' => 'post.'], function () {
@@ -21,8 +21,10 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 
   Route::group(['prefix' => 'category','as' => 'api.'], function () {
     Route::get('list', [Category::class, 'index'])->name('category.all');
+    Route::get('/users-list', [UserController::class, 'getUsersForDataTable']);
   });
 
+  //Route::get('/categories-list', [Category::class, 'getCategoriesForDataTable']);
 });
 
 

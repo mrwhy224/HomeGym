@@ -26,7 +26,7 @@
 @endsection
 
 @section('page-script')
-  @vite('resources/assets/js/post-category-list.js')
+  @vite('resources/assets/js/app-ecommerce-category-list.js')
 @endsection
 
 @section('content')
@@ -38,10 +38,10 @@
           <thead>
           <tr>
             <th></th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Slug</th>
-            <th class="text-nowrap text-sm-end">Total Post &nbsp;</th>
+            <th></th>
+            <th>Categories</th>
+            <th class="text-nowrap text-sm-end">Total Products &nbsp;</th>
+            <th class="text-nowrap text-sm-end">Total Earning</th>
             <th class="text-lg-center">Actions</th>
           </tr>
           </thead>
@@ -71,7 +71,54 @@
             <input type="text" id="ecommerce-category-slug" class="form-control" placeholder="Enter slug"
                    aria-label="slug" name="slug" />
           </div>
-
+          <!-- Image -->
+          <div class="mb-6">
+            <label class="form-label" for="ecommerce-category-image">Attachment</label>
+            <input class="form-control" type="file" id="ecommerce-category-image" />
+          </div>
+          <!-- Parent category -->
+          <div class="mb-6 ecommerce-select2-dropdown">
+            <label class="form-label" for="ecommerce-category-parent-category">Parent category</label>
+            <select id="ecommerce-category-parent-category" class="select2 form-select"
+                    data-placeholder="Select parent category">
+              <option value="">Select parent Category</option>
+              <option value="Household">Household</option>
+              <option value="Management">Management</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Office">Office</option>
+              <option value="Automotive">Automotive</option>
+            </select>
+          </div>
+          <!-- Description -->
+          <div class="mb-6">
+            <label class="form-label">Description</label>
+            <div class="form-control p-0 py-1">
+              <div class="comment-editor border-0" id="ecommerce-category-description"></div>
+              <div class="comment-toolbar border-0 rounded">
+                <div class="d-flex justify-content-end">
+                <span class="ql-formats me-0">
+                  <button class="ql-bold"></button>
+                  <button class="ql-italic"></button>
+                  <button class="ql-underline"></button>
+                  <button class="ql-list" value="ordered"></button>
+                  <button class="ql-list" value="bullet"></button>
+                  <button class="ql-link"></button>
+                  <button class="ql-image"></button>
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Status -->
+          <div class="mb-6 ecommerce-select2-dropdown">
+            <label class="form-label">Select category status</label>
+            <select id="ecommerce-category-status" class="select2 form-select" data-placeholder="Select category status">
+              <option value="">Select category status</option>
+              <option value="Scheduled">Scheduled</option>
+              <option value="Publish">Publish</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </div>
           <!-- Submit and reset -->
           <div class="mb-6">
             <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Add</button>
