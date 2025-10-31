@@ -127,5 +127,5 @@ return [
         // Other aliases...
         'Helper' => App\Helpers\Helpers::class,
     ],
-
+	'disable_auth' => env('APP_DISABLE_AUTH', false),
 ];
