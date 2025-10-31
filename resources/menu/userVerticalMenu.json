@@ -1,0 +1,58 @@
+{
+  "menu": [
+    {
+      "name": "Dashboards",
+      "icon": "menu-icon icon-base ti tabler-smart-home",
+      "slug": "user.dashboard"
+    },
+    {
+      "name": "Bookings",
+      "icon": "menu-icon icon-base ti tabler-library-plus",
+      "slug": "booking.",
+      "submenu": [
+        {
+          "url": "post",
+          "name": "New Booking",
+          "slug": "post.list"
+        },
+        {
+          "url": "post/create",
+          "name": "My Bookings",
+          "slug": "post.create"
+        }
+      ]
+    },
+    {
+      "name": "Financial",
+      "icon": "menu-icon icon-base ti tabler-cash",
+      "slug": "booking.",
+      "submenu": [
+        {
+          "url": "post",
+          "name": "My Wallet",
+          "slug": "post.list"
+        },
+        {
+          "url": "post/create",
+          "name": "Transaction History",
+          "slug": "post.create"
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "icon": "menu-icon icon-base ti tabler-message-2",
+      "slug": "user.dashboard1"
+    },
+    {
+      "name": "Help Center",
+      "icon": "menu-icon icon-base ti tabler-help",
+      "slug": "user.dashboard1"
+    },
+    {
+      "name": "Settings",
+      "icon": "menu-icon icon-base ti tabler-settings",
+      "slug": "user.dashboard1"
+    }
+  ]
+}

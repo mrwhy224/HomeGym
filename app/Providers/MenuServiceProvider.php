@@ -2,32 +2,32 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\View;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Request;
 
 use Illuminate\Support\ServiceProvider;
 
 class MenuServiceProvider extends ServiceProvider
 {
-  /**
-   * Register services.
-   */
-  public function register(): void
-  {
-    //
-  }
+	/**
+	 * Register services.
+	 */
+	public function register(): void
+	{
+		//
+	}
 
-  /**
-   * Bootstrap services.
-   */
-  public function boot(): void
-  {
-    $verticalMenuJson = file_get_contents(base_path('resources/menu/verticalMenu.json'));
-    $verticalMenuData = json_decode($verticalMenuJson);
-    $horizontalMenuJson = file_get_contents(base_path('resources/menu/horizontalMenu.json'));
-    $horizontalMenuData = json_decode($horizontalMenuJson);
-
-    // Share all menuData to all the views
-    $this->app->make('view')->share('menuData', [$verticalMenuData, $horizontalMenuData]);
-  }
+	/**
+	 * Bootstrap services.
+	 */
+	public function boot(): void
+	{
+		$verticalMenuJson = file_get_contents(base_path('resources/menu/verticalMenu.json'));
+		if (Request::is('admin*'))
+			$verticalMenuJson = file_get_contents(base_path('resources/menu/adminVerticalMenu.json'));
+		elseif (Request::is('coach*'))
+			$verticalMenuJson = file_get_contents(base_path('resources/menu/coachVerticalMenu.json'));
+		elseif (Request::is('user*'))
+			$verticalMenuJson = file_get_contents(base_path('resources/menu/userVerticalMenu.json'));
+		$this->app->make('view')->share('menuData', [json_decode($verticalMenuJson)]);
+	}
 }
