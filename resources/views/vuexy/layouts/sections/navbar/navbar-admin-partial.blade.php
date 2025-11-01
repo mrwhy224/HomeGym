@@ -90,7 +90,6 @@ use Illuminate\Support\Facades\Route;
     </li>
     <!--/ Language -->
 
-    @if ($configData['hasCustomizer'] == true)
     <!-- Style Switcher -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle hide-arrow btn btn-icon btn-text-secondary rounded-pill" id="nav-theme"
@@ -120,7 +119,6 @@ use Illuminate\Support\Facades\Route;
       </ul>
     </li>
     <!-- / Style Switcher-->
-    @endif
 
     <!-- Quick links  -->
     <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown">
@@ -426,6 +424,18 @@ use Illuminate\Support\Facades\Route;
       </ul>
     </li>
     <!--/ Notification -->
+    <li class="nav-item d-flex align-items-center me-3 me-xl-2">
+            <a class="nav-link" href="{{-- route('user.wallet.index') --}}" 
+               data-bs-toggle="tooltip" 
+               data-bs-placement="bottom" 
+               title="Your wallet balance">
+                
+                <span class="badge bg-label-primary rounded-pill d-flex align-items-center p-2">
+                    <i class="icon-base ti tabler-wallet ti-sm me-1"></i>
+                    <span class="fw-bold">3 $</span>
+                </span>
+            </a>
+        </li>
     <!-- User -->
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -550,5 +560,6 @@ use Illuminate\Support\Facades\Route;
       </ul>
     </li>
     <!--/ User -->
+
   </ul>
 </div>

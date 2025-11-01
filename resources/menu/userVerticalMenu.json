@@ -2,6 +2,7 @@
   "menu": [
     {
       "name": "Dashboards",
+      "url": "/user",
       "icon": "menu-icon icon-base ti tabler-smart-home",
       "slug": "user.dashboard"
     },
@@ -25,12 +26,12 @@
     {
       "name": "Financial",
       "icon": "menu-icon icon-base ti tabler-cash",
-      "slug": "booking.",
+      "slug": "user.financial.",
       "submenu": [
         {
-          "url": "post",
           "name": "My Wallet",
-          "slug": "post.list"
+          "url": "/user/financial/wallet",
+          "slug": "user.financial.wallet"
         },
         {
           "url": "post/create",
@@ -46,8 +47,9 @@
     },
     {
       "name": "Help Center",
+      "url": "/user/help",
       "icon": "menu-icon icon-base ti tabler-help",
-      "slug": "user.dashboard1"
+      "slug": "user.help-center"
     },
     {
       "name": "Settings",

@@ -50,7 +50,21 @@
 
         <!-- BEGIN: Navbar-->
         @if ($isNavbar)
-          @include('layouts/sections/navbar/navbar')
+          @php
+
+              $navbarView = 'layouts.sections.navbar.navbar_user';
+
+              if (request()->is('admin*'))
+                  $navbarView = 'layouts.sections.navbar.navbar_admin';
+              elseif (request()->is('coach*'))
+                  $navbarView = 'layouts.sections.navbar.navbar_coach';
+              elseif (request()->is('dashboard*')) 
+                  $navbarView = 'layouts.sections.navbar.navbar_user';
+              
+          @endphp
+
+          {{-- حالا به جای یک فایل ثابت، متغیر را include می‌کنیم --}}
+          @include($navbarView)
         @endif
         <!-- END: Navbar-->
 
