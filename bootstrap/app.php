@@ -39,6 +39,8 @@ return Application::configure(basePath: dirname(__DIR__))
 				->prefix('user')
 				->as('user.')
 				->group(base_path('routes/panel_user.php'));
+			Route::prefix('demo')
+				->group(base_path('routes/demo.php'));
 		}
 	)
     ->withMiddleware(function (Middleware $middleware) {
