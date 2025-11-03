@@ -20,7 +20,7 @@ return [
 
         // 2. Path for your user-facing website theme
         // It will look here second.
-        resource_path('views/user_theme'),
+        resource_path('views/fistudy'),
 
         // 3. The default path (we can leave it or comment it out)
         // resource_path('views'),
