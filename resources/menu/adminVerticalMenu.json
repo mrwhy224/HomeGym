@@ -1,5 +1,33 @@
 {
   "menu": [
+
+    {
+      "name": "Pages",
+      "icon": "menu-icon icon-base ti tabler-file",
+      "slug": "admin.post",
+      "submenu": [
+        {
+          "url": "/admin/post",
+          "name": "Post List",
+          "slug": "admin.post.list"
+        },
+        {
+          "url": "/admin/post/create",
+          "name": "New Post",
+          "slug": "admin.post.create"
+        },
+        {
+          "url": "/admin/post/comment",
+          "name": "Comments",
+          "slug": "admin.post.comment"
+        },
+        {
+          "url": "/admin/post/category",
+          "name": "Category",
+          "slug": "admin.post.category"
+        }
+      ]
+    },
     {
       "name": "Dashboards",
       "icon": "menu-icon icon-base ti tabler-smart-home",
@@ -377,306 +405,6 @@
               "slug": "laravel-example-user-management"
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "Pages",
-      "icon": "menu-icon icon-base ti tabler-file",
-      "slug": [
-        "pages",
-        "auth",
-        "wizard-ex",
-        "modal"
-      ],
-      "submenu": [
-        {
-          "name": "Front Pages",
-          "icon": "menu-icon icon-base ti tabler-files",
-          "slug": "front-pages",
-          "submenu": [
-            {
-              "url": "front-pages/landing",
-              "name": "Landing",
-              "slug": "front-pages-landing",
-              "target": "_blank"
-            },
-            {
-              "url": "front-pages/pricing",
-              "name": "Pricing",
-              "slug": "front-pages-pricing",
-              "target": "_blank"
-            },
-            {
-              "url": "front-pages/payment",
-              "name": "Payment",
-              "slug": "front-pages-payment",
-              "target": "_blank"
-            },
-            {
-              "url": "front-pages/checkout",
-              "name": "Checkout",
-              "slug": "front-pages-checkout",
-              "target": "_blank"
-            },
-            {
-              "url": "front-pages/help-center",
-              "name": "Help Center",
-              "slug": "front-pages-help-center",
-              "target": "_blank"
-            }
-          ]
-        },
-        {
-          "name": "User Profile",
-          "icon": "menu-icon icon-base ti tabler-user-circle",
-          "slug": "pages-profile",
-          "submenu": [
-            {
-              "url": "pages/profile-user",
-              "name": "Profile",
-              "slug": "pages-profile-user"
-            },
-            {
-              "url": "pages/profile-teams",
-              "name": "Teams",
-              "slug": "pages-profile-teams"
-            },
-            {
-              "url": "pages/profile-projects",
-              "name": "Projects",
-              "slug": "pages-profile-projects"
-            },
-            {
-              "url": "pages/profile-connections",
-              "name": "Connections",
-              "slug": "pages-profile-connections"
-            }
-          ]
-        },
-        {
-          "name": "Account Settings",
-          "icon": "menu-icon icon-base ti tabler-settings",
-          "slug": "pages-account-settings",
-          "submenu": [
-            {
-              "url": "pages/account-settings-account",
-              "name": "Account",
-              "slug": "pages-account-settings-account"
-            },
-            {
-              "url": "pages/account-settings-security",
-              "name": "Security",
-              "slug": "pages-account-settings-security"
-            },
-            {
-              "url": "pages/account-settings-billing",
-              "name": "Billing & Plans",
-              "slug": "pages-account-settings-billing"
-            },
-            {
-              "url": "pages/account-settings-notifications",
-              "name": "Notifications",
-              "slug": "pages-account-settings-notifications"
-            },
-            {
-              "url": "pages/account-settings-connections",
-              "name": "Connections",
-              "slug": "pages-account-settings-connections"
-            }
-          ]
-        },
-        {
-          "url": "pages/faq",
-          "name": "FAQ",
-          "icon": "menu-icon icon-base ti tabler-help",
-          "slug": "pages-faq"
-        },
-        {
-          "url": "pages/pricing",
-          "name": "Pricing",
-          "icon": "menu-icon icon-base ti tabler-diamond",
-          "slug": "pages-pricing"
-        },
-        {
-          "name": "Misc",
-          "icon": "menu-icon icon-base ti tabler-vector-bezier-circle",
-          "slug": "pages-misc",
-          "submenu": [
-            {
-              "url": "pages/misc-error",
-              "name": "Error",
-              "slug": "pages-misc-error",
-              "target": "_blank"
-            },
-            {
-              "url": "pages/misc-under-maintenance",
-              "name": "Under Maintenance",
-              "slug": "pages-misc-under-maintenance",
-              "target": "_blank"
-            },
-            {
-              "url": "pages/misc-comingsoon",
-              "name": "Coming Soon",
-              "slug": "pages-misc-comingsoon",
-              "target": "_blank"
-            },
-            {
-              "url": "pages/misc-not-authorized",
-              "name": "Not Authorized",
-              "slug": "pages-misc-not-authorized",
-              "target": "_blank"
-            }
-          ]
-        },
-        {
-          "name": "Authentications",
-          "icon": "menu-icon icon-base ti tabler-lock",
-          "slug": "auth",
-          "submenu": [
-            {
-              "name": "Login",
-              "slug": "auth-login",
-              "submenu": [
-                {
-                  "url": "auth/login-basic",
-                  "name": "Basic",
-                  "slug": "auth-login-basic",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/login-cover",
-                  "name": "Cover",
-                  "slug": "auth-login-cover",
-                  "target": "_blank"
-                }
-              ]
-            },
-            {
-              "name": "Register",
-              "slug": "auth-register",
-              "submenu": [
-                {
-                  "url": "auth/register-basic",
-                  "name": "Basic",
-                  "slug": "auth-register-basic",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/register-cover",
-                  "name": "Cover",
-                  "slug": "auth-register-cover",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/register-multisteps",
-                  "name": "Multi-steps",
-                  "slug": "auth-register-multisteps",
-                  "target": "_blank"
-                }
-              ]
-            },
-            {
-              "name": "Verify Email",
-              "slug": "auth-verify-email",
-              "submenu": [
-                {
-                  "url": "auth/verify-email-basic",
-                  "name": "Basic",
-                  "slug": "auth-verify-email-basic",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/verify-email-cover",
-                  "name": "Cover",
-                  "slug": "auth-verify-email-cover",
-                  "target": "_blank"
-                }
-              ]
-            },
-            {
-              "name": "Reset Password",
-              "slug": "auth-reset-password",
-              "submenu": [
-                {
-                  "url": "auth/reset-password-basic",
-                  "name": "Basic",
-                  "slug": "auth-reset-password-basic",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/reset-password-cover",
-                  "name": "Cover",
-                  "slug": "auth-reset-password-cover",
-                  "target": "_blank"
-                }
-              ]
-            },
-            {
-              "name": "Forgot Password",
-              "slug": "auth-forgot-password",
-              "submenu": [
-                {
-                  "url": "auth/forgot-password-basic",
-                  "name": "Basic",
-                  "slug": "auth-forgot-password-basic",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/forgot-password-cover",
-                  "name": "Cover",
-                  "slug": "auth-forgot-password-cover",
-                  "target": "_blank"
-                }
-              ]
-            },
-            {
-              "name": "Two Steps",
-              "slug": "auth-two-steps",
-              "submenu": [
-                {
-                  "url": "auth/two-steps-basic",
-                  "name": "Basic",
-                  "slug": "auth-two-steps-basic",
-                  "target": "_blank"
-                },
-                {
-                  "url": "auth/two-steps-cover",
-                  "name": "Cover",
-                  "slug": "auth-two-steps-cover",
-                  "target": "_blank"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Wizard Examples",
-          "icon": "menu-icon icon-base ti tabler-forms",
-          "slug": "wizard-ex",
-          "submenu": [
-            {
-              "url": "wizard/ex-checkout",
-              "name": "Checkout",
-              "slug": "wizard-ex-checkout"
-            },
-            {
-              "url": "wizard/ex-property-listing",
-              "name": "Property Listing",
-              "slug": "wizard-ex-property-listing"
-            },
-            {
-              "url": "wizard/ex-create-deal",
-              "name": "Create Deal",
-              "slug": "wizard-ex-create-deal"
-            }
-          ]
-        },
-        {
-          "url": "modal-examples",
-          "name": "Modal Examples",
-          "icon": "menu-icon icon-base ti tabler-square",
-          "slug": "modal-examples"
         }
       ]
     },
