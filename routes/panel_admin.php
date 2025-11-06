@@ -18,8 +18,8 @@ Route::group(['prefix' => 'post','as' => 'post.'], function () {
 
 Route::group(['prefix' => 'api','as' => 'api.'], function () {
 
-	Route::group(['prefix' => 'category','as' => 'api.'], function () {
-		Route::get('list', [Category::class, 'index'])->name('category.all');
+	Route::group(['prefix' => 'category','as' => 'category.'], function () {
+		Route::get('list', [Category::class, 'index'])->name('index');
 	});
 });
 
