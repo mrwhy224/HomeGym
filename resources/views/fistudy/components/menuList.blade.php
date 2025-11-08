@@ -4,14 +4,10 @@
             <div class="main-menu__wrapper-inner">
                 <div class="main-menu__left">
                     <div class="main-menu__logo">
-                        <a href={{ url('/') }}><img src="{{ asset('assets/images/resources/logo-1.png') }}" alt="">                        </a>
+                        <a href={{ url('/') }}><img src="{{ asset('assets/images/favicons/logo3.png') }}" alt="">                        </a>
                     </div>
                     <div class="main-menu__category-box">
-                        <div class="main-menu__category-btn">
-                            <i class="fas fa-th"></i>
-                            <p>Category</p>
-                            <span class="icon-down-arrow"></span>
-                        </div>
+
                         <ul class="list-unstyled main-menu__category-sub-menu">
                             <li>
                                 <a href={{ url('#') }}>
@@ -107,119 +103,8 @@
                 <div class="main-menu__main-menu-box">
                     <a href={{ url('#') }} class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                     <ul class="main-menu__list">
-                        <li class="dropdown megamenu">
+                        <li>
                             <a href={{ url('/') }}>Home </a>
-                            <ul>
-                                <li>
-                                    <section class="home-showcase">
-                                        <div class="container">
-                                            <div class="home-showcase__inner">
-                                                <div class="row">
-                                                    <div class="col-lg-3">
-                                                        <div class="home-showcase__item">
-                                                            <div class="home-showcase__image">
-                                                                <img src="{{ asset('assets/images/home-showcase/home-showcase-1-1.jpg') }}" alt="">
-                                                                <div class="home-showcase__buttons">
-                                                                    <a href={{ url('/') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        Multi Page
-                                                                    </a>
-                                                                    <a href={{ route('index-one-page') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        One Page
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.home-showcase__buttons -->
-                                                            </div><!-- /.home-showcase__image -->
-                                                            <h3 class="home-showcase__title">Home
-                                                                Page
-                                                                01</h3>
-                                                            <!-- /.home-showcase__title -->
-                                                        </div><!-- /.home-showcase__item -->
-                                                    </div><!-- /.col-lg-3 -->
-                                                    <div class="col-lg-3">
-                                                        <div class="home-showcase__item">
-                                                            <div class="home-showcase__image">
-                                                                <img src="{{ asset('assets/images/home-showcase/home-showcase-1-2.jpg') }}" alt="">
-                                                                <div class="home-showcase__buttons">
-                                                                    <a href={{ route('index2') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        Multi Page
-                                                                    </a>
-                                                                    <a href={{ route('index2-one-page') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        One Page
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.home-showcase__buttons -->
-                                                            </div><!-- /.home-showcase__image -->
-                                                            <h3 class="home-showcase__title">Home
-                                                                Page
-                                                                02
-                                                            </h3><!-- /.home-showcase__title -->
-                                                        </div><!-- /.home-showcase__item -->
-                                                    </div><!-- /.col-lg-3 -->
-                                                    <div class="col-lg-3">
-                                                        <div class="home-showcase__item">
-                                                            <div class="home-showcase__image">
-                                                                <img src="{{ asset('assets/images/home-showcase/home-showcase-1-3.jpg') }}" alt="">
-                                                                <div class="home-showcase__buttons">
-                                                                    <a href={{ route('index3') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        Multi Page
-                                                                    </a>
-                                                                    <a href={{ route('index3-one-page') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        View Page
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.home-showcase__buttons -->
-                                                            </div><!-- /.home-showcase__image -->
-                                                            <h3 class="home-showcase__title">Home
-                                                                Page
-                                                                03
-                                                            </h3><!-- /.home-showcase__title -->
-                                                        </div><!-- /.home-showcase__item -->
-                                                    </div><!-- /.col-lg-3 -->
-                                                    <div class="col-lg-3">
-                                                        <div class="home-showcase__item">
-                                                            <div class="home-showcase__image">
-                                                                <img src="{{ asset('assets/images/home-showcase/home-showcase-1-4.jpg') }}" alt="">
-                                                                <div class="home-showcase__buttons">
-                                                                    <a href={{ route('index-dark') }}
-                                                                        class="thm-btn home-showcase__buttons__item">
-                                                                        <span
-                                                                            class="icon-angles-right"></span>
-                                                                        One Page
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.home-showcase__buttons -->
-                                                            </div><!-- /.home-showcase__image -->
-                                                            <h3 class="home-showcase__title">Home
-                                                                Page
-                                                                04
-                                                            </h3><!-- /.home-showcase__title -->
-                                                        </div><!-- /.home-showcase__item -->
-                                                    </div><!-- /.col-lg-3 -->
-                                                </div><!-- /.row -->
-                                            </div><!-- /.home-showcase__inner -->
-
-                                        </div><!-- /.container -->
-                                    </section>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href={{ route('about') }}>About</a>
@@ -299,4 +184,4 @@
         </div>
     </div>
 </nav>
- 
+

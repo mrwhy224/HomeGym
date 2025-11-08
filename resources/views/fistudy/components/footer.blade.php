@@ -7,7 +7,7 @@
                 <div class="site-footer__logo-box wow fadeInLeft" data-wow-delay="100ms">
                     <div class="site-footer__logo">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('assets/images/resources/site-footer-logo-1.png') }}" alt="">
+                            <img src="{{ asset('assets/images/favicons/logo2footer.png') }}" alt="">
                         </a>
                     </div>
                     <p class="site-footer__text">Lorem Ipsum is simply dummy text of <br> the printing and typesetting</p>
@@ -33,7 +33,8 @@
                                                 <p class="site-footer__contact-info-icon-text">Email Address:</p>
                                             </div>
                                             <p class="site-footer__contact-info-text">
-                                                <a href="mailto:info@example.com">info@example.com</a>
+                                                <a href="mailto:info@example.com">springofthenewdream@gmail.com
+                                                </a>
                                             </p>
                                         </div>
                                     </li>
@@ -55,7 +56,7 @@
                                                 <p class="site-footer__contact-info-icon-text">Phone Number:</p>
                                             </div>
                                             <p class="site-footer__contact-info-text">
-                                                <a href="tel:1212345678900">+12 (123) 4567 8900</a>
+                                                <a href="tel:1212345678900">+94 787471</a>
                                             </p>
                                         </div>
                                     </li>
