@@ -423,19 +423,6 @@ use Illuminate\Support\Facades\Route;
         </li>
       </ul>
     </li>
-    <!--/ Notification -->
-    <li class="nav-item d-flex align-items-center me-3 me-xl-2">
-            <a class="nav-link" href="{{-- route('user.wallet.index') --}}" 
-               data-bs-toggle="tooltip" 
-               data-bs-placement="bottom" 
-               title="Your wallet balance">
-                
-                <span class="badge bg-label-primary rounded-pill d-flex align-items-center p-2">
-                    <i class="icon-base ti tabler-wallet ti-sm me-1"></i>
-                    <span class="fw-bold">3 $</span>
-                </span>
-            </a>
-        </li>
     <!-- User -->
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
