@@ -7,12 +7,8 @@
 <!-- Banner One Start -->
 <section class="banner-one">
     <div class="banner-one__bg-shape-1"></div>
-    <div class="banner-one__icon-1 img-bounce">
-        <img src="{{ asset('assets/images/icon/idea-bulb.png') }}" alt="">
-    </div>
-    <div class="banner-one__icon-2 float-bob-x">
-        <img src="{{ asset('assets/images/icon/3d-alarm.png') }}" alt="">
-    </div>
+
+
     <div class="banner-one__shape-4 float-bob-x">
         <img src="{{ asset('assets/images/shapes/banner-one-shape-4.png') }}" alt="">
     </div>
@@ -140,8 +136,8 @@
 
 <!-- Category One Start -->
 <section class="category-one">
-    <div class="category-one__bg-shape"
-        style="background-image: url({{ asset('assets/images/shapes/category-one-bg-shape.png') }});"></div>
+{{--    <div class="category-one__bg-shape"--}}
+{{--        style="background-image: url({{ asset('assets/images/shapes/category-one-bg-shape.png') }});"></div>--}}
     <div class="category-one__shape-1">
         <img src="{{ asset('assets/images/shapes/category-one-shape-1.png') }}" alt="">
     </div>
@@ -310,7 +306,7 @@
             <div class="col-xl-6 col-lg-5 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
                 <div class="category-one__right">
                     <div class="category-one__img">
-                        <img src="{{ asset('assets/images/home/why-us.1.png') }}" alt="">
+                        <img src="{{ asset('assets/images/home/why-us.111.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1179,10 +1175,10 @@
 
 <!-- Counter One Start -->
 <section class="counter-one">
-    <div class="counter-one__bg" style="background-image: url('{{ asset('assets/images/home/Post-3.jpg') }}');">
+    <div class="counter-one__bg" style="background-image: url('{{ asset('assets/images/home/young-fitness-man-studio_7502-5008.jpg') }}');">
         <div class="counter-one__video-link">
             <div class="counter-one__video-shape-1">
-                <img src="{{ asset('assets/images/shapes/counter-one-video-shape-1.png') }}" alt="">
+                <img src="{{ asset('assets/images/shapes/counter-one-video-shape-11.png') }}" alt="">
             </div>
             <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
                 <div class="counter-one__video-icon">
@@ -1547,33 +1543,33 @@
 <!-- Team One End -->
 
 <!-- Newsletter One Start -->
-<section class="newsletter-one" style="margin-top: 100px">
-    <div class="container">
-        <div class="newsletter-one__inner">
-            <div class="newsletter-one__bg-shape"
-                style="background-image: url('{{ asset('assets/images/home/newsletter-purple.png') }}');"></div>
-            <div class="newsletter-one__shape-1 float-bob-y">
-                <img src="{{ asset('assets/images/shapes/newsletter-one-shape-1.png') }}" alt="">
-            </div>
-            <div class="newsletter-one__shape-2 img-bounce">
-                <img src="{{ asset('assets/images/home/newsletter-one-shape-22.png') }}" alt="">
-            </div>
-            <div class="newsletter-one__img">
-                <img src="{{ asset('assets/images/home/dumble.webp') }}" alt="">
-            </div>
-            <h2 class="newsletter-one__title">Subscribe Our Newsletter</h2>
-            <p class="newsletter-one__text">Explore a diverse selection of courses all in one platform,<br>
-                designed to cater to various learning</p>
-            <form class="newsletter-one__contact-form">
-                <div class="newsletter-one__contact-input-box">
-                    <input type="email" placeholder="Enter email address" name="email">
-                    <button type="submit" class="thm-btn"><span
-                            class="icon-angles-right"></span>Subscribe</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+{{--<section class="newsletter-one" style="margin-top: 100px">--}}
+{{--    <div class="container">--}}
+{{--        <div class="newsletter-one__inner">--}}
+{{--            <div class="newsletter-one__bg-shape"--}}
+{{--                style="background-image: url('{{ asset('assets/images/home/newsletter-purple.png') }}');"></div>--}}
+{{--            <div class="newsletter-one__shape-1 float-bob-y">--}}
+{{--                <img src="{{ asset('assets/images/shapes/newsletter-one-shape-1.png') }}" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="newsletter-one__shape-2 img-bounce">--}}
+{{--                <img src="{{ asset('assets/images/home/newsletter-one-shape-22.png') }}" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="newsletter-one__img">--}}
+{{--                <img src="{{ asset('assets/images/home/dumble.webp') }}" alt="">--}}
+{{--            </div>--}}
+{{--            <h2 class="newsletter-one__title">Subscribe Our Newsletter</h2>--}}
+{{--            <p class="newsletter-one__text">Explore a diverse selection of courses all in one platform,<br>--}}
+{{--                designed to cater to various learning</p>--}}
+{{--            <form class="newsletter-one__contact-form">--}}
+{{--                <div class="newsletter-one__contact-input-box">--}}
+{{--                    <input type="email" placeholder="Enter email address" name="email">--}}
+{{--                    <button type="submit" class="thm-btn"><span--}}
+{{--                            class="icon-angles-right"></span>Subscribe</button>--}}
+{{--                </div>--}}
+{{--            </form>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- Newsletter One End -->
 
 <!-- Testimonial One Start -->
@@ -1990,25 +1986,6 @@
 
 
 <!-- Sliding Text Two Start -->
-<div class="sliding-text-two">
-    <div class="sliding-text-two__wrap">
-        <ul class="sliding-text-two__list list-unstyled marquee_mode-2">
-            <li>
-                <h2 data-hover="LIVE VIDEO" class="sliding-text-two__title">LIVE VIDEO</h2>
-            </li>
-            <li><img src="{{ asset('assets/images/shapes/sliding-text-two-shape-1.png') }}" alt=""></li>
-            <li>
-                <h2 data-hover="LIVE VIDEO" class="sliding-text-two__title">LIVE VIDEO</h2>
-            </li>
-            <li><img src="{{ asset('assets/images/shapes/sliding-text-two-shape-1.png') }}" alt=""></li>
-            <li>
-                <h2 data-hover="LIVE VIDEO" class="sliding-text-two__title">LIVE VIDEO</h2>
-            </li>
-            <li><img src="{{ asset('assets/images/shapes/sliding-text-two-shape-1.png') }}" alt=""></li>
-        </ul>
-    </div>
-</div>
-<!-- Sliding Text Two End -->
 
 
 <!-- Blog One Start -->
