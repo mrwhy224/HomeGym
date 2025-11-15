@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\user\Dashboard;
+use App\Http\Controllers\admin\Dashboard;
 use App\Http\Controllers\post\Category;
 use App\Http\Controllers\post\Comment;
 use App\Http\Controllers\post\PostAdd;
@@ -23,4 +23,6 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 	});
 });
 
-Route::get('/', [Dashboard::class, 'index'])->name('dashboard-analytics');
+Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+
+Route::fallback(function () {return view('content.pages.pages-misc-error');});
