@@ -8,6 +8,10 @@
 <section class="banner-one">
     <div class="banner-one__bg-shape-1"></div>
 
+
+    <div class="banner-one__shape-4 float-bob-x">
+        <img src="{{ asset('assets/images/shapes/banner-one-shape-4.png') }}" alt="">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6">
@@ -39,6 +43,55 @@
 {{--                                Price</a>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="banner-one__right">
+                    <div class="banner-one__img-box">
+                        <div class="banner-one__img">
+                            <img src="{{ asset('assets/images/home/mv-pc.png') }}" alt="">
+                            <div class="banner-one__img-shape-box rotate-me">
+                                <div class="banner-one__img-shape-1">
+                                    <div class="banner-one__img-shape-2"></div>
+                                </div>
+                                <div class="banner-one__shape-1">
+                                    <img src="{{ asset('assets/images/shapes/banner-one-shape-1.png') }}" alt="">
+                                </div>
+                                <div class="banner-one__shape-2 rotate-me">
+                                    <img src="{{ asset('assets/images/shapes/banner-one-shape-2.png') }}" alt="">
+                                </div>
+                                <div class="banner-one__shape-3">
+                                    <img src="{{ asset('assets/images/shapes/banner-one-shape-3.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="banner-one__student-trained">
+                                <div class="banner-one__student-trained-shape-1 rotate-me">
+                                    <img src="{{ asset('assets/images/shapes/banner-one-student-trained-shape-1.png') }}" alt="">
+                                </div>
+                                <ul class="list-unstyled banner-one__student-trained-list">
+                                    <li>
+                                        <div class="banner-one__student-trained-img">
+                                            <img src="{{ asset('assets/images/resources/banner-one-student-trained-img-1-1.jpg') }}"
+                                                alt="">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="banner-one__student-trained-img">
+                                            <img src="{{ asset('assets/images/resources/banner-one-student-trained-img-1-2.jpg') }}"
+                                                alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="banner-one__student-trained-count-box">
+                                    <div class="banner-one__student-trained-count-box-inner count-box">
+                                        <p class="count-text" data-stop="2000" data-speed="3000">00</p>
+                                        <span>+</span>
+                                    </div>
+                                    <p class="banner-one__student-trained-text">Success Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

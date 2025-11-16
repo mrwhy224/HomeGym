@@ -33,7 +33,7 @@
                                                 <p class="site-footer__contact-info-icon-text">Phone Number:</p>
                                             </div>
                                             <p class="site-footer__contact-info-text">
-                                                <a href="tel:1212345678900">+94 787471</a>
+                                                <a href="tel:+96894787471">+968-94787471</a>
                                             </p>
                                         </div>
                                     </li>

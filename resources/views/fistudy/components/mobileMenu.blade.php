@@ -18,7 +18,7 @@
             </li>
             <li>
                 <i class="fas fa-phone"></i>
-                <a href="tel:+94 787471">+94 787471</a>
+                <a href="tel:+96894787471">+968-94787471</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__top">
