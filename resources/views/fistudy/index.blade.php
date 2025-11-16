@@ -20,10 +20,11 @@
                         <div class="banner-one__title-box-shape">
                             <img src="{{ asset('assets/images/shapes/banner-one-title-box-shape-1.png') }}" alt="">
                         </div>
-                        <h2 class="banner-one__title">Build A Perfect<br>
-                            <span class="banner-one__title-clr-1">Health Growth</span>
-                            <span class="banner-one__title-clr-2">Your <br>Strenght</span>
-                        </h2>
+						<h2 class="banner-one__title">
+							<span class="banner-one__title-clr-1">Where smiles<br>grow</span>
+							And <br>
+							<span class="banner-one__title-clr-2">muscles show</span>
+						</h2>
                     </div>
                     <p class="banner-one__text">Train anytime, anywhere — empowering you to stay fit and achieve your goals at your own pace.
                       <br>
