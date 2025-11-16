@@ -66,7 +66,7 @@
                                 <div class="site-footer__social-box">
                                     <h4 class="site-footer__app-and-social-title">Follow Us:</h4>
                                     <div class="site-footer__social-box-inner">
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
+                                        <a href="https://www.instagram.com/sep.fit94"><span class="fab fa-instagram"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copyright &copy; 2025 <a href="https://www.instagram.com/sep.fit94">SepFit</a>. All Rights Reserved</p>
+                            <p class="site-footer__copyright-text">Copyright &copy; 2025 <a href="">SepFit</a>. All Rights Reserved</p>
                         </div>
                     </div>
                 </div>
