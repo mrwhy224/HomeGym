@@ -157,9 +157,14 @@
                                 <li><a href={{ route('blog-details') }}>Blog Details</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href={{ route('contact') }}>Contact</a>
-                        </li>
+						<li class="dropdown">
+							<a href={{ url('#') }}>Panels</a>
+							<ul class="shadow-box">
+								<li><a href={{ route('admin.dashboard') }}>Admin</a></li>
+								<li><a href={{ route('coach.dashboard') }}>Coach</a></li>
+								<li><a href={{ route('user.dashboard') }}>User</a></li>
+							</ul>
+						</li>
                     </ul>
                 </div>
                 <div class="main-menu__right">
