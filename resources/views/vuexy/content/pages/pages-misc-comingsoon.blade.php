@@ -18,14 +18,7 @@ $configData = Helper::appClasses();
   <div class="misc-wrapper">
     <h4 class="mb-2 mx-2">We are launching soon 🚀</h4>
     <p class="mb-6 mx-2">Our website is opening soon. Please register to get notified when it's ready!</p>
-    <form onsubmit="return false">
-      <div class="mb-0">
-        <div class="mb-0 d-flex gap-4">
-          <input type="text" class="form-control" placeholder="Enter your email" autofocus />
-          <button type="submit" class="btn btn-primary">Notify</button>
-        </div>
-      </div>
-    </form>
+    <a class="btn btn-outline-primary waves-effect" href="{{ url('/') }}">Get back to Home</a>
     <div class="mt-12">
       <img src="{{ asset('assets/img/illustrations/page-misc-launching-soon.png') }}" alt="page-misc-launching-soon" width="263" class="img-fluid" />
     </div>

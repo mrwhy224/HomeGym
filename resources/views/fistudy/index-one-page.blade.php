@@ -400,12 +400,6 @@
 
 <!-- About One Start -->
 <section class="about-one" id="about">
-    <div class="about-one__shape-1">
-        <img src="{{ asset('assets/images/shapes/about-one-shape-1.png') }}" alt="">
-    </div>
-    <div class="about-one__shape-2">
-        <img src="{{ asset('assets/images/shapes/about-one-shape-2.png') }}" alt="">
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
@@ -1834,35 +1828,6 @@
 </section>
 <!-- Testimonial One End -->
 
-<!-- Sliding Text Three Start -->
-<section class="sliding-text-three">
-    <div class="sliding-text-three__wrap">
-        <ul class="sliding-text-three__list list-unstyled marquee_mode">
-            <li>
-                <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">TESTIMONIAL
-                    <img src="{{ asset('assets/images/shapes/sliding-text-three-shape.png') }}" alt=""></h2>
-            </li>
-            <li>
-                <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">TESTIMONIAL
-                    <img src="{{ asset('assets/images/shapes/sliding-text-three-shape.png') }}" alt=""></h2>
-            </li>
-            <li>
-                <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">TESTIMONIAL
-                    <img src="{{ asset('assets/images/shapes/sliding-text-three-shape.png') }}" alt=""></h2>
-            </li>
-            <li>
-                <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">TESTIMONIAL
-                    <img src="{{ asset('assets/images/shapes/sliding-text-three-shape.png') }}" alt=""></h2>
-            </li>
-            <li>
-                <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">TESTIMONIAL
-                    <img src="{{ asset('assets/images/shapes/sliding-text-three-shape.png') }}" alt=""></h2>
-            </li>
-        </ul>
-    </div>
-</section>
-<!-- Sliding Text Three End -->
-
 <!-- Live Class One Start -->
 <section class="live-class-one">
     <div class="container">
@@ -1876,13 +1841,13 @@
                         </div>
                         <h2 class="section-title__title title-animation">
                             Join now Our Live classes Verify our
-                            <span>creativity 
+                            <span>creativity
                                 <img src="{{ asset('assets/images/shapes/section-title-shape-1.png') }}" alt="">
                             </span>
                         </h2>
                     </div>
                 </div>
-            </div>  
+            </div>
             <div class="col-xl-6">
                 <div class="live-class-one__right">
                     <div class="live-class-one__carousel owl-theme owl-carousel">
@@ -1906,7 +1871,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Live Class One Single End -->
                         <!-- Live Class One Single Start -->
                         <div class="item">
@@ -2023,12 +1988,6 @@
 
 <!-- Video One Start -->
 <section class="video-one">
-    <div class="video-one__shape-3 float-bob-y">
-        <img src="{{ asset('assets/images/shapes/video-one-shape-3.png') }}" alt="">
-    </div>
-    <div class="video-one__shape-4 img-bounce">
-        <img src="{{ asset('assets/images/shapes/video-one-shape-4.png') }}" alt="">
-    </div>
     <div class="container">
         <div class="video-one__inner">
             <div class="video-one__shape-1"></div>

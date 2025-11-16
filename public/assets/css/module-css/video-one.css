@@ -33,9 +33,7 @@
 .video-one__inner {
     position: relative;
     display: block;
-    margin: 0 109px;
     z-index: 1;
-    margin-bottom: 100px;
 }
 
 .video-one__shape-1 {

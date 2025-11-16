@@ -5,7 +5,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="{{ url('home') }}" aria-label="logo image"><img src="{{ asset('assets/images/resources/logo-4.png') }}" width="105" alt="" /></a>
+            <a href="{{ url('home') }}" aria-label="logo image"><img src="{{ asset('assets/images/favicons/logo.png') }}" width="105" alt="" /></a>
         </div>
         <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>

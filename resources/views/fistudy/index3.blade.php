@@ -150,12 +150,6 @@
 
     <!-- About One Start -->
     <section class="about-one">
-        <div class="about-one__shape-1">
-            <img src="{{ asset('assets/images/shapes/about-one-shape-1.png') }}" alt="">
-        </div>
-        <div class="about-one__shape-2">
-            <img src="{{ asset('assets/images/shapes/about-one-shape-2.png') }}" alt="">
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">

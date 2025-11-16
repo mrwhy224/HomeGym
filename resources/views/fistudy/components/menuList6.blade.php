@@ -4,7 +4,7 @@
             <div class="main-menu__wrapper-inner">
                 <div class="main-menu__left">
                     <div class="main-menu__logo">
-                        <a href={{ url('/') }}><img src="{{ asset('assets/images/resources/logo-4.png') }}" alt="">                        </a>
+                        <a href={{ url('/') }}><img src="{{ asset('assets/images/favicons/logo.png') }}" alt="">                        </a>
                     </div>
                     <div class="main-menu__category-box">
                         <div class="main-menu__category-btn">
@@ -299,4 +299,4 @@
         </div>
     </div>
 </nav>
- 
+

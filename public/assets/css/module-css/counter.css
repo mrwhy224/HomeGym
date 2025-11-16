@@ -7,7 +7,6 @@
     background-color: var(--fistudy-base);
     overflow: hidden;
     z-index: 1;
-    margin-bottom: 100px;
 }
 
 .counter-one__bg {
