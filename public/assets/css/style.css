@@ -149,7 +149,7 @@ ul {
 @media (min-width: 1314px) {
   .container {
     max-width: 1314px;
-  
+
   }
 }
 
@@ -792,7 +792,7 @@ ul {
 }
 
 .main-menu__wrapper>.container {
-  max-width: 1424px;
+  max-width: 1490px;
 }
 
 .main-menu__wrapper-inner {

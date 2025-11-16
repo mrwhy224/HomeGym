@@ -38,15 +38,6 @@
                                             </p>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="site-footer__contact-info-icon-box">
-                                            <div class="site-footer__contact-info-icon">
-                                                <span class="icon-location"></span>
-                                                <p class="site-footer__contact-info-icon-text">Location:</p>
-                                            </div>
-                                            <p class="site-footer__contact-info-text">1234 Elm Street, Springfield, IL <br> 62704</p>
-                                        </div>
-                                    </li>
                                 </ul>
                                 <ul class="list-unstyled site-footer__contact-info-list site-footer__contact-info-list--two">
                                     <li>
@@ -72,27 +63,9 @@
                                 </ul>
                             </div>
                             <div class="site-footer__app-and-social-box">
-                                <div class="site-footer__app-download">
-                                    <h4 class="site-footer__app-and-social-title">Download Apps</h4>
-                                    <div class="site-footer__app-download-inner">
-                                        <a href="#" class="site-footer__app-box">
-                                            <div class="site-footer__app-icon">
-                                                <img src="{{ asset('assets/images/icon/google-play-icon.png') }}" alt="">
-                                            </div>
-                                        </a>
-                                        <a href="#" class="site-footer__app-box">
-                                            <div class="site-footer__app-icon">
-                                                <img src="{{ asset('assets/images/icon/apple-icon.png') }}" alt="">
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
                                 <div class="site-footer__social-box">
                                     <h4 class="site-footer__app-and-social-title">Follow Us:</h4>
                                     <div class="site-footer__social-box-inner">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
                                         <a href="#"><span class="fab fa-instagram"></span></a>
                                     </div>
                                 </div>
@@ -149,20 +122,7 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copyright &copy; 2024 <a href="#">FiStudy</a>. All Rights Reserved</p>
-                        </div>
-                        <div class="site-footer__bottom-card-box">
-                            <ul class="list-unstyled site-footer__card-menu">
-                                <li><a href="{{ url('/contact') }}">
-                                    <img src="{{ asset('assets/images/icon/card-icon-1.png') }}" alt="">
-                                </a></li>
-                                <li><a href="{{ url('/contact') }}">
-                                    <img src="{{ asset('assets/images/icon/card-icon-2.png') }}" alt="">
-                                </a></li>
-                                <li><a href="{{ url('/contact') }}">
-                                    <img src="{{ asset('assets/images/icon/card-icon-3.png') }}" alt="">
-                                </a></li>
-                            </ul>
+                            <p class="site-footer__copyright-text">Copyright &copy; 2025 <a href="https://www.instagram.com/sep.fit94">SepFit</a>. All Rights Reserved</p>
                         </div>
                     </div>
                 </div>

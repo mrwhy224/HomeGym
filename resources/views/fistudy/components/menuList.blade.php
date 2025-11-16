@@ -168,14 +168,6 @@
                     </ul>
                 </div>
                 <div class="main-menu__right">
-                    <div class="main-menu__search-cart-box">
-                        <div class="main-menu__search-box">
-                            <a href={{ url('#') }} class="main-menu__search searcher-toggler-box icon-search"></a>
-                        </div>
-                        <div class="main-menu__cart">
-                            <a href={{ url('#') }}><span class="fas fa-shopping-cart"></span></a>
-                        </div>
-                    </div>
                     <div class="main-menu__btn-boxes">
                         <div class="main-menu__btn-box-1">
                             <a href={{ url('#') }} class="thm-btn">Login</a>
