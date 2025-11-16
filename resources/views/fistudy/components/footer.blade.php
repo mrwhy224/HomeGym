@@ -120,7 +120,7 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copyright &copy; 2025 <a href="">SepFit</a>. All Rights Reserved</p>
+                            <p class="site-footer__copyright-text">Copyright &copy; 2025 <a href="">Spring Of The New Dream</a>. All Rights Reserved (C.R: 1577233)</p>
                         </div>
                     </div>
                 </div>

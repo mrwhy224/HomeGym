@@ -14,19 +14,16 @@
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@fistudy.com">needhelp@fistudy.com</a>
+                <a href="mailto:springofthenewdream@gmail.com">springofthenewdream@gmail.com </a>
             </li>
             <li>
                 <i class="fas fa-phone"></i>
-                <a href="tel:666-888-0000">666 888 0000</a>
+                <a href="tel:+94 787471">+94 787471</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__top">
             <div class="mobile-nav__social">
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-facebook-square"></a>
-                <a href="#" class="fab fa-pinterest-p"></a>
-                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.instagram.com/sep.fit94" class="fab fa-instagram"></a>
             </div><!-- /.mobile-nav__social -->
         </div><!-- /.mobile-nav__top -->
 
