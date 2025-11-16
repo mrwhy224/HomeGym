@@ -25,20 +25,6 @@
                     <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="site-footer__top-left">
                             <div class="site-footer__contact-info">
-                                <ul class="list-unstyled site-footer__contact-info-list">
-                                    <li>
-                                        <div class="site-footer__contact-info-icon-box">
-                                            <div class="site-footer__contact-info-icon">
-                                                <span class="icon-envelope"></span>
-                                                <p class="site-footer__contact-info-icon-text">Email Address:</p>
-                                            </div>
-                                            <p class="site-footer__contact-info-text">
-                                                <a href="mailto:info@example.com">springofthenewdream@gmail.com
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
                                 <ul class="list-unstyled site-footer__contact-info-list site-footer__contact-info-list--two">
                                     <li>
                                         <div class="site-footer__contact-info-icon-box">
@@ -51,6 +37,18 @@
                                             </p>
                                         </div>
                                     </li>
+									<li>
+										<div class="site-footer__contact-info-icon-box">
+											<div class="site-footer__contact-info-icon">
+												<span class="icon-envelope"></span>
+												<p class="site-footer__contact-info-icon-text">Email Address:</p>
+											</div>
+											<p class="site-footer__contact-info-text">
+												<a href="mailto:info@example.com">springofthenewdream@gmail.com
+												</a>
+											</p>
+										</div>
+									</li>
                                     <li>
                                         <div class="site-footer__contact-info-icon-box">
                                             <div class="site-footer__contact-info-icon">
