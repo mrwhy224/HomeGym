@@ -10,10 +10,10 @@
                             <img src="{{ asset('assets/images/favicons/logo2footer.png') }}" alt="">
                         </a>
                     </div>
-                    <p class="site-footer__text">Lorem Ipsum is simply dummy text of <br> the printing and typesetting</p>
+                    <p class="site-footer__text">{!! __('footer.logo_description') !!}</p>
                 </div>
                 <div class="site-footer__contact-box wow fadeInRight" data-wow-delay="100ms">
-                    <a href="#">Contact Us</a>
+                    <a href="#">{{ __('footer.btn_contact_us') }}</a>
                 </div>
             </div>
         </div>
@@ -30,39 +30,39 @@
                                         <div class="site-footer__contact-info-icon-box">
                                             <div class="site-footer__contact-info-icon">
                                                 <span class="icon-phone"></span>
-                                                <p class="site-footer__contact-info-icon-text">Phone Number:</p>
+                                                <p class="site-footer__contact-info-icon-text">{{ __('footer.phone_label') }}:</p>
                                             </div>
                                             <p class="site-footer__contact-info-text">
-                                                <a href="tel:+96894787471">+968-94787471</a>
+                                                <a href="tel:+96894787471">{{ __('footer.phone_number') }}</a>
                                             </p>
                                         </div>
                                     </li>
-									<li>
-										<div class="site-footer__contact-info-icon-box">
-											<div class="site-footer__contact-info-icon">
-												<span class="icon-envelope"></span>
-												<p class="site-footer__contact-info-icon-text">Email Address:</p>
-											</div>
-											<p class="site-footer__contact-info-text">
-												<a href="mailto:info@example.com">springofthenewdream@gmail.com
-												</a>
-											</p>
-										</div>
-									</li>
+                                    <li>
+                                        <div class="site-footer__contact-info-icon-box">
+                                            <div class="site-footer__contact-info-icon">
+                                                <span class="icon-envelope"></span>
+                                                <p class="site-footer__contact-info-icon-text">{{ __('footer.email_label') }}:</p>
+                                            </div>
+                                            <p class="site-footer__contact-info-text">
+                                                <a href="mailto:info@example.com">{{ __('footer.email_address') }}
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </li>
                                     <li>
                                         <div class="site-footer__contact-info-icon-box">
                                             <div class="site-footer__contact-info-icon">
                                                 <span class="icon-clock"></span>
-                                                <p class="site-footer__contact-info-icon-text">Working Hour:</p>
+                                                <p class="site-footer__contact-info-icon-text">{{ __('footer.working_hour_label') }}:</p>
                                             </div>
-                                            <p class="site-footer__contact-info-text">Saturday - Friday <br> 10:00 - 18:00 </p>
+                                            <p class="site-footer__contact-info-text">{!! __('footer.working_hour_time') !!} </p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="site-footer__app-and-social-box">
                                 <div class="site-footer__social-box">
-                                    <h4 class="site-footer__app-and-social-title">Follow Us:</h4>
+                                    <h4 class="site-footer__app-and-social-title">{{ __('footer.follow_us_title') }}:</h4>
                                     <div class="site-footer__social-box-inner">
                                         <a href="https://www.instagram.com/sep.fit94"><span class="fab fa-instagram"></span></a>
                                     </div>
@@ -75,37 +75,37 @@
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="site-footer__links">
-                                        <h4 class="site-footer__title">Quick Link</h4>
+                                        <h4 class="site-footer__title">{{ __('footer.quick_link_title') }}</h4>
                                         <ul class="site-footer__links-list list-unstyled">
-                                            <li><a href="{{ url('/') }}"> <span class="icon-plus"></span> Home</a></li>
-                                            <li><a href="{{ url('/about') }}"> <span class="icon-plus"></span> About Us</a></li>
-                                            <li><a href="{{ url('/course') }}"> <span class="icon-plus"></span> Courses</a></li>
-                                            <li><a href="{{ url('/faq') }}"> <span class="icon-plus"></span> FAQs</a></li>
-                                            <li><a href="{{ url('/contact') }}"> <span class="icon-plus"></span> Contact</a></li>
+                                            <li><a href="{{ url('/') }}"> <span class="icon-plus"></span> {{ __('footer.link_home') }}</a></li>
+                                            <li><a href="{{ url('/about') }}"> <span class="icon-plus"></span> {{ __('footer.link_about_us') }}</a></li>
+                                            <li><a href="{{ url('/course') }}"> <span class="icon-plus"></span> {{ __('footer.link_courses') }}</a></li>
+                                            <li><a href="{{ url('/faq') }}"> <span class="icon-plus"></span> {{ __('footer.link_faqs') }}</a></li>
+                                            <li><a href="{{ url('/contact') }}"> <span class="icon-plus"></span> {{ __('footer.link_contact') }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="site-footer__useful-links">
-                                        <h4 class="site-footer__title">Useful Links</h4>
+                                        <h4 class="site-footer__title">{{ __('footer.useful_links_title') }}</h4>
                                         <ul class="site-footer__links-list list-unstyled">
-                                            <li><a href="{{ url('/become-a-teacher') }}"> <span class="icon-plus"></span> Became Partners</a></li>
-                                            <li><a href="{{ url('/privacy-policy') }}"> <span class="icon-plus"></span> Privacy & Policy</a></li>
-                                            <li><a href="{{ url('/terms') }}"> <span class="icon-plus"></span> Terms & Condition</a></li>
-                                            <li><a href="{{ url('/refund-policy') }}"> <span class="icon-plus"></span> Refund Policy</a></li>
-                                            <li><a href="{{ url('/workshop') }}"> <span class="icon-plus"></span> Live Workshop</a></li>
+                                            <li><a href="{{ url('/become-a-teacher') }}"> <span class="icon-plus"></span> {{ __('footer.link_become_partners') }}</a></li>
+                                            <li><a href="{{ url('/privacy-policy') }}"> <span class="icon-plus"></span> {{ __('footer.link_privacy_policy') }}</a></li>
+                                            <li><a href="{{ url('/terms') }}"> <span class="icon-plus"></span> {{ __('footer.link_terms_condition') }}</a></li>
+                                            <li><a href="{{ url('/refund-policy') }}"> <span class="icon-plus"></span> {{ __('footer.link_refund_policy') }}</a></li>
+                                            <li><a href="{{ url('/workshop') }}"> <span class="icon-plus"></span> {{ __('footer.link_live_workshop') }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="site-footer__newsletter-box">
-                                <h4 class="site-footer__title">Newsletter</h4>
+                                <h4 class="site-footer__title">{{ __('footer.newsletter_title') }}</h4>
                                 <form class="site-footer__newsletter-form" method="POST" action="{{ url('newsletter.subscribe') }}">
                                     @csrf
                                     <div class="site-footer__newsletter-input">
-                                        <input type="email" name="email" placeholder="Enter Your Email" required>
+                                        <input type="email" name="email" placeholder="{{ __('footer.newsletter_placeholder') }}" required>
                                     </div>
-                                    <button type="submit" class="thm-btn"> <span class="icon-angles-right"></span> Subscribe</button>
+                                    <button type="submit" class="thm-btn"> <span class="icon-angles-right"></span> {{ __('footer.newsletter_subscribe_btn') }}</button>
                                 </form>
                             </div>
                         </div>
@@ -120,7 +120,8 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copyright &copy; 2025 <a href="">Spring Of The New Dream</a>. All Rights Reserved (C.R: 1577233)</p>
+                            {{-- COPYRIGHT TEXT --}}
+                            <p class="site-footer__copyright-text">{!! __('footer.copyright_text') !!}</p>
                         </div>
                     </div>
                 </div>
@@ -129,6 +130,3 @@
     </div>
 </footer>
 <!-- Site Footer End -->
-
-<!--Site Footer End-->
-</div><!-- /.page-wrapper -->

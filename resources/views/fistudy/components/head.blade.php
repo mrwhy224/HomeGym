@@ -62,11 +62,15 @@
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/gallery.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/faq.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/shop.css') }}">
-    <link rel="stylesheet" href="assets/css/module-css/error.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/module-css/error.css') }}" />
 
 
     <!-- template styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	@if ($localeDirection === 'rtl')
+    <link rel="stylesheet" href="{{ asset('assets/css/style-rtl.css') }}">
+	@else
+		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	@endif
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <?php echo (isset($css) ? $css   : '')?>
 </head>

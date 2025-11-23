@@ -4,10 +4,10 @@
             <div class="main-menu__wrapper-inner">
                 <div class="main-menu__left">
                     <div class="main-menu__logo">
-                        <a href={{ url('/') }}><img src="{{ asset('assets/images/favicons/logo3.png') }}" alt="">                        </a>
+                        <a href={{ url('/') }}><img src="{{ asset('assets/images/favicons/logo3.png') }}" alt=""></a>
                     </div>
                     <div class="main-menu__category-box">
-
+                        {{-- فرض بر این است که لیست دسته‌بندی‌ها از دیتابیس می‌آیند و فقط برای نمایش ترجمه می‌شوند --}}
                         <ul class="list-unstyled main-menu__category-sub-menu">
                             <li>
                                 <a href={{ url('#') }}>
@@ -15,8 +15,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-1.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Tech & <br> Programming</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_tech_prog_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -26,8 +26,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-2.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Creative <br> Art</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_creative_art_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -37,8 +37,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-3.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Business & <br> Finance</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_business_finance_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -48,8 +48,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-4.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Health & <br> Wellness</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_health_wellness_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -59,8 +59,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-5.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Writing & <br> Communication</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_writing_comm_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -70,8 +70,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-6.png') }}" alt="">>
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>User Research & <br> Analytics</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_user_research_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -81,8 +81,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-7.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Digital <br> Marketing</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_digital_marketing_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -92,8 +92,8 @@
                                         <img src="{{ asset('assets/images/icon/categoyr-two-icon-8.png') }}" alt="">
                                     </div>
                                     <div class="main-menu__category-content">
-                                        <h5>Lifestyle & <br> Productivity</h5>
-                                        <p>3+ Courses</p>
+                                        <h5>{!! __('header.category_lifestyle_prod_title') !!}</h5>
+                                        <p>{{ __('header.category_courses_count') }}</p>
                                     </div>
                                 </a>
                             </li>
@@ -104,76 +104,97 @@
                     <a href={{ url('#') }} class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                     <ul class="main-menu__list">
                         <li>
-                            <a href={{ url('/') }}>Home </a>
+                            <a href="{{ route('index', ['locale' => app()->getLocale()]) }}">{{ __('header.menu_home') }}</a>
                         </li>
                         <li>
-                            <a href={{ route('about') }}>About</a>
+                            <a href="{{ route('about', ['locale' => app()->getLocale()]) }}">{{ __('header.menu_about') }}</a>
                         </li>
                         <li class="dropdown">
-                            <a href={{ url('#') }}>Pages</a>
+                            <a href={{ url('#') }}>{{ __('header.menu_pages') }}</a>
                             <ul class="shadow-box">
-                                <li><a href={{ route('instructor') }}>Instructors</a></li>
-                                <li><a href={{ route('instructor-carousel') }}>Instructor Carousel</a></li>
-                                <li><a href={{ route('instructor-details') }}>Instructor Details</a></li>
-                                <li><a href={{ route('events') }}>Events</a></li>
-                                <li><a href={{ route('events-carousel') }}>Event Carousel</a></li>
-                                <li><a href={{ route('event-details') }}>Event Details</a></li>
-                                <li><a href={{ route('become-a-teacher') }}>Become A Teacher</a></li>
-                                <li><a href={{ route('testimonials') }}>Testimonials</a></li>
-                                <li><a href={{ route('testimonials-carousel') }}>Testimonial Carousel</a></li>
-                                <li><a href={{ route('pricing') }}>Pricing</a></li>
-                                <li><a href={{ route('gallery') }}>Gallery</a></li>
-                                <li><a href={{ route('faq') }}>FAQs</a></li>
-                                <li><a href={{ url('404') }}>404 Error</a></li>
+                                <li><a href="{{ route('instructor', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructors') }}</a></li>
+                                <li><a href="{{ route('instructor-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructor_carousel') }}</a></li>
+                                <li><a href="{{ route('instructor-details', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructor_details') }}</a></li>
+                                <li><a href="{{ route('events', ['locale' => app()->getLocale()]) }}">{{ __('header.page_events') }}</a></li>
+                                <li><a href="{{ route('events-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_event_carousel') }}</a></li>
+                                <li><a href="{{ route('event-details', ['locale' => app()->getLocale()]) }}">{{ __('header.page_event_details') }}</a></li>
+                                <li><a href="{{ route('become-a-teacher', ['locale' => app()->getLocale()]) }}">{{ __('header.page_become_a_teacher') }}</a></li>
+                                <li><a href="{{ route('testimonials', ['locale' => app()->getLocale()]) }}">{{ __('header.page_testimonials') }}</a></li>
+                                <li><a href="{{ route('testimonials-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_testimonial_carousel') }}</a></li>
+                                <li><a href="{{ route('pricing', ['locale' => app()->getLocale()]) }}">{{ __('header.page_pricing') }}</a></li>
+                                <li><a href="{{ route('gallery', ['locale' => app()->getLocale()]) }}">{{ __('header.page_gallery') }}</a></li>
+                                <li><a href="{{ route('faq', ['locale' => app()->getLocale()]) }}">{{ __('header.page_faqs') }}</a></li>
+                                <li><a href="{{ url(app()->getLocale() . '/404') }}">{{ __('header.page_404') }}</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href={{ url('#') }}>Course</a>
+                            <a href={{ url('#') }}>{{ __('header.menu_course') }}</a>
                             <ul class="shadow-box">
-                                <li><a href={{ route('course') }}>Course</a></li>
-                                <li><a href={{ route('course-carousel') }}>Course Carousel</a></li>
-                                <li><a href={{ route('course-list') }}>Course List</a></li>
-                                <li><a href={{ route('course-details') }}>Course Details</a></li>
+                                <li><a href="{{ route('course', ['locale' => app()->getLocale()]) }}">{{ __('header.course_course') }}</a></li>
+                                <li><a href="{{ route('course-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.course_carousel') }}</a></li>
+                                <li><a href="{{ route('course-list', ['locale' => app()->getLocale()]) }}">{{ __('header.course_list') }}</a></li>
+                                <li><a href="{{ route('course-details', ['locale' => app()->getLocale()]) }}">{{ __('header.course_details') }}</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href={{ url('#') }}>Shop</a>
+                            <a href={{ url('#') }}>{{ __('header.menu_shop') }}</a>
                             <ul class="shadow-box">
-                                <li><a href={{ route('products') }}>Products</a></li>
-                                <li><a href={{ route('product-details') }}>Product Details</a></li>
-                                <li><a href={{ route('cart') }}>Cart</a></li>
-                                <li><a href={{ route('checkout') }}>Checkout</a></li>
-                                <li><a href={{ route('wishlist') }}>Wishlist</a></li>
-                                <li><a href={{ route('sign-up') }}>Sign Up</a></li>
-                                <li><a href={{ route('login') }}>Login</a></li>
+                                <li><a href="{{ route('products', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_products') }}</a></li>
+                                <li><a href="{{ route('product-details', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_product_details') }}</a></li>
+                                <li><a href="{{ route('cart', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_cart') }}</a></li>
+                                <li><a href="{{ route('checkout', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_checkout') }}</a></li>
+                                <li><a href="{{ route('wishlist', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_wishlist') }}</a></li>
+                                <li><a href="{{ route('sign-up', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_sign_up') }}</a></li>
+                                <li><a href="{{ route('login', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_login') }}</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href={{ url('#') }}>Blog</a>
+                            <a href={{ url('#') }}>{{ __('header.menu_blog') }}</a>
                             <ul class="shadow-box">
-                                <li><a href={{ route('blog') }}>Blog</a></li>
-                                <li><a href={{ route('blog-carousel') }}>Blog Carousel</a></li>
-                                <li><a href={{ route('blog-list') }}>Blog List</a></li>
-                                <li><a href={{ route('blog-details') }}>Blog Details</a></li>
+                                <li><a href="{{ route('blog', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_blog') }}</a></li>
+                                <li><a href="{{ route('blog-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_carousel') }}</a></li>
+                                <li><a href="{{ route('blog-list', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_list') }}</a></li>
+                                <li><a href="{{ route('blog-details', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_details') }}</a></li>
                             </ul>
                         </li>
-						<li class="dropdown">
-							<a href={{ url('#') }}>Panels</a>
-							<ul class="shadow-box">
-								<li><a href={{ route('admin.dashboard') }}>Admin</a></li>
-								<li><a href={{ route('coach.dashboard') }}>Coach</a></li>
-								<li><a href={{ route('user.dashboard') }}>User</a></li>
-							</ul>
-						</li>
+                        <li class="dropdown">
+                            <a href={{ url('#') }}>{{ __('header.menu_panels') }}</a>
+                            <ul class="shadow-box">
+                                <li><a href="{{ route('admin.dashboard', ['locale' => app()->getLocale()]) }}">{{ __('header.panel_admin') }}</a></li>
+                                <li><a href="{{ route('coach.dashboard', ['locale' => app()->getLocale()]) }}">{{ __('header.panel_coach') }}</a></li>
+                                <li><a href="{{ route('user.dashboard', ['locale' => app()->getLocale()]) }}">{{ __('header.panel_user') }}</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="main-menu__right">
+                    <ul class="main-menu__list">
+                        
+                        <li class="dropdown">
+                        <a href="#">
+                            <span class="fas fa-globe"></span> {{ strtoupper(app()->getLocale()) }}
+                        </a>
+                        <ul class="dropdown-menu shadow-box">
+                            @foreach ($activeLocales as $name => $code)
+                                <li>
+                                    <a href="{{ route('index', $code) }}">
+                                        {{ $name }}
+                                        @if ($code === app()->getLocale())
+                                            <span class="icon-tick-mark"></span>
+                                        @endif
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    </ul>
+
                     <div class="main-menu__btn-boxes">
                         <div class="main-menu__btn-box-1">
-                            <a href={{ url('#') }} class="thm-btn">Login</a>
+                            <a href="{{ route('login', ['locale' => app()->getLocale()]) }}" class="thm-btn">{{ __('header.btn_login') }}</a>
                         </div>
                         <div class="main-menu__btn-box-2">
-                            <a href={{ url('#') }} class="thm-btn">Register</a>
+                            <a href="{{ route('sign-up', ['locale' => app()->getLocale()]) }}" class="thm-btn">{{ __('header.btn_register') }}</a>
                         </div>
                     </div>
                 </div>
@@ -181,4 +202,3 @@
         </div>
     </div>
 </nav>
-
