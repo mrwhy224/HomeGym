@@ -1,13 +1,27 @@
 <?php
 
 use App\Http\Controllers\pages\MiscComingSoon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\main\HomeControllerMain;
 use App\Http\Controllers\main\PagesController;
 
 
 
-Route::get('/', [HomeControllerMain::class, 'index'])->name('index');
+
+
+$activeLocales = DB::table('languages')->pluck('code')->toArray();
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => implode('|', $activeLocales)]], function () {
+
+	Route::get('/', [HomeControllerMain::class, 'index'])->name('index');
+
+});
+
+
+
+Route::get('/', [\App\Http\Controllers\LangController::class, 'handleInitialRedirect']);
+
+//Route::get('/', [HomeControllerMain::class, 'index'])->name('index');
 Route::get('/index2', [HomeControllerMain::class, 'index'])->name('index');
 Route::get('/index3', [HomeControllerMain::class, 'index'])->name('index');
 Route::get('/index-one-page', [HomeControllerMain::class, 'index'])->name('index');
