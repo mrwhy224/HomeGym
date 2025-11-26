@@ -41,5 +41,9 @@ class AppServiceProvider extends ServiceProvider
 
 
 		}
+
+		Date::serializeUsing(function ($date) {
+			return $date->setTimezone(config('app.user_timezone', 'UTC'))->format('Y-m-d H:i:s');
+		});
 	}
 }
