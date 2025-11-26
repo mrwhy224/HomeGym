@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\CurrencyConverterService;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -15,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
 	 */
 	public function register(): void
 	{
-		//
+		$this->app->singleton(CurrencyConverterService::class, function ($app) {
+			return new CurrencyConverterService();
+		});
 	}
 
 	/**

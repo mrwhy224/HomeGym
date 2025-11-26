@@ -48,6 +48,7 @@ return Application::configure(basePath: dirname(__DIR__))
 	)
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(LocaleMiddleware::class);
+		$middleware->web(CurrencyMiddleware::class);
 		$middleware->web(SetUserTimezone::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
