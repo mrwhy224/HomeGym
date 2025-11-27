@@ -6,11 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class User extends Authenticatable
 {
-	use HasFactory, Notifiable;
-
+	use HasFactory, Notifiable, InteractsWithMedia;
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -66,5 +66,11 @@ class User extends Authenticatable
 	public function language()
 	{
 		return $this->belongsTo(Language::class);
+	}
+
+
+	public function registerMediaCollections(): void
+	{
+		$this->addMediaCollection('avatar')->singleFile();
 	}
 }
