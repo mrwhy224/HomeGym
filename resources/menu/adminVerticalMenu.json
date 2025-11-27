@@ -134,37 +134,37 @@
       ]
     },
     {
-      "isHeader": true,
-      "name": "Content & System",
-      "slug": "nav-header-system"
-    },
-    {
-      "name": "Content (Blog)",
+      "name": "Blog",
       "icon": "menu-icon icon-base ti tabler-file-text",
-      "slug": "admin.content",
+      "slug": "admin.post",
       "submenu": [
         {
           "url": "/admin/post",
           "name": "Post List",
-          "slug": "admin.content.post.list"
+          "slug": "admin.post.list"
         },
         {
           "url": "/admin/post/create",
           "name": "New Post",
-          "slug": "admin.content.post.create"
+          "slug": "admin.post.create"
         },
         {
           "url": "/admin/post/comments",
           "name": "Comments",
-          "slug": "admin.content.post.comments"
+          "slug": "admin.post.comments"
         },
         {
           "url": "/admin/post/categories",
           "name": "Categories",
-          "slug": "admin.content.post.categories"
+          "slug": "admin.post.categories"
         }
       ]
     },
+	  {
+		  "isHeader": true,
+		  "name": "System",
+		  "slug": "nav-header-system"
+	  },
     {
       "name": "System Settings",
       "icon": "menu-icon icon-base ti tabler-settings",
