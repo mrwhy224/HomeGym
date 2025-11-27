@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\CurrencyMiddleware;
+use App\Http\Middleware\SetUserTimezone;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -47,7 +49,7 @@ return Application::configure(basePath: dirname(__DIR__))
 		}
 	)
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->web(LocaleMiddleware::class);
+		$middleware->web(LocaleMiddleware::class);
 		$middleware->web(CurrencyMiddleware::class);
 		$middleware->web(SetUserTimezone::class);
     })
