@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 			LanguageSeeder::class,
 			CountrySeeder::class,
 			PlanSeeder::class,
+			RolesAndPermissionsSeeder::class,
 		]);
     }
 }
