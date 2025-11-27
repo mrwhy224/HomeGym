@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\post;
+namespace App\Http\Controllers\admin\post;
 
 use App\Http\Controllers\Controller;
 use App\Models\PostCategory;
-use Illuminate\Http\Request;
 
 class Category extends Controller
 {
   public function view()
   {
-    return view('content.post.category');
+    return view('content.admin.post.category');
   }
 
   public function index()
