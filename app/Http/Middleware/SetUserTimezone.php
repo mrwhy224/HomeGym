@@ -11,14 +11,10 @@ class SetUserTimezone
 {
 	public function handle(Request $request, Closure $next)
 	{
-//		if (auth()->check()) {
-//			$timezone = auth()->user()->timezone ?? 'UTC';
-//		} else {
-//			$timezone = config('app.timezone');
-//		}
-		// toDO: load timezone from database
-		config(['app.user_timezone' => 'Asia/Tehran']);
-
+		$timezone = config('app.timezone');
+		if (auth()->check())
+			$timezone = auth()->user()->timezone ?? $timezone;
+		config(['app.user_timezone' => $timezone]);
 		return $next($request);
 	}
 }
