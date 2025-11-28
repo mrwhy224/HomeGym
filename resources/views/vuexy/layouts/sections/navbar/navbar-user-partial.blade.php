@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 <!--  Brand demo (display only for navbar-full and hide on below xl) -->
 @if (isset($navbarFull))
 <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4 ms-0">
-  <a href="{{ url('/') }}" class="app-brand-link">
+  <a href="{{ url('/panel') }}" class="app-brand-link">
     <span class="app-brand-logo demo">@include('_partials.macros')</span>
     <span class="app-brand-text demo menu-text fw-bold">{{ config('variables.templateName') }}</span>
   </a>
@@ -425,22 +425,18 @@ use Illuminate\Support\Facades\Route;
     </li>
     <!--/ Notification -->
     <li class="nav-item d-flex align-items-center me-3 me-xl-2">
-            <a class="nav-link" href="{{-- route('user.wallet.index') --}}"
+            <a class="nav-link" href="{{ route('user.financial.wallet') }}"
                data-bs-toggle="tooltip"
                data-bs-placement="bottom"
                title="Your wallet balance">
 
                 <span class="badge bg-label-primary rounded-pill d-flex align-items-center p-2">
                     <i class="icon-base ti tabler-wallet ti-sm me-1"></i>
-                    <span class="fw-bold">1 $</span>
+                    <span class="fw-bold">{{ $user->wallet->getDisplayBalanceAttribute() }}</span>
                 </span>
             </a>
         </li>
     <!-- User -->
-    @php
-        $user = Auth::user();
-        $avatarUrl = $user->getFirstMediaUrl('avatar');
-    @endphp
 
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">

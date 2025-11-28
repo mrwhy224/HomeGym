@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 <!--  Brand demo (display only for navbar-full and hide on below xl) -->
 @if (isset($navbarFull))
 <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4 ms-0">
-  <a href="{{ url('/') }}" class="app-brand-link">
+  <a href="{{ url('/panel') }}" class="app-brand-link">
     <span class="app-brand-logo demo">@include('_partials.macros')</span>
     <span class="app-brand-text demo menu-text fw-bold">{{ config('variables.templateName') }}</span>
   </a>
@@ -432,7 +432,7 @@ use Illuminate\Support\Facades\Route;
                 
                 <span class="badge bg-label-primary rounded-pill d-flex align-items-center p-2">
                     <i class="icon-base ti tabler-wallet ti-sm me-1"></i>
-                    <span class="fw-bold">0 $</span>
+                    <span class="fw-bold">{{ $user->wallet->getDisplayBalanceAttribute() }}</span>
                 </span>
             </a>
         </li>
@@ -461,7 +461,7 @@ use Illuminate\Support\Facades\Route;
                   John Doe
                   @endif
                 </h6>
-                <small class="text-body-secondary">Admin</small>
+                <small class="text-body-secondary">Coach</small>
               </div>
             </div>
           </a>
