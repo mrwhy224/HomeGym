@@ -20,7 +20,7 @@ return new class extends Migration
 			$table->enum('cancelled_by', ['user', 'coach', 'admin', 'system'])->nullable();
 			$table->text('cancellation_reason')->nullable();
 			$table->timestamps();
-			$table->unique(['gym_class_id', 'user_id']);
+			$table->unique(['activity_id', 'user_id']);
 		});
     }
 
