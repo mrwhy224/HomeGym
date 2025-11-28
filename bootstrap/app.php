@@ -16,10 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
 		health: '/up',
 		then: function () {
 
-			$disableAuth = config('app.disable_auth', false);
+			// toDo: the roles name may need a change in the future
+			$disableAuth = config('app.disable_auth', false); // toDO: remove in production
 			$adminMiddleware = $disableAuth
 				? ['web']
-				: ['web', 'auth', 'role:admin'];
+				: ['web', 'auth', 'role:super_admin|content_manager|finance_manager'];
 
 			$coachMiddleware = $disableAuth
 				? ['web']
@@ -27,21 +28,21 @@ return Application::configure(basePath: dirname(__DIR__))
 
 			$userMiddleware = $disableAuth
 				? ['web']
-				: ['web', 'auth', 'role:user'];
+				: ['web', 'auth', 'role:customer'];
 
 			Route::middleware($adminMiddleware)
-				->prefix('admin')
+				->prefix('panel')
 				->as('admin.')
 				->group(base_path('routes/panel_admin.php'));
 			Route::middleware($coachMiddleware)
-				->prefix('coach')
+				->prefix('panel')
 				->as('coach.')
 				->group(base_path('routes/panel_coach.php'));
 			Route::middleware($userMiddleware)
-				->prefix('user')
+				->prefix('panel')
 				->as('user.')
 				->group(base_path('routes/panel_user.php'));
-			Route::prefix('demo')
+			Route::prefix('demo') // toDO: remove demo later
 				->group(base_path('routes/demo.php'));
 
 			Route::middleware('web')

@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "/user",
+      "url": "/panel",
       "icon": "menu-icon icon-base ti tabler-smart-home",
       "name": "Dashboard",
       "slug": "user.dashboard"
@@ -17,12 +17,12 @@
       "slug": "user.find",
       "submenu": [
         {
-          "url": "/user/coaches",
+          "url": "/panel/coaches",
           "name": "Browse Coaches",
           "slug": "user.coaches.list"
         },
         {
-          "url": "/user/classes/public",
+          "url": "/panel/classes/public",
           "name": "Public Classes",
           "slug": "user.classes.public"
         }
@@ -34,19 +34,19 @@
       "slug": "user.requests",
       "submenu": [
         {
-          "url": "/user/requests/private/create",
+          "url": "/panel/requests/private/create",
           "name": "Request Private Class",
           "slug": "user.requests.private.create"
         },
         {
-          "url": "/user/requests",
+          "url": "/panel/requests",
           "name": "All My Requests",
           "slug": "user.requests.list"
         }
       ]
     },
     {
-      "url": "/user/bookings",
+      "url": "/panel/bookings",
       "name": "My Bookings",
       "icon": "menu-icon icon-base ti tabler-calendar-event",
       "slug": "user.bookings.list"
@@ -62,19 +62,19 @@
       "slug": "user.financial",
       "submenu": [
         {
-          "url": "/user/financial/wallet",
+          "url": "/panel/financial/wallet",
           "name": "My Wallet",
           "slug": "user.financial.wallet"
         },
         {
-          "url": "/user/financial/transactions",
+          "url": "/panel/financial/transactions",
           "name": "Transaction History",
           "slug": "user.financial.history"
         }
       ]
     },
     {
-      "url": "/user/messages",
+      "url": "/panel/messages",
       "name": "Messages",
       "icon": "menu-icon icon-base ti tabler-message-2",
       "slug": "user.messages.inbox"
@@ -85,19 +85,19 @@
       "slug": "user.support",
       "submenu": [
         {
-          "url": "/user/support/faq",
+          "url": "/panel/support/faq",
           "name": "FAQ",
           "slug": "user.support.faq"
         },
         {
-          "url": "/user/support/tickets",
+          "url": "/panel/support/tickets",
           "name": "Support Tickets",
           "slug": "user.support.tickets"
         }
       ]
     },
     {
-      "url": "/user/settings/account",
+      "url": "/panel/settings/account",
       "name": "Settings",
       "icon": "menu-icon icon-base ti tabler-settings",
       "slug": "user.settings.account"

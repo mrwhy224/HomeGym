@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "/admin/dashboard",
+      "url": "/panel/dashboard",
       "icon": "menu-icon icon-base ti tabler-smart-home",
       "name": "Dashboards",
       "slug": "admin.dashboard"
@@ -17,22 +17,22 @@
       "slug": "admin.booking",
       "submenu": [
         {
-          "url": "/admin/bookings",
+          "url": "/panel/bookings",
           "name": "All Bookings",
           "slug": "admin.bookings.list"
         },
         {
-          "url": "/admin/bookings/calendar",
+          "url": "/panel/bookings/calendar",
           "name": "Booking Calendar",
           "slug": "admin.bookings.calendar"
         },
         {
-          "url": "/admin/services",
+          "url": "/panel/services",
           "name": "Class Services",
           "slug": "admin.services.list"
         },
         {
-          "url": "/admin/services/create",
+          "url": "/panel/services/create",
           "name": "New Service",
           "slug": "admin.services.create"
         }
@@ -44,17 +44,17 @@
       "slug": "admin.users",
       "submenu": [
         {
-          "url": "/admin/users",
+          "url": "/panel/users",
           "name": "User List",
           "slug": "admin.users.list"
         },
         {
-          "url": "/admin/coaches",
+          "url": "/panel/coaches",
           "name": "Coach Management",
           "slug": "admin.coaches.list"
         },
         {
-          "url": "/admin/access/roles",
+          "url": "/panel/access/roles",
           "name": "Roles & Permissions",
           "slug": "admin.access.roles"
         }
@@ -66,12 +66,12 @@
       "slug": "admin.messages",
       "submenu": [
         {
-          "url": "/admin/messages/inbox",
+          "url": "/panel/messages/inbox",
           "name": "Inbox",
           "slug": "admin.messages.inbox"
         },
         {
-          "url": "/admin/messages/support",
+          "url": "/panel/messages/support",
           "name": "Support Tickets",
           "slug": "admin.messages.support"
         }
@@ -83,12 +83,12 @@
       "slug": "admin.plans",
       "submenu": [
         {
-          "url": "/admin/plans",
+          "url": "/panel/plans",
           "name": "Plan List",
           "slug": "admin.plans.list"
         },
         {
-          "url": "/admin/plans/create",
+          "url": "/panel/plans/create",
           "name": "New Plan",
           "slug": "admin.plans.create"
         }
@@ -100,7 +100,7 @@
       "slug": "admin.marketing",
       "submenu": [
         {
-          "url": "/admin/discounts",
+          "url": "/panel/discounts",
           "name": "Discount Codes",
           "slug": "admin.discounts.list"
         }
@@ -112,22 +112,22 @@
       "slug": "admin.financial",
       "submenu": [
         {
-          "url": "/admin/financial/payouts",
+          "url": "/panel/financial/payouts",
           "name": "Payouts",
           "slug": "admin.financial.payouts"
         },
         {
-          "url": "/admin/financial/transactions",
+          "url": "/panel/financial/transactions",
           "name": "All Transactions",
           "slug": "admin.financial.transactions"
         },
         {
-          "url": "/admin/financial/invoices",
+          "url": "/panel/financial/invoices",
           "name": "Invoices",
           "slug": "admin.financial.invoices"
         },
         {
-          "url": "/admin/financial/wallets",
+          "url": "/panel/financial/wallets",
           "name": "System Wallets",
           "slug": "admin.financial.wallets"
         }
@@ -139,22 +139,22 @@
       "slug": "admin.post",
       "submenu": [
         {
-          "url": "/admin/post",
+          "url": "/panel/post",
           "name": "Post List",
           "slug": "admin.post.list"
         },
         {
-          "url": "/admin/post/create",
+          "url": "/panel/post/create",
           "name": "New Post",
           "slug": "admin.post.create"
         },
         {
-          "url": "/admin/post/comments",
+          "url": "/panel/post/comments",
           "name": "Comments",
           "slug": "admin.post.comments"
         },
         {
-          "url": "/admin/post/categories",
+          "url": "/panel/post/categories",
           "name": "Categories",
           "slug": "admin.post.categories"
         }
@@ -171,32 +171,32 @@
       "slug": "admin.settings",
       "submenu": [
         {
-          "url": "/admin/settings/general",
+          "url": "/panel/settings/general",
           "name": "General Settings",
           "slug": "admin.settings.general"
         },
         {
-          "url": "/admin/settings/languages",
+          "url": "/panel/settings/languages",
           "name": "Languages",
           "slug": "admin.settings.languages"
         },
         {
-          "url": "/admin/settings/currencies",
+          "url": "/panel/settings/currencies",
           "name": "Currencies",
           "slug": "admin.settings.currencies"
         },
         {
-          "url": "/admin/settings/gateways",
+          "url": "/panel/settings/gateways",
           "name": "Payment Gateways",
           "slug": "admin.settings.gateways"
         },
         {
-          "url": "/admin/system/logs",
+          "url": "/panel/system/logs",
           "name": "System Logs",
           "slug": "admin.system.logs"
         },
         {
-          "url": "/admin/system/backups",
+          "url": "/panel/system/backups",
           "name": "Backups",
           "slug": "admin.system.backups"
         }
