@@ -441,10 +441,11 @@ use Illuminate\Support\Facades\Route;
         $user = Auth::user();
         $avatarUrl = $user->getFirstMediaUrl('avatar');
     @endphp
+
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
         <div class="avatar avatar-online">
-          @if($avatarUrl)<img src="{{ $avatarUrl }}" alt="Avatar" class="rounded-circle" />@else<span class="avatar-initial rounded-circle bg-label-{{ $user->avatar_color }}">{{ $user->initials }}</span>@endif
+          <x-user-avatar />
         </div>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
@@ -454,7 +455,7 @@ use Illuminate\Support\Facades\Route;
             <div class="d-flex align-items-center">
               <div class="flex-shrink-0 me-2">
                 <div class="avatar avatar-online">
-                  @if($avatarUrl)<img src="{{ $avatarUrl }}" alt="Avatar" class="rounded-circle" />@else<span class="avatar-initial rounded-circle bg-label-{{ $user->avatar_color }}">{{ $user->initials }}</span>@endif
+                  <x-user-avatar />
                 </div>
               </div>
               <div class="flex-grow-1">
