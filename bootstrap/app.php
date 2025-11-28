@@ -17,31 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
 		then: function () {
 
 			// toDo: the roles name may need a change in the future
-			$disableAuth = config('app.disable_auth', false); // toDO: remove in production
-			$adminMiddleware = $disableAuth
-				? ['web']
-				: ['web', 'auth', 'role:super_admin|content_manager|finance_manager'];
-
-			$coachMiddleware = $disableAuth
-				? ['web']
-				: ['web', 'auth', 'role:coach'];
-
-			$userMiddleware = $disableAuth
-				? ['web']
-				: ['web', 'auth', 'role:customer'];
-
-			Route::middleware($adminMiddleware)
+			Route::middleware(['web', 'auth'])
 				->prefix('panel')
-				->as('admin.')
-				->group(base_path('routes/panel_admin.php'));
-			Route::middleware($coachMiddleware)
-				->prefix('panel')
-				->as('coach.')
-				->group(base_path('routes/panel_coach.php'));
-			Route::middleware($userMiddleware)
-				->prefix('panel')
-				->as('user.')
-				->group(base_path('routes/panel_user.php'));
+				->group(base_path('routes/panel_index.php'));
+
 			Route::prefix('demo') // toDO: remove demo later
 				->group(base_path('routes/demo.php'));
 
@@ -53,6 +32,19 @@ return Application::configure(basePath: dirname(__DIR__))
 		$middleware->web(LocaleMiddleware::class);
 		$middleware->web(CurrencyMiddleware::class);
 		$middleware->web(SetUserTimezone::class);
+		$middleware->redirectTo(
+
+			// toDo: with some how, detect the user language
+			guests: function () {
+				$locale = app()->getLocale();
+				return route('login.form', ['locale' => $locale]);
+			}
+		);
+		$middleware->alias([
+			'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+			'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+			'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+		]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
