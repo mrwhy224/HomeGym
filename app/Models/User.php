@@ -58,7 +58,19 @@ class User extends Authenticatable implements HasMedia
 		return $this->first_name . ' ' . $this->last_name;
 	}
 
-	// --- افزودن روابط (Relations) ---
+	public function getInitialsAttribute(): string
+	{
+		$first = mb_substr($this->first_name, 0, 1);
+		$last = mb_substr($this->last_name, 0, 1);
+
+		return strtoupper($first . $last);
+	}
+	public function getAvatarColorAttribute(): string
+	{
+		$colors = ['primary', 'success', 'danger', 'warning', 'info', 'dark'];
+		$index = $this->id % count($colors);
+		return $colors[$index];
+	}
 
 	public function country()
 	{

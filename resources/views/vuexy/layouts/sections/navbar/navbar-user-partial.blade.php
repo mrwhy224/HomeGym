@@ -425,11 +425,11 @@ use Illuminate\Support\Facades\Route;
     </li>
     <!--/ Notification -->
     <li class="nav-item d-flex align-items-center me-3 me-xl-2">
-            <a class="nav-link" href="{{-- route('user.wallet.index') --}}" 
-               data-bs-toggle="tooltip" 
-               data-bs-placement="bottom" 
+            <a class="nav-link" href="{{-- route('user.wallet.index') --}}"
+               data-bs-toggle="tooltip"
+               data-bs-placement="bottom"
                title="Your wallet balance">
-                
+
                 <span class="badge bg-label-primary rounded-pill d-flex align-items-center p-2">
                     <i class="icon-base ti tabler-wallet ti-sm me-1"></i>
                     <span class="fw-bold">1 $</span>
@@ -437,11 +437,14 @@ use Illuminate\Support\Facades\Route;
             </a>
         </li>
     <!-- User -->
+    @php
+        $user = Auth::user();
+        $avatarUrl = $user->getFirstMediaUrl('avatar');
+    @endphp
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
         <div class="avatar avatar-online">
-          <img src="{{ Auth::user() ? Auth::user()->profile_photo_url : asset('assets/img/avatars/1.png') }}" alt
-            class="rounded-circle" />
+          @if($avatarUrl)<img src="{{ $avatarUrl }}" alt="Avatar" class="rounded-circle" />@else<span class="avatar-initial rounded-circle bg-label-{{ $user->avatar_color }}">{{ $user->initials }}</span>@endif
         </div>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
@@ -451,8 +454,7 @@ use Illuminate\Support\Facades\Route;
             <div class="d-flex align-items-center">
               <div class="flex-shrink-0 me-2">
                 <div class="avatar avatar-online">
-                  <img src="{{ Auth::user() ? Auth::user()->profile_photo_url : asset('assets/img/avatars/1.png') }}"
-                    alt class="rounded-circle" />
+                  @if($avatarUrl)<img src="{{ $avatarUrl }}" alt="Avatar" class="rounded-circle" />@else<span class="avatar-initial rounded-circle bg-label-{{ $user->avatar_color }}">{{ $user->initials }}</span>@endif
                 </div>
               </div>
               <div class="flex-grow-1">
@@ -463,7 +465,7 @@ use Illuminate\Support\Facades\Route;
                   John Doe
                   @endif
                 </h6>
-                <small class="text-body-secondary">Admin</small>
+                <small class="text-body-secondary">User</small>
               </div>
             </div>
           </a>
