@@ -25,4 +25,4 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 
 Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
 
-Route::fallback(function () {return view('content.pages.pages-misc-error');});
+Route::fallback(function () {return view('content.pages-error');});
