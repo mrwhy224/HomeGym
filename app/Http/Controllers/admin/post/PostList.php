@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\post;
+namespace App\Http\Controllers\admin\post;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
 
 class PostList extends Controller
@@ -31,7 +30,7 @@ class PostList extends Controller
     ];
 
 
-    return view('content.post.post-list', $data);
+    return view('content.admin.post.post-list', $data);
   }
 
 }

@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "/coach/dashboard",
+      "url": "/panel/dashboard",
       "icon": "menu-icon icon-base ti tabler-smart-home",
       "name": "Dashboard",
       "slug": "coach.dashboard"
@@ -17,31 +17,31 @@
       "slug": "coach.services",
       "submenu": [
         {
-          "url": "/coach/services",
+          "url": "/panel/services",
           "name": "Service List",
           "slug": "coach.services.list"
         },
         {
-          "url": "/coach/services/create",
+          "url": "/panel/services/create",
           "name": "New Service",
           "slug": "coach.services.create"
         }
       ]
     },
     {
-      "url": "/coach/schedule",
+      "url": "/panel/schedule",
       "icon": "menu-icon icon-base ti tabler-calendar-plus",
       "name": "My Schedule",
       "slug": "coach.schedule"
     },
     {
-      "url": "/coach/bookings",
+      "url": "/panel/bookings",
       "icon": "menu-icon icon-base ti tabler-calendar-event",
       "name": "Bookings Calendar",
       "slug": "coach.bookings.calendar"
     },
     {
-      "url": "/coach/requests",
+      "url": "/panel/requests",
       "icon": "menu-icon icon-base ti tabler-bell-ringing",
       "name": "Class Requests",
       "slug": "coach.requests.list"
@@ -52,13 +52,13 @@
       "slug": "nav-header-community"
     },
     {
-      "url": "/coach/students",
+      "url": "/panel/students",
       "icon": "menu-icon icon-base ti tabler-users",
       "name": "My Students",
       "slug": "coach.students.list"
     },
     {
-      "url": "/coach/messages",
+      "url": "/panel/messages",
       "icon": "menu-icon icon-base ti tabler-messages",
       "name": "Messages",
       "slug": "coach.messages.index"
@@ -69,7 +69,7 @@
       "slug": "nav-header-personal"
     },
     {
-      "url": "/coach/financials",
+      "url": "/panel/financials",
       "icon": "menu-icon icon-base ti tabler-file-dollar",
       "name": "Earnings & Payouts",
       "slug": "coach.financials.summary"
@@ -80,12 +80,12 @@
       "slug": "coach.profile",
       "submenu": [
         {
-          "url": "/coach/profile/edit",
+          "url": "/panel/profile/edit",
           "name": "Edit Profile & Bio",
           "slug": "coach.profile.edit"
         },
         {
-          "url": "/coach/profile/experience",
+          "url": "/panel/profile/experience",
           "name": "Manage Resume",
           "slug": "coach.profile.experience"
         }

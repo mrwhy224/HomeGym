@@ -2,8 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\coach\Dashboard;
 
+Route::get('/test', function() {
 
-
-Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
-
-Route::fallback(function () {return view('content.pages.pages-misc-error');});
+	return view('content.coach.financial', ['transactions'=>[]]);
+});

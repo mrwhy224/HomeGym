@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Services\CurrencyConverterService;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -15,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
 	 */
 	public function register(): void
 	{
-		//
+		$this->app->singleton(CurrencyConverterService::class, function ($app) {
+			return new CurrencyConverterService();
+		});
 	}
 
 	/**
@@ -41,5 +46,11 @@ class AppServiceProvider extends ServiceProvider
 
 
 		}
+
+		Carbon::macro('formatUser', function ($format = 'Y-m-d H:i:s') {
+			$timezone = config('app.user_timezone', config('app.timezone'));
+			return $this->setTimezone($timezone)->format($format);
+		});
+
 	}
 }

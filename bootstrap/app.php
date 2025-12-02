@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\CurrencyMiddleware;
+use App\Http\Middleware\SetUserTimezone;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -14,32 +16,12 @@ return Application::configure(basePath: dirname(__DIR__))
 		health: '/up',
 		then: function () {
 
-			$disableAuth = config('app.disable_auth', false);
-			$adminMiddleware = $disableAuth
-				? ['web']
-				: ['web', 'auth', 'role:admin'];
+			// toDo: the roles name may need a change in the future
+			Route::middleware(['web', 'auth'])
+				->prefix('panel')
+				->group(base_path('routes/panel_index.php'));
 
-			$coachMiddleware = $disableAuth
-				? ['web']
-				: ['web', 'auth', 'role:coach'];
-
-			$userMiddleware = $disableAuth
-				? ['web']
-				: ['web', 'auth', 'role:user'];
-
-			Route::middleware($adminMiddleware)
-				->prefix('admin')
-				->as('admin.')
-				->group(base_path('routes/panel_admin.php'));
-			Route::middleware($coachMiddleware)
-				->prefix('coach')
-				->as('coach.')
-				->group(base_path('routes/panel_coach.php'));
-			Route::middleware($userMiddleware)
-				->prefix('user')
-				->as('user.')
-				->group(base_path('routes/panel_user.php'));
-			Route::prefix('demo')
+			Route::prefix('demo') // toDO: remove demo later
 				->group(base_path('routes/demo.php'));
 
 			Route::middleware('web')
@@ -47,7 +29,22 @@ return Application::configure(basePath: dirname(__DIR__))
 		}
 	)
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->web(LocaleMiddleware::class);
+		$middleware->web(LocaleMiddleware::class);
+		$middleware->web(CurrencyMiddleware::class);
+		$middleware->web(SetUserTimezone::class);
+		$middleware->redirectTo(
+
+			// toDo: with some how, detect the user language
+			guests: function () {
+				$locale = app()->getLocale();
+				return route('login.form', ['locale' => $locale]);
+			}
+		);
+		$middleware->alias([
+			'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+			'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+			'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+		]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

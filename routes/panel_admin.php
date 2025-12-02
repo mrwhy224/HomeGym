@@ -1,11 +1,12 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\Dashboard;
-use App\Http\Controllers\post\Category;
-use App\Http\Controllers\post\Comment;
-use App\Http\Controllers\post\PostAdd;
-use App\Http\Controllers\post\PostList;
 
+use App\Http\Controllers\admin\Dashboard;
+use App\Http\Controllers\admin\Plans;
+use App\Http\Controllers\admin\post\Category;
+use App\Http\Controllers\admin\post\Comment;
+use App\Http\Controllers\admin\post\PostAdd;
+use App\Http\Controllers\admin\post\PostList;
+use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'post','as' => 'post.'], function () {
@@ -15,14 +16,23 @@ Route::group(['prefix' => 'post','as' => 'post.'], function () {
 	Route::get('/category', [Category::class, 'view'])->name('category');
 
 });
+Route::group(['prefix' => 'customer','as' => 'customer.'], function () {
+	Route::get('plan', [Plans::class, 'index'])->name('plan');
+	Route::get('list', function () {
+		return view('content.admin.users.customer');
+	})->name('list');
+});
+
 
 Route::group(['prefix' => 'api','as' => 'api.'], function () {
 
 	Route::group(['prefix' => 'category','as' => 'category.'], function () {
 		Route::get('list', [Category::class, 'index'])->name('index');
 	});
+
+	Route::group(['prefix' => 'customer','as' => 'customer.'], function () {
+		Route::get('plan', [Plans::class, 'customers'])->name('plan');
+
+	});
+
 });
-
-Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
-
-Route::fallback(function () {return view('content.pages.pages-misc-error');});

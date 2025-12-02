@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\pages\MiscComingSoon;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\main\HomeControllerMain;
@@ -14,11 +15,11 @@ $activeLocales = DB::table('languages')->pluck('code')->toArray();
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => implode('|', $activeLocales)]], function () {
 
 	Route::get('/', [HomeControllerMain::class, 'index'])->name('index');
+	Route::get('login', [UserController::class, 'showLogin'])->name('login.form');
+	Route::post('login', [UserController::class, 'loginAttempt'])->name('login.attempt');
 
 });
-
-
-
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/', [\App\Http\Controllers\LangController::class, 'handleInitialRedirect']);
 
 //Route::get('/', [HomeControllerMain::class, 'index'])->name('index');

@@ -6,11 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
-	use HasFactory, Notifiable;
-
+	use HasFactory, Notifiable, InteractsWithMedia, HasRoles;
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -56,7 +58,19 @@ class User extends Authenticatable
 		return $this->first_name . ' ' . $this->last_name;
 	}
 
-	// --- افزودن روابط (Relations) ---
+	public function getInitialsAttribute(): string
+	{
+		$first = mb_substr($this->first_name, 0, 1);
+		$last = mb_substr($this->last_name, 0, 1);
+
+		return strtoupper($first . $last);
+	}
+	public function getAvatarColorAttribute(): string
+	{
+		$colors = ['primary', 'success', 'danger', 'warning', 'info', 'dark'];
+		$index = $this->id % count($colors);
+		return $colors[$index];
+	}
 
 	public function country()
 	{
@@ -66,5 +80,11 @@ class User extends Authenticatable
 	public function language()
 	{
 		return $this->belongsTo(Language::class);
+	}
+
+
+	public function registerMediaCollections(): void
+	{
+		$this->addMediaCollection('avatar')->singleFile();
 	}
 }

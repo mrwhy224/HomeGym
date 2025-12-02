@@ -49,23 +49,25 @@
         {{-- <x-banner /> --}}
 
         <!-- BEGIN: Navbar-->
-        @if ($isNavbar)
-          @php
+		  @if ($isNavbar)
+			  @auth
+				  @php
+					  $user = auth()->user();
+					  $navbarView = null;
 
-              $navbarView = 'layouts.sections.navbar.navbar_user';
+					  if ($user->hasRole(['super_admin', 'content_manager', 'finance_manager']))
+						  $navbarView = 'layouts.sections.navbar.navbar_admin';
 
-              if (request()->is('admin*'))
-                  $navbarView = 'layouts.sections.navbar.navbar_admin';
-              elseif (request()->is('coach*'))
-                  $navbarView = 'layouts.sections.navbar.navbar_coach';
-              elseif (request()->is('dashboard*')) 
-                  $navbarView = 'layouts.sections.navbar.navbar_user';
-              
-          @endphp
+					  elseif ($user->hasRole('coach'))
+						  $navbarView = 'layouts.sections.navbar.navbar_coach';
 
-          {{-- حالا به جای یک فایل ثابت، متغیر را include می‌کنیم --}}
-          @include($navbarView)
-        @endif
+					  elseif ($user->hasRole('customer'))
+						  $navbarView = 'layouts.sections.navbar.navbar_user';
+
+				  @endphp
+				  @include($navbarView)
+			  @endauth
+		  @endif
         <!-- END: Navbar-->
 
         <!-- Content wrapper -->

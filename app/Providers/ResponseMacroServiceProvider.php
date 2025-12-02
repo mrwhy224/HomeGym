@@ -34,7 +34,6 @@ class ResponseMacroServiceProvider extends ServiceProvider
         $factory->macro('error', function (int $code, array|string $message = '', array|string $errors = []) use ($factory){
             $format = [
                 'ok' => false,
-                'error_code'=> $code,
                 'message' => $message,
                 'errors' => $errors,
             ];
