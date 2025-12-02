@@ -17,12 +17,12 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-1.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/couple-actively66.jpg') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
-                                <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-1.jpg') }}">
+                                <a class="img-popup" href="{{ asset('assets/images/home/couple-actively66.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -33,12 +33,12 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-2.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/Photo-11.png') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
                                 <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-2.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -49,12 +49,12 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-3.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/Post-3.jpg') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
                                 <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-3.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -65,12 +65,13 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-4.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/medium-shot-41.jpg') }}" alt="">
+
                             </div>
                             <div class="gallery-page__icon">
                                 <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-4.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -81,12 +82,12 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-5.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/coaches-sub6.webp') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
                                 <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-5.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -97,12 +98,12 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-6.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/12.jpg') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
                                 <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-6.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -113,10 +114,10 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-7.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/man-with-dumbbell-that-sayasds-personal.webp') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
-                                <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-7.jpg') }}"><span class="icon-plus"></span></a>
+                                <a class="img-popup" href="{{ asset('assets/images/home/man-with-dumbbell-that-sayasds-personal.webp') }}"><span class="icon-plus"></span></a>
                             </div>
                         </div>
                     </div>
@@ -127,10 +128,10 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-8.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/Post-2.jpg') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
-                                <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-8.jpg') }}"><span class="icon-plus"></span></a>
+                                <a class="img-popup" href="{{ asset('assets/images/home/Post-2.jpg') }}"><span class="icon-plus"></span></a>
                             </div>
                         </div>
                     </div>
@@ -141,12 +142,12 @@
                     <div class="gallery-page__single">
                         <div class="gallery-page__img">
                             <div class="gallery-page__img-box">
-                                <img src="{{ asset('assets/images/gallery/gallery-page-1-9.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/10.jpg') }}" alt="">
                             </div>
                             <div class="gallery-page__icon">
                                 <a class="img-popup" href="{{ asset('assets/images/gallery/gallery-page-1-9.jpg') }}">
                                     <span class="icon-plus"></span>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -158,39 +159,39 @@
     <!--Gallery Page End-->
 
     <!--Newsletter Two Start -->
-    <section class="newsletter-two">
-        <div class="container">
-            <div class="newsletter-two__inner">
-                <div class="newsletter-two__img">
-                    <img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">
-                </div>
-                <div class="newsletter-two__inner-content">
-                    <div class="newsletter-two__shape-bg"
-                        style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">
-                    </div>
-                    <div class="newsletter-two__like">
-                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">
-                    </div>
-                    <div class="newsletter-two__title-box">
-                        <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>
-                        <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,
-                            <br>
-                            designed to cater to various learning</p>
-                    </div>
-                    <div class="newsletter-two__form-box">
-                        <form class="newsletter-two__form">
-                            <div class="newsletter-two__input">
-                                <input type="email" placeholder="Enter Your Email">
-                            </div>
-                            <button type="submit" class="newsletter-two__btn">
-                                <span class="icon-arrow-circle"></span> Subscribe
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="newsletter-two">--}}
+{{--        <div class="container">--}}
+{{--            <div class="newsletter-two__inner">--}}
+{{--                <div class="newsletter-two__img">--}}
+{{--                    <img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="newsletter-two__inner-content">--}}
+{{--                    <div class="newsletter-two__shape-bg"--}}
+{{--                        style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__like">--}}
+{{--                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__title-box">--}}
+{{--                        <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>--}}
+{{--                        <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,--}}
+{{--                            <br>--}}
+{{--                            designed to cater to various learning</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__form-box">--}}
+{{--                        <form class="newsletter-two__form">--}}
+{{--                            <div class="newsletter-two__input">--}}
+{{--                                <input type="email" placeholder="Enter Your Email">--}}
+{{--                            </div>--}}
+{{--                            <button type="submit" class="newsletter-two__btn">--}}
+{{--                                <span class="icon-arrow-circle"></span> Subscribe--}}
+{{--                            </button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!--Newsletter Two End -->
 
     <!--Contact Info One Start -->

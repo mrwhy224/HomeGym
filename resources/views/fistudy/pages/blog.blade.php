@@ -16,7 +16,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="blog-two__single">
                         <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-1.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/home/medium-shot-41.jpg') }}" alt="">
                             <div class="blog-two__date">
                                 <span class="icon-calendar"></span>
                                 <p>Nov 02, 2024</p>
@@ -46,7 +46,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="blog-two__single">
                         <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-2.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/home/females8.jpg') }}" alt="">
                             <div class="blog-two__date">
                                 <span class="icon-calendar"></span>
                                 <p>Nov 02, 2024</p>
@@ -70,13 +70,13 @@
                             <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <!--Blog Two Single End -->
                 <!--Blog Two Single Start -->
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="blog-two__single">
                         <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-3.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/home/couple-actively66.jpg') }}" alt="">
                             <div class="blog-two__date">
                                 <span class="icon-calendar"></span>
                                 <p>Nov 02, 2024</p>
@@ -100,13 +100,13 @@
                             <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <!--Blog Two Single End -->
                 <!--Blog Two Single Start -->
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                     <div class="blog-two__single">
                         <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-4.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/home/Post-3.jpg') }}" alt="">
                             <div class="blog-two__date">
                                 <span class="icon-calendar"></span>
                                 <p>March 02, 2024</p>
@@ -130,13 +130,13 @@
                             <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <!--Blog Two Single End -->
                 <!--Blog Two Single Start -->
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <div class="blog-two__single">
                         <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-5.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/home/Post-2.jpg') }}" alt="">
                             <div class="blog-two__date">
                                 <span class="icon-calendar"></span>
                                 <p>Oct 02, 2024</p>
@@ -160,13 +160,13 @@
                             <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <!--Blog Two Single End -->
                 <!--Blog Two Single Start -->
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
                     <div class="blog-two__single">
                         <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-6.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/home/medium-shot-41.jpg') }}" alt="">
                             <div class="blog-two__date">
                                 <span class="icon-calendar"></span>
                                 <p>June 02, 2024</p>
@@ -190,98 +190,98 @@
                             <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <!--Blog Two Single End -->
                 <!--Blog Two Single Start -->
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="blog-two__single">
-                        <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-7.jpg') }}" alt="">
-                            <div class="blog-two__date">
-                                <span class="icon-calendar"></span>
-                                <p>Dec 02, 2024</p>
-                            </div>
-                        </div>
-                        <div class="blog-two__content">
-                            <div class="blog-two__meta-box">
-                                <ul class="blog-two__meta list-unstyled">
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">How an LMS Supports Employee Development</a></h4>
-                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
-                        </div>
-                    </div>
-                </div>                
-                <!--Blog Two Single End -->
-                <!--Blog Two Single Start -->
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms">
-                    <div class="blog-two__single">
-                        <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-8.jpg') }}" alt="">
-                            <div class="blog-two__date">
-                                <span class="icon-calendar"></span>
-                                <p>Nov 02, 2024</p>
-                            </div>
-                        </div>
-                        <div class="blog-two__content">
-                            <div class="blog-two__meta-box">
-                                <ul class="blog-two__meta list-unstyled">
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Top 5 LMS Integrations Every Business Should Consider</a></h4>
-                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
-                        </div>
-                    </div>
-                </div>                
-                <!--Blog Two Single End -->
-                <!--Blog Two Single Start -->
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="900ms">
-                    <div class="blog-two__single">
-                        <div class="blog-two__img">
-                            <img src="{{ asset('assets/images/blog/blog-2-9.jpg') }}" alt="">
-                            <div class="blog-two__date">
-                                <span class="icon-calendar"></span>
-                                <p>Nov 02, 2024</p>
-                            </div>
-                        </div>
-                        <div class="blog-two__content">
-                            <div class="blog-two__meta-box">
-                                <ul class="blog-two__meta list-unstyled">
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Maximizing ROI: How to Measure the Success of Your LMS</a></h4>
-                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>
-                        </div>
-                    </div>
-                </div>                
-                <!--Blog Two Single End -->
+{{--                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="700ms">--}}
+{{--                    <div class="blog-two__single">--}}
+{{--                        <div class="blog-two__img">--}}
+{{--                            <img src="{{ asset('assets/images/blog/blog-2-7.jpg') }}" alt="">--}}
+{{--                            <div class="blog-two__date">--}}
+{{--                                <span class="icon-calendar"></span>--}}
+{{--                                <p>Dec 02, 2024</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="blog-two__content">--}}
+{{--                            <div class="blog-two__meta-box">--}}
+{{--                                <ul class="blog-two__meta list-unstyled">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">How an LMS Supports Employee Development</a></h4>--}}
+{{--                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!--Blog Two Single End -->--}}
+{{--                <!--Blog Two Single Start -->--}}
+{{--                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms">--}}
+{{--                    <div class="blog-two__single">--}}
+{{--                        <div class="blog-two__img">--}}
+{{--                            <img src="{{ asset('assets/images/blog/blog-2-8.jpg') }}" alt="">--}}
+{{--                            <div class="blog-two__date">--}}
+{{--                                <span class="icon-calendar"></span>--}}
+{{--                                <p>Nov 02, 2024</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="blog-two__content">--}}
+{{--                            <div class="blog-two__meta-box">--}}
+{{--                                <ul class="blog-two__meta list-unstyled">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Top 5 LMS Integrations Every Business Should Consider</a></h4>--}}
+{{--                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!--Blog Two Single End -->--}}
+{{--                <!--Blog Two Single Start -->--}}
+{{--                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="900ms">--}}
+{{--                    <div class="blog-two__single">--}}
+{{--                        <div class="blog-two__img">--}}
+{{--                            <img src="{{ asset('assets/images/blog/blog-2-9.jpg') }}" alt="">--}}
+{{--                            <div class="blog-two__date">--}}
+{{--                                <span class="icon-calendar"></span>--}}
+{{--                                <p>Nov 02, 2024</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="blog-two__content">--}}
+{{--                            <div class="blog-two__meta-box">--}}
+{{--                                <ul class="blog-two__meta list-unstyled">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Maximizing ROI: How to Measure the Success of Your LMS</a></h4>--}}
+{{--                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!--Blog Two Single End -->--}}
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -289,7 +289,7 @@
                         <a href="{{ url('blog-details') }}" class="thm-btn-two">
                             <span>More Blogs</span>
                             <i class="icon-angles-right"></i>
-                        </a>                        
+                        </a>
                     </div>
                     <div class="blog-list__pagination">
                         <ul class="pg-pagination list-unstyled">

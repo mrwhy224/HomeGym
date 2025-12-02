@@ -107,7 +107,7 @@
 					</h2>
 				</li>
 				<li>
-					<h2 data-hover="{{ __('home.sliding_courses') }}" class="sliding-text__title">
+					<h2 data-hover="{{ __('home.sliding_courses') }}" class="sliding-text_-++_title">
 						<span class="odometer" data-count="500">00</span>+ {{ __('home.sliding_courses_suffix') }}
 						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">
 					</h2>

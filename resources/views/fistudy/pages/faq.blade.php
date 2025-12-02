@@ -17,49 +17,46 @@
                         <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>What services do you offer for development ?</h4>
+                                    <h4>How does SepFit work ?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>Getting started is simple. First, register on our website. Next, browse through our list of expert trainers and choose the one that fits your goals. Once you’ve selected your trainer, you can check their availability and book your preferred class time. All sessions are conducted online, bringing the gym experience directly to your home.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                             <div class="accrodion  active">
                                 <div class="accrodion-title">
-                                    <h4>How can your consultancy help my business grow?</h4>
+                                    <h4>What types of classes do you offer?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>We offer three distinct class formats to suit your needs:
+											Public Classes: Group sessions where the instructor guides a number of athletes online and monitors their movements.
+											Semi-Private Classes: Small group sessions limited to 2 students for more focused attention.
+											Private Classes: 1-on-1 sessions where you train exclusively with your coach for maximum personalization.
+
+										</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>What types of businesses do you work with?</h4>
+                                    <h4>Can I choose my own trainer?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>Absolutely! We believe the connection between a student and a coach is vital. You can view the profiles of our energetic and experienced male and female trainers, review their specialties, and select the one who best aligns with your fitness journey.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>How do you tailor your services to my business’s needs?</h4>
+                                    <h4>How long does each workout session last?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>Class durations are flexible to accommodate your schedule and fitness level. Sessions typically last 30, 45, or 60 minutes. However, the exact duration and frequency of sessions are determined by your coach’s professional assessment and your specific goals.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
@@ -71,49 +68,41 @@
                         <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>What services do you offer for development ?</h4>
+                                    <h4>Which currencies and payment methods do you accept?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>Since SepFit is a global platform, we support multiple currencies including USD, Euro, and Toman. The payment gateway displayed to you will automatically correspond to your location and banking access, ensuring a smooth transaction process for users worldwide.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>How can your consultancy help my business grow?</h4>
+                                    <h4>Is the training content pre-recorded or live?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>All SepFit classes are live and interactive. Whether you are in a Public, Semi-Private, or Private class, your instructor is present in real-time to guide you, correct your form, and ensure you are exercising safely and effectively.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>What types of businesses do you work with?</h4>
+                                    <h4>Do I need professional gym equipment to participate?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>SepFit is designed as a "Home Gym" solution. While having some equipment can be beneficial, it is not always mandatory. Your coach will design your workout plan based on the equipment you have available at home, or advise you on minimal essentials if needed.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>How do you tailor your services to my business’s needs?</h4>
+                                    <h4>Is the platform available in languages other than English?</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>We provide a range of services designed to help your business grow and
-                                            succeed. Our services include market research and analysis, strategic
-                                            planning, sales and marketing strategy development</p>
+                                        <p>Yes, SepFit is a multilingual platform designed for a global audience. You can access the entire website and its services in English, Persian (Farsi), and Arabic, making it easy for you to navigate and communicate in your preferred language.</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>

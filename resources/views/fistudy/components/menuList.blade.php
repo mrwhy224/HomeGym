@@ -136,18 +136,7 @@
                                 <li><a href="{{ route('course-details', ['locale' => app()->getLocale()]) }}">{{ __('header.course_details') }}</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href={{ url('#') }}>{{ __('header.menu_shop') }}</a>
-                            <ul class="shadow-box">
-                                <li><a href="{{ route('products', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_products') }}</a></li>
-                                <li><a href="{{ route('product-details', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_product_details') }}</a></li>
-                                <li><a href="{{ route('cart', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_cart') }}</a></li>
-                                <li><a href="{{ route('checkout', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_checkout') }}</a></li>
-                                <li><a href="{{ route('wishlist', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_wishlist') }}</a></li>
-                                <li><a href="{{ route('sign-up', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_sign_up') }}</a></li>
-                                <li><a href="{{ route('login', ['locale' => app()->getLocale()]) }}">{{ __('header.shop_login') }}</a></li>
-                            </ul>
-                        </li>
+
                         <li class="dropdown">
                             <a href={{ url('#') }}>{{ __('header.menu_blog') }}</a>
                             <ul class="shadow-box">
@@ -169,7 +158,7 @@
                 </div>
                 <div class="main-menu__right">
                     <ul class="main-menu__list">
-                        
+
                         <li class="dropdown">
                         <a href="#">
                             <span class="fas fa-globe"></span> {{ strtoupper(app()->getLocale()) }}

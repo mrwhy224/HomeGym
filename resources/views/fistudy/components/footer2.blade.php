@@ -15,7 +15,7 @@
                                 <div class="footer-widget-two__about">
                                     <div class="footer-widget-two__about-logo">
                                         <a href="{{ url('/') }}">
-                                            <img src="{{ asset('assets/images/resources/site-footer-logo-2.png') }}" alt="">
+                                            <img src="{{ asset('assets/images/favicons/logo2footer.png') }}" alt="">
                                         </a>
                                     </div>
                                     <p class="footer-widget-two__about-text">Lorem Ipsum is simply dummy text of the

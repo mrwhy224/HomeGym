@@ -45,7 +45,7 @@
             </div>
             <x-menuList/>
         </header>
-        
+
 
             <!--Page Header Start-->
             <section class="page-header">
@@ -69,16 +69,9 @@
                 <div class="container">
                     <div class="page-header__inner">
                         <div class="page-header__img">
-                            <img src="{{ asset('assets/images/resources/page-header-img-1.png') }}" alt="">
-                            <div class="page-header__shape-1">
-                                <img src="{{ asset('assets/images/shapes/page-header-shape-1.png') }}" alt="">
-                            </div>
-                            <div class="page-header__shape-2">
-                                <img src="{{ asset('assets/images/shapes/page-header-shape-2.png') }}" alt="">
-                            </div>
-                            <div class="page-header__shape-3">
-                                <img src="{{ asset('assets/images/shapes/page-header-shape-3.png') }}" alt="">
-                            </div>
+                            <img src="{{ asset('assets/images/resources/home/discount.png') }}" alt="">
+
+
                         </div>
                         <h2>{{ $title }}</h2>
                         <div class="thm-breadcrumb__box">

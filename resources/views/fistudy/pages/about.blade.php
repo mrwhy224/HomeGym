@@ -22,10 +22,10 @@
                         </div>
                         <div class="about-three__img-box">
                             <div class="about-three__img-one">
-                                <img src="{{ asset('assets/images/resources/about-three-img-1.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/tt.webp') }}" alt="">
                             </div>
                             <div class="about-three__img-two">
-                                <img src="{{ asset('assets/images/resources/about-three-img-2.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/Photo-11.png') }}" alt="">
                             </div>
                             <div class="about-three__experience-box">
                                 <div class="about-three__experience-box-inner">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="col-xl-5">
                     <div class="about-three__right">
                         <div class="section-title-two text-left sec-title-animation animation-style2">
@@ -55,13 +55,10 @@
                                 </div>
                                 <span class="section-title-two__tagline">About Us</span>
                             </div>
-                            <h2 class="section-title-two__title title-animation">Behind the Scenes: Discover the
-                                People & Passion <span>Behind</span>
+                            <h2 class="section-title-two__title title-animation">Behind the Scenes: Discover the Energy & Passion <span>Behind SepFit</span>
                             </h2>
                         </div>
-                        <p class="about-three__text-1">Meet the talented individuals who bring our vision to life
-                            every day. With a shared passion and commitment, our team works tirelessly to deliver
-                            exceptional quality and innovation.</p>
+                        <p class="about-three__text-1">SepFit is more than just a website; it’s a global fitness hub. We combine the expertise of experienced male and female trainers with the convenience of modern technology. Our goal is to bring the discipline and results of a professional gym directly to your home, speaking your language—literally and figuratively.</p>
                         <div class="about-three__mission-vission">
                             <div class="about-three__tab-box tabs-box">
                                 <ul class="tab-buttons clearfix list-unstyled">
@@ -75,21 +72,14 @@
                                             <ul class="list-unstyled about-three__mission-vission-list">
                                                 <li>
                                                     <div class="about-three__mission-vission-content">
-                                                        <h4 class="about-three__mission-vission-title">It provides
-                                                            tools for course creation</h4>
-                                                        <p class="about-three__mission-vission-text">enrollment
-                                                            management, and tracking learner progress, ensuring a
-                                                            streamlined learning experience.</p>
+                                                        <h4 class="about-three__mission-vission-title">Redefining the Global Home Gym Experience</h4>
+                                                        <p class="about-three__mission-vission-text">To become the world's leading "Home Gym" community, where cultural diversity meets physical excellence. We envision a world where anyone, anywhere, can connect with a top-tier coach and achieve their dream physique from the comfort of their home.</p>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="about-three__mission-vission-content">
-                                                        <h4 class="about-three__mission-vission-title">Many LMS
-                                                            platforms include collaborative </h4>
-                                                        <p class="about-three__mission-vission-text">collaborative
-                                                            features such as discussion forums, messaging, and group
-                                                            projects, which facilitate interaction and communication
-                                                            among learners</p>
+                                                        <h4 class="about-three__mission-vission-title">Breaking Barriers to a Healthy Life</h4>
+                                                        <p class="about-three__mission-vission-text">To eliminate barriers to a healthy lifestyle. We strive to provide high-quality, multilingual fitness instruction (English, Persian, Arabic) that is affordable and accessible, empowering individuals to train confidently without geographical limitations.</p>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -147,14 +137,10 @@
                                 </div>
                                 <span class="section-title-two__tagline">Why Choose Us</span>
                             </div>
-                            <h2 class="section-title-two__title title-animation">Discover Why Our Student <br> and
-                                Clients <span>Choose Us</span>
+                            <h2 class="section-title-two__title title-animation">Discover Why Athletes Worldwide  <span>Choose SepFit</span>
                             </h2>
                         </div>
-                        <p class="why-choose-three__text-1">Meet the talented individuals who bring our vision to
-                            life every day. With a shared passion and commitment, our team works tirelessly to
-                            deliver exceptional quality and innovation. Discover the stories, skills, and dedication
-                            that make us who we are.</p>
+                        <p class="why-choose-three__text-1">Meet the energetic experts dedicated to transforming your living room into a professional gym. Our team of young, certified trainers bridges the gap between distance and fitness, delivering interactive workouts tailored to your lifestyle, language, and goals.</p>
                         <div class="why-choose-three__ceo-speech-box">
                             <div class="why-choose-three__ceo-speech">
                                 <div class="why-choose-three__ceo-img-two">
@@ -166,14 +152,10 @@
                                     </div>
                                     <div class="why-choose-three__ceo-content">
                                         <p>CEO & FOUNDER</p>
-                                        <h5>Jordan Williamson</h5>
+                                        <h5>Sepideh & Mahdi</h5>
                                     </div>
                                 </div>
-                                <p class="why-choose-three__ceo-text">It’s an honor to be here with all of you
-                                    today, especially at such a pivotal moment in the world of education and technology. As
-                                    we
-                                    gather here, we’re witnessing rapid shifts in how people learn, work, and grow, and
-                                    our mission at FIStudy has never felt more relevant.</p>
+                                <p class="why-choose-three__ceo-text">Fitness knows no borders. At SepFit, our mission is to make elite personal training accessible to everyone, everywhere. We don't just teach exercises; we build a global community where health meets convenience, regardless of your currency or time zone.</p>
                             </div>
                             <div class="why-choose-three__ceo-speech-border"></div>
                         </div>
@@ -190,11 +172,8 @@
                                                 <img src="{{ asset('assets/images/icon/why-choose-three-feature-1.png') }}" alt="">
                                             </div>
                                             <div class="why-choose-three__feature-content">
-                                                <h4 class="why-choose-three__feature-title">AI-Driven
-                                                    Personalization</h4>
-                                                <p class="why-choose-three__feature-text">Our platform leverages AI
-                                                    to tailor learning paths to individual users. This means each
-                                                    learner receives</p>
+                                                <h4 class="why-choose-three__feature-title">Global Accessibility</h4>
+                                                <p class="why-choose-three__feature-text">Whether you pay in USD, Euro, or Toman, our platform adapts to you. Train from any country with seamless localized support.</p>
                                             </div>
                                         </div>
                                     </li>
@@ -204,10 +183,8 @@
                                                 <img src="{{ asset('assets/images/icon/why-choose-three-feature-2.png') }}" alt="">
                                             </div>
                                             <div class="why-choose-three__feature-content">
-                                                <h4 class="why-choose-three__feature-title">Mobile-Optimized
-                                                    Learning</h4>
-                                                <p class="why-choose-three__feature-text">With a fully responsive
-                                                    mobile interface, learners can access courses</p>
+                                                <h4 class="why-choose-three__feature-title">Expert Live Guidance</h4>
+                                                <p class="why-choose-three__feature-text">Forget pre-recorded videos. Our trainers monitor your form in real-time during Public, Semi-Private, or Private sessions to ensure safety.</p>
                                             </div>
                                         </div>
                                     </li>
@@ -221,11 +198,8 @@
                                                 <img src="{{ asset('assets/images/icon/why-choose-three-feature-3.png') }}" alt="">
                                             </div>
                                             <div class="why-choose-three__feature-content">
-                                                <h4 class="why-choose-three__feature-title">Gamified Learning
-                                                    Modules</h4>
-                                                <p class="why-choose-three__feature-text">Our platform leverages AI
-                                                    to tailor learning paths to individual users. This means each
-                                                    learner receives </p>
+                                                <h4 class="why-choose-three__feature-title">Flexible Scheduling</h4>
+                                                <p class="why-choose-three__feature-text">From 30-minute express workouts to full-hour sessions, book class times that fit perfectly into your busy daily routine.</p>
                                             </div>
                                         </div>
                                     </li>
@@ -235,10 +209,8 @@
                                                 <img src="{{ asset('assets/images/icon/why-choose-three-feature-4.png') }}" alt="">
                                             </div>
                                             <div class="why-choose-three__feature-content">
-                                                <h4 class="why-choose-three__feature-title">Real-Time Analytics and
-                                                    Reporting</h4>
-                                                <p class="why-choose-three__feature-text">Administrators and
-                                                    educators can access real-time data insights, enabling them.</p>
+                                                <h4 class="why-choose-three__feature-title">Personalized & Interactive</h4>
+                                                <p class="why-choose-three__feature-text">Our energetic coaches create custom plans based on your level, ensuring you get the attention of a private gym at home.</p>
                                             </div>
                                         </div>
                                     </li>
@@ -254,7 +226,7 @@
 
     <!-- Counter One Start -->
     <section class="counter-one">
-        <div class="counter-one__bg" style="background-image: url({{ asset('assets/images/backgrounds/counter-one-bg.jpg') }});">
+        <div class="counter-one__bg" style="background-image: url({{ asset('assets/images/home/young-fitness-man-studio_7502-5008.jpg') }});">
             <div class="counter-one__video-link">
                 <div class="counter-one__video-shape-1">
                     <img src="{{ asset('assets/images/shapes/counter-one-video-shape-1.png') }}" alt="">
@@ -309,178 +281,178 @@
     <!-- Counter One End -->
 
     <!-- Testimonial Two Start -->
-    <section class="testimonial-two">
-        <div class="testimonial-two__shape-6">
-            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-6.png') }}" alt="">
-        </div>
-        <div class="testimonial-two__shape-1">
-            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-1.png') }}" alt="">
-            <div class="testimonial-two__shape-icon-1">
-                <img src="{{ asset('assets/images/icon/testimonial-two-shape-icon-1.png') }}" alt="" class="zoom-fade">
-            </div>
-            <div class="testimonial-two__shape-img-2">
-                <img src="{{ asset('assets/images/testimonial/testimonial-two-shape-img-2.jpg') }}" alt="">
-            </div>
-            <div class="testimonial-two__shape-img-3 img-bounce">
-                <img src="{{ asset('assets/images/testimonial/testimonial-two-shape-img-3.jpg') }}" alt="">
-            </div>
-        </div>
-        <div class="testimonial-two__shape-2">
-            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-2.png') }}" alt="">
-            <div class="testimonial-two__shape-icon-2 float-bob-y">
-                <img src="{{ asset('assets/images/icon/testimonial-two-shape-icon-2.png') }}" alt="">
-            </div>
-            <div class="testimonial-two__shape-img-1 zoom-fade">
-                <img src="{{ asset('assets/images/testimonial/testimonial-two-shape-img-1.jpg') }}" alt="">
-            </div>
-        </div>
-        <div class="testimonial-two__shape-3 float-bob-x">
-            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-3.png') }}" alt="">
-        </div>
-        <div class="testimonial-two__shape-4"></div>
-        <div class="testimonial-two__shape-5"></div>
-        <div class="container">
-            <div class="testimonial-two__inner">
-                <div class="testimonial-two__quote">
-                    <span class="icon-quote"></span>
-                </div>
-                <div class="testimonial-two__slider">
+{{--    <section class="testimonial-two">--}}
+{{--        <div class="testimonial-two__shape-6">--}}
+{{--            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-6.png') }}" alt="">--}}
+{{--        </div>--}}
+{{--        <div class="testimonial-two__shape-1">--}}
+{{--            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-1.png') }}" alt="">--}}
+{{--            <div class="testimonial-two__shape-icon-1">--}}
+{{--                <img src="{{ asset('assets/images/icon/testimonial-two-shape-icon-1.png') }}" alt="" class="zoom-fade">--}}
+{{--            </div>--}}
+{{--            <div class="testimonial-two__shape-img-2">--}}
+{{--                <img src="{{ asset('assets/images/testimonial/testimonial-two-shape-img-2.jpg') }}" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="testimonial-two__shape-img-3 img-bounce">--}}
+{{--                <img src="{{ asset('assets/images/testimonial/testimonial-two-shape-img-3.jpg') }}" alt="">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="testimonial-two__shape-2">--}}
+{{--            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-2.png') }}" alt="">--}}
+{{--            <div class="testimonial-two__shape-icon-2 float-bob-y">--}}
+{{--                <img src="{{ asset('assets/images/icon/testimonial-two-shape-icon-2.png') }}" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="testimonial-two__shape-img-1 zoom-fade">--}}
+{{--                <img src="{{ asset('assets/images/testimonial/testimonial-two-shape-img-1.jpg') }}" alt="">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="testimonial-two__shape-3 float-bob-x">--}}
+{{--            <img src="{{ asset('assets/images/shapes/testimonial-two-shape-3.png') }}" alt="">--}}
+{{--        </div>--}}
+{{--        <div class="testimonial-two__shape-4"></div>--}}
+{{--        <div class="testimonial-two__shape-5"></div>--}}
+{{--        <div class="container">--}}
+{{--            <div class="testimonial-two__inner">--}}
+{{--                <div class="testimonial-two__quote">--}}
+{{--                    <span class="icon-quote"></span>--}}
+{{--                </div>--}}
+{{--                <div class="testimonial-two__slider">--}}
 
-                    <div class="testimonial-two__main-content">
-                        <div class="testimonial-two__carousel owl-carousel owl-theme">
-                            <div class="testimonial-two__item">
-                                <div class="testimonial-two__inner-content">
-                                    <div class="testimonial-two__rating">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                    </div>
-                                    <p class="testimonial-two__text">It has survived not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged. It was popularised in the<br> 1960s with the release of Letraset sheets containing Lorem Ipsum<br> passages, and more recently with desktop publishing software like Aldus<br> PageMaker including versions of Lorem Ipsum.</p>
-                                    <div class="testimonial-two__client-info">
-                                        <div class="testimonial-two__client-logo">
-                                            <img src="{{ asset('assets/images/testimonial/testimonial-two-client-logo.png') }}" alt="">
-                                        </div>
-                                        <div class="testimonial-two__client-name-box">
-                                            <h4 class="testimonial-two__client-name"><a href={{ url('testimonials') }}>Mitchel Clack</a></h4>
-                                            <p class="testimonial-two__client-sub-title">Tech Specialist</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                    <div class="testimonial-two__main-content">--}}
+{{--                        <div class="testimonial-two__carousel owl-carousel owl-theme">--}}
+{{--                            <div class="testimonial-two__item">--}}
+{{--                                <div class="testimonial-two__inner-content">--}}
+{{--                                    <div class="testimonial-two__rating">--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <p class="testimonial-two__text">It has survived not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged. It was popularised in the<br> 1960s with the release of Letraset sheets containing Lorem Ipsum<br> passages, and more recently with desktop publishing software like Aldus<br> PageMaker including versions of Lorem Ipsum.</p>--}}
+{{--                                    <div class="testimonial-two__client-info">--}}
+{{--                                        <div class="testimonial-two__client-logo">--}}
+{{--                                            <img src="{{ asset('assets/images/testimonial/testimonial-two-client-logo.png') }}" alt="">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="testimonial-two__client-name-box">--}}
+{{--                                            <h4 class="testimonial-two__client-name"><a href={{ url('testimonials') }}>Mitchel Clack</a></h4>--}}
+{{--                                            <p class="testimonial-two__client-sub-title">Tech Specialist</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="testimonial-two__item">
-                                <div class="testimonial-two__inner-content">
-                                    <div class="testimonial-two__rating">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                    </div>
-                                    <p class="testimonial-two__text">It has survived not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged. It was popularised in the<br> 1960s with the release of Letraset sheets containing Lorem Ipsum<br> passages, and more recently with desktop publishing software like Aldus<br> PageMaker including versions of Lorem Ipsum.</p>
-                                    <div class="testimonial-two__client-info">
-                                        <div class="testimonial-two__client-logo">
-                                            <img src="{{ asset('assets/images/testimonial/testimonial-two-client-logo.png') }}" alt="">
-                                        </div>
-                                        <div class="testimonial-two__client-name-box">
-                                            <h4 class="testimonial-two__client-name"><a href={{ url('testimonials') }}>Mitchela Smith</a></h4>
-                                            <p class="testimonial-two__client-sub-title">Tech Specialist</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="testimonial-two__item">--}}
+{{--                                <div class="testimonial-two__inner-content">--}}
+{{--                                    <div class="testimonial-two__rating">--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <p class="testimonial-two__text">It has survived not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged. It was popularised in the<br> 1960s with the release of Letraset sheets containing Lorem Ipsum<br> passages, and more recently with desktop publishing software like Aldus<br> PageMaker including versions of Lorem Ipsum.</p>--}}
+{{--                                    <div class="testimonial-two__client-info">--}}
+{{--                                        <div class="testimonial-two__client-logo">--}}
+{{--                                            <img src="{{ asset('assets/images/testimonial/testimonial-two-client-logo.png') }}" alt="">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="testimonial-two__client-name-box">--}}
+{{--                                            <h4 class="testimonial-two__client-name"><a href={{ url('testimonials') }}>Mitchela Smith</a></h4>--}}
+{{--                                            <p class="testimonial-two__client-sub-title">Tech Specialist</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="testimonial-two__item">
-                                <div class="testimonial-two__inner-content">
-                                    <div class="testimonial-two__rating">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                    </div>
-                                    <p class="testimonial-two__text">It has survived not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged. It was popularised in the<br> 1960s with the release of Letraset sheets containing Lorem Ipsum<br> passages, and more recently with desktop publishing software like Aldus<br> PageMaker including versions of Lorem Ipsum.</p>
-                                    <div class="testimonial-two__client-info">
-                                        <div class="testimonial-two__client-logo">
-                                            <img src="{{ asset('assets/images/testimonial/testimonial-two-client-logo.png') }}" alt="">
-                                        </div>
-                                        <div class="testimonial-two__client-name-box">
-                                            <h4 class="testimonial-two__client-name"><a href={{ url('testimonials') }}>Sarah Smith</a></h4>
-                                            <p class="testimonial-two__client-sub-title">Tech Specialist</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="testimonial-two__item">--}}
+{{--                                <div class="testimonial-two__inner-content">--}}
+{{--                                    <div class="testimonial-two__rating">--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                        <i class="icon-star"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <p class="testimonial-two__text">It has survived not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged. It was popularised in the<br> 1960s with the release of Letraset sheets containing Lorem Ipsum<br> passages, and more recently with desktop publishing software like Aldus<br> PageMaker including versions of Lorem Ipsum.</p>--}}
+{{--                                    <div class="testimonial-two__client-info">--}}
+{{--                                        <div class="testimonial-two__client-logo">--}}
+{{--                                            <img src="{{ asset('assets/images/testimonial/testimonial-two-client-logo.png') }}" alt="">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="testimonial-two__client-name-box">--}}
+{{--                                            <h4 class="testimonial-two__client-name"><a href={{ url('testimonials') }}>Sarah Smith</a></h4>--}}
+{{--                                            <p class="testimonial-two__client-sub-title">Tech Specialist</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
-                    </div>
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="testimonial-two__thumb-outer-box">
-                        <div class="testimonial-two__thumb-carousel owl-carousel owl-theme">
-                            <div class="testimonial-two__thumb-item">
-                                <div class="testimonial-two__img-holder-box">
-                                    <div class="testimonial-two__img-holder">
-                                        <img src="{{ asset('assets/images/testimonial/testimonial-2-1.jpg') }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-two__thumb-item">
-                                <div class="testimonial-two__img-holder-box">
-                                    <div class="testimonial-two__img-holder">
-                                        <img src="{{ asset('assets/images/testimonial/testimonial-2-2.jpg') }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-two__thumb-item">
-                                <div class="testimonial-two__img-holder-box">
-                                    <div class="testimonial-two__img-holder">
-                                        <img src="{{ asset('assets/images/testimonial/testimonial-2-3.jpg') }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="testimonial-two__thumb-outer-box">--}}
+{{--                        <div class="testimonial-two__thumb-carousel owl-carousel owl-theme">--}}
+{{--                            <div class="testimonial-two__thumb-item">--}}
+{{--                                <div class="testimonial-two__img-holder-box">--}}
+{{--                                    <div class="testimonial-two__img-holder">--}}
+{{--                                        <img src="{{ asset('assets/images/testimonial/testimonial-2-1.jpg') }}" alt="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="testimonial-two__thumb-item">--}}
+{{--                                <div class="testimonial-two__img-holder-box">--}}
+{{--                                    <div class="testimonial-two__img-holder">--}}
+{{--                                        <img src="{{ asset('assets/images/testimonial/testimonial-2-2.jpg') }}" alt="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="testimonial-two__thumb-item">--}}
+{{--                                <div class="testimonial-two__img-holder-box">--}}
+{{--                                    <div class="testimonial-two__img-holder">--}}
+{{--                                        <img src="{{ asset('assets/images/testimonial/testimonial-2-3.jpg') }}" alt="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-        </div>
-    </section>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- Testimonial Two End -->
 
     <!-- Sliding Text Three Start-->
-    <section class="sliding-text-three sliding-text-four">
-        <div class="sliding-text-three__wrap">
-            <ul class="sliding-text-three__list list-unstyled marquee_mode">
-                <li>
-                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial
-                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial
-                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial
-                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial
-                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial
-                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">
-                    </h2>
-                </li>
-            </ul>
-        </div>
-    </section>
+{{--    <section class="sliding-text-three sliding-text-four">--}}
+{{--        <div class="sliding-text-three__wrap">--}}
+{{--            <ul class="sliding-text-three__list list-unstyled marquee_mode">--}}
+{{--                <li>--}}
+{{--                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial--}}
+{{--                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">--}}
+{{--                    </h2>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial--}}
+{{--                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">--}}
+{{--                    </h2>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial--}}
+{{--                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">--}}
+{{--                    </h2>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial--}}
+{{--                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">--}}
+{{--                    </h2>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <h2 data-hover="20+ Instructor " class="sliding-text-three__title count-box">Testimonial--}}
+{{--                        <img src="{{ asset('assets/images/shapes/sliding-text-three-shape-1.png') }}" alt="">--}}
+{{--                    </h2>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- Sliding Text Three End -->
 
     <!--Newsletter Two Start -->
@@ -494,9 +466,7 @@
                     <div class="newsletter-two__shape-bg"
                         style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">
                     </div>
-                    <div class="newsletter-two__like">
-                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">
-                    </div>
+
                     <div class="newsletter-two__title-box">
                         <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>
                         <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,
