@@ -146,14 +146,6 @@
                                 <li><a href="{{ route('blog-details', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_details') }}</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href={{ url('#') }}>{{ __('header.menu_panels') }}</a>
-                            <ul class="shadow-box">
-                                <li><a href="{{ route('admin.dashboard', ['locale' => app()->getLocale()]) }}">{{ __('header.panel_admin') }}</a></li>
-                                <li><a href="{{ route('coach.dashboard', ['locale' => app()->getLocale()]) }}">{{ __('header.panel_coach') }}</a></li>
-                                <li><a href="{{ route('user.dashboard', ['locale' => app()->getLocale()]) }}">{{ __('header.panel_user') }}</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
                 <div class="main-menu__right">
