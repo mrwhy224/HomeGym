@@ -47,12 +47,12 @@
 							<div class="banner-one__img">
 								<img src="{{ asset('assets/images/home/mv-pc.png') }}" alt="">
 								<div class="banner-one__img-shape-box rotate-me">
-									<div class="banner-one__img-shape-1">
-										<div class="banner-one__img-shape-2"></div>
-									</div>
-									<div class="banner-one__shape-1">
-										<img src="{{ asset('assets/images/shapes/banner-one-shape-1.png') }}" alt="">
-									</div>
+{{--									<div class="banner-one__img-shape-1">--}}
+{{--										<div class="banner-one__img-shape-2"></div>--}}
+{{--									</div>--}}
+{{--									<div class="banner-one__shape-1">--}}
+{{--										<img src="{{ asset('assets/images/shapes/banner-one-shape-1.png') }}" alt="">--}}
+{{--									</div>--}}
 									<div class="banner-one__shape-2 rotate-me">
 										<img src="{{ asset('assets/images/shapes/banner-one-shape-2.png') }}" alt="">
 									</div>
