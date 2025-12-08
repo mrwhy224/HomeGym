@@ -97,36 +97,36 @@
 
 
 	<!-- Sliding Text One Start-->
-	<section class="sliding-text-one">
-		<div class="sliding-text-one__wrap">
-			<ul class="sliding-text__list list-unstyled marquee_mode">
-				<li>
-					<h2 data-hover="{{ __('home.sliding_instructor') }}" class="sliding-text__title">
-						<span class="odometer" data-count="20">00</span>+ {{ __('home.sliding_instructor_suffix') }}
-						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">
-					</h2>
-				</li>
-				<li>
-					<h2 data-hover="{{ __('home.sliding_courses') }}" class="sliding-text_-++_title">
-						<span class="odometer" data-count="500">00</span>+ {{ __('home.sliding_courses_suffix') }}
-						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">
-					</h2>
-				</li>
-				<li>
-					<h2 data-hover="{{ __('home.sliding_support') }}" class="sliding-text__title">
-						{{ __('home.sliding_support') }}
-						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">
-					</h2>
-				</li>
-				<li>
-					<h2 data-hover="{{ __('home.sliding_certificate') }}" class="sliding-text__title">
-						{{ __('home.sliding_certificate') }}
-						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">
-					</h2>
-				</li>
-			</ul>
-		</div>
-	</section>
+{{--	<section class="sliding-text-one">--}}
+{{--		<div class="sliding-text-one__wrap">--}}
+{{--			<ul class="sliding-text__list list-unstyled marquee_mode">--}}
+{{--				<li>--}}
+{{--					<h2 data-hover="{{ __('home.sliding_instructor') }}" class="sliding-text__title">--}}
+{{--						<span class="odometer" data-count="20">00</span>+ {{ __('home.sliding_instructor_suffix') }}--}}
+{{--						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">--}}
+{{--					</h2>--}}
+{{--				</li>--}}
+{{--				<li>--}}
+{{--					<h2 data-hover="{{ __('home.sliding_courses') }}" class="sliding-text_-++_title">--}}
+{{--						<span class="odometer" data-count="500">00</span>+ {{ __('home.sliding_courses_suffix') }}--}}
+{{--						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">--}}
+{{--					</h2>--}}
+{{--				</li>--}}
+{{--				<li>--}}
+{{--					<h2 data-hover="{{ __('home.sliding_support') }}" class="sliding-text__title">--}}
+{{--						{{ __('home.sliding_support') }}--}}
+{{--						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">--}}
+{{--					</h2>--}}
+{{--				</li>--}}
+{{--				<li>--}}
+{{--					<h2 data-hover="{{ __('home.sliding_certificate') }}" class="sliding-text__title">--}}
+{{--						{{ __('home.sliding_certificate') }}--}}
+{{--						<img src="{{ asset('assets/images/shapes/sliding-text-shape-1.png') }}" alt="">--}}
+{{--					</h2>--}}
+{{--				</li>--}}
+{{--			</ul>--}}
+{{--		</div>--}}
+{{--	</section>--}}
 	<!-- Sliding Text One End -->
 
 
@@ -299,10 +299,14 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-xl-6 col-lg-5 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
+				@if ($localeDirection === 'rtl')
+					<div class="col-xl-6 col-lg-5 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
+				@else
+					<div class="col-xl-6 col-lg-5 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
+				@endif
 					<div class="category-one__right">
 						<div class="category-one__img">
-							<img src="{{ asset('assets/images/home/why-us.111.png') }}" alt="">
+							<img src="{{ asset('assets/images/home/') }}" alt="">
 						</div>
 					</div>
 				</div>
@@ -318,21 +322,21 @@
 			<div class="row">
 				<div class="col-xl-6 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
 					<div class="about-one__left">
-						<div class="about-one__left-shape-1 rotate-me"></div>
+{{--						<div class="about-one__left-shape-1 rotate-me"></div>--}}
 						<div class="row">
 							<div class="col-xl-6 col-lg-6 col-md-6">
 								<div class="about-one__img-box">
 									<div class="about-one__img">
-										<img src="{{ asset('assets/images/home/tt.webp') }}" alt="">
+										<img src="{{ asset('assets/images/home/') }}" alt="">
 									</div>
 								</div>
-								<div class="about-one__awards-box">
-									<div class="about-one__awards-count-box">
-										<h3 class="odometer" data-count="45">00</h3>
-										<span>+</span>
-									</div>
-									<p>{{ __('home.about_awards_winning') }}</p>
-								</div>
+{{--								<div class="about-one__awards-box">--}}
+{{--									<div class="about-one__awards-count-box">--}}
+{{--										<h3 class="odometer" data-count="45">00</h3>--}}
+{{--										<span>+</span>--}}
+{{--									</div>--}}
+{{--									<p>{{ __('home.about_awards_winning') }}</p>--}}
+{{--								</div>--}}
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6">
 								{{--                            <div class="about-one__experience-box">--}}
@@ -353,10 +357,10 @@
 								{{--                            </div>--}}
 								<div class="about-one__img-box-2">
 									<div class="about-one__img-2">
-										<img src="{{ asset('assets/images/home/Photo-11.png') }}" alt="">
+										<img src="{{ asset('assets/images/home/') }}" alt="">
 									</div>
 									<div class="about-one__img-shape-1 float-bob-y">
-										<img src="{{ asset('assets/images/shapes/about-one-img-shape-1.png') }}" alt="">
+										<img src="{{ asset('assets/images/shapes/') }}" alt="">
 									</div>
 								</div>
 							</div>
@@ -370,7 +374,12 @@
 								<div class="section-title__tagline-shape"></div>
 								<span class="section-title__tagline">{{ __('home.about_tagline') }}</span>
 							</div>
-							<h2 class="section-title__title title-animation">{!! __('home.about_title') !!}
+							@if ($localeDirection === 'rtl')
+								<h2 class="section-title__title">
+							@else
+								<h2 class="section-title__title title-animation">
+							@endif
+								{!! __('home.about_title') !!}
 								<span>{{ __('home.about_title_span') }} <img src="{{ asset('assets/images/shapes/section-title-shape-1.png') }}"
 																			 alt=""></span></h2>
 						</div>
@@ -400,8 +409,8 @@
 								<a href="{{ url('about') }}" class="about-one__btn thm-btn"><span
 										class="icon-angles-right"></span>{{ __('home.btn_know_more') }}</a>
 							</div>
-							<h3 class="about-one__live-class">{{ __('home.about_live_class') }} <img
-									src="{{ asset('assets/images/shapes/live-class-shape-1.png') }}" alt=""></h3>
+		{{--							<h3 class="about-one__live-class">{{ __('home.about_live_class') }} <img--}}
+		{{--									src="{{ asset('assets/images/shapes/live-class-shape-1.png') }}" alt=""></h3>--}}
 						</div>
 					</div>
 				</div>
@@ -421,62 +430,62 @@
 
 
 	<!-- Counter One Start -->
-	<section class="counter-one">
-		<div class="counter-one__bg" style="background-image: url('{{ asset('assets/images/home/young-fitness-man-studio_7502-5008.jpg') }}');">
-			<div class="counter-one__video-link">
-				<div class="counter-one__video-shape-1">
-					<img src="{{ asset('assets/images/shapes/counter-one-video-shape-11.png') }}" alt="">
-				</div>
-				<a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
-					<div class="counter-one__video-icon">
-						<span class="icon-play"></span>
-						<i class="ripple"></i>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="counter-one__shape-1" style="background-image: url('{{ asset('assets/images/shapes/counter-one-shape-1.png') }}');"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-8">
-					<div class="counter-one__left">
-						<ul class="counter-one__list list-unstyled">
-							<li>
-								<div class="counter-one__count-hover-img"
-									 style="background-image: url('{{ asset('assets/images/resources/counter-one-single-hover-img.jpg') }}');">
-								</div>
-								<div class="counter-one__count count-box">
-									<h3 class="count-text" data-stop="10" data-speed="1500">00</h3>
-									<span>k</span>
-								</div>
-								<p>{{ __('home.counter_student_trained') }}</p>
-							</li>
-							<li>
-								<div class="counter-one__count-hover-img"
-									 style="background-image: url('{{ asset('assets/images/resources/counter-one-single-hover-img.jpg') }}');">
-								</div>
-								<div class="counter-one__count count-box">
-									<h3 class="count-text" data-stop="50" data-speed="1500">00</h3>
-									<span>+</span>
-								</div>
-								<p>{{ __('home.counter_recorded_courses') }}</p>
-							</li>
-							<li>
-								<div class="counter-one__count-hover-img"
-									 style="background-image: url('{{ asset('assets/images/resources/counter-one-single-hover-img.jpg') }}');">
-								</div>
-								<div class="counter-one__count count-box">
-									<h3 class="count-text" data-stop="15" data-speed="1500">00</h3>
-									<span>M</span>
-								</div>
-								<p>{{ __('home.counter_satisfaction_rate') }}</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+{{--	<section class="counter-one">--}}
+{{--		<div class="counter-one__bg" style="background-image: url('{{ asset('assets/images/home/young-fitness-man-studio_7502-5008.jpg') }}');">--}}
+{{--			<div class="counter-one__video-link">--}}
+{{--				<div class="counter-one__video-shape-1">--}}
+{{--					<img src="{{ asset('assets/images/shapes/counter-one-video-shape-11.png') }}" alt="">--}}
+{{--				</div>--}}
+{{--				<a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">--}}
+{{--					<div class="counter-one__video-icon">--}}
+{{--						<span class="icon-play"></span>--}}
+{{--						<i class="ripple"></i>--}}
+{{--					</div>--}}
+{{--				</a>--}}
+{{--			</div>--}}
+{{--		</div>--}}
+{{--		<div class="counter-one__shape-1" style="background-image: url('{{ asset('assets/images/shapes/counter-one-shape-1.png') }}');"></div>--}}
+{{--		<div class="container">--}}
+{{--			<div class="row">--}}
+{{--				<div class="col-xl-8">--}}
+{{--					<div class="counter-one__left">--}}
+{{--						<ul class="counter-one__list list-unstyled">--}}
+{{--							<li>--}}
+{{--								<div class="counter-one__count-hover-img"--}}
+{{--									 style="background-image: url('{{ asset('assets/images/resources/counter-one-single-hover-img.jpg') }}');">--}}
+{{--								</div>--}}
+{{--								<div class="counter-one__count count-box">--}}
+{{--									<h3 class="count-text" data-stop="10" data-speed="1500">00</h3>--}}
+{{--									<span>k</span>--}}
+{{--								</div>--}}
+{{--								<p>{{ __('home.counter_student_trained') }}</p>--}}
+{{--							</li>--}}
+{{--							<li>--}}
+{{--								<div class="counter-one__count-hover-img"--}}
+{{--									 style="background-image: url('{{ asset('assets/images/resources/counter-one-single-hover-img.jpg') }}');">--}}
+{{--								</div>--}}
+{{--								<div class="counter-one__count count-box">--}}
+{{--									<h3 class="count-text" data-stop="50" data-speed="1500">00</h3>--}}
+{{--									<span>+</span>--}}
+{{--								</div>--}}
+{{--								<p>{{ __('home.counter_recorded_courses') }}</p>--}}
+{{--							</li>--}}
+{{--							<li>--}}
+{{--								<div class="counter-one__count-hover-img"--}}
+{{--									 style="background-image: url('{{ asset('assets/images/resources/counter-one-single-hover-img.jpg') }}');">--}}
+{{--								</div>--}}
+{{--								<div class="counter-one__count count-box">--}}
+{{--									<h3 class="count-text" data-stop="15" data-speed="1500">00</h3>--}}
+{{--									<span>M</span>--}}
+{{--								</div>--}}
+{{--								<p>{{ __('home.counter_satisfaction_rate') }}</p>--}}
+{{--							</li>--}}
+{{--						</ul>--}}
+{{--					</div>--}}
+{{--				</div>--}}
+{{--			</div>--}}
+{{--		</div>--}}
+{{--	</section>--}}
 	<!-- Counter One End -->
 
 
@@ -498,37 +507,37 @@
 	<!-- Live Class One End -->
 
 	<!-- Video One Start -->
-	<section class="video-one">
-		<div class="video-one__inner">
-			<div class="video-one__img-box">
-				<img src="{{ asset('assets/images/home/females8.jpg') }}" alt="">
-				<div class="video-one__video-link">
-					<a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
-						{{--                        <div class="video-one__video-shape-1">--}}
-						{{--                            <img src="{{ asset('assets/images/home/females8.jpg') }}" alt="">--}}
-						{{--                        </div>--}}
-						<div class="video-one__video-icon">
-							<span class="fa fa-play"></span>
-							<i class="ripple"></i>
-						</div>
-					</a>
-				</div>
-				<ul class="list-unstyled video-one__video-control">
-					<li><a href={{ url('#') }}><span class="icon-screen-share"></span></a></li>
-					<li><a href={{ url('#') }}><span class="icon-microphone"></span></a></li>
-					<li><a href={{ url('#') }}><span class="icon-phone"></span></a></li>
-					<li><a href={{ url('#') }}><span class="icon-video-slash"></span></a></li>
-					<li><a href={{ url('#') }}><span class="icon-share-from"></span></a></li>
-				</ul>
-				<div class="video-one__live">
-					<div class="video-one__live-icon">
-						<span class="icon-wifi"></span>
-					</div>
-					<p class="video-one__live-text">{{ __('home.video_live_time') }}</p>
-				</div>
-			</div>
-		</div>
-	</section>
+{{--	<section class="video-one">--}}
+{{--		<div class="video-one__inner">--}}
+{{--			<div class="video-one__img-box">--}}
+{{--				<img src="{{ asset('assets/images/home/females8.jpg') }}" alt="">--}}
+{{--				<div class="video-one__video-link">--}}
+{{--					<a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">--}}
+{{--						--}}{{--                        <div class="video-one__video-shape-1">--}}
+{{--						--}}{{--                            <img src="{{ asset('assets/images/home/females8.jpg') }}" alt="">--}}
+{{--						--}}{{--                        </div>--}}
+{{--						<div class="video-one__video-icon">--}}
+{{--							<span class="fa fa-play"></span>--}}
+{{--							<i class="ripple"></i>--}}
+{{--						</div>--}}
+{{--					</a>--}}
+{{--				</div>--}}
+{{--				<ul class="list-unstyled video-one__video-control">--}}
+{{--					<li><a href={{ url('#') }}><span class="icon-screen-share"></span></a></li>--}}
+{{--					<li><a href={{ url('#') }}><span class="icon-microphone"></span></a></li>--}}
+{{--					<li><a href={{ url('#') }}><span class="icon-phone"></span></a></li>--}}
+{{--					<li><a href={{ url('#') }}><span class="icon-video-slash"></span></a></li>--}}
+{{--					<li><a href={{ url('#') }}><span class="icon-share-from"></span></a></li>--}}
+{{--				</ul>--}}
+{{--				<div class="video-one__live">--}}
+{{--					<div class="video-one__live-icon">--}}
+{{--						<span class="icon-wifi"></span>--}}
+{{--					</div>--}}
+{{--					<p class="video-one__live-text">{{ __('home.video_live_time') }}</p>--}}
+{{--				</div>--}}
+{{--			</div>--}}
+{{--		</div>--}}
+{{--	</section>--}}
 	<!-- Video One End -->
 
 

@@ -75,15 +75,10 @@
                                 <div class="footer-widget-two__courses">
                                     <h4 class="footer-widget-two__title">Our Courses</h4>
                                     <ul class="footer-widget-two__quick-links-list list-unstyled">
-                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Website
-                                                Design</a></li>
-                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Digital
-                                                marketing</a></li>
-                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Product Design</a></li>
-                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Web
-                                                Development</a></li>
-                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> App Development</a></li>
-                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Many More</a></li>
+                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Public classes</a></li>
+                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> Semi-private classes</a></li>
+                                        <li><a href="{{ url('course-details') }}"> <span class="icon-plus"></span> private classes</a></li>
+
                                     </ul>
                                 </div>
                             </div>

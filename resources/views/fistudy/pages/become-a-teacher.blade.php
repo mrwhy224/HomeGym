@@ -1,9 +1,9 @@
 @extends('layouts.layout2')
 @php
-    $title = 'Become a Teacher';
-    $subtitle = 'Become a Teacher';
+    $title = 'Become a Coach';
+    $subtitle = 'Become a Coach';
 @endphp
-@section('title', ' Become a Teacher || Fistudy || Fistudy Laravel Template ')
+@section('title', ' Become a Coach || Fistudy || Fistudy Laravel Template ')
 @section('content')
 
 <x-strickyHeader/>
@@ -17,17 +17,17 @@
                         <div class="section-title-two__tagline-shape">
                             <img src="{{ asset('assets/images/shapes/section-title-two-shape-1.png') }}" alt="">
                         </div>
-                        <span class="section-title-two__tagline">Instructor</span>
+                        <span class="section-title-two__tagline">Coach</span>
                     </div>
                     <h2 class="section-title-two__title title-animation">Apply As
-                        <span>Instructor</span>
+                        <span>Coach</span>
                     </h2>
                 </div>
                 <div class="become-a-teacher__tab-box tabs-box">
                     <ul class="tab-buttons clearfix list-unstyled">
                         <li data-tab="#become-an-intructor" class="tab-btn active-btn"><span>Become an
-                                Intructor.</span></li>
-                        <li data-tab="#intructor-rules" class="tab-btn"><span>Intructor Rules.</span></li>
+                                Coach.</span></li>
+                        <li data-tab="#intructor-rules" class="tab-btn"><span>Coach Rules.</span></li>
                         <li data-tab="#start-courses" class="tab-btn"><span>Start with courses.</span></li>
                     </ul>
                     <div class="tabs-content">
@@ -72,7 +72,7 @@
                     <div class="col-xl-4">
                         <div class="become-a-teacher__img-box">
                             <div class="become-a-teacher__img">
-                                <img src="{{ asset('assets/images/resources/become-a-teacher-img-1.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/man-with-dumbbell-that-sayasds-personal.webp') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -83,9 +83,9 @@
                                     <div class="section-title-two__tagline-shape">
                                         <img src="{{ asset('assets/images/shapes/section-title-two-shape-1.png') }}" alt="">
                                     </div>
-                                    <span class="section-title-two__tagline">For Become an Intructor</span>
+                                    <span class="section-title-two__tagline">For Become an Coach</span>
                                 </div>
-                                <h2 class="section-title-two__title title-animation">Instructor Registration
+                                <h2 class="section-title-two__title title-animation">Coach Registration
                                 </h2>
                             </div>
                             <form class="contact-form-validated contact-three__form"
@@ -117,15 +117,15 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6">
-                                        <h4 class="contact-three__input-title">Password</h4>
+                                        <h4 class="contact-three__input-title">Sports degree</h4>
                                         <div class="contact-three__input-box">
-                                            <input type="text" name="Phone" placeholder="Password" required="">
+                                            <input type="text" name="Phone" placeholder="Sports degree" required="">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6">
-                                        <h4 class="contact-three__input-title">Password Confirmation</h4>
+                                        <h4 class="contact-three__input-title">Specialized field of sports</h4>
                                         <div class="contact-three__input-box">
-                                            <input type="text" name="Phone" placeholder="Password Confirmation"
+                                            <input type="text" name="Phone" placeholder="Specialized field of sports"
                                                 required="">
                                         </div>
                                     </div>
@@ -137,7 +137,7 @@
                                         <div class="contact-three__btn-box">
                                             <button type="submit"
                                                 class="thm-btn-two contact-three__btn"><span>Become a
-                                                    Instructor</span><i class="icon-angles-right"></i></button>
+                                                    Coach</span><i class="icon-angles-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -152,39 +152,39 @@
     <!--Become A Teacher End-->
 
     <!--Newsletter Two Start -->
-    <section class="newsletter-two">
-        <div class="container">
-            <div class="newsletter-two__inner">
-                <div class="newsletter-two__img">
-                    <img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">
-                </div>
-                <div class="newsletter-two__inner-content">
-                    <div class="newsletter-two__shape-bg"
-                        style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">
-                    </div>
-                    <div class="newsletter-two__like">
-                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">
-                    </div>
-                    <div class="newsletter-two__title-box">
-                        <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>
-                        <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,
-                            <br>
-                            designed to cater to various learning</p>
-                    </div>
-                    <div class="newsletter-two__form-box">
-                        <form class="newsletter-two__form">
-                            <div class="newsletter-two__input">
-                                <input type="email" placeholder="Enter Your Email">
-                            </div>
-                            <button type="submit" class="newsletter-two__btn">
-                                <span class="icon-arrow-circle"></span> Subscribe
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="newsletter-two">--}}
+{{--        <div class="container">--}}
+{{--            <div class="newsletter-two__inner">--}}
+{{--                <div class="newsletter-two__img">--}}
+{{--                    <img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="newsletter-two__inner-content">--}}
+{{--                    <div class="newsletter-two__shape-bg"--}}
+{{--                        style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__like">--}}
+{{--                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__title-box">--}}
+{{--                        <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>--}}
+{{--                        <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,--}}
+{{--                            <br>--}}
+{{--                            designed to cater to various learning</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__form-box">--}}
+{{--                        <form class="newsletter-two__form">--}}
+{{--                            <div class="newsletter-two__input">--}}
+{{--                                <input type="email" placeholder="Enter Your Email">--}}
+{{--                            </div>--}}
+{{--                            <button type="submit" class="newsletter-two__btn">--}}
+{{--                                <span class="icon-arrow-circle"></span> Subscribe--}}
+{{--                            </button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!--Newsletter Two End -->
 
     <!--Contact Info One Start -->
