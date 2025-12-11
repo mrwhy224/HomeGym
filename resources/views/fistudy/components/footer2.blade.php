@@ -21,9 +21,7 @@
                                     <p class="footer-widget-two__about-text">Lorem Ipsum is simply dummy text of the
                                         printing and typesetting</p>
                                     <div class="site-footer-two__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                        
                                         <a href="#"><span class="fab fa-instagram"></span></a>
                                     </div>
                                     <div class="footer-widget-two__app-download-box">

@@ -36,7 +36,7 @@ Route::get('/index-dark', [HomeControllerMain::class, 'index'])->name('index');
 // Pages
 Route::get('about', [PagesController::class, 'about'])->name('about');
 Route::get('instructor', [MiscComingSoon::class, 'index'])->name('instructor');
-Route::get('instructor-carousel', [MiscComingSoon::class, 'index'])->name('instructor-carousel');
+Route::get('instructor-carousel', [PagesController::class, 'instructor_carousel'])->name('instructor-carousel');
 Route::get('instructor-details', [MiscComingSoon::class, 'index'])->name('instructor-details');
 Route::get('events', [MiscComingSoon::class, 'index'])->name('events');
 Route::get('events-carousel', [MiscComingSoon::class, 'index'])->name('events-carousel');

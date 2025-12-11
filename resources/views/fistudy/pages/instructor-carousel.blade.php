@@ -8,41 +8,181 @@
 
 <x-strickyHeader/>
 
-    
+
     <!--Team Carousel Page Start-->
     <section class="team-carousel-page">
         <div class="container">
             <div class="team-carousel-style owl-carousel owl-theme carousel-dot-style">
                 <!--Team One Single Start-->
+{{--                <div class="item">--}}
+{{--                    <div class="team-one__single">--}}
+{{--                        <div class="team-one__img-box">--}}
+{{--                            <div class="team-one__img">--}}
+{{--                                <img src="{{ asset('assets/images/team/team-1-1.jpg') }}" alt="">--}}
+{{--                            </div>--}}
+{{--                            <div class="team-one__content">--}}
+{{--                                <div class="team-one__single-bg-shape"--}}
+{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Thomas Alison</a></h3>--}}
+{{--                                <p class="team-one__sub-title">UI/UX Expert</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <!--Team One Single End-->
+                <!--Team One Single Start-->
+{{--                <div class="item">--}}
+{{--                    <div class="team-one__single">--}}
+{{--                        <div class="team-one__img-box">--}}
+{{--                            <div class="team-one__img">--}}
+{{--                                <img src="{{ asset('assets/images/team/team-1-2.jpg') }}" alt="">--}}
+{{--                            </div>--}}
+{{--                            <div class="team-one__content">--}}
+{{--                                <div class="team-one__single-bg-shape"--}}
+{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Alisa Olivia</a></h3>--}}
+{{--                                <p class="team-one__sub-title">Graphics Designer</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <!--Team One Single End-->
+                <!--Team One Single Start-->
+{{--                <div class="item">--}}
+{{--                    <div class="team-one__single">--}}
+{{--                        <div class="team-one__img-box">--}}
+{{--                            <div class="team-one__img">--}}
+{{--                                <img src="{{ asset('assets/images/team/team-1-3.jpg') }}" alt="">--}}
+{{--                            </div>--}}
+{{--                            <div class="team-one__content">--}}
+{{--                                <div class="team-one__single-bg-shape"--}}
+{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Sarah Wilson</a></h3>--}}
+{{--                                <p class="team-one__sub-title">Tech & Programming</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <!--Team One Single End-->
+                <!--Team One Single Start-->
+{{--                <div class="item">--}}
+{{--                    <div class="team-one__single">--}}
+{{--                        <div class="team-one__img-box">--}}
+{{--                            <div class="team-one__img">--}}
+{{--                                <img src="{{ asset('assets/images/team/team-1-4.jpg') }}" alt="">--}}
+{{--                            </div>--}}
+{{--                            <div class="team-one__content">--}}
+{{--                                <div class="team-one__single-bg-shape"--}}
+{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">David Warner</a></h3>--}}
+{{--                                <p class="team-one__sub-title">Digital Marketer</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <!--Team One Single End-->
+                <!--Team One Single Start-->
                 <div class="item">
                     <div class="team-one__single">
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-1.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/trainer_1.jpg') }}" alt="">
                             </div>
                             <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
+                                <div class="team-one__single-bg-shape"
                                     style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
                                 </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Thomas Alison</a></h3>
-                                <p class="team-one__sub-title">UI/UX Expert</p>
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Sepideh</a></h3>
+                                <p class="team-one__sub-title">Head Coach </p>
                             </div>
                         </div>
                     </div>
@@ -53,170 +193,30 @@
                     <div class="team-one__single">
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-2.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/trainer.jpg') }}" alt="">
                             </div>
                             <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
+                                <div class="team-one__single-bg-shape"
                                     style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
                                 </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Alisa Olivia</a></h3>
-                                <p class="team-one__sub-title">Graphics Designer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Team One Single End-->
-                <!--Team One Single Start-->
-                <div class="item">
-                    <div class="team-one__single">
-                        <div class="team-one__img-box">
-                            <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-3.jpg') }}" alt="">
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
-                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
-                                </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Sarah Wilson</a></h3>
-                                <p class="team-one__sub-title">Tech & Programming</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Team One Single End-->
-                <!--Team One Single Start-->
-                <div class="item">
-                    <div class="team-one__single">
-                        <div class="team-one__img-box">
-                            <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-4.jpg') }}" alt="">
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
-                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
-                                </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">David Warner</a></h3>
-                                <p class="team-one__sub-title">Digital Marketer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Team One Single End-->
-                <!--Team One Single Start-->
-                <div class="item">
-                    <div class="team-one__single">
-                        <div class="team-one__img-box">
-                            <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-5.jpg') }}" alt="">
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
-                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
-                                </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">James Alexander</a></h3>
-                                <p class="team-one__sub-title">Web Designer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Team One Single End-->
-                <!--Team One Single Start-->
-                <div class="item">
-                    <div class="team-one__single">
-                        <div class="team-one__img-box">
-                            <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-6.jpg') }}" alt="">
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
-                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
-                                </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">William David</a></h3>
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Mahdi</a></h3>
                                 <p class="team-one__sub-title">Fitness Expert</p>
                             </div>
                         </div>
@@ -228,31 +228,31 @@
                     <div class="team-one__single">
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-7.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/trainer_3.jpg') }}" alt="">
                             </div>
                             <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
+                                <div class="team-one__single-bg-shape"
                                     style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
                                 </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Samuel Jonathan</a></h3>
-                                <p class="team-one__sub-title">Cooking Expert</p>
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Mahan</a></h3>
+                                <p class="team-one__sub-title">TRX Expert</p>
                             </div>
                         </div>
                     </div>
@@ -263,33 +263,9 @@
                     <div class="team-one__single">
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-8.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/team/trainer_2.jpg') }}" alt="">
                             </div>
-                            <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
-                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
-                                </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Joshua Steven</a></h3>
-                                <p class="team-one__sub-title">Product designer</p>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <!--Team One Single End-->
@@ -298,31 +274,31 @@
                     <div class="team-one__single">
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                                <img src="{{ asset('assets/images/team/team-1-1.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/home/trainer_2.jpg') }}" alt="">
                             </div>
                             <div class="team-one__content">
-                                <div class="team-one__single-bg-shape" 
+                                <div class="team-one__single-bg-shape"
                                     style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
                                 </div>
-                                <div class="team-one__content-shape-1">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">
-                                </div>
-                                <div class="team-one__content-shape-2">
-                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">
-                                </div>
-                                <div class="team-one__plus-and-social">
-                                    <div class="team-one__plus">
-                                        <span class="icon-plus"></span>
-                                    </div>
-                                    <div class="team-one__social">
-                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                    </div>
-                                </div>
-                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Thomas Alison</a></h3>
-                                <p class="team-one__sub-title">UI/UX Expert</p>
+{{--                                <div class="team-one__content-shape-1">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__content-shape-2">--}}
+{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="team-one__plus-and-social">--}}
+{{--                                    <div class="team-one__plus">--}}
+{{--                                        <span class="icon-plus"></span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="team-one__social">--}}
+{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Shima</a></h3>
+                                <p class="team-one__sub-title">Coach</p>
                             </div>
                         </div>
                     </div>

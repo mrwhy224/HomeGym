@@ -13,12 +13,7 @@
         <div class="container">
             <div class="become-a-teacher__top">
                 <div class="section-title-two text-center sec-title-animation animation-style1">
-                    <div class="section-title-two__tagline-box">
-                        <div class="section-title-two__tagline-shape">
-                            <img src="{{ asset('assets/images/shapes/section-title-two-shape-1.png') }}" alt="">
-                        </div>
-                        <span class="section-title-two__tagline">Coach</span>
-                    </div>
+
                     <h2 class="section-title-two__title title-animation">Apply As
                         <span>Coach</span>
                     </h2>
@@ -72,19 +67,14 @@
                     <div class="col-xl-4">
                         <div class="become-a-teacher__img-box">
                             <div class="become-a-teacher__img">
-                                <img src="{{ asset('assets/images/home/man-with-dumbbell-that-sayasds-personal.webp') }}" alt="">
+                                <img src="{{ asset('assets/images/home/') }}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-8">
                         <div class="become-a-teacher__right">
                             <div class="section-title-two text-left sec-title-animation animation-style1">
-                                <div class="section-title-two__tagline-box">
-                                    <div class="section-title-two__tagline-shape">
-                                        <img src="{{ asset('assets/images/shapes/section-title-two-shape-1.png') }}" alt="">
-                                    </div>
-                                    <span class="section-title-two__tagline">For Become an Coach</span>
-                                </div>
+
                                 <h2 class="section-title-two__title title-animation">Coach Registration
                                 </h2>
                             </div>

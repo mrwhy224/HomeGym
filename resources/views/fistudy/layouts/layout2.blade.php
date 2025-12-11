@@ -51,21 +51,7 @@
             <section class="page-header">
                 <div class="page-header__bg" style="background-image: url({{ asset('assets/images/shapes/page-header-bg-shape.png') }});">
                 </div>
-                <div class="page-header__shape-4">
-                    <img src="{{ asset('assets/images/shapes/page-header-shape-4.png') }}" alt="">
-                </div>
-                <div class="page-header__shape-5">
-                    <img src="{{ asset('assets/images/shapes/page-header-shape-5.png') }}" alt="">
-                </div>
-                <div class="page-header__social">
-                    <a href="#">Facebook</a>
-                    <span>//</span>
-                    <a href="#">Instagram</a>
-                    <span>//</span>
-                    <a href="#">LinkedIn</a>
-                    <span>//</span>
-                    <a href="#">Twitter</a>
-                </div>
+
                 <div class="container">
                     <div class="page-header__inner">
                         <div class="page-header__img">

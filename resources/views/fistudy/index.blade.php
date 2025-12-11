@@ -8,9 +8,7 @@
 		<div class="banner-one__bg-shape-1"></div>
 
 
-		<div class="banner-one__shape-4 float-bob-x">
-			<img src="{{ asset('assets/images/shapes/banner-one-shape-4.png') }}" alt="">
-		</div>
+
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-6">
@@ -53,39 +51,39 @@
 {{--									<div class="banner-one__shape-1">--}}
 {{--										<img src="{{ asset('assets/images/shapes/banner-one-shape-1.png') }}" alt="">--}}
 {{--									</div>--}}
-									<div class="banner-one__shape-2 rotate-me">
-										<img src="{{ asset('assets/images/shapes/banner-one-shape-2.png') }}" alt="">
-									</div>
-									<div class="banner-one__shape-3">
-										<img src="{{ asset('assets/images/shapes/banner-one-shape-3.png') }}" alt="">
-									</div>
+{{--									<div class="banner-one__shape-2 rotate-me">--}}
+{{--										<img src="{{ asset('assets/images/shapes/banner-one-shape-2.png') }}" alt="">--}}
+{{--									</div>--}}
+{{--									<div class="banner-one__shape-3">--}}
+{{--										<img src="{{ asset('assets/images/shapes/banner-one-shape-3.png') }}" alt="">--}}
+{{--									</div>--}}
 								</div>
-								<div class="banner-one__student-trained">
-									<div class="banner-one__student-trained-shape-1 rotate-me">
-										<img src="{{ asset('assets/images/shapes/banner-one-student-trained-shape-1.png') }}" alt="">
-									</div>
-									<ul class="list-unstyled banner-one__student-trained-list">
-										<li>
-											<div class="banner-one__student-trained-img">
-												<img src="{{ asset('assets/images/resources/banner-one-student-trained-img-1-1.jpg') }}"
-													 alt="">
-											</div>
-										</li>
-										<li>
-											<div class="banner-one__student-trained-img">
-												<img src="{{ asset('assets/images/resources/banner-one-student-trained-img-1-2.jpg') }}"
-													 alt="">
-											</div>
-										</li>
-									</ul>
-									<div class="banner-one__student-trained-count-box">
-										<div class="banner-one__student-trained-count-box-inner count-box">
-											<p class="count-text" data-stop="2000" data-speed="3000">00</p>
-											<span>+</span>
-										</div>
-										<p class="banner-one__student-trained-text">{{ __('home.banner_student_trained') }}</p>
-									</div>
-								</div>
+{{--								<div class="banner-one__student-trained">--}}
+{{--									<div class="banner-one__student-trained-shape-1 rotate-me">--}}
+{{--										<img src="{{ asset('assets/images/shapes/banner-one-student-trained-shape-1.png') }}" alt="">--}}
+{{--									</div>--}}
+{{--									<ul class="list-unstyled banner-one__student-trained-list">--}}
+{{--										<li>--}}
+{{--											<div class="banner-one__student-trained-img">--}}
+{{--												<img src="{{ asset('assets/images/resources/banner-one-student-trained-img-1-1.jpg') }}"--}}
+{{--													 alt="">--}}
+{{--											</div>--}}
+{{--										</li>--}}
+{{--										<li>--}}
+{{--											<div class="banner-one__student-trained-img">--}}
+{{--												<img src="{{ asset('assets/images/resources/banner-one-student-trained-img-1-2.jpg') }}"--}}
+{{--													 alt="">--}}
+{{--											</div>--}}
+{{--										</li>--}}
+{{--									</ul>--}}
+{{--									<div class="banner-one__student-trained-count-box">--}}
+{{--										<div class="banner-one__student-trained-count-box-inner count-box">--}}
+{{--											<p class="count-text" data-stop="2000" data-speed="3000">00</p>--}}
+{{--											<span>+</span>--}}
+{{--										</div>--}}
+{{--										<p class="banner-one__student-trained-text">{{ __('home.banner_student_trained') }}</p>--}}
+{{--									</div>--}}
+{{--								</div>--}}
 							</div>
 						</div>
 					</div>
@@ -137,9 +135,9 @@
 		<div class="category-one__shape-1">
 			<img src="{{ asset('assets/images/shapes/category-one-shape-1.png') }}" alt="">
 		</div>
-		<div class="category-one__shape-2">
-			<img src="{{ asset('assets/images/shapes/category-one-shape-2.png') }}" alt="">
-		</div>
+{{--		<div class="category-one__shape-2">--}}
+{{--			<img src="{{ asset('assets/images/shapes/category-one-shape-2.png') }}" alt="">--}}
+{{--		</div>--}}
 		<div class="category-one__shape-3">
 			<img src="{{ asset('assets/images/shapes/category-one-shape-3.png') }}" alt="">
 		</div>
@@ -167,13 +165,13 @@
 				<div class="col-xl-6 col-lg-7">
 					<div class="category-one__left">
 						<div class="section-title text-left sec-title-animation animation-style2">
-							<div class="section-title__tagline-box">
-								<div class="section-title__tagline-shape"></div>
-								<span class="section-title__tagline">{{ __('home.category_tagline') }}</span>
-							</div>
-							<h2 class="section-title__title title-animation">{!! __('home.category_title') !!}
-								<span>{{ __('home.category_title_span') }} <img src="{{ asset('assets/images/shapes/section-title-shape-2.png') }}"
-																				alt=""></span></h2>
+{{--							<div class="section-title__tagline-box">--}}
+{{--								<div class="section-title__tagline-shape"></div>--}}
+{{--								<span class="section-title__tagline">{{ __('home.category_tagline') }}</span>--}}
+{{--							</div>--}}
+{{--							<h2 class="section-title__title title-animation">{!! __('home.category_title') !!}--}}
+{{--								<span>{{ __('home.category_title_span') }} <img src="{{ asset('assets/images/shapes/section-title-shape-2.png') }}"--}}
+{{--																				alt=""></span></h2>--}}
 						</div>
 						<ul class="category-one__category-list list-unstyled">
 							<li>
@@ -370,10 +368,10 @@
 				<div class="col-xl-6">
 					<div class="about-one__right">
 						<div class="section-title text-left sec-title-animation animation-style2">
-							<div class="section-title__tagline-box">
-								<div class="section-title__tagline-shape"></div>
-								<span class="section-title__tagline">{{ __('home.about_tagline') }}</span>
-							</div>
+{{--							<div class="section-title__tagline-box">--}}
+{{--								<div class="section-title__tagline-shape"></div>--}}
+{{--								<span class="section-title__tagline">{{ __('home.about_tagline') }}</span>--}}
+{{--							</div>--}}
 							@if ($localeDirection === 'rtl')
 								<h2 class="section-title__title">
 							@else
@@ -384,27 +382,27 @@
 																			 alt=""></span></h2>
 						</div>
 						<p class="about-one__text">{!! __('home.about_text') !!}</p>
-						<ul class="about-one__mission-and-vision list-unstyled">
-							<li>
-								<div class="about-one__icon-and-title">
-									<div class="about-one__icon">
-										<img src="{{ asset('assets/images/icon/mission-icon.png') }}" alt="">
-									</div>
-									<h3>{{ __('home.about_mission_title') }}</h3>
-								</div>
-								<p class="about-one__mission-and-vision-text">{{ __('home.about_mission_text') }}</p>
-							</li>
-							<li>
-								<div class="about-one__icon-and-title">
-									<div class="about-one__icon">
-										<img src="{{ asset('assets/images/icon/vision-icon.png') }}" alt="">
-									</div>
-									<h3>{{ __('home.about_vision_title') }}</h3>
-								</div>
-								<p class="about-one__mission-and-vision-text">{{ __('home.about_vision_text') }}</p>
-							</li>
-						</ul>
-						<div class="about-one__btn-and-live-class">
+{{--						<ul class="about-one__mission-and-vision list-unstyled">--}}
+{{--							<li>--}}
+{{--								<div class="about-one__icon-and-title">--}}
+{{--									<div class="about-one__icon">--}}
+{{--										<img src="{{ asset('assets/images/icon/mission-icon.png') }}" alt="">--}}
+{{--									</div>--}}
+{{--									<h3>{{ __('home.about_mission_title') }}</h3>--}}
+{{--								</div>--}}
+{{--								<p class="about-one__mission-and-vision-text">{{ __('home.about_mission_text') }}</p>--}}
+{{--							</li>--}}
+{{--							<li>--}}
+{{--								<div class="about-one__icon-and-title">--}}
+{{--									<div class="about-one__icon">--}}
+{{--										<img src="{{ asset('assets/images/icon/vision-icon.png') }}" alt="">--}}
+{{--									</div>--}}
+{{--									<h3>{{ __('home.about_vision_title') }}</h3>--}}
+{{--								</div>--}}
+{{--								<p class="about-one__mission-and-vision-text">{{ __('home.about_vision_text') }}</p>--}}
+{{--							</li>--}}
+{{--						</ul>--}}
+						<div class="about-one__btn-and-live-class" style="margin-top: 20px">
 							<div class="about-one__btn-box">
 								<a href="{{ url('about') }}" class="about-one__btn thm-btn"><span
 										class="icon-angles-right"></span>{{ __('home.btn_know_more') }}</a>
@@ -487,6 +485,526 @@
 {{--		</div>--}}
 {{--	</section>--}}
 	<!-- Counter One End -->
+	<!--Team Carousel Page Start-->
+	<section class="team-carousel-page">
+		<div class="container">
+			<div class="team-carousel-style owl-carousel owl-theme carousel-dot-style">
+				<!--Team One Single Start-->
+				{{--                <div class="item">--}}
+				{{--                    <div class="team-one__single">--}}
+				{{--                        <div class="team-one__img-box">--}}
+				{{--                            <div class="team-one__img">--}}
+				{{--                                <img src="{{ asset('assets/images/team/team-1-1.jpg') }}" alt="">--}}
+				{{--                            </div>--}}
+				{{--                            <div class="team-one__content">--}}
+				{{--                                <div class="team-one__single-bg-shape"--}}
+				{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-1">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-2">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__plus-and-social">--}}
+				{{--                                    <div class="team-one__plus">--}}
+				{{--                                        <span class="icon-plus"></span>--}}
+				{{--                                    </div>--}}
+				{{--                                    <div class="team-one__social">--}}
+				{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+				{{--                                    </div>--}}
+				{{--                                </div>--}}
+				{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Thomas Alison</a></h3>--}}
+				{{--                                <p class="team-one__sub-title">UI/UX Expert</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				{{--                <div class="item">--}}
+				{{--                    <div class="team-one__single">--}}
+				{{--                        <div class="team-one__img-box">--}}
+				{{--                            <div class="team-one__img">--}}
+				{{--                                <img src="{{ asset('assets/images/team/team-1-2.jpg') }}" alt="">--}}
+				{{--                            </div>--}}
+				{{--                            <div class="team-one__content">--}}
+				{{--                                <div class="team-one__single-bg-shape"--}}
+				{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-1">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-2">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__plus-and-social">--}}
+				{{--                                    <div class="team-one__plus">--}}
+				{{--                                        <span class="icon-plus"></span>--}}
+				{{--                                    </div>--}}
+				{{--                                    <div class="team-one__social">--}}
+				{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+				{{--                                    </div>--}}
+				{{--                                </div>--}}
+				{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Alisa Olivia</a></h3>--}}
+				{{--                                <p class="team-one__sub-title">Graphics Designer</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				{{--                <div class="item">--}}
+				{{--                    <div class="team-one__single">--}}
+				{{--                        <div class="team-one__img-box">--}}
+				{{--                            <div class="team-one__img">--}}
+				{{--                                <img src="{{ asset('assets/images/team/team-1-3.jpg') }}" alt="">--}}
+				{{--                            </div>--}}
+				{{--                            <div class="team-one__content">--}}
+				{{--                                <div class="team-one__single-bg-shape"--}}
+				{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-1">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-2">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__plus-and-social">--}}
+				{{--                                    <div class="team-one__plus">--}}
+				{{--                                        <span class="icon-plus"></span>--}}
+				{{--                                    </div>--}}
+				{{--                                    <div class="team-one__social">--}}
+				{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+				{{--                                    </div>--}}
+				{{--                                </div>--}}
+				{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Sarah Wilson</a></h3>--}}
+				{{--                                <p class="team-one__sub-title">Tech & Programming</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				{{--                <div class="item">--}}
+				{{--                    <div class="team-one__single">--}}
+				{{--                        <div class="team-one__img-box">--}}
+				{{--                            <div class="team-one__img">--}}
+				{{--                                <img src="{{ asset('assets/images/team/team-1-4.jpg') }}" alt="">--}}
+				{{--                            </div>--}}
+				{{--                            <div class="team-one__content">--}}
+				{{--                                <div class="team-one__single-bg-shape"--}}
+				{{--                                    style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-1">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__content-shape-2">--}}
+				{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+				{{--                                </div>--}}
+				{{--                                <div class="team-one__plus-and-social">--}}
+				{{--                                    <div class="team-one__plus">--}}
+				{{--                                        <span class="icon-plus"></span>--}}
+				{{--                                    </div>--}}
+				{{--                                    <div class="team-one__social">--}}
+				{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+				{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+				{{--                                    </div>--}}
+				{{--                                </div>--}}
+				{{--                                <h3 class="team-one__title"><a href="{{ url('instructor-details') }}">David Warner</a></h3>--}}
+				{{--                                <p class="team-one__sub-title">Digital Marketer</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				<div class="item">
+					<div class="team-one__single">
+						<div class="team-one__img-box">
+							<div class="team-one__img">
+								<img src="{{ asset('assets/images/home/trainer_1.jpg') }}" alt="">
+							</div>
+							<div class="team-one__content">
+								<div class="team-one__single-bg-shape"
+									 style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
+								</div>
+								{{--                                <div class="team-one__content-shape-1">--}}
+								{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+								{{--                                </div>--}}
+								{{--                                <div class="team-one__content-shape-2">--}}
+								{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+								{{--                                </div>--}}
+								{{--                                <div class="team-one__plus-and-social">--}}
+								{{--                                    <div class="team-one__plus">--}}
+								{{--                                        <span class="icon-plus"></span>--}}
+								{{--                                    </div>--}}
+								{{--                                    <div class="team-one__social">--}}
+								{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+								{{--                                    </div>--}}
+								{{--                                </div>--}}
+								<h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Sepideh</a></h3>
+								<p class="team-one__sub-title">Head Coach </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				<div class="item">
+					<div class="team-one__single">
+						<div class="team-one__img-box">
+							<div class="team-one__img">
+								<img src="{{ asset('assets/images/home/trainer.jpg') }}" alt="">
+							</div>
+							<div class="team-one__content">
+								<div class="team-one__single-bg-shape"
+									 style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
+								</div>
+								{{--                                <div class="team-one__content-shape-1">--}}
+								{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+								{{--                                </div>--}}
+								{{--                                <div class="team-one__content-shape-2">--}}
+								{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+								{{--                                </div>--}}
+								{{--                                <div class="team-one__plus-and-social">--}}
+								{{--                                    <div class="team-one__plus">--}}
+								{{--                                        <span class="icon-plus"></span>--}}
+								{{--                                    </div>--}}
+								{{--                                    <div class="team-one__social">--}}
+								{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+								{{--                                    </div>--}}
+								{{--                                </div>--}}
+								<h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Mahdi</a></h3>
+								<p class="team-one__sub-title">Fitness Expert</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				<div class="item">
+					<div class="team-one__single">
+						<div class="team-one__img-box">
+							<div class="team-one__img">
+								<img src="{{ asset('assets/images/home/trainer_3.jpg') }}" alt="">
+							</div>
+							<div class="team-one__content">
+								<div class="team-one__single-bg-shape"
+									 style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
+								</div>
+								{{--                                <div class="team-one__content-shape-1">--}}
+								{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+								{{--                                </div>--}}
+								{{--                                <div class="team-one__content-shape-2">--}}
+								{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+								{{--                                </div>--}}
+								{{--                                <div class="team-one__plus-and-social">--}}
+								{{--                                    <div class="team-one__plus">--}}
+								{{--                                        <span class="icon-plus"></span>--}}
+								{{--                                    </div>--}}
+								{{--                                    <div class="team-one__social">--}}
+								{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+								{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+								{{--                                    </div>--}}
+								{{--                                </div>--}}
+								<h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Mahan</a></h3>
+								<p class="team-one__sub-title">TRX Expert</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Team One Single End-->
+				<!--Team One Single Start-->
+				<div class="item">
+					<div class="team-one__single">
+						<div class="team-one__img-box">
+							<div class="team-one__img">
+								<img src="{{ asset('assets/images/team/trainer_2.jpg') }}" alt="">
+							</div>
+
+						</div>
+					</div>
+					<!--Team One Single End-->
+					<!--Team One Single Start-->
+					<div class="item">
+						<div class="team-one__single">
+							<div class="team-one__img-box">
+								<div class="team-one__img">
+									<img src="{{ asset('assets/images/home/trainer_2.jpg') }}" alt="">
+								</div>
+								<div class="team-one__content">
+									<div class="team-one__single-bg-shape"
+										 style="background-image: url('{{ asset('assets/images/shapes/team-one-single-bg-shape.png') }}');">
+									</div>
+									{{--                                <div class="team-one__content-shape-1">--}}
+									{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-1.png') }}" alt="">--}}
+									{{--                                </div>--}}
+									{{--                                <div class="team-one__content-shape-2">--}}
+									{{--                                    <img src="{{ asset('assets/images/shapes/team-one-content-shape-2.png') }}" alt="">--}}
+									{{--                                </div>--}}
+									{{--                                <div class="team-one__plus-and-social">--}}
+									{{--                                    <div class="team-one__plus">--}}
+									{{--                                        <span class="icon-plus"></span>--}}
+									{{--                                    </div>--}}
+									{{--                                    <div class="team-one__social">--}}
+									{{--                                        <a href="#"><span class="fab fa-linkedin-in"></span></a>--}}
+									{{--                                        <a href="#"><span class="fab fa-pinterest-p"></span></a>--}}
+									{{--                                        <a href="#"><span class="fab fa-facebook-f"></span></a>--}}
+									{{--                                        <a href="#"><span class="fab fa-instagram"></span></a>--}}
+									{{--                                    </div>--}}
+									{{--                                </div>--}}
+									<h3 class="team-one__title"><a href="{{ url('instructor-details') }}">Shima</a></h3>
+									<p class="team-one__sub-title">Coach</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Team One Single End-->
+				</div>
+			</div>
+	</section>
+	<!--Team Carousel Page End-->
+
+	<section class="blog-page">
+		<div class="container">
+			<div class="row">
+				<!--Blog Two Single Start -->
+{{--				<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">--}}
+{{--					<div class="blog-two__single">--}}
+{{--						<div class="blog-two__img">--}}
+{{--							<img src="{{ asset('assets/images/home/medium-shot-41.jpg') }}" alt="">--}}
+{{--							<div class="blog-two__date">--}}
+{{--								<span class="icon-calendar"></span>--}}
+{{--								<p>Nov 02, 2024</p>--}}
+{{--							</div>--}}
+{{--						</div>--}}
+{{--						<div class="blog-two__content">--}}
+{{--							<div class="blog-two__meta-box">--}}
+{{--								<ul class="blog-two__meta list-unstyled">--}}
+{{--									<li>--}}
+{{--										<a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+{{--									</li>--}}
+{{--									<li>--}}
+{{--										<a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+{{--									</li>--}}
+{{--									<li>--}}
+{{--										<a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+{{--									</li>--}}
+{{--								</ul>--}}
+{{--							</div>--}}
+{{--							<h4 class="blog-two__title"><a href="{{ url('blog-details') }}">How to Succeed in Online Learning: Tips for Students</a></h4>--}}
+{{--							<p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+{{--						</div>--}}
+{{--					</div>--}}
+{{--				</div>--}}
+				<!--Blog Two Single End -->
+				<!--Blog Two Single Start -->
+
+				<!--Blog Two Single End -->
+				<!--Blog Two Single Start -->
+				<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+					<div class="blog-two__single">
+						<div class="blog-two__img">
+							<img src="{{ asset('assets/images/home/females8.jpg') }}" alt="">
+							<div class="blog-two__date">
+								<span class="icon-calendar"></span>
+								<p>March 02, 2024</p>
+							</div>
+						</div>
+						<div class="blog-two__content">
+							<div class="blog-two__meta-box">
+								<ul class="blog-two__meta list-unstyled">
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>
+									</li>
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>
+									</li>
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>
+									</li>
+								</ul>
+							</div>
+							<h4 class="blog-two__title"><a href="{{ url('blog-details') }}">The Future of LMS</a></h4>
+							<p class="blog-two__text"></p>
+						</div>
+					</div>
+				</div>
+				<!--Blog Two Single End -->
+				<!--Blog Two Single Start -->
+				<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+					<div class="blog-two__single">
+						<div class="blog-two__img">
+							<img src="{{ asset('assets/images/home/couple-actively66.jpg') }}" alt="">
+							<div class="blog-two__date">
+								<span class="icon-calendar"></span>
+								<p>Oct 02, 2024</p>
+							</div>
+						</div>
+						<div class="blog-two__content">
+							<div class="blog-two__meta-box">
+								<ul class="blog-two__meta list-unstyled">
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>
+									</li>
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>
+									</li>
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>
+									</li>
+								</ul>
+							</div>
+							<h4 class="blog-two__title"><a href="{{ url('blog-details') }}">How to Choose the Right LMS </a></h4>
+							<p class="blog-two__text"></p>
+						</div>
+					</div>
+				</div>
+				<!--Blog Two Single End -->
+				<!--Blog Two Single Start -->
+				<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
+					<div class="blog-two__single">
+						<div class="blog-two__img">
+							<img src="{{ asset('assets/images/home/medium-shot-41.jpg') }}" alt="">
+							<div class="blog-two__date">
+								<span class="icon-calendar"></span>
+								<p>June 02, 2024</p>
+							</div>
+						</div>
+						<div class="blog-two__content">
+							<div class="blog-two__meta-box">
+								<ul class="blog-two__meta list-unstyled">
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>
+									</li>
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>
+									</li>
+									<li>
+										<a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>
+									</li>
+								</ul>
+							</div>
+							<h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Boosting Employee Engagement </a></h4>
+							<p class="blog-two__text"></p>
+						</div>
+					</div>
+				</div>
+				<!--Blog Two Single End -->
+				<!--Blog Two Single Start -->
+				{{--                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="700ms">--}}
+				{{--                    <div class="blog-two__single">--}}
+				{{--                        <div class="blog-two__img">--}}
+				{{--                            <img src="{{ asset('assets/images/blog/blog-2-7.jpg') }}" alt="">--}}
+				{{--                            <div class="blog-two__date">--}}
+				{{--                                <span class="icon-calendar"></span>--}}
+				{{--                                <p>Dec 02, 2024</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                        <div class="blog-two__content">--}}
+				{{--                            <div class="blog-two__meta-box">--}}
+				{{--                                <ul class="blog-two__meta list-unstyled">--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+				{{--                                    </li>--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+				{{--                                    </li>--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+				{{--                                    </li>--}}
+				{{--                                </ul>--}}
+				{{--                            </div>--}}
+				{{--                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">How an LMS Supports Employee Development</a></h4>--}}
+				{{--                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				{{--                <!--Blog Two Single End -->--}}
+				{{--                <!--Blog Two Single Start -->--}}
+				{{--                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms">--}}
+				{{--                    <div class="blog-two__single">--}}
+				{{--                        <div class="blog-two__img">--}}
+				{{--                            <img src="{{ asset('assets/images/blog/blog-2-8.jpg') }}" alt="">--}}
+				{{--                            <div class="blog-two__date">--}}
+				{{--                                <span class="icon-calendar"></span>--}}
+				{{--                                <p>Nov 02, 2024</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                        <div class="blog-two__content">--}}
+				{{--                            <div class="blog-two__meta-box">--}}
+				{{--                                <ul class="blog-two__meta list-unstyled">--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+				{{--                                    </li>--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+				{{--                                    </li>--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+				{{--                                    </li>--}}
+				{{--                                </ul>--}}
+				{{--                            </div>--}}
+				{{--                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Top 5 LMS Integrations Every Business Should Consider</a></h4>--}}
+				{{--                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				{{--                <!--Blog Two Single End -->--}}
+				{{--                <!--Blog Two Single Start -->--}}
+				{{--                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="900ms">--}}
+				{{--                    <div class="blog-two__single">--}}
+				{{--                        <div class="blog-two__img">--}}
+				{{--                            <img src="{{ asset('assets/images/blog/blog-2-9.jpg') }}" alt="">--}}
+				{{--                            <div class="blog-two__date">--}}
+				{{--                                <span class="icon-calendar"></span>--}}
+				{{--                                <p>Nov 02, 2024</p>--}}
+				{{--                            </div>--}}
+				{{--                        </div>--}}
+				{{--                        <div class="blog-two__content">--}}
+				{{--                            <div class="blog-two__meta-box">--}}
+				{{--                                <ul class="blog-two__meta list-unstyled">--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-tags"></span>Business</a>--}}
+				{{--                                    </li>--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-clock"></span>10 Min Read</a>--}}
+				{{--                                    </li>--}}
+				{{--                                    <li>--}}
+				{{--                                        <a href="{{ url('blog-details') }}"><span class="icon-comments"></span>(Comments)</a>--}}
+				{{--                                    </li>--}}
+				{{--                                </ul>--}}
+				{{--                            </div>--}}
+				{{--                            <h4 class="blog-two__title"><a href="{{ url('blog-details') }}">Maximizing ROI: How to Measure the Success of Your LMS</a></h4>--}}
+				{{--                            <p class="blog-two__text">The discusses the advantages of using LMS for upskilling employees, managing compliance training,</p>--}}
+				{{--                        </div>--}}
+				{{--                    </div>--}}
+				{{--                </div>--}}
+				{{--                <!--Blog Two Single End -->--}}
+			</div>
+
+	</section>
+
 
 
 	<!-- Team One Start -->

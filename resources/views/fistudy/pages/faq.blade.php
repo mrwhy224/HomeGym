@@ -115,39 +115,39 @@
     <!--Faq Page End-->
 
     <!--Newsletter Two Start -->
-    <section class="newsletter-two">
-        <div class="container">
-            <div class="newsletter-two__inner">
-                <div class="newsletter-two__img">
-                    <img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">
-                </div>
-                <div class="newsletter-two__inner-content">
-                    <div class="newsletter-two__shape-bg"
-                        style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">
-                    </div>
-                    <div class="newsletter-two__like">
-                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">
-                    </div>
-                    <div class="newsletter-two__title-box">
-                        <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>
-                        <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,
-                            <br>
-                            designed to cater to various learning</p>
-                    </div>
-                    <div class="newsletter-two__form-box">
-                        <form class="newsletter-two__form">
-                            <div class="newsletter-two__input">
-                                <input type="email" placeholder="Enter Your Email">
-                            </div>
-                            <button type="submit" class="newsletter-two__btn">
-                                <span class="icon-arrow-circle"></span> Subscribe
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="newsletter-two">--}}
+{{--        <div class="container">--}}
+{{--            <div class="newsletter-two__inner">--}}
+{{--                <div class="newsletter-two__img">--}}
+{{--                    <img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="newsletter-two__inner-content">--}}
+{{--                    <div class="newsletter-two__shape-bg"--}}
+{{--                        style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');">--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__like">--}}
+{{--                        <img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__title-box">--}}
+{{--                        <h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>--}}
+{{--                        <p class="newsletter-two__text">Explore a diverse selection of courses all in one platform,--}}
+{{--                            <br>--}}
+{{--                            designed to cater to various learning</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="newsletter-two__form-box">--}}
+{{--                        <form class="newsletter-two__form">--}}
+{{--                            <div class="newsletter-two__input">--}}
+{{--                                <input type="email" placeholder="Enter Your Email">--}}
+{{--                            </div>--}}
+{{--                            <button type="submit" class="newsletter-two__btn">--}}
+{{--                                <span class="icon-arrow-circle"></span> Subscribe--}}
+{{--                            </button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!--Newsletter Two End -->
 
     <!--Contact Info One Start -->
