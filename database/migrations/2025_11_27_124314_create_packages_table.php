@@ -16,6 +16,7 @@ return new class extends Migration
 			$table->json('name');
 			$table->enum('type', ['public', 'semi_private', 'private']);
 			$table->integer('total_sessions')->default(12);
+			$table->integer('capacity');
 			$table->decimal('price', 15, 0);
 			$table->integer('validity_days')->default(30);
 			$table->boolean('is_active')->default(true);

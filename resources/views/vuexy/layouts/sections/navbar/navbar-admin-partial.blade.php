@@ -62,30 +62,38 @@ use Illuminate\Support\Facades\Route;
         <i class="icon-base ti tabler-language icon-22px text-heading"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
+        @foreach($activeLocales as $locale)
         <li>
-          <a class="dropdown-item {{ app()->getLocale() === 'en' ? 'active' : '' }}" href="{{ url('lang/en') }}"
+          <a class="dropdown-item {{ app()->getLocale() === $locale->code ? 'active' : '' }}" href="{{ route('lang', ['locale'=>$locale->code]) }}"
+            data-language="en" data-text-direction="{{ $locale->direction }}">
+            <span>{{ $locale->name }}</span>
+          </a>
+        </li>
+        @endforeach
+        <!-- <li>
+          <a class="dropdown-item {{ app()->getLocale() === 'en' ? 'active' : '' }}" href="{{ url('panel/lang/en') }}"
             data-language="en" data-text-direction="ltr">
             <span>English</span>
           </a>
         </li>
         <li>
-          <a class="dropdown-item {{ app()->getLocale() === 'fr' ? 'active' : '' }}" href="{{ url('lang/fr') }}"
+          <a class="dropdown-item {{ app()->getLocale() === 'fr' ? 'active' : '' }}" href="{{ url('panel/lang/fr') }}"
             data-language="fr" data-text-direction="ltr">
             <span>French</span>
           </a>
         </li>
         <li>
-          <a class="dropdown-item {{ app()->getLocale() === 'ar' ? 'active' : '' }}" href="{{ url('lang/ar') }}"
+          <a class="dropdown-item {{ app()->getLocale() === 'ar' ? 'active' : '' }}" href="{{ url('panel/lang/ar') }}"
             data-language="ar" data-text-direction="rtl">
             <span>Arabic</span>
           </a>
         </li>
         <li>
-          <a class="dropdown-item {{ app()->getLocale() === 'de' ? 'active' : '' }}" href="{{ url('lang/de') }}"
+          <a class="dropdown-item {{ app()->getLocale() === 'de' ? 'active' : '' }}" href="{{ url('panel/lang/de') }}"
             data-language="de" data-text-direction="ltr">
             <span>German</span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </li>
     <!--/ Language -->

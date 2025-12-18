@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
 			CountrySeeder::class,
 			PlanSeeder::class,
 			RolesAndPermissionsSeeder::class,
+			UserSeeder::class,
+			PackageSeeder::class,
 		]);
     }
 }

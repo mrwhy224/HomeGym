@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
 			$table->foreignId('country_id')->nullable()->constrained('countries')->onDelete('set null');
+			$table->foreignId('currency_id')->nullable()->constrained('currencies')->onDelete('set null');
 			$table->foreignId('language_id')->nullable()->constrained('languages')->onDelete('set null');
 			// toDo: change default timezone
 			$table->string('timezone', 64)->default('Asia/Tehran');

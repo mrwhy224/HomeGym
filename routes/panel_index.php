@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,9 @@ Route::get('/', function() {
 	if ($user->hasRole('customer'))
 		return app(\App\Http\Controllers\user\Dashboard::class)->index();
 })->name('dashboard');
+
+Route::get('/lang/{locale}', [LanguageController::class, 'swap'])->name('lang');
+
 
 Route::middleware(['role:super_admin|content_manager'])->as('admin.')->group(function () {
     require base_path('routes/panel_admin.php');
