@@ -28,10 +28,7 @@ $configData = Helper::appClasses();
 ])
 @endsection
 
-@section('page-script')
-{{-- فایل JS مربوط به هندل کردن دیتاتیبل رزروها --}}
-@vite(['resources/assets/js/admin/app-booking-management.js'])
-@endsection
+
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-6">

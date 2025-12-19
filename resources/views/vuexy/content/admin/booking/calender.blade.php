@@ -16,9 +16,7 @@ $configData = Helper::appClasses();
 ])
 @endsection
 
-@section('page-style')
-@vite(['resources/assets/vendor/scss/pages/app-calendar.scss'])
-@endsection
+
 
 @section('vendor-script')
 @vite([
@@ -32,10 +30,6 @@ $configData = Helper::appClasses();
 ])
 @endsection
 
-@section('page-script')
-{{-- این فایل باید منطق دریافت رویدادها از سرور بر اساس کاربر انتخابی را داشته باشد --}}
-@vite(['resources/assets/js/admin/app-booking-calendar.js'])
-@endsection
 
 @section('content')
 <div class="card app-calendar-wrapper">
@@ -92,6 +86,7 @@ $configData = Helper::appClasses();
         </div>
     </div>
 </div>
+
 
 @endsection
 

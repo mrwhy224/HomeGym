@@ -2,11 +2,7 @@
 
 @section('title', 'Chat Monitoring')
 
-@section('vendor-style')
-@vite([
-  'resources/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.scss'
-])
-@endsection
+
 
 @section('page-style')
 <style>
