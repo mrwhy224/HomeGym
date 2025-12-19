@@ -17,24 +17,24 @@
 			"slug": ["admin.booking", "admin.classes"],
 			"submenu": [
 				{
-					"url": "/panel/bookings",
+					"url": "/panel/booking",
 					"name": "menu.admin.classes.all",
-					"slug": "admin.bookings.index"
+					"slug": "admin.booking.list"
 				},
 				{
-					"url": "/panel/bookings/calendar",
+					"url": "/panel/booking/calendar",
 					"name": "menu.admin.classes.calendar",
-					"slug": "admin.bookings.calendar"
+					"slug": "admin.booking.calendar"
 				},
 				{
-					"url": "/panel/services",
+					"url": "/panel/classes",
 					"name": "menu.admin.classes.services",
-					"slug": "admin.services.index"
+					"slug": "admin.classes.list"
 				},
 				{
-					"url": "/panel/services/create",
+					"url": "/panel/classes/create",
 					"name": "menu.admin.classes.new_service",
-					"slug": "admin.services.create"
+					"slug": "admin.classes.create"
 				},
 				{
 					"url": "/panel/classes/package",
@@ -46,39 +46,39 @@
 		{
 			"name": "menu.admin.users.title",
 			"icon": "menu-icon icon-base ti tabler-users",
-			"slug": "admin.users",
+			"slug": ["admin.customer", "admin.coach", "admin.role"],
 			"submenu": [
 				{
 					"url": "/panel/customer/list",
 					"name": "menu.admin.users.customers",
-					"slug": "admin.users.index"
+					"slug": "admin.customer.list"
 				},
 				{
-					"url": "/panel/coaches",
+					"url": "/panel/coach/list",
 					"name": "menu.admin.users.coaches",
-					"slug": "admin.coaches.index"
+					"slug": "admin.coach.list"
 				},
 				{
-					"url": "/panel/access/roles",
+					"url": "/panel/role",
 					"name": "menu.admin.users.roles",
-					"slug": "admin.roles.index"
+					"slug": "admin.role"
 				}
 			]
 		},
 		{
 			"name": "menu.admin.messages.title",
 			"icon": "menu-icon icon-base ti tabler-messages",
-			"slug": "admin.messages",
+			"slug": "admin.message",
 			"submenu": [
 				{
-					"url": "/panel/messages/inbox",
-					"name": "menu.admin.messages.inbox",
-					"slug": "admin.messages.index"
+					"url": "/panel/message/monitoring",
+					"name": "menu.admin.messages.monitor",
+					"slug": "admin.message.monitoring"
 				},
 				{
-					"url": "/panel/messages/support",
+					"url": "/panel/message/support",
 					"name": "menu.admin.messages.tickets",
-					"slug": "admin.tickets.index"
+					"slug": "admin.message.support"
 				}
 			]
 		},
@@ -89,68 +89,56 @@
 			"url": "/panel/customer/plan"
 		},
 		{
-			"name": "menu.admin.marketing.title",
-			"icon": "menu-icon icon-base ti tabler-discount",
-			"slug": "admin.marketing",
-			"submenu": [
-				{
-					"url": "/panel/discounts",
-					"name": "menu.admin.marketing.discounts",
-					"slug": "admin.discounts.index"
-				}
-			]
-		},
-		{
 			"name": "menu.admin.financial.title",
 			"icon": "menu-icon icon-base ti tabler-file-dollar",
-			"slug": "admin.financial",
+			"slug": "admin.finance",
 			"submenu": [
 				{
-					"url": "/panel/financial/payouts",
+					"url": "/panel/finance/payout",
 					"name": "menu.admin.financial.payouts",
-					"slug": "admin.financial.payouts"
+					"slug": "admin.finance.payout"
 				},
 				{
-					"url": "/panel/financial/transactions",
+					"url": "/panel/finance/transaction",
 					"name": "menu.admin.financial.transactions",
-					"slug": "admin.financial.transactions"
+					"slug": "admin.finance.transaction"
 				},
 				{
-					"url": "/panel/financial/invoices",
+					"url": "/panel/finance/invoice",
 					"name": "menu.admin.financial.invoices",
-					"slug": "admin.invoices.index"
+					"slug": "admin.finance.invoice"
 				},
 				{
-					"url": "/panel/financial/wallets",
+					"url": "/panel/finance/wallet",
 					"name": "menu.admin.financial.wallets",
-					"slug": "admin.financial.wallets"
+					"slug": "admin.finance.wallet"
 				}
 			]
 		},
 		{
 			"name": "menu.admin.blog.title",
 			"icon": "menu-icon icon-base ti tabler-file-text",
-			"slug": "admin.posts",
+			"slug": "admin.post",
 			"submenu": [
 				{
 					"url": "/panel/post",
 					"name": "menu.admin.blog.posts",
-					"slug": "admin.posts.index"
+					"slug": "admin.post.list"
 				},
 				{
 					"url": "/panel/post/create",
 					"name": "menu.admin.blog.new_post",
-					"slug": "admin.posts.create"
+					"slug": "admin.post.create"
 				},
 				{
-					"url": "/panel/post/comments",
+					"url": "/panel/post/comment",
 					"name": "menu.admin.blog.comments",
-					"slug": "admin.comments.index"
+					"slug": "admin.post.comment"
 				},
 				{
-					"url": "/panel/post/categories",
+					"url": "/panel/post/category",
 					"name": "menu.admin.blog.categories",
-					"slug": "admin.categories.index"
+					"slug": "admin.post.category"
 				}
 			]
 		},
@@ -162,37 +150,37 @@
 		{
 			"name": "menu.admin.settings.title",
 			"icon": "menu-icon icon-base ti tabler-settings",
-			"slug": "admin.settings",
+			"slug": ["admin.setting", "admin.system"],
 			"submenu": [
 				{
-					"url": "/panel/settings/general",
+					"url": "/panel/setting/general",
 					"name": "menu.admin.settings.general",
-					"slug": "admin.settings.general"
+					"slug": "admin.setting.general"
 				},
 				{
-					"url": "/panel/settings/languages",
+					"url": "/panel/setting/language",
 					"name": "menu.admin.settings.languages",
-					"slug": "admin.settings.languages"
+					"slug": "admin.setting.language"
 				},
 				{
-					"url": "/panel/settings/currencies",
+					"url": "/panel/setting/currency",
 					"name": "menu.admin.settings.currencies",
-					"slug": "admin.settings.currencies"
+					"slug": "admin.setting.currency"
 				},
 				{
-					"url": "/panel/settings/gateways",
+					"url": "/panel/setting/payment",
 					"name": "menu.admin.settings.gateways",
-					"slug": "admin.settings.gateways"
+					"slug": "admin.setting.payment"
 				},
 				{
-					"url": "/panel/system/logs",
+					"url": "/panel/system/log",
 					"name": "menu.admin.settings.logs",
-					"slug": "admin.logs.index"
+					"slug": "admin.system.log"
 				},
 				{
-					"url": "/panel/system/backups",
+					"url": "/panel/system/backup",
 					"name": "menu.admin.settings.backups",
-					"slug": "admin.backups.index"
+					"slug": "admin.system.backup"
 				}
 			]
 		}

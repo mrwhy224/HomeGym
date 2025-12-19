@@ -28,17 +28,12 @@ return [
 
 		'messages' => [
 			'title' => 'Messages',
-			'inbox' => 'Inbox',
+			'monitor' => 'Monitoring',
 			'tickets' => 'Support Tickets',
 		],
 
 		'plans' => [
 			'title' => 'Plan Management',
-		],
-
-		'marketing' => [
-			'title' => 'Marketing',
-			'discounts' => 'Discount Codes',
 		],
 
 		'financial' => [

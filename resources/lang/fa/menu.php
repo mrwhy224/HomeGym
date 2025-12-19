@@ -27,17 +27,12 @@ return [
 
         'messages' => [
             'title' => 'پیام‌ها',
-            'inbox' => 'صندوق ورودی',
+            'monitor' => 'صندوق ورودی',
             'tickets' => 'تیکت‌های پشتیبانی',
         ],
 
         'plans' => [
             'title' => 'مدیریت پلن‌ها',
-        ],
-
-        'marketing' => [
-            'title' => 'بازاریابی',
-            'discounts' => 'کدهای تخفیف',
         ],
 
         'financial' => [

@@ -1,13 +1,16 @@
 <?php
 
+use App\Http\Controllers\admin\classes\BookingController;
 use App\Http\Controllers\admin\classes\PackageController;
+use App\Http\Controllers\admin\classes\ServiceController;
 use App\Http\Controllers\admin\CustomerController;
+use App\Http\Controllers\admin\FinancialController;
+use App\Http\Controllers\admin\MessageController;
 use App\Http\Controllers\admin\post\Category;
 use App\Http\Controllers\admin\post\Comment;
 use App\Http\Controllers\admin\post\PostAdd;
 use App\Http\Controllers\admin\post\PostList;
-use App\Models\Coach;
-use App\Models\Package;
+use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,17 +27,51 @@ Route::group(['prefix' => 'customer','as' => 'customer.'], function () {
 		return view('content.admin.users.customer');
 	})->name('list');
 });
-
-Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
-
-	Route::get('package', [PackageController::class, 'getPage'])->name('package');
+Route::group(['prefix' => 'coach','as' => 'coach.'], function () {
 	Route::get('list', function () {
-		return view('content.admin.classes.create', ['packages'=>Package::all(), 'coaches'=>Coach::all()]);
+		return view('content.admin.users.coach');
 	})->name('list');
+});
+Route::get('role', function () {
+	return view('content.admin.users.role');
+})->name('role');
 
-
+Route::group(['prefix' => 'booking','as' => 'booking.'], function () {
+	Route::get('', [BookingController::class, 'index'])->name('list');
+	Route::get('calendar', [BookingController::class, 'calendar'])->name('calendar');
 });
 
+Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
+	Route::get('', [ServiceController::class, 'index'])->name('list');
+	Route::get('create', [ServiceController::class, 'create'])->name('create');
+	Route::get('package', [PackageController::class, 'getPage'])->name('package');
+});
+
+Route::group(['prefix' => 'message','as' => 'message.'], function () {
+	Route::get('monitoring', [MessageController::class, 'monitoring'])->name('monitoring');
+	Route::get('support', [MessageController::class, 'support'])->name('support');
+});
+
+Route::group(['prefix' => 'finance','as' => 'finance.'], function () {
+	Route::get('payout', [FinancialController::class, 'payout'])->name('payout');
+	Route::get('transaction', [FinancialController::class, 'transaction'])->name('transaction');
+	Route::get('invoice', [FinancialController::class, 'invoice'])->name('invoice');
+	Route::get('wallet', [FinancialController::class, 'wallet'])->name('wallet');
+});
+
+Route::group(['prefix' => 'setting','as' => 'setting.'], function () {
+	Route::get('general', [SettingController::class, 'general'])->name('general');
+	Route::get('language', [SettingController::class, 'language'])->name('language');
+	Route::get('currency', [SettingController::class, 'currency'])->name('currency');
+	Route::get('payment', [SettingController::class, 'payment'])->name('payment');
+
+	Route::get('profile', [SettingController::class, 'profile'])->name('profile');
+});
+
+Route::group(['prefix' => 'system','as' => 'system.'], function () {
+	Route::get('log', [SettingController::class, 'log'])->name('log');
+	Route::get('backup', [SettingController::class, 'backup'])->name('backup');
+});
 
 Route::group(['prefix' => 'api','as' => 'api.'], function () {
 

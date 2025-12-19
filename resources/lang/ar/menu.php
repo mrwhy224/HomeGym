@@ -27,17 +27,12 @@ return [
 
         'messages' => [
             'title' => 'الرسائل',
-            'inbox' => 'البريد الوارد',
+            'monitor' => 'البريد الوارد',
             'tickets' => 'تذاكر الدعم',
         ],
 
         'plans' => [
             'title' => 'إدارة الخطط',
-        ],
-
-        'marketing' => [
-            'title' => 'التسويق',
-            'discounts' => 'أكواد الخصم',
         ],
 
         'financial' => [
