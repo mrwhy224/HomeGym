@@ -2,11 +2,10 @@
 
 namespace App\Services;
 
-use AllowDynamicProperties;
+
 use App\Models\Currency;
 use Exception;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 
@@ -59,6 +58,6 @@ class CurrencyConverterService
 
 		$finalAmount = (($amount / $fromRate) * $baseRate * $toRate) / $baseRate;
 		$final = $standardFormat? number_format($finalAmount, $this->currencies[$toCode]->precision ?? 2):round($finalAmount, $this->currencies[$toCode]->precision ?? 2);
-		return $withSymbol? $final.$this->currencies[$toCode]->symbol:$final;
+		return $withSymbol? $final.' '.$this->currencies[$toCode]->symbol:$final;
 	}
 }

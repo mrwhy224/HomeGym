@@ -3,191 +3,184 @@
 		{
 			"url": "/panel",
 			"icon": "menu-icon icon-base ti tabler-smart-home",
-			"name": "Dashboards",
-			"slug": "admin.dashboard"
+			"name": "menu.admin.dashboard",
+			"slug": "dashboard"
 		},
 		{
 			"isHeader": true,
-			"name": "App Management",
+			"name": "menu.admin.header.app_management",
 			"slug": "nav-header-app"
 		},
 		{
-			"name": "Booking Management",
+			"name": "menu.admin.classes.title",
 			"icon": "menu-icon icon-base ti tabler-calendar-event",
-			"slug": "admin.booking",
+			"slug": ["admin.booking", "admin.classes"],
 			"submenu": [
 				{
-					"url": "/panel/bookings",
-					"name": "All Bookings",
-					"slug": "admin.bookings.list"
+					"url": "/panel/booking",
+					"name": "menu.admin.classes.all",
+					"slug": "admin.booking.list"
 				},
 				{
-					"url": "/panel/bookings/calendar",
-					"name": "Booking Calendar",
-					"slug": "admin.bookings.calendar"
+					"url": "/panel/booking/calendar",
+					"name": "menu.admin.classes.calendar",
+					"slug": "admin.booking.calendar"
 				},
 				{
-					"url": "/panel/services",
-					"name": "Class Services",
-					"slug": "admin.services.list"
+					"url": "/panel/classes",
+					"name": "menu.admin.classes.services",
+					"slug": "admin.classes.list"
 				},
 				{
-					"url": "/panel/services/create",
-					"name": "New Service",
-					"slug": "admin.services.create"
+					"url": "/panel/classes/create",
+					"name": "menu.admin.classes.new_service",
+					"slug": "admin.classes.create"
+				},
+				{
+					"url": "/panel/classes/package",
+					"name": "menu.admin.classes.package",
+					"slug": "admin.classes.package"
 				}
 			]
 		},
 		{
-			"name": "User Management",
+			"name": "menu.admin.users.title",
 			"icon": "menu-icon icon-base ti tabler-users",
-			"slug": "admin.users",
+			"slug": ["admin.customer", "admin.coach", "admin.role"],
 			"submenu": [
 				{
-					"url": "/panel/users",
-					"name": "User List",
-					"slug": "admin.users.list"
+					"url": "/panel/customer/list",
+					"name": "menu.admin.users.customers",
+					"slug": "admin.customer.list"
 				},
 				{
-					"url": "/panel/coaches",
-					"name": "Coach Management",
-					"slug": "admin.coaches.list"
+					"url": "/panel/coach/list",
+					"name": "menu.admin.users.coaches",
+					"slug": "admin.coach.list"
 				},
 				{
-					"url": "/panel/access/roles",
-					"name": "Roles & Permissions",
-					"slug": "admin.access.roles"
+					"url": "/panel/role",
+					"name": "menu.admin.users.roles",
+					"slug": "admin.role"
 				}
 			]
 		},
 		{
-			"name": "Messages",
+			"name": "menu.admin.messages.title",
 			"icon": "menu-icon icon-base ti tabler-messages",
-			"slug": "admin.messages",
+			"slug": "admin.message",
 			"submenu": [
 				{
-					"url": "/panel/messages/inbox",
-					"name": "Inbox",
-					"slug": "admin.messages.inbox"
+					"url": "/panel/message/monitoring",
+					"name": "menu.admin.messages.monitor",
+					"slug": "admin.message.monitoring"
 				},
 				{
-					"url": "/panel/messages/support",
-					"name": "Support Tickets",
-					"slug": "admin.messages.support"
+					"url": "/panel/message/support",
+					"name": "menu.admin.messages.tickets",
+					"slug": "admin.message.support"
 				}
 			]
 		},
 		{
-			"name": "Plan Management",
+			"name": "menu.admin.plans.title",
 			"icon": "menu-icon icon-base ti tabler-packages",
 			"slug": "admin.customer.plan",
 			"url": "/panel/customer/plan"
 		},
 		{
-			"name": "Marketing",
-			"icon": "menu-icon icon-base ti tabler-discount",
-			"slug": "admin.marketing",
-			"submenu": [
-				{
-					"url": "/panel/discounts",
-					"name": "Discount Codes",
-					"slug": "admin.discounts.list"
-				}
-			]
-		},
-		{
-			"name": "Financial Management",
+			"name": "menu.admin.financial.title",
 			"icon": "menu-icon icon-base ti tabler-file-dollar",
-			"slug": "admin.financial",
+			"slug": "admin.finance",
 			"submenu": [
 				{
-					"url": "/panel/financial/payouts",
-					"name": "Payouts",
-					"slug": "admin.financial.payouts"
+					"url": "/panel/finance/payout",
+					"name": "menu.admin.financial.payouts",
+					"slug": "admin.finance.payout"
 				},
 				{
-					"url": "/panel/financial/transactions",
-					"name": "All Transactions",
-					"slug": "admin.financial.transactions"
+					"url": "/panel/finance/transaction",
+					"name": "menu.admin.financial.transactions",
+					"slug": "admin.finance.transaction"
 				},
 				{
-					"url": "/panel/financial/invoices",
-					"name": "Invoices",
-					"slug": "admin.financial.invoices"
+					"url": "/panel/finance/invoice",
+					"name": "menu.admin.financial.invoices",
+					"slug": "admin.finance.invoice"
 				},
 				{
-					"url": "/panel/financial/wallets",
-					"name": "System Wallets",
-					"slug": "admin.financial.wallets"
+					"url": "/panel/finance/wallet",
+					"name": "menu.admin.financial.wallets",
+					"slug": "admin.finance.wallet"
 				}
 			]
 		},
 		{
-			"name": "Blog",
+			"name": "menu.admin.blog.title",
 			"icon": "menu-icon icon-base ti tabler-file-text",
 			"slug": "admin.post",
 			"submenu": [
 				{
 					"url": "/panel/post",
-					"name": "Post List",
+					"name": "menu.admin.blog.posts",
 					"slug": "admin.post.list"
 				},
 				{
 					"url": "/panel/post/create",
-					"name": "New Post",
+					"name": "menu.admin.blog.new_post",
 					"slug": "admin.post.create"
 				},
 				{
-					"url": "/panel/post/comments",
-					"name": "Comments",
-					"slug": "admin.post.comments"
+					"url": "/panel/post/comment",
+					"name": "menu.admin.blog.comments",
+					"slug": "admin.post.comment"
 				},
 				{
-					"url": "/panel/post/categories",
-					"name": "Categories",
-					"slug": "admin.post.categories"
+					"url": "/panel/post/category",
+					"name": "menu.admin.blog.categories",
+					"slug": "admin.post.category"
 				}
 			]
 		},
 		{
 			"isHeader": true,
-			"name": "System",
+			"name": "menu.admin.header.system",
 			"slug": "nav-header-system"
 		},
 		{
-			"name": "System Settings",
+			"name": "menu.admin.settings.title",
 			"icon": "menu-icon icon-base ti tabler-settings",
-			"slug": "admin.settings",
+			"slug": ["admin.setting", "admin.system"],
 			"submenu": [
 				{
-					"url": "/panel/settings/general",
-					"name": "General Settings",
-					"slug": "admin.settings.general"
+					"url": "/panel/setting/general",
+					"name": "menu.admin.settings.general",
+					"slug": "admin.setting.general"
 				},
 				{
-					"url": "/panel/settings/languages",
-					"name": "Languages",
-					"slug": "admin.settings.languages"
+					"url": "/panel/setting/language",
+					"name": "menu.admin.settings.languages",
+					"slug": "admin.setting.language"
 				},
 				{
-					"url": "/panel/settings/currencies",
-					"name": "Currencies",
-					"slug": "admin.settings.currencies"
+					"url": "/panel/setting/currency",
+					"name": "menu.admin.settings.currencies",
+					"slug": "admin.setting.currency"
 				},
 				{
-					"url": "/panel/settings/gateways",
-					"name": "Payment Gateways",
-					"slug": "admin.settings.gateways"
+					"url": "/panel/setting/payment",
+					"name": "menu.admin.settings.gateways",
+					"slug": "admin.setting.payment"
 				},
 				{
-					"url": "/panel/system/logs",
-					"name": "System Logs",
-					"slug": "admin.system.logs"
+					"url": "/panel/system/log",
+					"name": "menu.admin.settings.logs",
+					"slug": "admin.system.log"
 				},
 				{
-					"url": "/panel/system/backups",
-					"name": "Backups",
-					"slug": "admin.system.backups"
+					"url": "/panel/system/backup",
+					"name": "menu.admin.settings.backups",
+					"slug": "admin.system.backup"
 				}
 			]
 		}

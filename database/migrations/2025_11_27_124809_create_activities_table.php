@@ -14,12 +14,10 @@ return new class extends Migration
 		Schema::create('activities', function (Blueprint $table) {
 			$table->id();
 			$table->foreignId('coach_id')->constrained('users')->onDelete('cascade');
-			$table->enum('type', ['public', 'semi_private', 'private']);
-			$table->integer('capacity');
-			$table->timestamp('start_at');
-			$table->timestamp('end_at');
-			$table->enum('status', ['scheduled', 'completed', 'cancelled_by_coach', 'cancelled_system'])->default('scheduled');
-			$table->boolean('is_modified_duration')->default(false);
+			$table->foreignId('package_id')->constrained('packages')->onDelete('cascade');
+//			$table->timestamp('start_at');
+//			$table->timestamp('end_at');
+//			$table->enum('status', ['scheduled', 'completed', 'cancelled_by_coach', 'cancelled_system'])->default('scheduled');
 			$table->timestamps();
 		});
     }

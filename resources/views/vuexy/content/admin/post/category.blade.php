@@ -1,131 +1,118 @@
 @extends('layouts/layoutMaster')
 
-@section('title', 'eCommerce Product Category - Apps')
+@section('title', 'Post Categories')
 
 @section('vendor-style')
-  @vite(['resources/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.scss',
+@vite([
+  'resources/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.scss',
   'resources/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.scss',
-  'resources/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.scss',
   'resources/assets/vendor/libs/select2/select2.scss',
-  'resources/assets/vendor/libs/@form-validation/form-validation.scss',
-  'resources/assets/vendor/libs/quill/typography.scss', 'resources/assets/vendor/libs/quill/katex.scss',
-  'resources/assets/vendor/libs/quill/editor.scss'])
-@endsection
-
-@section('page-style')
-  @vite('resources/assets/vendor/scss/pages/app-ecommerce.scss')
+  'resources/assets/vendor/libs/@form-validation/form-validation.scss'
+])
 @endsection
 
 @section('vendor-script')
-  @vite(['resources/assets/vendor/libs/moment/moment.js',
+@vite([
   'resources/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js',
-  'resources/assets/vendor/libs/select2/select2.js', 'resources/assets/vendor/libs/@form-validation/popular.js',
+  'resources/assets/vendor/libs/select2/select2.js',
+  'resources/assets/vendor/libs/@form-validation/popular.js',
   'resources/assets/vendor/libs/@form-validation/bootstrap5.js',
-  'resources/assets/vendor/libs/@form-validation/auto-focus.js', 'resources/assets/vendor/libs/quill/katex.js',
-  'resources/assets/vendor/libs/quill/quill.js'])
-@endsection
-
-@section('page-script')
-  @vite('resources/assets/js/app-ecommerce-category-list.js')
+  'resources/assets/vendor/libs/@form-validation/auto-focus.js'
+])
 @endsection
 
 @section('content')
-  <div class="app-ecommerce-category">
-    <!-- Category List Table -->
+<div class="row g-6">
+  <div class="col-md-4">
     <div class="card">
-      <div class="card-datatable">
-        <table class="datatables-category-list table">
-          <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th>Categories</th>
-            <th class="text-nowrap text-sm-end">Total Products &nbsp;</th>
-            <th class="text-nowrap text-sm-end">Total Earning</th>
-            <th class="text-lg-center">Actions</th>
-          </tr>
-          </thead>
-        </table>
+      <div class="card-header border-bottom">
+        <h5 class="card-title mb-0">Add New Category</h5>
       </div>
-    </div>
-    <!-- Offcanvas to add new customer -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEcommerceCategoryList"
-         aria-labelledby="offcanvasEcommerceCategoryListLabel">
-      <!-- Offcanvas Header -->
-      <div class="offcanvas-header py-6">
-        <h5 id="offcanvasEcommerceCategoryListLabel" class="offcanvas-title">Add Category</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <!-- Offcanvas Body -->
-      <div class="offcanvas-body border-top">
-        <form class="pt-0" id="eCommerceCategoryListForm" onsubmit="return true">
-          <!-- Title -->
-          <div class="mb-6 form-control-validation">
-            <label class="form-label" for="ecommerce-category-title">Title</label>
-            <input type="text" class="form-control" id="ecommerce-category-title" placeholder="Enter category title"
-                   name="categoryTitle" aria-label="category title" />
+      <div class="card-body pt-6">
+        <form id="addCategoryForm" onsubmit="return false">
+          <div class="mb-4">
+            <label class="form-label" for="category-name">Name</label>
+            <input type="text" class="form-control" id="category-name" placeholder="e.g. Health & Fitness" name="categoryName" required />
           </div>
-          <!-- Slug -->
-          <div class="mb-6 form-control-validation">
-            <label class="form-label" for="ecommerce-category-slug">Slug</label>
-            <input type="text" id="ecommerce-category-slug" class="form-control" placeholder="Enter slug"
-                   aria-label="slug" name="slug" />
+          <div class="mb-4">
+            <label class="form-label" for="category-slug">Slug</label>
+            <input type="text" class="form-control" id="category-slug" placeholder="health-fitness" name="categorySlug" />
           </div>
-          <!-- Image -->
-          <div class="mb-6">
-            <label class="form-label" for="ecommerce-category-image">Attachment</label>
-            <input class="form-control" type="file" id="ecommerce-category-image" />
-          </div>
-          <!-- Parent category -->
-          <div class="mb-6 ecommerce-select2-dropdown">
-            <label class="form-label" for="ecommerce-category-parent-category">Parent category</label>
-            <select id="ecommerce-category-parent-category" class="select2 form-select"
-                    data-placeholder="Select parent category">
-              <option value="">Select parent Category</option>
-              <option value="Household">Household</option>
-              <option value="Management">Management</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Office">Office</option>
-              <option value="Automotive">Automotive</option>
+          <div class="mb-4">
+            <label class="form-label" for="parent-category">Parent Category</label>
+            <select id="parent-category" class="select2 form-select" data-placeholder="Select Parent">
+              <option value="">None</option>
+              <option value="1">Training</option>
+              <option value="2">Nutrition</option>
             </select>
           </div>
-          <!-- Description -->
-          <div class="mb-6">
-            <label class="form-label">Description</label>
-            <div class="form-control p-0 py-1">
-              <div class="comment-editor border-0" id="ecommerce-category-description"></div>
-              <div class="comment-toolbar border-0 rounded">
-                <div class="d-flex justify-content-end">
-                <span class="ql-formats me-0">
-                  <button class="ql-bold"></button>
-                  <button class="ql-italic"></button>
-                  <button class="ql-underline"></button>
-                  <button class="ql-list" value="ordered"></button>
-                  <button class="ql-list" value="bullet"></button>
-                  <button class="ql-link"></button>
-                  <button class="ql-image"></button>
-                </span>
-                </div>
-              </div>
-            </div>
+          <div class="mb-4">
+            <label class="form-label" for="category-description">Description</label>
+            <textarea class="form-control" id="category-description" rows="3" placeholder="Brief description..."></textarea>
           </div>
-          <!-- Status -->
-          <div class="mb-6 ecommerce-select2-dropdown">
-            <label class="form-label">Select category status</label>
-            <select id="ecommerce-category-status" class="select2 form-select" data-placeholder="Select category status">
-              <option value="">Select category status</option>
-              <option value="Scheduled">Scheduled</option>
-              <option value="Publish">Publish</option>
-              <option value="Inactive">Inactive</option>
-            </select>
-          </div>
-          <!-- Submit and reset -->
-          <div class="mb-6">
-            <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Add</button>
-            <button type="reset" class="btn btn-label-danger" data-bs-dismiss="offcanvas">Discard</button>
+          <div class="d-flex flex-column gap-2">
+            <button type="submit" class="btn btn-primary">Create Category</button>
+            <button type="reset" class="btn btn-label-secondary">Discard</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-datatable table-responsive">
+        <table class="datatables-category-list table border-top">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Slug</th>
+              <th class="text-nowrap">Post Count</th>
+              <th>Status</th>
+              <th class="text-lg-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="avatar-wrapper me-3">
+                    <div class="avatar avatar-sm"><span class="avatar-initial rounded bg-label-success"><i class="ti tabler-stretching"></i></span></div>
+                  </div>
+                  <span class="fw-medium text-heading">Yoga & Zen</span>
+                </div>
+              </td>
+              <td><code>yoga-zen</code></td>
+              <td>24</td>
+              <td><span class="badge bg-label-primary">Active</span></td>
+              <td class="text-lg-center">
+                <div class="d-flex align-items-center justify-content-lg-center gap-1">
+                  <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill"><i class="ti tabler-edit"></i></button>
+                  <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill text-danger"><i class="ti tabler-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section('page-script')
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Select2
+    const select2 = $('.select2');
+    if (select2.length) {
+      select2.each(function () {
+        var $this = $(this);
+        $this.wrap('<div class="position-relative"></div>').select2({
+          dropdownParent: $this.parent()
+        });
+      });
+    }
+  });
+</script>
 @endsection

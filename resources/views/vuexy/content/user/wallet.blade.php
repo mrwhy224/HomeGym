@@ -1,24 +1,3 @@
-@php
-// Dummy data to be passed from your controller
-// $currentBalance = 540.00;
-// $currencySymbol = '$';
-// $transactions = [
-//     (object)['id' => 1, 'date' => 'Oct 30, 2025', 'type' => 'Wallet Deposit', 'amount' => 50.00, 'status' => 'Success', 'status_color' => 'success', 'icon' => 'tabler-arrow-up-right'],
-//     (object)['id' => 2, 'date' => 'Oct 29, 2025', 'type' => 'Class Booking #1234', 'amount' => -25.00, 'status' => 'Paid', 'status_color' => 'info', 'icon' => 'tabler-arrow-down-left'],
-//     (object)['id' => 3, 'date' => 'Oct 28, 2025', 'type' => 'Refund #1090', 'amount' => 10.00, 'status' => 'Refunded', 'status_color' => 'warning', 'icon' => 'tabler-receipt-refund'],
-//     (object)['id' => 4, 'date' => 'Oct 27, 2025', 'type' => 'Wallet Deposit', 'amount' => 100.00, 'status' => 'Failed', 'status_color' => 'danger', 'icon' => 'tabler-arrow-up-right'],
-// ];
-
-// --- Default values for testing ---
-$currentBalance = $currentBalance ?? 540.00;
-$currencySymbol = $currencySymbol ?? '$';
-$transactions = $transactions ?? [
-    (object)['id' => 1, 'date' => 'Oct 30, 2025', 'type' => 'Wallet Deposit', 'amount' => 50.00, 'status' => 'Success', 'status_color' => 'success', 'icon' => 'tabler-arrow-up-right'],
-    (object)['id' => 2, 'date' => 'Oct 29, 2025', 'type' => 'Class Booking #1234', 'amount' => -25.00, 'status' => 'Paid', 'status_color' => 'info', 'icon' => 'tabler-arrow-down-left'],
-    (object)['id' => 3, 'date' => 'Oct 28, 2025', 'type' => 'Refund #1090', 'amount' => 10.00, 'status' => 'Refunded', 'status_color' => 'warning', 'icon' => 'tabler-receipt-refund'],
-    (object)['id' => 4, 'date' => 'Oct 27, 2025', 'type' => 'Wallet Deposit', 'amount' => 100.00, 'status' => 'Failed', 'status_color' => 'danger', 'icon' => 'tabler-arrow-up-right'],
-];
-@endphp
 
 @extends('layouts/layoutMaster')
 
@@ -40,7 +19,7 @@ $transactions = $transactions ?? [
 <div class="row">
   <div class="col-md-12">
 
-        <div class="card card-action mb-6">
+    <div class="card card-action mb-6">
           <div class="card-body">
             <div class="d-flex align-items-center mb-1">
               <div class="avatar me-4">
@@ -50,13 +29,26 @@ $transactions = $transactions ?? [
               </div>
               <div>
                 <h5 class="mb-0">Current Balance</h5>
-                <small class="text-muted">Last updated: {{ now()->format('H:i A') }}</small>
+                <small class="text-muted">Last change: {{ auth()->user()->wallet->updated_at->formatUser('Y-m-d H:i') }}</small>
               </div>
             </div>
-            <h2 class="fw-bolder mb-1">{{ $currencySymbol }}{{ number_format($currentBalance, 2) }}</h2>
+            
+            {{-- نمایش موجودی با فرمت و سیمبل --}}
+            <h2 class="fw-bolder mb-1 text-primary">
+                {{ auth()->user()->wallet->display_balance }}
+            </h2>
+            
             <p class="text-body-secondary">
               Your wallet balance is used for quick payments across the platform.
+              @if(auth()->user()->wallet->balance_blocked > 0)
+                <br>
+                <span class="text-warning">
+                    <i class="ti tabler-lock me-1"></i>
+                    Blocked Amount: {{ auth()->user()->wallet->currency->symbol }}{{ number_format(auth()->user()->wallet->balance_blocked, 2) }}
+                </span>
+              @endif
             </p>
+            
             <a href="#add-funds-form" class="btn btn-primary">
               <i class="icon-base ti tabler-plus ti-sm me-1"></i>
               Add Funds
@@ -72,20 +64,12 @@ $transactions = $transactions ?? [
                 <div class="mb-5 col-12">
                   <label for="amount" class="form-label">Amount</label>
                   <div class="input-group">
-                    <span class="input-group-text">{{ $currencySymbol }}</span>
+                    <span class="input-group-text">{{ auth()->user()->wallet->currency->symbol }}</span>
                     <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter amount" aria-label="Amount">
                   </div>
                 </div>
 
-                <div class="mb-5 col-12">
-                  <label class="form-label d-block">Quick Select</label>
-                  <div class="btn-group" role="group" aria-label="Quick select amounts">
-                    <button type="button" class="btn btn-label-secondary">$50.00</button>
-                    <button type="button" class="btn btn-label-secondary">$100.00</button>
-                    <button type="button" class="btn btn-label-secondary">$250.00</button>
-                    <button type="button" class="btn btn-label-secondary">$500.00</button>
-                  </div>
-                </div>
+                
 
                 <div class="mb-5 col-12">
                   <label class="form-label d-block">Select Payment Method</label>

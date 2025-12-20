@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia;
@@ -71,7 +72,18 @@ class User extends Authenticatable implements HasMedia
 		$index = $this->id % count($colors);
 		return $colors[$index];
 	}
-
+	public function wallet(): HasOne
+	{
+		return $this->hasOne(Wallet::class);
+	}
+	public function customer(): HasOne
+	{
+		return $this->hasOne(Customer::class);
+	}
+	public function coach(): HasOne
+	{
+		return $this->hasOne(Coach::class);
+	}
 	public function country()
 	{
 		return $this->belongsTo(Country::class);
@@ -81,7 +93,6 @@ class User extends Authenticatable implements HasMedia
 	{
 		return $this->belongsTo(Language::class);
 	}
-
 
 	public function registerMediaCollections(): void
 	{

@@ -58,6 +58,7 @@ export default defineConfig({
         'resources/assets/css/demo.css',
         'resources/js/app.js',
         ...pageJsFiles,
+        ...GetFilesArray('resources/assets/js/admin/*.js'),
         ...vendorJsFiles,
         ...LibsJsFiles,
         'resources/js/laravel-user-management.js', // Processing Laravel User Management CRUD JS File
