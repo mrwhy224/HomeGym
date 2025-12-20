@@ -8,6 +8,7 @@
     overflow: hidden;
     padding: 120px 0 225px;
     z-index: 1;
+    
 }
 
 .blog-one__carousel {
@@ -1772,6 +1773,7 @@
     display: block;
     padding: 120px 0 120px;
     z-index: 1;
+    background-color: #d6d6d6;
 }
 
 .blog-two__btn-box {

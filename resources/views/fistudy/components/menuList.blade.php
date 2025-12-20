@@ -112,28 +112,28 @@
                         <li class="dropdown">
                             <a href={{ url('#') }}>{{ __('header.menu_pages') }}</a>
                             <ul class="shadow-box">
-                                <li><a href="{{ route('instructor', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructors') }}</a></li>
-                                <li><a href="{{ route('instructor-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructor_carousel') }}</a></li>
-                                <li><a href="{{ route('instructor-details', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructor_details') }}</a></li>
-                                <li><a href="{{ route('events', ['locale' => app()->getLocale()]) }}">{{ __('header.page_events') }}</a></li>
-                                <li><a href="{{ route('events-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_event_carousel') }}</a></li>
-                                <li><a href="{{ route('event-details', ['locale' => app()->getLocale()]) }}">{{ __('header.page_event_details') }}</a></li>
+{{--                                <li><a href="{{ route('instructor', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructors') }}</a></li>--}}
+{{--                                <li><a href="{{ route('instructor-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructor_carousel') }}</a></li>--}}
+{{--                                <li><a href="{{ route('instructor-details', ['locale' => app()->getLocale()]) }}">{{ __('header.page_instructor_details') }}</a></li>--}}
+{{--                                <li><a href="{{ route('events', ['locale' => app()->getLocale()]) }}">{{ __('header.page_events') }}</a></li>--}}
+{{--                                <li><a href="{{ route('events-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_event_carousel') }}</a></li>--}}
+{{--                                <li><a href="{{ route('event-details', ['locale' => app()->getLocale()]) }}">{{ __('header.page_event_details') }}</a></li>--}}
                                 <li><a href="{{ route('become-a-teacher', ['locale' => app()->getLocale()]) }}">{{ __('header.page_become_a_teacher') }}</a></li>
-                                <li><a href="{{ route('testimonials', ['locale' => app()->getLocale()]) }}">{{ __('header.page_testimonials') }}</a></li>
-                                <li><a href="{{ route('testimonials-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_testimonial_carousel') }}</a></li>
-                                <li><a href="{{ route('pricing', ['locale' => app()->getLocale()]) }}">{{ __('header.page_pricing') }}</a></li>
+{{--                                <li><a href="{{ route('testimonials', ['locale' => app()->getLocale()]) }}">{{ __('header.page_testimonials') }}</a></li>--}}
+{{--                                <li><a href="{{ route('testimonials-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.page_testimonial_carousel') }}</a></li>--}}
+{{--                                <li><a href="{{ route('pricing', ['locale' => app()->getLocale()]) }}">{{ __('header.page_pricing') }}</a></li>--}}
                                 <li><a href="{{ route('gallery', ['locale' => app()->getLocale()]) }}">{{ __('header.page_gallery') }}</a></li>
                                 <li><a href="{{ route('faq', ['locale' => app()->getLocale()]) }}">{{ __('header.page_faqs') }}</a></li>
-                                <li><a href="{{ url(app()->getLocale() . '/404') }}">{{ __('header.page_404') }}</a></li>
+{{--                                <li><a href="{{ url(app()->getLocale() . '/404') }}">{{ __('header.page_404') }}</a></li>--}}
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href={{ url('#') }}>{{ __('header.menu_course') }}</a>
                             <ul class="shadow-box">
                                 <li><a href="{{ route('course', ['locale' => app()->getLocale()]) }}">{{ __('header.course_course') }}</a></li>
-                                <li><a href="{{ route('course-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.course_carousel') }}</a></li>
-                                <li><a href="{{ route('course-list', ['locale' => app()->getLocale()]) }}">{{ __('header.course_list') }}</a></li>
-                                <li><a href="{{ route('course-details', ['locale' => app()->getLocale()]) }}">{{ __('header.course_details') }}</a></li>
+{{--                                <li><a href="{{ route('course-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.course_carousel') }}</a></li>--}}
+{{--                                <li><a href="{{ route('course-list', ['locale' => app()->getLocale()]) }}">{{ __('header.course_list') }}</a></li>--}}
+{{--                                <li><a href="{{ route('course-details', ['locale' => app()->getLocale()]) }}">{{ __('header.course_details') }}</a></li>--}}
                             </ul>
                         </li>
 
@@ -141,9 +141,9 @@
                             <a href={{ url('#') }}>{{ __('header.menu_blog') }}</a>
                             <ul class="shadow-box">
                                 <li><a href="{{ route('blog', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_blog') }}</a></li>
-                                <li><a href="{{ route('blog-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_carousel') }}</a></li>
-                                <li><a href="{{ route('blog-list', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_list') }}</a></li>
-                                <li><a href="{{ route('blog-details', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_details') }}</a></li>
+{{--                                <li><a href="{{ route('blog-carousel', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_carousel') }}</a></li>--}}
+{{--                                <li><a href="{{ route('blog-list', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_list') }}</a></li>--}}
+{{--                                <li><a href="{{ route('blog-details', ['locale' => app()->getLocale()]) }}">{{ __('header.blog_details') }}</a></li>--}}
                             </ul>
                         </li>
                     </ul>
