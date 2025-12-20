@@ -73,7 +73,7 @@
 			box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 			z-index: 999999;
 			display: none;
-			border-left: 5px solid var(--thm-primary, #ff5722);
+			border-left: 5px solid var(--thm-primary, #d6d6d6);
 			font-family: inherit;
 			animation: cookieSlideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 		}
@@ -82,7 +82,7 @@
 			left: auto;
 			right: 30px;
 			border-left: none;
-			border-right: 5px solid var(--thm-primary, #ff5722);
+			border-right: 5px solid var(--thm-primary, #d6d6d6);
 		}
 
 		.cookie-banner__content {
@@ -93,7 +93,7 @@
 
 		.cookie-banner__icon {
 			font-size: 30px;
-			color: var(--thm-primary, #ff5722);
+			color: var(--thm-primary, #d6d6d6);
 			margin-right: 15px;
 			flex-shrink: 0;
 		}
@@ -118,7 +118,7 @@
 		}
 
 		.cookie-banner__info a {
-			color: var(--thm-primary, #ff5722);
+			color: var(--thm-primary, #d6d6d6);
 			text-decoration: underline;
 			font-weight: 600;
 		}
@@ -149,7 +149,7 @@
 		}
 
 		.cookie-banner .thm-btn:not(.active):hover {
-			background-color: var(--thm-primary, #ff5722);
+			background-color: var(--thm-primary, #d6d6d6);
 			color: #fff;
 		}
 
@@ -159,7 +159,7 @@
 
 		/* استایل دکمه زبان فعال */
 		.cookie-banner .thm-btn.active {
-			background-color: var(--thm-primary, #ff5722);
+			background-color: var(--thm-primary, #d6d6d6);
 			color: #fff;
 			cursor: default;
 			opacity: 0.8;
