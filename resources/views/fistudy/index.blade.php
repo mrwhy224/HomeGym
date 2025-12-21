@@ -179,12 +179,12 @@
 									<div class="category-one__count-box">
 										<div class="category-one__count"></div>
 										<div class="category-one__count-content">
-											<h3><a href={{ url('course-details') }}>{{ __('home.category_public_classes_title') }}</a></h3>
+											<h3><a href={{ route('course-details', ['info'=>'group-fitness-classes']) }}>{{ __('home.category_public_classes_title') }}</a></h3>
 											<p>{{ __('home.category_public_classes_count') }}</p>
 										</div>
 									</div>
 									<div class="category-one__count-arrow">
-										<a href={{ url('course-details') }}><span
+										<a href={{ route('course-details', ['info'=>'group-fitness-classes']) }}><span
 												class="icon-arrow-up-right-2"></span></a>
 									</div>
 								</div>
@@ -194,12 +194,12 @@
 										{{--                                        <img src="{{ asset('assets/images/icon/category-one-hover-icon-1-1.png') }}" alt="">--}}
 										{{--                                    </div>--}}
 										<div class="category-one__hover-content">
-											<h3><a href={{ url('course-details') }}>{{ __('home.category_public_classes_title') }}</a></h3>
+											<h3><a href={{ route('course-details', ['info'=>'group-fitness-classes']) }}>{{ __('home.category_public_classes_title') }}</a></h3>
 											<p>{{ __('home.category_public_classes_count') }}</p>
 										</div>
 									</div>
 									<div class="category-one__hover-arrow">
-										<a href={{ url('course-details') }}><span
+										<a href={{ route('course-details', ['info'=>'group-fitness-classes']) }}><span
 												class="icon-arrow-up-right-2"></span></a>
 									</div>
 								</div>
@@ -209,12 +209,12 @@
 									<div class="category-one__count-box">
 										<div class="category-one__count"></div>
 										<div class="category-one__count-content">
-											<h3><a href={{ url('course-details') }}>{{ __('home.category_semi_private_classes_title') }}</a></h3>
+											<h3><a href={{ route('course-details', ['info'=>'semi-private-coaching']) }}>{{ __('home.category_semi_private_classes_title') }}</a></h3>
 											<p>{{ __('home.category_semi_private_classes_count') }}</p>
 										</div>
 									</div>
 									<div class="category-one__count-arrow">
-										<a href={{ url('course-details') }}><span
+										<a href={{ route('course-details', ['info'=>'semi-private-coaching']) }}><span
 												class="icon-arrow-up-right-2"></span></a>
 									</div>
 								</div>
@@ -224,12 +224,12 @@
 										{{--                                        <img src="{{ asset('assets/images/icon/category-one-hover-icon-1-1.png') }}" alt="">--}}
 										{{--                                    </div>--}}
 										<div class="category-one__hover-content">
-											<h3><a href={{ url('course-details') }}>{{ __('home.category_semi_private_classes_title') }}</a></h3>
+											<h3><a href={{ route('course-details', ['info'=>'semi-private-coaching']) }}>{{ __('home.category_semi_private_classes_title') }}</a></h3>
 											<p>{{ __('home.category_semi_private_classes_count') }}</p>
 										</div>
 									</div>
 									<div class="category-one__hover-arrow">
-										<a href={{ url('course-details') }}><span
+										<a href={{ route('course-details', ['info'=>'semi-private-coaching']) }}><span
 												class="icon-arrow-up-right-2"></span></a>
 									</div>
 								</div>
@@ -239,12 +239,12 @@
 									<div class="category-one__count-box">
 										<div class="category-one__count"></div>
 										<div class="category-one__count-content">
-											<h3><a href={{ url('course-details') }}>{{ __('home.category_private_classes_title') }}</a></h3>
+											<h3><a href={{ route('course-details', ['info'=>'private-online-coaching']) }}>{{ __('home.category_private_classes_title') }}</a></h3>
 											<p>{{ __('home.category_private_classes_count') }}</p>
 										</div>
 									</div>
 									<div class="category-one__count-arrow">
-										<a href={{ url('course-details') }}><span
+										<a href={{ route('course-details', ['info'=>'private-online-coaching']) }}><span
 												class="icon-arrow-up-right-2"></span></a>
 									</div>
 								</div>
@@ -254,16 +254,19 @@
 										{{--                                        <img src="{{ asset('assets/images/icon/category-one-hover-icon-1-1.png') }}" alt="">--}}
 										{{--                                    </div>--}}
 										<div class="category-one__hover-content">
-											<h3><a href={{ url('course-details') }}>{{ __('home.category_private_classes_title') }}</a></h3>
+											<h3><a href={{ route('course-details', ['info'=>'private-online-coaching']) }}>{{ __('home.category_private_classes_title') }}</a></h3>
 											<p>{{ __('home.category_private_classes_count') }}</p>
 										</div>
 									</div>
 									<div class="category-one__hover-arrow">
-										<a href={{ url('course-details') }}><span
+										<a href={{ route('course-details', ['info'=>'private-online-coaching']) }}><span
 												class="icon-arrow-up-right-2"></span></a>
 									</div>
 								</div>
 							</li>
+
+
+
 							{{--                        <li>--}}
 							{{--                            <div class="category-one__count-and-arrow">--}}
 							{{--                                <div class="category-one__count-box">--}}
