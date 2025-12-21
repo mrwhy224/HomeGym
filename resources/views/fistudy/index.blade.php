@@ -162,7 +162,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-6 col-lg-7">
+				<div class="col-xl-6 offset-xl-3">
 					<div class="category-one__left">
 						<div class="section-title text-left sec-title-animation animation-style2">
 {{--							<div class="section-title__tagline-box">--}}

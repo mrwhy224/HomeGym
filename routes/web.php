@@ -47,10 +47,10 @@ Route::get('testimonials-carousel', [MiscComingSoon::class, 'index'])->name('tes
 Route::get('pricing', [MiscComingSoon::class, 'index'])->name('pricing');
 Route::get('gallery', [PagesController::class, 'gallery'])->name('gallery');
 Route::get('faq', [PagesController::class, 'faq'])->name('faq');
-Route::get('course', [MiscComingSoon::class, 'index'])->name('course');
+Route::get('course', [PagesController::class, 'course'])->name('course');
 Route::get('course-carousel', [MiscComingSoon::class, 'index'])->name('course-carousel');
 Route::get('course-list', [MiscComingSoon::class, 'index'])->name('course-list');
-Route::get('course-details', [MiscComingSoon::class, 'index'])->name('course-details');
+Route::get('course-details/{info}', [PagesController::class, 'course_details'])->name('course-details');
 Route::get('products', [MiscComingSoon::class, 'index'])->name('products');
 Route::get('product-details', [MiscComingSoon::class, 'index'])->name('product-details');
 Route::get('cart', [MiscComingSoon::class, 'index'])->name('cart');

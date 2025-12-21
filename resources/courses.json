@@ -1,0 +1,155 @@
+[
+    {
+        "slug": "private-online-coaching",
+        "title": "One-on-One Private \n Online Coaching",
+        "subtitle": "Exclusive Personal Training",
+        "tag": "Personal Training",
+        "main_image": "assets/images/resources/private-course.jpg",
+        "last_update": "December 20, 2025",
+        "students_count": "1 Student (Private)",
+        "rating_avg": "5.0",
+        "rating_stars": 5,
+        "video_url": "https://www.youtube.com/watch?v=example",
+        "video_bg": "assets/images/backgrounds/video-bg-1.jpg",
+        "sidebar_info": {
+            "lessons": "12 Sessions",
+            "duration": "1 Month (3 Days/Week)",
+            "skill_level": "All Levels",
+            "language": "Persian, English",
+            "certificate": "Progress Report Included"
+        },
+        "overview": {
+            "text_1": "Our Private Online Classes offer a completely personalized experience with direct supervision from your coach. We stay with you throughout the entire session to ensure correct technique, proper form, and maximum results.",
+            "text_2": "Sep.fit94 brings the professional gym energy directly to your home. This program is designed for those who seek high-level accountability and a training plan built specifically for their body's unique needs.",
+            "learn_points": [
+                { "title": "Full Body Analysis:", "text": "Detailed assessment of your body composition and physical condition." },
+                { "title": "Exclusive Diet Plan:", "text": "A personalized nutrition guide designed to fuel your specific lifestyle." },
+                { "title": "Specialized Training:", "text": "Workouts tailored to your analysis, existing injuries, and fitness goals." },
+                { "title": "Real-time Correction:", "text": "Direct feedback on every movement to prevent injury and improve form." }
+            ],
+            "requirement_text": "Sep.fit94 started during the COVID-19 era when safety and home comfort were priorities. Our mission is to help you become healthier and stronger from anywhere in the world.",
+            "requirement_points": [
+                { "title": "Stable Internet \n Connection:", "text": "Required for smooth live video \n coaching sessions.", "icon": "assets/images/icon/course-details-points-list-icon-1.png" },
+                { "title": "Basic Workout \n Space:", "text": "A small area in your home \n is enough to start.", "icon": "assets/images/icon/course-details-points-list-icon-2.png" },
+                { "title": "Commitment to \n Growth:", "text": "Willingness to follow the \n customized plan consistently.", "icon": "assets/images/icon/course-details-points-list-icon-3.png" },
+                { "title": "Positive \n Mindset:", "text": "An open mind and energy \n to reach your best version.", "icon": "assets/images/icon/course-details-points-list-icon-4.png" }
+            ]
+        },
+        "curriculum": {
+            "intro": "This 12-session monthly plan is structured to take you from foundational movements to advanced performance.",
+            "sections": [
+                {
+                    "title": "Phase 1: Foundation & Analysis",
+                    "lessons": "4 Sessions",
+                    "duration": "Week 1",
+                    "active": true,
+                    "content_title": "Getting Started",
+                    "content_text": "Initial body analysis, mobility testing, and introduction to core movements.",
+                    "items": [
+                        { "title": "Body Composition Analysis", "type": "fal fa-video", "preview": true, "locked": false },
+                        { "title": "Form & Technique Assessment", "type": "far fa-microphone", "preview": false, "locked": true }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "slug": "semi-private-coaching",
+        "title": "Semi-Private \n Online Training",
+        "subtitle": "Small Group Dynamics",
+        "tag": "Semi-Private",
+        "main_image": "assets/images/resources/semi-private.jpg",
+        "last_update": "December 20, 2025",
+        "students_count": "Max 3 Students",
+        "rating_avg": "4.9",
+        "rating_stars": 5,
+        "video_url": "https://www.youtube.com/watch?v=example",
+        "video_bg": "assets/images/backgrounds/video-bg-2.jpg",
+        "sidebar_info": {
+            "lessons": "12 Sessions",
+            "duration": "1 Month (3 Days/Week)",
+            "skill_level": "Intermediate",
+            "language": "Persian, English",
+            "certificate": "Available"
+        },
+        "overview": {
+            "text_1": "Experience effective training and personal attention in our Semi-Private online classes. With a maximum of 3 participants, you get the benefit of social motivation without losing individual focus.",
+            "text_2": "Our motto: 'Your club is always with you; just get online, and we will bring the energy and professional training to you.'",
+            "learn_points": [
+                { "title": "Full Body Analysis:", "text": "Individual assessment for each of the 3 participants." },
+                { "title": "Personalized Diet:", "text": "Nutrition plans customized for your specific body analysis." },
+                { "title": "Targeted Training:", "text": "Workouts adapted to the injuries and goals of each participant." }
+            ],
+            "requirement_text": "Fitness is beyond appearance; it's where your muscles get stronger and your smiles get real.",
+            "requirement_points": [
+                { "title": "Zoom or Google \n Meet:", "text": "Required for interactive small \n group sessions.", "icon": "assets/images/icon/course-details-points-list-icon-1.png" },
+                { "title": "Minimum \n Equipment:", "text": "Dumbbells or resistance bands \n are recommended.", "icon": "assets/images/icon/course-details-points-list-icon-3.png" }
+            ]
+        },
+        "curriculum": {
+            "intro": "12-session curriculum focused on group synergy and individual progress.",
+            "sections": [
+                {
+                    "title": "Core Strengthening",
+                    "lessons": "12 Sessions",
+                    "duration": "Full Month",
+                    "active": true,
+                    "content_title": "Balanced Training",
+                    "content_text": "A blend of strength, corrective exercise, and form improvement.",
+                    "items": [
+                        { "title": "Live Interactive Session", "type": "fal fa-video", "preview": true, "locked": false }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "slug": "group-fitness-classes",
+        "title": "Group Online \n Fitness Classes",
+        "subtitle": "Community & Energy",
+        "tag": "Group Training",
+        "main_image": "assets/images/resources/group-course.jpg",
+        "last_update": "December 20, 2025",
+        "students_count": "10-12 Students",
+        "rating_avg": "4.8",
+        "rating_stars": 5,
+        "video_url": "https://www.youtube.com/watch?v=example",
+        "video_bg": "assets/images/backgrounds/video-bg-3.jpg",
+        "sidebar_info": {
+            "lessons": "12 Sessions",
+            "duration": "1 Month (3 Days/Week)",
+            "skill_level": "Beginner to Pro",
+            "language": "Persian",
+            "certificate": "Participation Badge"
+        },
+        "overview": {
+            "text_1": "Join our group online workouts with a professional coach to achieve fitness and a better overall vibe. These sessions are perfect for staying active and energized with a supportive community.",
+            "text_2": "At Sep.fit94, we believe in real changes through professional corrective movements and constant support.",
+            "learn_points": [
+                { "title": "Body Analysis:", "text": "General guidance and analysis for the group." },
+                { "title": "Group Training:", "text": "Workouts designed to match the average level of participants." },
+                { "title": "Positive Energy:", "text": "Focus on mental health, energy, and the joy of living." }
+            ],
+            "requirement_text": "Just get online and start exercising—we are by your side to help you build the best version of yourself.",
+            "requirement_points": [
+                { "title": "Active \n Participation:", "text": "Join the live group and \n share the energy.", "icon": "assets/images/icon/course-details-points-list-icon-4.png" }
+            ]
+        },
+        "curriculum": {
+            "intro": "Monthly group plan designed for weight loss and muscle toning.",
+            "sections": [
+                {
+                    "title": "Group Progress",
+                    "lessons": "12 Sessions",
+                    "duration": "3 Days a Week",
+                    "active": true,
+                    "content_title": "Monthly Routine",
+                    "content_text": "Consistent high-energy workouts.",
+                    "items": [
+                        { "title": "Live Group Workout", "type": "fal fa-video", "preview": true, "locked": false }
+                    ]
+                }
+            ]
+        }
+    }
+]
