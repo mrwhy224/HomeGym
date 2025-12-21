@@ -2,11 +2,6 @@
 
 @section('title', 'Coach Communication - Messenger')
 
-@section('vendor-style')
-@vite([
-  'resources/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.scss'
-])
-@endsection
 
 @section('page-style')
 @vite(['resources/assets/vendor/scss/pages/app-chat.scss'])
