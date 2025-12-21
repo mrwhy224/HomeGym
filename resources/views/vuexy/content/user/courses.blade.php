@@ -30,7 +30,7 @@
                     <h5 class="text-primary mb-0">{{ $activity->package->getPrice() }}</h5>
                 </div>
                 
-                <a href="{{ url('course/') }}" class="h5 mt-2 d-block">{{ $activity->package->name }}</a>
+                <a href="{{ route('user.classes.details', ['activity'=>$activity->id]) }}" class="h5 mt-2 d-block">{{ $activity->package->name }}</a>
 
                 <div class="mt-4 p-3 bg-lighter rounded">
                     <p class="small fw-bold mb-2 text-heading"><i class="ti tabler-calendar-stats me-1"></i> Weekly Schedule:</p>
