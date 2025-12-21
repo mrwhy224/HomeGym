@@ -172,7 +172,7 @@
 				<div class="col-xl-4 col-lg-5">
 					<div class="course-details__right">
 						<div class="course-details__info-box">
-							
+
 							<div class="course-details__social-box">
 								<h5 class="course-details__social-title">Share Course</h5>
 								<div class="course-details__social-list">
@@ -192,6 +192,14 @@
 									<li><p><i class="icon-stamp"></i>Certificate</p><span>{{ $course['sidebar_info']['certificate'] }}</span></li>
 								</ul>
 							</div>
+							<div class="course-details__doller-and-btn-box">
+								<div class="course-details__doller-btn-box">
+									<a href={{ url('course-details') }} class="thm-btn-two">
+										<span>Join Us Now!</span>
+										<i class="icon-angles-right"></i>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -199,47 +207,10 @@
 		</div>
 	</section>
 
-	<section class="newsletter-two">
-		<div class="container">
-			<div class="newsletter-two__inner">
-				<div class="newsletter-two__img">
-					<img src="{{ asset('assets/images/resources/newsletter-two-img-1.png') }}" alt="">
-				</div>
-				<div class="newsletter-two__inner-content">
-					<div class="newsletter-two__shape-bg" style="background-image: url('{{ asset('assets/images/shapes/newsletter-two-shape-bg.png') }}');"></div>
-					<div class="newsletter-two__like"><img src="{{ asset('assets/images/shapes/newsletter-two-like.png') }}" alt=""></div>
-					<div class="newsletter-two__title-box">
-						<h3 class="newsletter-two__title">Subscribe our <span>Newsletter</span></h3>
-						<p class="newsletter-two__text">Explore a diverse selection of courses all in one platform...</p>
-					</div>
-					<div class="newsletter-two__form-box">
-						<form class="newsletter-two__form">
-							<div class="newsletter-two__input"><input type="email" placeholder="Enter Your Email"></div>
-							<button type="submit" class="newsletter-two__btn"><span class="icon-arrow-circle"></span> Subscribe</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<section class="contact-info-one">
-		<div class="container">
-			<ul class="list-unstyled contact-info-one__list">
-				<li>
-					<div class="contact-info-one__single">
-						<div class="contact-info-one__icon"><span class="icon-envelope"></span></div>
-						<div class="contact-info-one__content">
-							<p class="contact-info-one__sub-title">Email Address:</p>
-							<h5 class="contact-info-one__email"><a href="mailto:info@example.com">info@example.com</a></h5>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</section>
 
-	<x-footer2/>
+
+	<x-footer/>
 	<x-mobileMenu/>
 	<x-searchPopup/>
 	<x-scroll-to-top/>
