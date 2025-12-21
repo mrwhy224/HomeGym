@@ -14,42 +14,25 @@
     {
       "name": "Find a Class",
       "icon": "menu-icon icon-base ti tabler-search",
-      "slug": "user.find",
+      "slug": "user.classes",
       "submenu": [
         {
-          "url": "/panel/coaches",
-          "name": "Browse Coaches",
-          "slug": "user.coaches.list"
-        },
-        {
-          "url": "/panel/classes/public",
-          "name": "Public Classes",
-          "slug": "user.classes.public"
-        }
-      ]
-    },
-    {
-      "name": "My Requests",
-      "icon": "menu-icon icon-base ti tabler-calendar-plus",
-      "slug": "user.requests",
-      "submenu": [
-        {
-          "url": "/panel/requests/private/create",
+          "url": "/panel/classes/new/private",
           "name": "Request Private Class",
-          "slug": "user.requests.private.create"
+          "slug": "user.classes.new.private"
         },
         {
-          "url": "/panel/requests",
-          "name": "All My Requests",
-          "slug": "user.requests.list"
+          "url": "/panel/classes/new/non-private",
+          "name": "Get Public/Semi-Private",
+          "slug": "user.classes.new.non-private"
         }
       ]
     },
     {
-      "url": "/panel/bookings",
-      "name": "My Bookings",
+      "url": "/panel/classes/calendar",
+      "name": "My Calendar",
       "icon": "menu-icon icon-base ti tabler-calendar-event",
-      "slug": "user.bookings.list"
+      "slug": "user.classes.calendar"
     },
     {
       "isHeader": true,
@@ -67,40 +50,40 @@
           "slug": "user.financial.wallet"
         },
         {
-          "url": "/panel/financial/transactions",
+          "url": "/panel/financial/transaction",
           "name": "Transaction History",
-          "slug": "user.financial.history"
+          "slug": "user.financial.transaction"
         }
       ]
     },
     {
-      "url": "/panel/messages",
-      "name": "Messages",
+      "url": "/panel/messenger",
+      "name": "Messenger",
       "icon": "menu-icon icon-base ti tabler-message-2",
-      "slug": "user.messages.inbox"
+      "slug": "user.messenger"
     },
     {
-      "name": "Support",
+      "name": "Help",
       "icon": "menu-icon icon-base ti tabler-help",
-      "slug": "user.support",
+      "slug": "user.help",
       "submenu": [
         {
-          "url": "/panel/support/faq",
+          "url": "/panel/help/faq",
           "name": "FAQ",
-          "slug": "user.support.faq"
+          "slug": "user.help.faq"
         },
         {
-          "url": "/panel/support/tickets",
+          "url": "/panel/help/support",
           "name": "Support Tickets",
-          "slug": "user.support.tickets"
+          "slug": "user.help.support"
         }
       ]
     },
     {
-      "url": "/panel/settings/account",
+      "url": "/panel/setting",
       "name": "Settings",
       "icon": "menu-icon icon-base ti tabler-settings",
-      "slug": "user.settings.account"
+      "slug": "user.setting"
     }
   ]
 }

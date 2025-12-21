@@ -88,6 +88,10 @@ class User extends Authenticatable implements HasMedia
 	{
 		return $this->belongsTo(Country::class);
 	}
+	public function currency()
+	{
+		return $this->belongsTo(Currency::class);
+	}
 
 	public function language()
 	{

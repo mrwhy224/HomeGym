@@ -84,24 +84,20 @@ class UserController extends Controller
 			]);
 		}
 
-		// استفاده از Transaction برای اطمینان از ثبت کامل در همه جداول
 		return DB::transaction(function () use ($request) {
 			try {
-				// 2. دریافت داده‌های پیش‌فرض مطابق با Seeder
 				$planBasic = Plan::where('is_default', true)->first() ?? Plan::first();
 				$countryIran = Country::where('code_alpha_2', 'USD')->first();
 				$langFa = Language::where('code', 'en')->first();
-
-				// ارز کاربر (تومان برای نمایش) و ارز کیف پول (دلار/سیستمی برای محاسبات)
 				$irtCurrency = Currency::where('code', 'USD')->first() ?? Currency::first();
 				$systemCurrency = Currency::where('is_default', true)->first() ?? Currency::first();
 
 				$user = User::create([
 					'first_name' => $request->name,
-					'last_name' => 'Member', // مقدار دستی
+					'last_name' => 'Member',
 					'email' => $request->email,
 					'password' => Hash::make($request->password),
-					'phone' => null, // فعلاً در فرم نیست
+					'phone' => null,
 					'email_verified_at' => now(),
 					'country_id' => $countryIran?->id,
 					'language_id' => $langFa?->id,
@@ -114,20 +110,20 @@ class UserController extends Controller
 				Customer::create([
 					'user_id' => $user->id,
 					'plan_id' => $planBasic?->id,
-					'gender' => 'not_specified', // مقدار دستی
-					'date_of_birth' => '2000-01-01', // مقدار دستی
-					'activity_level' => 'moderate', // مقدار دستی
-					'fitness_goal' => 'General Health', // مقدار دستی
+					'gender' => 'not_specified',
+					'date_of_birth' => '2000-01-01',
+					'activity_level' => 'moderate',
+					'fitness_goal' => 'General Health',
 					'bio' => 'Newly registered user.',
 				]);
 
-				// 6. ایجاد کیف پول با ارز پایه سیستم (مشابه متد createWallet در سیدر)
+
 				Wallet::create([
 					'user_id' => $user->id,
 					'currency_id' => $systemCurrency->id,
 					'name' => 'Main Wallet',
 					'holder_type' => 'user',
-					'balance' => 0, // موجودی اولیه صفر
+					'balance' => 0,
 					'balance_blocked' => 0,
 					'is_active' => true,
 				]);

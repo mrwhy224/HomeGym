@@ -29,15 +29,15 @@
               </div>
               <div>
                 <h5 class="mb-0">Current Balance</h5>
-                <small class="text-muted">Last change: {{ auth()->user()->wallet->updated_at->formatUser('Y-m-d H:i') }}</small>
+                <small class="text-muted">Last change {{ auth()->user()->wallet->updated_at->diffForHumans() }}</small>
               </div>
             </div>
-            
+
             {{-- نمایش موجودی با فرمت و سیمبل --}}
             <h2 class="fw-bolder mb-1 text-primary">
                 {{ auth()->user()->wallet->display_balance }}
             </h2>
-            
+
             <p class="text-body-secondary">
               Your wallet balance is used for quick payments across the platform.
               @if(auth()->user()->wallet->balance_blocked > 0)
@@ -48,11 +48,6 @@
                 </span>
               @endif
             </p>
-            
-            <a href="#add-funds-form" class="btn btn-primary">
-              <i class="icon-base ti tabler-plus ti-sm me-1"></i>
-              Add Funds
-            </a>
           </div>
         </div>
         <div class="card mb-6" id="add-funds-form">
@@ -69,7 +64,7 @@
                   </div>
                 </div>
 
-                
+
 
                 <div class="mb-5 col-12">
                   <label class="form-label d-block">Select Payment Method</label>

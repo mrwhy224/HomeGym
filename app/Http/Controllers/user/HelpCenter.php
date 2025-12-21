@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class HelpCenter extends Controller
 {
-	public function index()
+	public function faq()
 	{
 		return view('content.user.faq');
+	}
+	public function support()
+	{
+		return view('content.user.support');
 	}
 }

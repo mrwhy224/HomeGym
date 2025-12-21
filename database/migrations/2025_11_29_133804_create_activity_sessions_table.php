@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('activity_sessions', function (Blueprint $table) {
             $table->id();
+			$table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
+			$table->timestamp('start_at');
+			$table->timestamp('end_at');
+			$table->enum('status', ['scheduled', 'completed', 'cancelled_by_coach', 'cancelled_system'])->default('scheduled');
             $table->timestamps();
         });
     }

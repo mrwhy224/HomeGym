@@ -50,7 +50,8 @@ class AppServiceProvider extends ServiceProvider
 
 		Carbon::macro('formatUser', function ($format = 'Y-m-d H:i:s') {
 			$timezone = config('app.user_timezone', config('app.timezone'));
-			return $this->setTimezone($timezone)->format($format);
+
+			return $this->copy()->setTimezone($timezone)->format($format);
 		});
 
 	}

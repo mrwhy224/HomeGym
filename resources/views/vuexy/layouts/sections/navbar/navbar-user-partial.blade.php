@@ -1,8 +1,82 @@
 @php
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+	use Illuminate\Support\Facades\Auth;
+	use Illuminate\Support\Facades\Route;
+
+	// Dummy logic for the demo - This would eventually come from your Controller
+	$upcomingEvent = [
+		'title' => 'Yoga Class',
+		'time' => '18:00',
+		'icon' => 'tabler-stretching'
+	];
+	 $upcomingEvent = null; // Uncomment this to see the "Quiet" state
 @endphp
 
+<style>
+	/* Dynamic Island Core Styles */
+	.island-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-grow: 1;
+	}
+
+	.dynamic-island {
+		background: #2f3349;
+		color: #fff;
+		border-radius: 50px;
+		padding: 6px 16px;
+		min-width: 160px;
+		height: 38px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		cursor: pointer;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.dynamic-island:hover {
+		min-width: 240px;
+		background: #000;
+		box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+	}
+
+	.island-icon {
+		font-size: 18px;
+		color: #7367f0; /* primary color */
+		transition: transform 0.3s ease;
+	}
+
+	.dynamic-island:hover .island-icon {
+		transform: scale(1.2);
+	}
+
+	.island-text {
+		font-size: 0.85rem;
+		font-weight: 500;
+		white-space: nowrap;
+		opacity: 0.9;
+	}
+
+	/* Pulse animation for active events */
+	.pulse-dot {
+		width: 8px;
+		height: 8px;
+		background: #28c76f;
+		border-radius: 50%;
+		box-shadow: 0 0 0 rgba(40, 199, 111, 0.4);
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0% { box-shadow: 0 0 0 0 rgba(40, 199, 111, 0.7); }
+		70% { box-shadow: 0 0 0 10px rgba(40, 199, 111, 0); }
+		100% { box-shadow: 0 0 0 0 rgba(40, 199, 111, 0); }
+	}
+</style>
 <!--  Brand demo (display only for navbar-full and hide on below xl) -->
 @if (isset($navbarFull))
 <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4 ms-0">
@@ -33,27 +107,22 @@ use Illuminate\Support\Facades\Route;
 <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
 
   @if (!isset($menuHorizontal))
-  <!-- Search -->
-  <div class="navbar-nav align-items-center">
-    <div class="nav-item navbar-search-wrapper px-md-0 px-2 mb-0">
-      <a class="nav-item nav-link search-toggler d-flex align-items-center px-0" href="javascript:void(0);">
-        <span class="d-inline-block text-body-secondary fw-normal" id="autocomplete"></span>
-      </a>
-    </div>
-  </div>
-  <!-- /Search -->
+		<div class="island-wrapper d-none d-md-flex">
+			<div class="dynamic-island" id="main-island">
+				@if($upcomingEvent)
+					<div class="pulse-dot"></div>
+					<i class="icon-base ti {{ $upcomingEvent['icon'] }} island-icon"></i>
+					<span class="island-text">{{ $upcomingEvent['title'] }} at {{ $upcomingEvent['time'] }}</span>
+				@else
+					<i class="icon-base ti tabler-zzz island-icon text-muted"></i>
+					<span class="island-text text-muted">All quiet for now</span>
+				@endif
+			</div>
+		</div>
   @endif
 
   <ul class="navbar-nav flex-row align-items-center ms-md-auto">
-    @if (isset($menuHorizontal))
-    <!-- Search -->
-    <li class="nav-item navbar-search-wrapper btn btn-text-secondary btn-icon rounded-pill">
-      <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">
-        <span class="d-inline-block text-body-secondary fw-normal" id="autocomplete"></span>
-      </a>
-    </li>
-    <!-- /Search -->
-    @endif
+
 
     <!-- Language -->
     <li class="nav-item dropdown-language dropdown">
@@ -198,15 +267,6 @@ use Illuminate\Support\Facades\Route;
           <a class="dropdown-item"
             href="{{ Route::has('profile.show') ? route('profile.show') : url('pages/profile-user') }}">
             <i class="icon-base ti tabler-user me-3 icon-md"></i><span class="align-middle">My Profile</span> </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="{{ url('pages/account-settings-billing') }}">
-            <span class="d-flex align-items-center align-middle">
-              <i class="flex-shrink-0 icon-base ti tabler-file-dollar me-3 icon-md"></i><span
-                class="flex-grow-1 align-middle">Billing</span>
-              <span class="flex-shrink-0 badge bg-danger d-flex align-items-center justify-content-center">4</span>
-            </span>
-          </a>
         </li>
         <li>
           <div class="dropdown-divider my-1 mx-n2"></div>
