@@ -194,7 +194,7 @@
 							</div>
 							<div class="course-details__doller-and-btn-box">
 								<div class="course-details__doller-btn-box">
-									<a href={{ url('course-details') }} class="thm-btn-two">
+									<a href={{ route('register.form') }} class="thm-btn-two">
 										<span>Join Us Now!</span>
 										<i class="icon-angles-right"></i>
 									</a>

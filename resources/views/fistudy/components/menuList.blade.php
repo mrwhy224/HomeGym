@@ -175,7 +175,7 @@
                             <a href="{{ route('login.form', ['locale' => app()->getLocale()]) }}" class="thm-btn">{{ __('header.btn_login') }}</a>
                         </div>
                         <div class="main-menu__btn-box-2">
-                            <a href="{{ route('sign-up', ['locale' => app()->getLocale()]) }}" class="thm-btn">{{ __('header.btn_register') }}</a>
+                            <a href="{{ route('register.form', ['locale' => app()->getLocale()]) }}" class="thm-btn">{{ __('header.btn_register') }}</a>
                         </div>
                     </div>
                 </div>
