@@ -30,7 +30,7 @@
   if (isset($configData['color']) && $configData['color']) {
       $primaryColorCSS = Helpers::generatePrimaryColorCSS($configData['color']);
   }
-  
+
 @endphp
 
 <html lang="{{ session()->get('locale') ?? app()->getLocale() }}"
@@ -46,7 +46,6 @@
 
   <title>
     @yield('title') | {{ config('variables.templateName') ? config('variables.templateName') : 'TemplateName' }}
-    - {{ config('variables.templateSuffix') ? config('variables.templateSuffix') : 'TemplateSuffix' }}
   </title>
   <meta name="description"
     content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
