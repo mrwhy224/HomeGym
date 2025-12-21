@@ -18,6 +18,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => implode('|', $acti
 	Route::get('login', [UserController::class, 'showLogin'])->name('login.form');
 	Route::get('register', [UserController::class, 'showRegister'])->name('register.form');
 	Route::post('login', [UserController::class, 'loginAttempt'])->name('login.attempt');
+	Route::post('register', [UserController::class, 'registerAttempt'])->name('register.attempt');
 
 });
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');

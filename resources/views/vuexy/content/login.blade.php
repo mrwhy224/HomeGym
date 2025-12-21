@@ -89,7 +89,7 @@ $configData = Helper::appClasses();
 
         <p class="text-center">
           <span>New on our platform?</span>
-          <a href="{{ url('auth/register-cover') }}">
+          <a href="{{ route('register.form', ['locale' => app()->getLocale()]) }}">
             <span>Create an account</span>
           </a>
         </p>

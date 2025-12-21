@@ -2,8 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
+use App\Models\Currency;
+use App\Models\Customer;
+use App\Models\Language;
+use App\Models\Plan;
+use App\Models\User;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -27,9 +36,9 @@ class UserController extends Controller
 		if ($validator->fails())
 			return response()->error(422,  'Please fill in all required fields.', $validator->errors());
 
-		$loginType = filter_var($request->input('email-username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
 		$credentials = [
-			$loginType => $request->input('email-username'),
+			'email' => $request->input('email-username'),
 			'password' => $request->input('password')
 		];
 
@@ -58,5 +67,85 @@ class UserController extends Controller
 		$request->session()->invalidate();
 		$request->session()->regenerateToken();
 		return redirect('/panel');
+	}
+	public function registerAttempt(Request $request)
+	{
+		$validator = Validator::make($request->all(), [
+			'name' => 'required|string|max:255',
+			'email' => 'required|string|email|max:255|unique:users',
+			'password' => 'required|string|min:6',
+			'terms' => 'accepted'
+		]);
+
+		if ($validator->fails()) {
+			return response()->json([
+				'ok' => false,
+				'message' => $validator->errors()->first()
+			]);
+		}
+
+		// استفاده از Transaction برای اطمینان از ثبت کامل در همه جداول
+		return DB::transaction(function () use ($request) {
+			try {
+				// 2. دریافت داده‌های پیش‌فرض مطابق با Seeder
+				$planBasic = Plan::where('is_default', true)->first() ?? Plan::first();
+				$countryIran = Country::where('code_alpha_2', 'USD')->first();
+				$langFa = Language::where('code', 'en')->first();
+
+				// ارز کاربر (تومان برای نمایش) و ارز کیف پول (دلار/سیستمی برای محاسبات)
+				$irtCurrency = Currency::where('code', 'USD')->first() ?? Currency::first();
+				$systemCurrency = Currency::where('is_default', true)->first() ?? Currency::first();
+
+				$user = User::create([
+					'first_name' => $request->name,
+					'last_name' => 'Member', // مقدار دستی
+					'email' => $request->email,
+					'password' => Hash::make($request->password),
+					'phone' => null, // فعلاً در فرم نیست
+					'email_verified_at' => now(),
+					'country_id' => $countryIran?->id,
+					'language_id' => $langFa?->id,
+					'currency_id' => $irtCurrency->id,
+					'timezone' => 'UTC',
+				]);
+
+				$user->assignRole('customer');
+
+				Customer::create([
+					'user_id' => $user->id,
+					'plan_id' => $planBasic?->id,
+					'gender' => 'not_specified', // مقدار دستی
+					'date_of_birth' => '2000-01-01', // مقدار دستی
+					'activity_level' => 'moderate', // مقدار دستی
+					'fitness_goal' => 'General Health', // مقدار دستی
+					'bio' => 'Newly registered user.',
+				]);
+
+				// 6. ایجاد کیف پول با ارز پایه سیستم (مشابه متد createWallet در سیدر)
+				Wallet::create([
+					'user_id' => $user->id,
+					'currency_id' => $systemCurrency->id,
+					'name' => 'Main Wallet',
+					'holder_type' => 'user',
+					'balance' => 0, // موجودی اولیه صفر
+					'balance_blocked' => 0,
+					'is_active' => true,
+				]);
+
+				Auth::login($user);
+
+				return response()->json([
+					'ok' => true,
+					'message' => 'Account created successfully!',
+					'data' => ['redirect_url' => url('/panel')]
+				]);
+
+			} catch (\Exception $e) {
+				return response()->json([
+					'ok' => false,
+					'message' => 'Registration failed: ' . $e->getMessage()
+				]);
+			}
+		});
 	}
 }
