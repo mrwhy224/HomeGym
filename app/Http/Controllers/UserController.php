@@ -48,6 +48,10 @@ class UserController extends Controller
 		return view('content.login');
 	}
 
+	public function showRegister()
+	{
+		return view('content.register');
+	}
 	public function logout(Request $request)
 	{
 		Auth::logout();
