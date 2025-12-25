@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="content-right d-none d-sm-block">
-          <img src="{{ asset('assets/img/illustrations/man-with-laptop.png') }}" height="140" alt="Dashboard Welcome">
+          <img src="{{ asset('assets/img/illustrations/girl-unlock-password-light.png') }}" height="140" alt="Dashboard Welcome">
         </div>
       </div>
     </div>
