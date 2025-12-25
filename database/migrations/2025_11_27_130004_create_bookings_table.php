@@ -15,7 +15,6 @@ return new class extends Migration
 			$table->id();
 			$table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
 			$table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-			$table->foreignId('user_package_id')->constrained('user_packages')->onDelete('restrict');
 			$table->timestamp('cancelled_at')->nullable();
 			$table->enum('cancelled_by', ['user', 'coach', 'admin', 'system'])->nullable();
 			$table->text('cancellation_reason')->nullable();

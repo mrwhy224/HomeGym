@@ -10,4 +10,9 @@ class ActivitySession extends Model
 		'start_at' => 'datetime',
 		'end_at' => 'datetime',
 	];
+
+	public function activity()
+	{
+		return $this->belongsTo(Activity::class, 'activity_id');
+	}
 }

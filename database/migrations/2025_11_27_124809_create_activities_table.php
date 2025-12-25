@@ -15,6 +15,7 @@ return new class extends Migration
 			$table->id();
 			$table->foreignId('coach_id')->constrained('users')->onDelete('cascade');
 			$table->foreignId('package_id')->constrained('packages')->onDelete('cascade');
+			$table->smallInteger('remaining_capacity');
 //			$table->timestamp('start_at');
 //			$table->timestamp('end_at');
 //			$table->enum('status', ['scheduled', 'completed', 'cancelled_by_coach', 'cancelled_system'])->default('scheduled');
