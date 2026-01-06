@@ -13,6 +13,9 @@ class Customer extends Model
 	protected $fillable = [
 		'user_id',
 		'plan_id',
+		'gender',
+		'activity_level',
+		'fitness_goal',
 	];
 	protected $casts = [
 		'created_at' => 'datetime',

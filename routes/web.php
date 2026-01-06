@@ -3,6 +3,7 @@
 use App\Http\Controllers\pages\MiscComingSoon;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\main\HomeControllerMain;
 use App\Http\Controllers\main\PagesController;
@@ -17,6 +18,10 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => implode('|', $acti
 	Route::get('/', [HomeControllerMain::class, 'index'])->name('index');
 	Route::get('login', [UserController::class, 'showLogin'])->name('login.form');
 	Route::get('register', [UserController::class, 'showRegister'])->name('register.form');
+	Route::post('register-step1', [UserController::class, 'registerStep1'])->name('register.step1');
+	Route::post('register-step2', [UserController::class, 'registerStep2'])->name('register.step2');
+	Route::post('register-final', [UserController::class, 'registerFinalize'])->name('register.final');
+
 	Route::post('login', [UserController::class, 'loginAttempt'])->name('login.attempt');
 	Route::post('register', [UserController::class, 'registerAttempt'])->name('register.attempt');
 

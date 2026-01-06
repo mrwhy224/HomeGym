@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class PrivateClassRequest extends Model
 {
-	protected $fillable = [
-		'user_id', 'coach_id', 'user_package_id',
-		'requested_start_at', 'duration_minutes', 'status', 'admin_note'
+	protected $casts = [
+		'requested_time' => 'array',
 	];
 
-	protected $casts = [
-		'requested_start_at' => 'datetime',
+	protected $fillable = [
+		'user_id', 'coach_id', 'requested_time', 'status', 'admin_note'
 	];
 
 	public function user()

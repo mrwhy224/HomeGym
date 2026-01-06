@@ -27,23 +27,21 @@
             <a class="btn btn-primary btn-sm" href="{{ route('user.financial.wallet') }}"><i class="ti tabler-plus me-1"></i> Top-up Wallet</a>
         </div>
       </div>
-      
+
       <div class="table-responsive">
         <table class="table table-hover">
           <thead class="table-light">
             <tr>
-              <th>ID / Ref</th>
               <th>Transaction Details</th>
               <th>Amount</th>
               <th>Date & Time</th>
               <th>Status</th>
-              <th>Action</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             @forelse($transactions as $transaction)
             <tr>
-              <td><span class="fw-medium">#{{ $transaction->ref_id ?? $transaction->id }}</span></td>
               <td>
                 <div class="d-flex align-items-center">
                   <div class="avatar avatar-sm me-3">
@@ -61,7 +59,7 @@
               </td>
               <td>
                 <span class="fw-bold {{ $transaction->type == 'deposit' ? 'text-success' : 'text-danger' }}">
-                  {{ $transaction->type == 'deposit' ? '+' : '-' }} {{ number_format($transaction->amount) }}
+                  {{ number_format($transaction->original_amount) }} {{ $transaction->currency->code }}
                 </span>
               </td>
               <td>
@@ -71,21 +69,16 @@
                 </div>
               </td>
               <td>
-                @php
-                  $statusClasses = [
-                      'completed' => 'bg-label-success',
-                      'pending' => 'bg-label-warning',
-                      'failed' => 'bg-label-danger'
-                  ];
-                @endphp
-                <span class="badge {{ $statusClasses[$transaction->status] ?? 'bg-label-secondary' }} text-capitalize">
-                  {{ $transaction->status }}
+                <span class="badge {{ $transaction->confirmed? 'bg-label-success':'bg-label-danger' }} text-capitalize">
+                  {{ $transaction->confirmed?'Completed':'Failed' }}
                 </span>
               </td>
               <td>
-                <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill" data-bs-toggle="tooltip" title="Download Invoice">
-                  <i class="ti tabler-download"></i>
-                </button>
+				  @if($transaction->reference_type == 'App\Models\Activity')
+				  <a href="{{ route('user.financial.invoice', ['invoice'=>$transaction->reference->invoice->id]) }}" target="_blank" class="btn btn-text-secondary rounded-pill" data-bs-toggle="tooltip" title="Get Invoice">
+					  <i class="ti tabler-download me-2"></i> Invoice
+                </a>
+				  @endif
               </td>
             </tr>
             @empty
@@ -98,7 +91,7 @@
           </tbody>
         </table>
       </div>
-      
+
       @if($transactions->hasPages())
       <div class="card-footer border-top">
         {{ $transactions->links() }}

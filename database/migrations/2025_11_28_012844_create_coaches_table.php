@@ -22,6 +22,7 @@ return new class extends Migration
 			$table->json('verification_documents')->nullable();
 
 			$table->decimal('commission_percentage', 5, 2)->default(70.00);
+			$table->unsignedTinyInteger('payout_day')->default(1);
 			$table->string('bank_name')->nullable();
 			$table->string('iban', 34)->nullable();
 			$table->string('card_number', 20)->nullable();

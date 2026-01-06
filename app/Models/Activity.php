@@ -4,11 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Activity extends Model
 {
 	protected $fillable = [
-		'coach_id', 'type', 'capacity', 'start_at', 'end_at', 'status', 'is_modified_duration'
+		'coach_id',
+		'package_id',
+		'type',
+		'remaining_capacity',
 	];
 
 	protected $casts = [
@@ -31,6 +35,10 @@ class Activity extends Model
 	public function sessions()
 	{
 		return $this->hasMany(ActivitySession::class);
+	}
+	public function invoice(): MorphOne
+	{
+		return $this->morphOne(Invoice::class, 'invoiceable');
 	}
 
 	protected function weeklySchedule(): Attribute

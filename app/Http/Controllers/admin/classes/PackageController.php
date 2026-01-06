@@ -83,5 +83,31 @@ class PackageController
 		return response()->success('Package created successfully!');
 
 	}
+	/**
+	 * Update the specified package in storage.
+	 */
+	public function update(Request $request, $id)
+	{
+		$package = Package::findOrFail($id);
+		$rules = [
+			'type'           => 'required|in:public,semi_private,private',
+			'total_sessions' => 'required|integer|min:1',
+			'capacity'       => 'required|integer|min:1',
+			'price'          => 'required|numeric|min:0',
+			'validity_days'  => 'required|integer|min:1',
+			'name'           => 'array|required',
+		];
+		foreach ($this->getActiveLocales() as $locale) {
+			if ($locale == 'en') {
+				$rules['name.' . $locale] = 'required|string|max:255';
+			} else {
+				$rules['name.' . $locale] = 'nullable|string|max:255';
+			}
+		}
+		$validatedData = $request->validate($rules);
+		$validatedData['is_active'] = $request->has('is_active') ? 1 : 0;
+		$package->update($validatedData);
+		return response()->success('Package updated successfully!');
+	}
 
 }

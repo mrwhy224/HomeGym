@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\classes\BookingController;
 use App\Http\Controllers\admin\classes\PackageController;
 use App\Http\Controllers\admin\classes\ServiceController;
+use App\Http\Controllers\admin\CoachController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\FinancialController;
 use App\Http\Controllers\admin\MessageController;
@@ -28,9 +29,7 @@ Route::group(['prefix' => 'customer','as' => 'customer.'], function () {
 	})->name('list');
 });
 Route::group(['prefix' => 'coach','as' => 'coach.'], function () {
-	Route::get('list', function () {
-		return view('content.admin.users.coach');
-	})->name('list');
+	Route::get('list', [CoachController::class, 'index'])->name('list');
 });
 Route::get('role', function () {
 	return view('content.admin.users.role');
@@ -38,12 +37,17 @@ Route::get('role', function () {
 
 Route::group(['prefix' => 'booking','as' => 'booking.'], function () {
 	Route::get('', [BookingController::class, 'index'])->name('list');
+	Route::get('process/{id}', [BookingController::class, 'process'])->name('process');
+	Route::get('getHeatmapData/{id}', [BookingController::class, 'getHeatmapData'])->name('getHeatmapData');
+	Route::post('process/{id}/approve', [BookingController::class, 'approve'])->name('approve');
 	Route::get('calendar', [BookingController::class, 'calendar'])->name('calendar');
 });
 
 Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
 	Route::get('', [ServiceController::class, 'index'])->name('list');
 	Route::get('create', [ServiceController::class, 'create'])->name('create');
+	Route::get('attendance/{activity}', [ServiceController::class, 'attendance'])->name('attendance');
+	Route::get('details/{activity}', [ServiceController::class, 'show'])->name('show');
 	Route::get('package', [PackageController::class, 'getPage'])->name('package');
 });
 
@@ -79,13 +83,22 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 		Route::get('list', [Category::class, 'index'])->name('index');
 	});
 
+	Route::get('users/search', [CustomerController::class, 'search'])->name('users.search');
+	Route::post('book/{activity}', [BookingController::class, 'enrollUser'])->name('book');
+
 	Route::group(['prefix' => 'customer','as' => 'customer.'], function () {
 		Route::get('list', [CustomerController::class, 'customers'])->name('list');
+	});
+	Route::group(['prefix' => 'coach','as' => 'coach.'], function () {
+		Route::get('list', [CoachController::class, 'coaches'])->name('list');
+		Route::post('create', [CoachController::class, 'store'])->name('create');
 	});
 
 	Route::group(['prefix' => 'package','as' => 'package.'], function () {
 		Route::get('list', [PackageController::class, 'index'])->name('index');
 		Route::post('create', [PackageController::class, 'store'])->name('create');
+		Route::post('update/{id}', [PackageController::class, 'update'])->name('update');
 		Route::delete('delete/{package}', [PackageController::class, 'remove'])->name('delete');
 	});
 });
+

@@ -16,9 +16,10 @@ return [
     'paths' => [
         // 1. Path for your Vuexy admin panel
         // Laravel will look here first.
-        resource_path('views/vuexy'), 
+		resource_path('views/vuexy'),
+		resource_path('views/emails'),
 
-        // 2. Path for your user-facing website theme
+		// 2. Path for your user-facing website theme
         // It will look here second.
         resource_path('views/fistudy'),
 

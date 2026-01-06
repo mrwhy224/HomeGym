@@ -15,9 +15,7 @@ return new class extends Migration
 			$table->id();
 			$table->foreignId('user_id')->constrained('users')->onDelete('cascade');
 			$table->foreignId('coach_id')->constrained('users')->onDelete('cascade');
-			$table->foreignId('user_package_id')->constrained('user_packages')->onDelete('cascade');
-			$table->timestamp('requested_start_at');
-			$table->integer('duration_minutes')->default(60);
+			$table->json('requested_time');
 			$table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
 			$table->text('admin_note')->nullable();
 			$table->timestamps();

@@ -217,6 +217,23 @@
 
             <div id="coach-selection" class="content">
                 <h5 class="mb-3">Suggested Coaches for Your Schedule</h5>
+                <div class="card mb-4 border-primary shadow-none">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h6 class="mb-1">How many sessions per week do you want?</h6>
+                                <small class="text-muted">Select the frequency of your private classes.</small>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select border-primary" id="sessions-count" onchange="updateSessionCount()">
+                                    @for ($i = 1; $i <= 3; $i++)
+                                        <option value="{{ $i }}"{{ $i==1?" Selected":"" }}>{{ $i }} Session{{ $i > 1 ? 's' : '' }} per week</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row g-4" id="coaches-list-container"></div>
                 <div class="col-12 d-flex justify-content-between mt-4">
                     <button class="btn btn-label-secondary btn-prev" onclick="stepper.previous()">
@@ -289,6 +306,8 @@
 
         // متغیرهای سراسری
         let userSlots = [];
+        let allCoachesFromServer = [];
+        let selectedSessionsCount = 1;
         let selectedCoachId = null;
         let stepper;
         let timeModal;
@@ -483,40 +502,115 @@
                 return;
             }
 
-            if (stepper) stepper.next();
-
             document.getElementById('coaches-list-container').innerHTML =
-                '<div class="col-12 text-center py-5"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Finding best coaches...</p></div>';
+                '<div class="col-12 text-center py-5"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Analyzing precise schedule overlaps...</p></div>';
 
-            setTimeout(() => {
-                const mockCoaches = [
-                    {id: 1, name: 'Sarah Jenkins', match: 100, bio: 'Yoga & Meditation Specialist'},
-                    {id: 2, name: 'Alex Stone', match: 80, bio: 'Fitness & Bodybuilding Coach'},
-                ];
-                let html = '';
-                mockCoaches.forEach(coach => {
-                    html += `
-                    <div class="col-md-6 animate__animated animate__fadeInUp">
-                        <div class="card coach-card h-100" onclick="selectCoach(this, ${coach.id}, '${coach.name}')">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="avatar avatar-lg me-3">
-                                    <span class="avatar-initial rounded-circle bg-label-primary">${coach.name.slice(0, 2)}</span>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mb-1">${coach.name}</h5>
-                                    <small class="text-muted d-block mb-2">${coach.bio}</small>
-                                    <span class="badge bg-label-success">Time Match: ${coach.match}%</span>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="coachRadio" value="${coach.id}">
-                                </div>
+            if (stepper) stepper.next();
+            fetch('http://127.0.0.1:8000/panel/classes/test2', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ 
+                    slots: cleanSlots 
+                })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                allCoachesFromServer = data.coaches;
+                filterAndRenderCoaches();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error', 'Failed to find matching coaches. Please try again.', 'error');
+                if (stepper) stepper.previous();
+            });
+        }
+        function filterAndRenderCoaches() {
+            const sessionsNeeded = parseInt(selectedSessionsCount);
+
+            const filteredList = allCoachesFromServer.map(coach => {
+                return {
+                    ...coach,
+                    is_usable: coach.is_usable && coach.max_sessions >= sessionsNeeded
+                };
+            });
+
+            renderCoachResults(filteredList);
+        }
+        function updateSessionCount() {
+            selectedSessionsCount = document.getElementById('sessions-count').value;
+            // document.getElementById('summary-sessions-count').innerText = selectedSessionsCount;
+            
+            // بلافاصله لیست مربیان را بر اساس فیلتر جدید آپدیت کن
+            if (allCoachesFromServer.length > 0) {
+                filterAndRenderCoaches();
+            }
+        }
+        function renderCoachResults(coaches) {
+            // ۱. مرتب‌سازی لیست: 
+            // اولویت اول: مربیان قابل استفاده (is_usable) بالا قرار بگیرند
+            // اولویت دوم: بر اساس درصد مطابقت (match_percentage) نزولی
+            coaches.sort((a, b) => {
+                if (a.is_usable !== b.is_usable) {
+                    return b.is_usable ? -1 : 1; // مربیان True قبل از False
+                }
+                return b.match_percentage - a.match_percentage; // درصد بالاتر قبل از درصد پایین‌تر
+            });
+
+            let html = '';
+            coaches.forEach(coach => {
+                // تنظیمات ظاهری برای مربیان غیرمجاز
+                const isNotUsable = !coach.is_usable;
+                const disabledClass = isNotUsable ? 'bg-light-secondary opacity-75' : '';
+                const grayscaleStyle = isNotUsable ? 'filter: grayscale(1);' : '';
+                const cursorStyle = isNotUsable ? 'cursor: not-allowed;' : 'cursor: pointer;';
+                const pointerEvents = isNotUsable ? 'none' : 'auto';
+
+                html += `
+                <div class="col-md-6 animate__animated animate__fadeInUp">
+                    <div class="card coach-card h-100 ${disabledClass}" 
+                         onclick="${coach.is_usable ? `selectCoach(this, ${coach.id}, '${coach.name}')` : ''}"
+                         style="${grayscaleStyle} ${cursorStyle}">
+                        
+                        <div class="card-body d-flex align-items-center" style="pointer-events: ${pointerEvents};">
+                            <div class="avatar avatar-lg me-3">
+                                <span class="avatar-initial rounded-circle bg-label-primary">${coach.name.slice(0, 2)}</span>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h5 class="mb-1">
+                                    ${coach.name} 
+                                    ${isNotUsable ? '<span class="badge bg-label-danger ms-2" style="font-size: 0.6rem;">NOT ELIGIBLE</span>' : ''}
+                                </h5>
+                                
+                                ${coach.is_usable 
+                                    ? `<span class="badge bg-label-success">Up to ${coach.max_sessions} sessions / week</span>`
+                                    : `<span class="badge bg-label-secondary">Schedule Mismatch</span>`
+                                }
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="coachRadio" 
+                                       value="${coach.id}" ${isNotUsable ? 'disabled' : ''}>
                             </div>
                         </div>
-                    </div>`;
-                });
-                document.getElementById('coaches-list-container').innerHTML = html;
-            }, 1000);
+                    </div>
+                </div>`;
+            });
+
+            const container = document.getElementById('coaches-list-container');
+            container.innerHTML = html;
+
+            // ریست کردن انتخاب قبلی اگر مربی انتخابی دیگر در دسترس نیست
+            selectedCoachId = null;
+            document.getElementById('btn-select-coach').disabled = true;
+            document.getElementById('summary-coach-name').innerText = '---';
         }
+
 
         function selectCoach(element, id, name) {
             document.querySelectorAll('.coach-card').forEach(el => el.classList.remove('selected'));
@@ -540,29 +634,70 @@
 
         function submitRequest() {
             const cleanSlots = userSlots.filter(n => n);
-            
-            console.log('Final Request:', {coach_id: selectedCoachId, slots: cleanSlots});
-            
-            // Success Toast
-            showNotification('Success!', 'Your request has been submitted successfully.', 'success');
-            
-            // Redirect logic (Optional)
-            // setTimeout(() => window.location.href = '/dashboard', 2000);
+            const submitBtn = document.querySelector('#confirmation .btn-success');
+
+            // ۱. اعتبارسنجی نهایی
+            if (!selectedCoachId) {
+                showNotification('Selection Required', 'Please go back and select a coach.', 'warning');
+                return;
+            }
+
+            // ۲. نمایش حالت در حال بارگذاری روی دکمه
+            const originalContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Sending...';
+            submitBtn.disabled = true;
+
+            // ۳. ارسال اطلاعات به سرور
+            fetch('http://127.0.0.1:8000/panel/classes/test3', { // این روت را در فایل web.php بسازید
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    coach_id: selectedCoachId,
+                    sessions_per_week: selectedSessionsCount,
+                    slots: cleanSlots
+                })
+            })
+            .then(async response => {
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.message || 'Something went wrong');
+                return data;
+            })
+            .then(data => {
+                // ۴. نمایش پیام موفقیت و انتقال کاربر
+                showNotification('Success!', 'Your private class request has been sent.', 'success');
+                
+                setTimeout(() => {
+                    location.reload();
+                }, 1500);
+            })
+            .catch(error => {
+                console.error('Submission Error:', error);
+                showNotification('Submission Failed', error.message, 'error');
+                
+                // بازگرداندن دکمه به حالت عادی در صورت خطا
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+            });
         }
 
         function loadHeatmapData() {
 
-            const mockData = {};
-            for(let d=0; d<7; d++) {
-                mockData[d] = [];
-                for(let h=8; h<=23; h++) {
-                    // ساعت 8 تا 22
-                    const coaches = Math.floor(Math.random() * 5); // بین 0 تا 4 مربی
-                    mockData[d].push({ hour: h, count: coaches });
-                }
-            }
-
-            renderHeatmap(mockData);
+            const columns = document.querySelectorAll('.day-column');
+    
+            fetch('http://127.0.0.1:8000/panel/classes/test') // آدرس روت کنترلر بالا
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.data);
+                    renderHeatmap(data.data);
+                })
+                .catch(error => {
+                    console.error('Error fetching heatmap:', error);
+                    showNotification('Error', 'Could not load coach availability data.', 'error');
+                });
         }
 
         function renderHeatmap(data) {

@@ -28,6 +28,7 @@ class User extends Authenticatable implements HasMedia
 		'country_id',
 		'currency_id',
 		'language_id',
+		'timezone',
 	];
 
 	/**

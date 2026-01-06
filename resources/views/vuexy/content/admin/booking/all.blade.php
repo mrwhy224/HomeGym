@@ -1,171 +1,144 @@
-@php
-$configData = Helper::appClasses();
-@endphp
-
 @extends('layouts/layoutMaster')
-
-@section('title', 'Booking Management')
-
-@section('vendor-style')
-@vite([
-    'resources/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.scss',
-    'resources/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.scss',
-    'resources/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.scss',
-    'resources/assets/vendor/libs/@form-validation/form-validation.scss',
-    'resources/assets/vendor/libs/select2/select2.scss',
-    'resources/assets/vendor/libs/flatpickr/flatpickr.scss'
-])
-@endsection
-
-@section('vendor-script')
-@vite([
-    'resources/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js',
-    'resources/assets/vendor/libs/@form-validation/popular.js',
-    'resources/assets/vendor/libs/@form-validation/bootstrap5.js',
-    'resources/assets/vendor/libs/@form-validation/auto-focus.js',
-    'resources/assets/vendor/libs/select2/select2.js',
-    'resources/assets/vendor/libs/flatpickr/flatpickr.js'
-])
-@endsection
-
-
+@section('title', 'Private Class Requests')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-6">
-    <h4 class="mb-1">Booking Management</h4>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewBookingModal">
-        <i class="ti ti-plus me-1"></i> Add New Booking
-    </button>
-</div>
-
-<div class="row g-6 mb-6">
-    <div class="col-sm-6 col-xl-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between">
-                    <div class="content-left">
-                        <span class="text-heading">Total Bookings</span>
-                        <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2">{{ $totalBookings ?? 0 }}</h4>
-                        </div>
-                        <small class="mb-0">Overall total</small>
-                    </div>
-                    <div class="avatar">
-                        <span class="avatar-initial rounded bg-label-primary">
-                            <i class="ti ti-calendar-event ti-26px"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-xl-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between">
-                    <div class="content-left">
-                        <span class="text-heading">Pending</span>
-                        <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2 text-warning">{{ $pendingBookings ?? 0 }}</h4>
-                        </div>
-                        <small class="mb-0">Awaiting confirmation</small>
-                    </div>
-                    <div class="avatar">
-                        <span class="avatar-initial rounded bg-label-warning">
-                            <i class="ti ti-clock ti-26px"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-xl-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between">
-                    <div class="content-left">
-                        <span class="text-heading">Confirmed</span>
-                        <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2 text-success">{{ $confirmedBookings ?? 0 }}</h4>
-                        </div>
-                        <small class="mb-0">Ready for service</small>
-                    </div>
-                    <div class="avatar">
-                        <span class="avatar-initial rounded bg-label-success">
-                            <i class="ti ti-circle-check ti-26px"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-xl-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between">
-                    <div class="content-left">
-                        <span class="text-heading">Cancelled</span>
-                        <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2 text-danger">{{ $cancelledBookings ?? 0 }}</h4>
-                        </div>
-                        <small class="mb-0">Rejected or cancelled</small>
-                    </div>
-                    <div class="avatar">
-                        <span class="avatar-initial rounded bg-label-danger">
-                            <i class="ti ti-x ti-26px"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="card">
-    <div class="card-header border-bottom">
-        <h5 class="card-title mb-0">Search & Filters</h5>
-        <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
-            <div class="col-md-4 booking_status"></div>
-            <div class="col-md-4 booking_date"></div>
-        </div>
-    </div>
     <div class="card-datatable table-responsive">
-        <table class="datatables-bookings table border-top">
+        <table class="table border-top">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>ID</th>
-                    <th>Customer</th>
-                    <th>Service/Plan</th>
-                    <th>Date & Time</th>
-                    <th>Amount</th>
+                    <th>User</th>
+                    <th>Coach</th>
+                    <th>Sessions/Week</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
+            <tbody>
+                @foreach($requests as $request)
+                @php
+                    $details = is_array($request->requested_time) ? $request->requested_time : json_decode($request->requested_time, true);
+                @endphp
+                <tr>
+                    <td>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="d-flex flex-column">
+                                <span class="fw-medium text-heading">{{ $request->user->name }}</span>
+                                <small class="text-muted">{{ $request->user->email }}</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{ $request->coach->name }}</td>
+                    <td><span class="badge bg-label-primary">{{ $details['sessions_per_week'] ?? '-' }} Sessions</span></td>
+                    <td>
+                        <span class="badge @if($request->status == 'pending') bg-label-warning @elseif($request->status == 'approved') bg-label-success @else bg-label-danger @endif">
+                            {{ ucfirst($request->status) }}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill view-slots-btn"
+                                    data-sessions="{{ $details['sessions_per_week'] ?? 0 }}"
+                                    data-slots='@json($details['slots'] ?? [])'
+                                    data-user-name="{{ $request->user->name }}">
+                                <i class="ti tabler-calendar-time"></i>
+                            </button>
+							@if($request->status !== 'approved')
+								<a href="{{ route('admin.booking.process', ['id'=>$request->id]) }}" class="btn btn-sm btn-icon btn-text-secondary rounded-pill"><i class="ti tabler-eye"></i></a>
+							@endif
+
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 </div>
 
-{{-- مودال‌های مربوطه را اینجا Include کنید --}}
-{{-- @include('_partials._modals.modal-add-booking') --}}
+<div class="modal fade" id="viewSlotsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-bottom">
+        <h5 class="modal-title">Schedule Details: <span id="modalUserName" class="text-primary"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="d-flex justify-content-between align-items-center mb-4 bg-label-primary p-3 rounded">
+              <span class="fw-medium">Intensity:</span>
+              <span class="badge bg-primary" id="modalIntensity">-- Sessions / Week</span>
+          </div>
 
+          <h6 class="mb-3 border-bottom pb-2">Selected Time Slots:</h6>
+          <div class="table-responsive">
+              <table class="table table-sm table-borderless">
+                  <thead class="table-light">
+                      <tr>
+                          <th>Day</th>
+                          <th class="text-center">Time Range</th>
+                      </tr>
+                  </thead>
+                  <tbody id="modalSlotsBody">
+                      </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="modal-footer border-top">
+        <button type="button" class="btn btn-label-secondary w-100" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
-@push('scripts')
+@section('page-script')
 <script>
-    // تنظیمات اولیه برای Flatpickr (انتخاب تاریخ) و Select2 در مودال‌ها
-    $(document).on('shown.bs.modal', function() {
-        $(".flatpickr-date").flatpickr({
-            monthSelectorType: 'static'
+document.addEventListener('DOMContentLoaded', function () {
+    const dayNames = {
+        0: 'Saturday', 1: 'Sunday', 2: 'Monday',
+        3: 'Tuesday', 4: 'Wednesday', 5: 'Thursday', 6: 'Friday'
+    };
+
+    $('.view-slots-btn').on('click', function() {
+        const userName = $(this).data('user-name');
+        const sessions = $(this).data('sessions');
+        let slots = $(this).data('slots');
+
+        // ۱. تنظیم اطلاعات هدر
+        $('#modalUserName').text(userName);
+        $('#modalIntensity').text(sessions + ' Sessions / Week');
+
+        // ۲. مرتب‌سازی اسلات‌ها (ابتدا روز، بعد ساعت شروع)
+        slots.sort((a, b) => {
+            if (a.day !== b.day) return a.day - b.day;
+            return a.start.localeCompare(b.start);
         });
 
-        $('.select2').each(function() {
-            var $this = $(this);
-            $this.wrap('<div class="position-relative"></div>').select2({
-                dropdownParent: $this.parent()
+        // ۳. ساختن ردیف‌های جدول مدال
+        let html = '';
+        if (slots.length > 0) {
+            slots.forEach(slot => {
+                html += `
+                <tr class="border-bottom">
+                    <td class="py-2">
+                        <span class="fw-bold text-heading">${dayNames[slot.day] || 'Unknown'}</span>
+                    </td>
+                    <td class="text-center py-2">
+                        <span class="badge bg-label-info px-3">
+                            <i class="ti tabler-clock-hour-4 me-1 icon-xs"></i>
+                            ${slot.start} - ${slot.end}
+                        </span>
+                    </td>
+                </tr>`;
             });
-        });
+        } else {
+            html = '<tr><td colspan="2" class="text-center text-muted py-4">No slots defined</td></tr>';
+        }
+
+        // ۴. تزریق به مدال و نمایش
+        $('#modalSlotsBody').html(html);
+        $('#viewSlotsModal').modal('show');
     });
+});
 </script>
-@endpush
+@endsection

@@ -8,6 +8,65 @@
 
 @section('page-style')
 @vite('resources/assets/vendor/scss/pages/app-invoice.scss')
+<style>
+    @media print {
+        /* ۱. مخفی سازی تمام عناصر اضافی قالب */
+        #layout-navbar,
+        .layout-menu,
+        .content-footer,
+        .invoice-actions,
+        .nav,
+        #template-customizer,
+        .btn {
+            display: none !important;
+        }
+
+        /* ۲. ریست کردن کل ساختار صفحه برای استفاده از تمام فضا */
+        .layout-wrapper,
+        .layout-container,
+        .layout-page,
+        .content-wrapper,
+        .container-xxl {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+            background: #fff !important;
+        }
+
+        /* ۳. حذف حاشیه‌ها و سایه‌های کارت فاکتور */
+        .invoice-preview-card {
+            box-shadow: none !important;
+            border: none !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* ۴. تنظیم عرض ستون فاکتور به ۱۰۰٪ */
+        .col-xl-9, .col-md-8 {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: 0 0 100% !important;
+        }
+
+        /* ۵. تنظیمات صفحه برای مرورگر */
+        @page {
+            margin: 0; /* حذف حاشیه پیش‌فرض مرورگر */
+            size: auto;
+        }
+
+        body {
+            margin: 1cm; /* حاشیه استاندارد برای لبه کاغذ */
+            background: #fff !important;
+        }
+
+        /* ۶. اطمینان از چاپ رنگ‌های پس‌زمینه */
+        .invoice-preview-header {
+            background-color: #f8f7fa !important;
+            -webkit-print-color-adjust: exact;
+        }
+    }
+</style>
 @endsection
 
 @section('vendor-script')

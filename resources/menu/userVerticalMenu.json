@@ -71,12 +71,8 @@
           "url": "/panel/help/faq",
           "name": "FAQ",
           "slug": "user.help.faq"
-        },
-        {
-          "url": "/panel/help/support",
-          "name": "Support Tickets",
-          "slug": "user.help.support"
         }
+
       ]
     },
     {

@@ -5,7 +5,7 @@
 @section('vendor-style')
 @vite([
   'resources/assets/vendor/libs/fullcalendar/fullcalendar.scss',
-  'resources/assets/vendor/libs/flatpickr/flatpickr.scss', 
+  'resources/assets/vendor/libs/flatpickr/flatpickr.scss',
   'resources/assets/vendor/libs/select2/select2.scss'
 ])
 @endsection
@@ -18,20 +18,18 @@
 @vite([
   'resources/assets/vendor/libs/fullcalendar/fullcalendar.js',
   'resources/assets/vendor/libs/select2/select2.js',
-  'resources/assets/vendor/libs/flatpickr/flatpickr.js', 
+  'resources/assets/vendor/libs/flatpickr/flatpickr.js',
   'resources/assets/vendor/libs/moment/moment.js'
 ])
 @endsection
 
 @section('page-script')
-<script>
-    // انتقال دیتا از فایل ایونت‌ها به اسکریپت اصلی
-    window.events = @json($events ?? []); // اگر دیتا را از کنترلر می‌فرستید
-</script>
-@vite([
-   // 'resources/assets/js/app-calendar-events.js', 
-    'resources/assets/js/app-calendar-view-only.js'
-])
+	<script>
+		window.events = @json($events ?? []);
+	</script>
+	@vite([
+		'resources/assets/js/app-calendar-view-only.js'
+	])
 @endsection
 
 @section('content')
@@ -53,7 +51,7 @@
         <div class="inline-calendar"></div>
       </div>
       <hr class="mb-6 mx-n4 mt-3" />
-      
+
     </div>
     <div class="col app-calendar-content">
       <div class="card shadow-none border-0">

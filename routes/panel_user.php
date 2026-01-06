@@ -13,6 +13,7 @@ Route::group(['prefix' => 'help','as' => 'help.'], function () {
 
 Route::group(['prefix' => 'financial','as' => 'financial.'], function () {
 	Route::get('wallet', [Financial::class, 'wallet'])->name('wallet');
+	Route::get('invoice/{invoice}', [Financial::class, 'invoice'])->name('invoice');
 	Route::get('transaction', [Financial::class, 'transaction'])->name('transaction');
 });
 
@@ -26,15 +27,35 @@ Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
 	Route::get('get/{activity}', [Classes::class, 'details'])->name('details');
 
 
+
+
+	Route::get('test', [Classes::class, 'getHeatmapData']);
+	Route::post('test2', [Classes::class, 'findMatches']);
+	Route::post('test3', [Classes::class, 'store']);
 });
 
 Route::get('messenger', function (){
 	return view('content.user.messenger');
 })->name('messenger');
 
-Route::get('setting', function (){
+Route::get('setting/account', function (){
+	$allCurrencies = \App\Models\Currency::all();
+
+	$languages = \App\Models\Language::all();
+	$countries = \App\Models\Country::all();
+	$timezones = \App\Models\Country::whereNotNull('default_timezone')->distinct()->pluck('default_timezone');
+
+	return view('content.user.setting', compact('allCurrencies', 'languages', 'countries', 'timezones'));
+})->name('setting.account');
+
+Route::get('setting/security', function (){
 	return view('content.user.setting');
-})->name('setting');
+})->name('setting.security');
 
 
 
+Route::group(['prefix' => 'api','as' => 'api.'], function () {
+	Route::group(['prefix' => 'classes', 'as' => 'classes.'], function () {
+		Route::post('book/{activity}', [Classes::class, 'bookClass'])->name('book');
+	});
+});

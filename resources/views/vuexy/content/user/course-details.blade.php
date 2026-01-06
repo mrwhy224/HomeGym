@@ -19,7 +19,7 @@
                 {{ strtoupper($activity->package->type) }}
             </span>
         </div>
-        
+
         <p class="mb-6">
             {{ $activity->package->description ?? 'Experience professional online training tailored to your goals.' }}
         </p>
@@ -68,15 +68,15 @@
     <div class="card mb-6 border-primary border-top-0 border-end-0 border-bottom-0 border-5 shadow-sm">
       <div class="card-body">
         <h4 class="mb-4 text-primary">{{ $activity->package->getPrice() }}</h4>
-        
-        <div class="d-grid gap-3">
-            @if($activity->is_full)
-                <button class="btn btn-secondary" disabled>Fully Booked</button>
-            @else
-                <button class="btn btn-primary btn-lg">Enroll Now</button>
-            @endif
-            <p class="text-center small text-muted">Secure checkout via Wallet or Bank</p>
-        </div>
+
+{{--        <div class="d-grid gap-3">--}}
+{{--            @if($activity->is_full)--}}
+{{--                <button class="btn btn-secondary" disabled>Fully Booked</button>--}}
+{{--            @else--}}
+{{--                <button class="btn btn-primary btn-lg">Enroll Now</button>--}}
+{{--            @endif--}}
+{{--            <p class="text-center small text-muted">Secure checkout via Wallet or Bank</p>--}}
+{{--        </div>--}}
 
         <hr class="my-4">
 

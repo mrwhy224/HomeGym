@@ -24,4 +24,8 @@ class Booking extends Model
 	{
 		return $this->belongsTo(User::class);
 	}
+	public function sessions()
+	{
+		return $this->hasMany(BookingSession::class);
+	}
 }

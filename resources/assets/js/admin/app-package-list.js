@@ -485,8 +485,8 @@ $(function () {
 		// Handle Form Submit (Create / Update)
 		var formData = $(addNewPackageForm).serialize();
 		var id = $('#package_id').val();
-		var url = id ? route('admin.api.package.update', {'package': id}) : route('admin.api.package.create');
-		var method = id ? 'PUT' : 'POST';
+		var url = id ? route('admin.api.package.update', {'id': id}) : route('admin.api.package.create');
+		var method = 'POST';
 
 		$.ajax({
 			data: formData,

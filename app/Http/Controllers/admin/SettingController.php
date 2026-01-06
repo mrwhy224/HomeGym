@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Currency;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -17,7 +18,8 @@ class SettingController extends Controller
 	}
 	public function currency()
 	{
-		return view('content.admin.setting.currency');
+		$currencies = Currency::all();
+		return view('content.admin.setting.currency', compact('currencies'));
 	}
 	public function payment()
 	{

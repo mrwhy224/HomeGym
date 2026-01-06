@@ -32,10 +32,11 @@
     28 => 'Termwind\\Laravel\\TermwindServiceProvider',
     29 => 'Spatie\\MediaLibrary\\MediaLibraryServiceProvider',
     30 => 'Spatie\\Permission\\PermissionServiceProvider',
-    31 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
-    32 => 'App\\Providers\\AppServiceProvider',
-    33 => 'App\\Providers\\MenuServiceProvider',
-    34 => 'App\\Providers\\ResponseMacroServiceProvider',
+    31 => 'Spatie\\Translatable\\TranslatableServiceProvider',
+    32 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
+    33 => 'App\\Providers\\AppServiceProvider',
+    34 => 'App\\Providers\\MenuServiceProvider',
+    35 => 'App\\Providers\\ResponseMacroServiceProvider',
   ),
   'eager' => 
   array (
@@ -55,10 +56,11 @@
     13 => 'Termwind\\Laravel\\TermwindServiceProvider',
     14 => 'Spatie\\MediaLibrary\\MediaLibraryServiceProvider',
     15 => 'Spatie\\Permission\\PermissionServiceProvider',
-    16 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
-    17 => 'App\\Providers\\AppServiceProvider',
-    18 => 'App\\Providers\\MenuServiceProvider',
-    19 => 'App\\Providers\\ResponseMacroServiceProvider',
+    16 => 'Spatie\\Translatable\\TranslatableServiceProvider',
+    17 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
+    18 => 'App\\Providers\\AppServiceProvider',
+    19 => 'App\\Providers\\MenuServiceProvider',
+    20 => 'App\\Providers\\ResponseMacroServiceProvider',
   ),
   'deferred' => 
   array (

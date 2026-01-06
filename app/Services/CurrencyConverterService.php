@@ -60,4 +60,22 @@ class CurrencyConverterService
 		$final = $standardFormat? number_format($finalAmount, $this->currencies[$toCode]->precision ?? 2):round($finalAmount, $this->currencies[$toCode]->precision ?? 2);
 		return $withSymbol? $final.' '.$this->currencies[$toCode]->symbol:$final;
 	}
+	public function getConversionRate(string $fromCode, string $toCode): float|int
+	{
+		$fromCurrency = $this->currencies[$fromCode] ?? null;
+		$toCurrency   = $this->currencies[$toCode] ?? null;
+
+		if (!$fromCurrency || !$toCurrency)
+			throw new Exception("Currency codes are invalid.");
+
+		return (1 / $fromCurrency->exchange_rate) * $toCurrency->exchange_rate;
+	}
+	public function getConversionRateToDefault(string $fromCode): float|int
+	{
+		return $this->getConversionRate($fromCode, $this->baseCurrencyData->code);
+	}
+	public function getConversionRateFromDefault(string $toCode): float|int
+	{
+		return $this->getConversionRate($this->baseCurrencyData->code, $toCode);
+	}
 }
