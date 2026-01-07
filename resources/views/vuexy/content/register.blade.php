@@ -84,7 +84,7 @@
 								<div class="input-group">
 									<select class="form-select" name="country_id" style="max-width: 125px;">
 						               @foreach($countries as $country)
-						                  <option value="{{ $country->id }}" 
+						                  <option value="{{ $country->id }}"
 						                     {{ $country->dialing_code == '98' ? 'selected' : '' }}>
 						                     {{ $country->code_alpha_2 }} (+{{ $country->dialing_code }})
 						                  </option>
@@ -148,7 +148,7 @@
 
 					<p class="text-center mt-6">
 						<span>Already have an account?</span>
-						<a href="{{ url('auth/login-cover') }}"><span>Sign in</span></a>
+						<a href="{{ route('login.form', ['locale' => app()->getLocale()]) }}"><span>Sign in</span></a>
 					</p>
 
 				</div>
@@ -220,9 +220,9 @@
 			window.nextStep = async function (current, next) {
 			    const validator = current === 1 ? fv1 : fv2;
 			    const form = document.getElementById(`formStep${current}`);
-			    
+
 			    // ذخیره رفرنس دکمه (بسیار مهم در توابع async)
-			    const btn = event.currentTarget || event.target; 
+			    const btn = event.currentTarget || event.target;
 			    const status = await validator.validate();
 
 			    if (status === 'Valid') {
@@ -231,8 +231,8 @@
 			        btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span>';
 			        btn.disabled = true;
 
-			        const url = current === 1 
-			            ? window.registrationConfig.endpoints.step1 
+			        const url = current === 1
+			            ? window.registrationConfig.endpoints.step1
 			            : window.registrationConfig.endpoints.step2;
 
 			        try {
@@ -255,7 +255,7 @@
 			                }
 
 			                Object.assign(registrationData, formData);
-			                
+
 			                document.getElementById('step-' + current).classList.add('d-none');
 			                document.getElementById('step-' + next).classList.remove('d-none');
 			                document.getElementById('wizard-progress').style.width = (next / 3 * 100) + '%';
@@ -278,7 +278,7 @@
 			    btnFinalize.addEventListener('click', async function () {
 			        const form3 = document.getElementById('formStep3');
 			        const formData = Object.fromEntries(new FormData(form3));
-			        
+
 
 			        this.disabled = true;
 			        const originalText = this.innerHTML;
