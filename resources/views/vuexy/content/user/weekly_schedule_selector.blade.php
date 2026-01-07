@@ -648,7 +648,7 @@
             submitBtn.disabled = true;
 
             // ۳. ارسال اطلاعات به سرور
-            fetch(route('user.api.classes.save'), { // این روت را در فایل web.php بسازید
+            fetch(route('user.api.classes.savePrivate'), { // این روت را در فایل web.php بسازید
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
