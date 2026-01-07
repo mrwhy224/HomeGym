@@ -22,7 +22,7 @@
                   @if(isset($schedules[$i]))
                     @foreach($schedules[$i] as $slot)
                       <div class="badge bg-label-primary d-flex align-items-center p-2">
-                        {{ \Carbon\Carbon::parse($slot->start_time)->format('H:i') }} - 
+                        {{ \Carbon\Carbon::parse($slot->start_time)->format('H:i') }} -
                         {{ \Carbon\Carbon::parse($slot->end_time)->format('H:i') }}
                         <i class="ti tabler-x ms-2 cursor-pointer btn-delete-slot" data-id="{{ $slot->id }}"></i>
                       </div>
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         const btn = $('.btn-save');
         const originalText = btn.html();
-        
+
         btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-1"></span> Saving...');
 
         $.ajax({
@@ -146,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const badge = $(this).closest('.badge');
 
         $.ajax({
-            url: `/coach/schedule/${id}`,
-            method: 'DELETE',
+            url: route('coach.api.schedule.delete', {'id':id}),
+            method: 'POST',
             data: { _token: "{{ csrf_token() }}" },
             success: function(res) {
                 notyf.success(res.message);

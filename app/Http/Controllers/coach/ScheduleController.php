@@ -68,13 +68,13 @@ class ScheduleController extends Controller
 	public function destroy($id)
 	{
 		$schedule = CoachSchedule::where('id', $id)
-			->where('coach_id', Auth::user()->coach->id)
+			->where('coach_id', Auth::user()->id)
 			->first();
 
 		if (!$schedule) {
 			return response()->json([
 				'status' => 'error',
-				'message' => 'برنامه مورد نظر یافت نشد یا دسترسی ندارید.'
+				'message' => 'Schedule not found or access denied.'
 			], 404);
 		}
 
@@ -82,7 +82,7 @@ class ScheduleController extends Controller
 
 		return response()->json([
 			'status' => 'success',
-			'message' => 'بازه زمانی مورد نظر حذف شد.'
+			'message' => 'Time slot has been deleted successfully.'
 		]);
 	}
 }

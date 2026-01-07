@@ -11,3 +11,4 @@ Route::get('/test', function() {
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::post('/schedule', [ScheduleController::class, 'store'])->name('schedule.store');
+Route::post('/schedule/delete/{id}', [ScheduleController::class, 'destroy'])->name('api.schedule.delete');
