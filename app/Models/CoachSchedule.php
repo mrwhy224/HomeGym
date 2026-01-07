@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class CoachSchedule extends Model
 {
 	protected $fillable = ['coach_id', 'day_of_week', 'start_time', 'end_time'];
-
+	protected $casts = [
+		'day_of_week' => 'integer',
+	];
 	// متدی برای تبدیل عدد روز به نام فارسی یا انگلیسی
 	public static function getDayName($day)
 	{
