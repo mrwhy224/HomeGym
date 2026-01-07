@@ -86,7 +86,7 @@
     flex-direction: column;  /* <--- جدید */
     min-height: 300px;       /* ارتفاع ثابت برای یکدست شدن کارت‌ها */
 
-    padding-bottom: 0 !important; 
+    padding-bottom: 0 !important;
     gap: 0 !important;
 }
 
@@ -130,16 +130,16 @@
 
 /* افکت هاور: کمی بلندتر شدن */
 .heatmap-block:hover {
-    transform: scaleY(1.5);  
+    transform: scaleY(1.5);
     transform-origin: bottom;
     z-index: 10;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
 /* رنگ‌بندی وضعیت‌ها (همان قبلی) */
-.hm-high { background-color: #28c76f; } 
-.hm-med  { background-color: #ff9f43; } 
-.hm-low  { background-color: #ea5455; } 
+.hm-high { background-color: #28c76f; }
+.hm-med  { background-color: #ff9f43; }
+.hm-low  { background-color: #ea5455; }
 .hm-none { background-color: #e0e0e0; }
     </style>
 @endsection
@@ -506,15 +506,15 @@
                 '<div class="col-12 text-center py-5"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Analyzing precise schedule overlaps...</p></div>';
 
             if (stepper) stepper.next();
-            fetch('http://127.0.0.1:8000/panel/classes/test2', {
+            fetch(route('user.api.classes.matches'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                 },
-                body: JSON.stringify({ 
-                    slots: cleanSlots 
+                body: JSON.stringify({
+                    slots: cleanSlots
                 })
             })
             .then(response => {
@@ -546,14 +546,14 @@
         function updateSessionCount() {
             selectedSessionsCount = document.getElementById('sessions-count').value;
             // document.getElementById('summary-sessions-count').innerText = selectedSessionsCount;
-            
+
             // بلافاصله لیست مربیان را بر اساس فیلتر جدید آپدیت کن
             if (allCoachesFromServer.length > 0) {
                 filterAndRenderCoaches();
             }
         }
         function renderCoachResults(coaches) {
-            // ۱. مرتب‌سازی لیست: 
+            // ۱. مرتب‌سازی لیست:
             // اولویت اول: مربیان قابل استفاده (is_usable) بالا قرار بگیرند
             // اولویت دوم: بر اساس درصد مطابقت (match_percentage) نزولی
             coaches.sort((a, b) => {
@@ -574,27 +574,27 @@
 
                 html += `
                 <div class="col-md-6 animate__animated animate__fadeInUp">
-                    <div class="card coach-card h-100 ${disabledClass}" 
+                    <div class="card coach-card h-100 ${disabledClass}"
                          onclick="${coach.is_usable ? `selectCoach(this, ${coach.id}, '${coach.name}')` : ''}"
                          style="${grayscaleStyle} ${cursorStyle}">
-                        
+
                         <div class="card-body d-flex align-items-center" style="pointer-events: ${pointerEvents};">
                             <div class="avatar avatar-lg me-3">
                                 <span class="avatar-initial rounded-circle bg-label-primary">${coach.name.slice(0, 2)}</span>
                             </div>
                             <div class="flex-grow-1">
                                 <h5 class="mb-1">
-                                    ${coach.name} 
+                                    ${coach.name}
                                     ${isNotUsable ? '<span class="badge bg-label-danger ms-2" style="font-size: 0.6rem;">NOT ELIGIBLE</span>' : ''}
                                 </h5>
-                                
-                                ${coach.is_usable 
+
+                                ${coach.is_usable
                                     ? `<span class="badge bg-label-success">Up to ${coach.max_sessions} sessions / week</span>`
                                     : `<span class="badge bg-label-secondary">Schedule Mismatch</span>`
                                 }
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="coachRadio" 
+                                <input class="form-check-input" type="radio" name="coachRadio"
                                        value="${coach.id}" ${isNotUsable ? 'disabled' : ''}>
                             </div>
                         </div>
@@ -648,7 +648,7 @@
             submitBtn.disabled = true;
 
             // ۳. ارسال اطلاعات به سرور
-            fetch('http://127.0.0.1:8000/panel/classes/test3', { // این روت را در فایل web.php بسازید
+            fetch(route('user.api.classes.save'), { // این روت را در فایل web.php بسازید
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -669,7 +669,7 @@
             .then(data => {
                 // ۴. نمایش پیام موفقیت و انتقال کاربر
                 showNotification('Success!', 'Your private class request has been sent.', 'success');
-                
+
                 setTimeout(() => {
                     location.reload();
                 }, 1500);
@@ -677,7 +677,7 @@
             .catch(error => {
                 console.error('Submission Error:', error);
                 showNotification('Submission Failed', error.message, 'error');
-                
+
                 // بازگرداندن دکمه به حالت عادی در صورت خطا
                 submitBtn.innerHTML = originalContent;
                 submitBtn.disabled = false;
@@ -687,8 +687,8 @@
         function loadHeatmapData() {
 
             const columns = document.querySelectorAll('.day-column');
-    
-            fetch('http://127.0.0.1:8000/panel/classes/test') // آدرس روت کنترلر بالا
+
+            fetch(route('user.api.classes.heatmap')) // آدرس روت کنترلر بالا
                 .then(response => response.json())
                 .then(data => {
                     console.log(data.data);
@@ -713,22 +713,22 @@
                 data[dayIndex].forEach(slot => {
                     const block = document.createElement('div');
                     block.className = `heatmap-block ${getColorClass(slot.count)}`;
-                    
+
                     // تولتیپ برای نمایش ساعت و تعداد
                     block.setAttribute('data-bs-toggle', 'tooltip');
                     block.setAttribute('data-bs-placement', 'left');
                     block.title = `${slot.hour}:00 - ${slot.count} Coaches`; // متن ساده تولتیپ
 
                     // رویداد هاور دستی (چون تولتیپ بوت‌استرپ روی المنت داینامیک گاهی اذیت میکند)
-                    // اینجا از title ساده استفاده کردیم که خود مرورگر نشون میده، 
+                    // اینجا از title ساده استفاده کردیم که خود مرورگر نشون میده،
                     // برای زیبایی بیشتر میشه از Tooltip بوت‌استرپ استفاده کرد:
-                    
+
                     strip.appendChild(block);
                 });
 
                 container.appendChild(strip);
             }
-            
+
             // فعال‌سازی تولتیپ‌های بوت‌استرپ (اگر نیاز به استایل زیبا دارید)
             const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             tooltipTriggerList.map(function (tooltipTriggerEl) {

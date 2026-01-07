@@ -25,13 +25,6 @@ Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
 	});
 	Route::get('calendar', [Classes::class, 'calendar'])->name('calendar');
 	Route::get('get/{activity}', [Classes::class, 'details'])->name('details');
-
-
-
-
-	Route::get('test', [Classes::class, 'getHeatmapData']);
-	Route::post('test2', [Classes::class, 'findMatches']);
-	Route::post('test3', [Classes::class, 'store']);
 });
 
 Route::get('messenger', function (){
@@ -57,5 +50,8 @@ Route::get('setting/security', function (){
 Route::group(['prefix' => 'api','as' => 'api.'], function () {
 	Route::group(['prefix' => 'classes', 'as' => 'classes.'], function () {
 		Route::post('book/{activity}', [Classes::class, 'bookClass'])->name('book');
+		Route::get('heatmap', [Classes::class, 'getHeatmapData'])->name('heatmap');
+		Route::post('matches', [Classes::class, 'findMatches'])->name('matches');
+		Route::post('save', [Classes::class, 'store'])->name('savePrivate');
 	});
 });
