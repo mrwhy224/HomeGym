@@ -14,11 +14,11 @@
         .day-column { border: 1px solid #dbdade; border-radius: 8px; background: #fff; display: flex; flex-direction: column; min-height: 350px; }
         .day-header { background: #f8f9fa; text-align: center; padding: 10px; font-weight: bold; border-bottom: 1px solid #dbdade; }
         .slots-container { padding: 10px; flex-grow: 1; overflow-y: auto; max-height: 250px; }
-        
+
         /* هیت‌مپ اصلاح شده برای ادمین */
         .heatmap-strip { height: 15px; width: 100%; display: flex; flex-direction: row; background: #eee; }
         .heatmap-block { flex: 1; height: 100%; cursor: help; position: relative; border-right: 0.5px solid rgba(255,255,255,0.2); }
-        
+
         /* رنگ‌بندی جدید بر اساس منطق درخواستی شما */
         .hm-none { background-color: #ea5455; } /* قرمز: هیچ همپوشانی نیست */
         .hm-partial { background-color: #ff9f43; } /* نارنجی: فقط یکی حضور دارد */
@@ -158,7 +158,7 @@
 
         const slot = { day: parseInt(day), start, end };
         finalizedSlots.push(slot);
-        
+
         renderSlotUI(day, start, end, finalizedSlots.length - 1);
         if (timeModal) timeModal.hide();
     };
@@ -186,11 +186,10 @@
             return;
         }
 
-        // غیرفعال کردن دکمه برای جلوگیری از کلیک مکرر
-        const btn = event.currentTarget; 
+        const btn = event.currentTarget;
         btn.disabled = true;
 
-        fetch(`/panel/booking/process/${bookingId}/approve`, {
+        fetch(route('user.api.classes.approve', {'id':bookingId}), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -201,7 +200,6 @@
         .then(res => res.json())
         .then(data => {
             if(notyf) notyf.success("Schedule approved successfully!");
-            // setTimeout(() => location.href = '/panel/admin/classes/requests', 1500);
         })
         .catch(err => {
             btn.disabled = false;
@@ -209,9 +207,8 @@
         });
     };
 
-    // ۳. بارگذاری دیتای هیت‌مپ
     function loadComparisonData() {
-        fetch(`http://127.0.0.1:8000/panel/booking/getHeatmapData/${bookingId}`)
+        fetch(route('user.api.classes.getHeatmapData', {'id':bookingId}))
             .then(response => response.json())
             .then(data => {
                 renderAdminHeatmap(data.comparison);
@@ -236,7 +233,7 @@
 
                 block.className = `heatmap-block ${colorClass}`;
                 block.setAttribute('data-bs-toggle', 'tooltip');
-                block.title = `${slot.hour}:00 - ${slot.info_text}`; 
+                block.title = `${slot.hour}:00 - ${slot.info_text}`;
                 strip.appendChild(block);
             });
             container.appendChild(strip);

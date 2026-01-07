@@ -38,8 +38,6 @@ Route::get('role', function () {
 Route::group(['prefix' => 'booking','as' => 'booking.'], function () {
 	Route::get('', [BookingController::class, 'index'])->name('list');
 	Route::get('process/{id}', [BookingController::class, 'process'])->name('process');
-	Route::get('getHeatmapData/{id}', [BookingController::class, 'getHeatmapData'])->name('getHeatmapData');
-	Route::post('process/{id}/approve', [BookingController::class, 'approve'])->name('approve');
 	Route::get('calendar', [BookingController::class, 'calendar'])->name('calendar');
 });
 
@@ -82,7 +80,10 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 	Route::group(['prefix' => 'category','as' => 'category.'], function () {
 		Route::get('list', [Category::class, 'index'])->name('index');
 	});
-
+	Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
+		Route::post('process/{id}/approve', [BookingController::class, 'approve'])->name('approve');
+		Route::get('getHeatmapData/{id}', [BookingController::class, 'getHeatmapData'])->name('getHeatmapData');
+	});
 	Route::get('users/search', [CustomerController::class, 'search'])->name('users.search');
 	Route::post('book/{activity}', [BookingController::class, 'enrollUser'])->name('book');
 

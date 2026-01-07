@@ -23,7 +23,7 @@ class BookingController extends Controller
 	}
 	public function process($id)
 	{
-		return view('content.admin.booking.test',['booking'=> PrivateClassRequest::find($id)]);
+		return view('content.admin.booking.process',['booking'=> PrivateClassRequest::find($id)]);
 	}
 	public function getHeatmapData($id)
 	{
