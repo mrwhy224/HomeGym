@@ -172,7 +172,7 @@ class Classes
 		} catch (\Exception $e) {
 			return response()->json([
 				'status' => 'error',
-				'message' => 'Failed to save request. Please try again later.'
+				'message' => 'Failed to save request. Please try again later.'.$e
 			], 500);
 		}
 	}
