@@ -189,7 +189,7 @@
         const btn = event.currentTarget;
         btn.disabled = true;
 
-        fetch(route('user.api.classes.approve', {'id':bookingId}), {
+        fetch(route('admin.api.classes.approve', {'id':bookingId}), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -208,7 +208,7 @@
     };
 
     function loadComparisonData() {
-        fetch(route('user.api.classes.getHeatmapData', {'id':bookingId}))
+        fetch(route('admin.api.classes.getHeatmapData', {'id':bookingId}))
             .then(response => response.json())
             .then(data => {
                 renderAdminHeatmap(data.comparison);
