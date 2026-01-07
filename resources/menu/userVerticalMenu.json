@@ -76,10 +76,10 @@
       ]
     },
     {
-      "url": "/panel/setting",
+      "url": "/panel/setting/account",
       "name": "Settings",
       "icon": "menu-icon icon-base ti tabler-settings",
-      "slug": "user.setting"
+      "slug": "user.setting.account"
     }
   ]
 }

@@ -42,7 +42,7 @@ Route::get('setting/account', function (){
 })->name('setting.account');
 
 Route::get('setting/security', function (){
-	return view('content.user.setting');
+	return view('content.user.security');
 })->name('setting.security');
 
 
