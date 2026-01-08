@@ -8,6 +8,7 @@ use App\Models\ActivitySession;
 use App\Models\Booking;
 use App\Models\BookingSession;
 use App\Models\CoachSchedule;
+use App\Models\Package;
 use App\Models\PrivateClassRequest;
 use App\Models\User;
 use App\Services\ActivityBookingService;
@@ -203,6 +204,74 @@ class BookingController extends Controller
 
 		} catch (\Exception $e) {
 			return response()->error(422, $e->getMessage());
+		}
+	}
+
+	public function create(Request $request)
+	{
+		$request->validate([
+			'class_type'   => 'required|in:public,semi_private',
+			'package_id'   => 'required|exists:packages,id',
+			'coach_id'     => 'required|exists:users,id',
+			'timezone'     => 'required|string',
+			'sessions'     => 'required|array|min:1',
+			'sessions.*.date'       => 'required|date_format:Y-m-d',
+			'sessions.*.start_time' => 'required|date_format:H:i',
+			'sessions.*.end_time'   => 'required|date_format:H:i|after:sessions.*.start_time',
+		]);
+
+		$package = Package::findOrFail($request->package_id);
+		if ($package->type !== $request->class_type) {
+			return response()->error(422, "The selected package type ({$package->type}) does not match the class type ({$request->class_type}).");
+		}
+		$processedSessions = [];
+		foreach ($request->sessions as $index => $session) {
+			$startAt = Carbon::createFromFormat('Y-m-d H:i', $session['date'] . ' ' . $session['start_time'], $request->timezone)->setTimezone('UTC');
+			$endAt = Carbon::createFromFormat('Y-m-d H:i', $session['date'] . ' ' . $session['end_time'], $request->timezone)->setTimezone('UTC');
+
+			$processedSessions[] = [
+				'start_at' => $startAt,
+				'end_at'   => $endAt,
+				'display'  => $session['date'] . ' ' . $session['start_time']
+			];
+		}
+
+		foreach ($processedSessions as $session) {
+			$overlap = ActivitySession::whereHas('activity', function ($query) use ($request) {
+				$query->where('coach_id', $request->coach_id);
+			})
+				->where(function ($query) use ($session) {
+					$query->where('start_at', '<', $session['end_at'])
+						->where('end_at', '>', $session['start_at']);
+				})
+				->first();
+
+			if ($overlap)
+				return response()->error(422, "Time conflict detected! The session on {$session['display']} overlaps with an existing class for this coach.");
+
+		}
+
+		try {
+			return DB::transaction(function () use ($request, $processedSessions, $package) {
+
+				$activity = Activity::create([
+					'coach_id'           => $request->coach_id,
+					'package_id'         => $request->package_id,
+					'remaining_capacity' => $package->capacity,
+				]);
+				foreach ($processedSessions as $session) {
+					$activity->sessions()->create([
+						'start_at' => $session['start_at'],
+						'end_at'   => $session['end_at'],
+						'status'   => 'scheduled',
+					]);
+				}
+
+				return response()->success('Class and sessions have been successfully published.');
+			});
+
+		} catch (\Exception $e) {
+			return response()->error(500, 'System error occurred while creating the class: ' . $e->getMessage());
 		}
 	}
 }

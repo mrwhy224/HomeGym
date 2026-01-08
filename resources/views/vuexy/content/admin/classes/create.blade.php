@@ -6,7 +6,8 @@
     @vite([
         'resources/assets/vendor/libs/flatpickr/flatpickr.scss',
         'resources/assets/vendor/libs/select2/select2.scss',
-        'resources/assets/vendor/libs/@form-validation/form-validation.scss'
+        'resources/assets/vendor/libs/@form-validation/form-validation.scss',
+          'resources/assets/vendor/libs/notyf/notyf.scss',
     ])
     <style>
         /* Custom styles for Weekday Selector */
@@ -46,10 +47,213 @@
         'resources/assets/vendor/libs/jquery-repeater/jquery-repeater.js',
         'resources/assets/vendor/libs/@form-validation/popular.js',
         'resources/assets/vendor/libs/@form-validation/bootstrap5.js',
-        'resources/assets/vendor/libs/@form-validation/auto-focus.js'
+        'resources/assets/vendor/libs/@form-validation/auto-focus.js',
+          'resources/assets/vendor/libs/notyf/notyf.js',
     ])
 @endsection
+@section('page-script')
+	<script>
+		'use strict';
 
+		document.addEventListener('DOMContentLoaded', function () {
+			// --- 1. Initialize Notyf (Vuexy Style) ---
+			const notyf = new Notyf({
+				duration: 5000,
+				position: { x: 'right', y: 'top' },
+				types: [
+					{
+						type: 'success',
+						background: '#28c76f',
+						icon: { className: 'ti tabler-circle-check text-white', tagName: 'i' }
+					},
+					{
+						type: 'error',
+						background: '#ea5455',
+						icon: { className: 'ti tabler-circle-x text-white', tagName: 'i' }
+					}
+				]
+			});
+
+			// --- 2. Component Initializations ---
+			const select2 = $('.select2');
+			if (select2.length) {
+				select2.each(function () {
+					var $this = $(this);
+					$this.wrap('<div class="position-relative"></div>').select2({
+						placeholder: $this.data('placeholder'),
+						dropdownParent: $this.parent()
+					});
+				});
+			}
+
+			const flatpickrDateConfig = { minDate: 'today', dateFormat: 'Y-m-d' };
+			const flatpickrTimeConfig = { enableTime: true, noCalendar: true, dateFormat: "H:i", time_24hr: true, allowInput: true };
+
+			// Generator Pickers
+			flatpickr("#gen_start_date", flatpickrDateConfig);
+			flatpickr("#gen_start_time", flatpickrTimeConfig);
+			flatpickr("#gen_end_time", flatpickrTimeConfig);
+
+			// --- 3. Repeater Logic ---
+			const repeater = $('.class-repeater').repeater({
+				show: function () {
+					$(this).slideDown();
+					// Initialize pickers for new row
+					flatpickr($(this).find('.date-picker'), flatpickrDateConfig);
+					flatpickr($(this).find('.time-picker-start'), flatpickrTimeConfig);
+					flatpickr($(this).find('.time-picker-end'), flatpickrTimeConfig);
+
+					// Refresh Feather Icons if used
+					if (typeof feather !== 'undefined') { feather.replace(); }
+				},
+				hide: function (deleteElement) {
+					if ($(this).hasClass('silent-remove') || confirm('Are you sure you want to delete this session?')) {
+						$(this).slideUp(deleteElement);
+					}
+				},
+				isFirstItemUndeletable: false
+			});
+
+			// Initialize first row pickers
+			flatpickr('.date-picker', flatpickrDateConfig);
+			flatpickr('.time-picker-start', flatpickrTimeConfig);
+			flatpickr('.time-picker-end', flatpickrTimeConfig);
+
+
+
+			const createClassForm = document.getElementById('createClassForm');
+			const submitBtn = createClassForm.querySelector('button[type="submit"]');
+
+			const fv = FormValidation.formValidation(createClassForm, {
+				fields: {
+					package_id: { validators: { notEmpty: { message: 'Please select a package' } } },
+					coach_id: { validators: { notEmpty: { message: 'Please select a coach' } } }
+				},
+				plugins: {
+					trigger: new FormValidation.plugins.Trigger(),
+					bootstrap5: new FormValidation.plugins.Bootstrap5({
+						eleValidClass: '',
+						rowSelector: '.col-md-6, .mb-4'
+					}),
+					submitButton: new FormValidation.plugins.SubmitButton(),
+					autoFocus: new FormValidation.plugins.AutoFocus()
+				}
+			}).on('core.form.valid', function () {
+				submitBtn.disabled = true;
+				submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Processing...';
+
+				// ۱. جمع‌آوری داده‌های پایه فرم
+				// از serializeArray برای تبدیل فیلدها به آرایه استفاده می‌کنیم تا راحت‌تر به Object تبدیل کنیم
+				const formDataArray = $(createClassForm).serializeArray();
+				let payload = {};
+
+				formDataArray.forEach(item => {
+					// فیلدهای ریپیتر را فعلاً نادیده می‌گیریم چون جداگانه اضافه می‌کنیم
+					if (!item.name.includes('sessions')) {
+						payload[item.name] = item.value;
+					}
+				});
+
+				// ۲. جمع‌آوری داده‌های ریپیتر (Sessions) به صورت تمیز
+				// متد repeaterVal خروجی را دقیقاً به صورت آرایه‌ای از آبجکت‌ها می‌دهد
+				const repeaterItems = $('.class-repeater').repeaterVal();
+				payload.sessions = repeaterItems.sessions;
+
+				// ۳. ارسال AJAX به صورت JSON
+				$.ajax({
+					url: route('admin.api.classes.create'),
+					method: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify(payload),
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+						'Accept': 'application/json' // برای اینکه لاراول بداند پاسخ باید JSON باشد
+					},
+					success: function (res) {
+						if (res.ok) {
+							notyf.success(res.message || 'Class published successfully!');
+							setTimeout(() => { window.location.reload(); }, 1500);
+						} else {
+							notyf.error(res.message || 'Failed to save class.');
+							resetBtnState();
+						}
+					},
+					error: function (xhr) {
+						resetBtnState();
+						notyf.error(xhr.responseJSON?.message || 'A system error occurred.');
+
+					}
+				});
+			});
+
+			function resetBtnState() {
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = 'Publish Class';
+			}
+
+			// --- 5. Generator Logic ---
+			window.generateSchedule = function () {
+				const startDate = $('#gen_start_date').val();
+				const weeks = parseInt($('#gen_weeks').val()) || 1;
+				const startTime = $('#gen_start_time').val();
+				const endTime = $('#gen_end_time').val();
+				const selectedDays = $('input[name="gen_days"]:checked').map(function() { return parseInt($(this).val()); }).get();
+
+				if (!startDate || !startTime || !endTime || selectedDays.length === 0) {
+					notyf.error('Please fill all pattern fields and select at least one day.');
+					return;
+				}
+
+				// Clear existing rows silently
+				$('[data-repeater-item]').addClass('silent-remove');
+				$('[data-repeater-delete]').click();
+
+				let sessions = [];
+				let cursor = moment(startDate);
+				const endLimit = moment(startDate).add(weeks, 'weeks');
+
+				while (cursor.isBefore(endLimit)) {
+					if (selectedDays.includes(cursor.day())) {
+						sessions.push({
+							'date': cursor.format('YYYY-MM-DD'),
+							'start_time': startTime,
+							'end_time': endTime
+						});
+					}
+					cursor.add(1, 'days');
+				}
+
+				if (sessions.length > 0) {
+					repeater.setList(sessions);
+					notyf.success(`Generated ${sessions.length} sessions successfully.`);
+				} else {
+					notyf.error('No dates matched the selected pattern.');
+				}
+			};
+
+			// --- 6. UI Logic & Preview ---
+			$('input[name="schedule_mode"]').on('change', function() {
+				const isRecurring = this.value === 'recurring';
+				$('#recurring-section').toggleClass('d-none', !isRecurring);
+				if (isRecurring) $('#recurring-section').hide().slideDown();
+			});
+
+
+			// Live Preview Updates
+			$('#package_id').on('select2:select', function(e) { $('#preview_package').text(e.params.data.text); });
+			$('#coach_id').on('select2:select', function(e) { $('#preview_coach_name').text($(e.params.data.element).data('name')); });
+
+			$('input[name="class_type"]').on('change', function() {
+				const type = this.value;
+				const isPublic = type === 'public';
+				$('#preview_type').text(isPublic ? 'Public' : 'Semi-Private')
+					.toggleClass('text-primary', isPublic).toggleClass('text-info', !isPublic);
+				$('#preview_card').toggleClass('border-primary', isPublic).toggleClass('border-info', !isPublic);
+				$('.card-header', '#preview_card').toggleClass('bg-label-primary', isPublic).toggleClass('bg-label-info', !isPublic);
+			});
+		});
+	</script>
+@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-8 col-lg-7 col-md-12">
@@ -59,7 +263,7 @@
             </div>
             <div class="card-body">
                 <form id="createClassForm" onsubmit="return false" autocomplete="off">
-                    
+
                     <div class="mb-4">
                         <label class="form-label mb-2">Class Type</label>
                         <div class="row g-3">
@@ -69,7 +273,6 @@
                                         <span class="custom-option-body">
                                             <i class="ti tabler-users ti-xl mb-2 text-primary"></i>
                                             <span class="custom-option-title">Public Class</span>
-                                            <small>Standard group (Max 8-12)</small>
                                         </span>
                                         <input name="class_type" class="form-check-input" type="radio" value="public" id="typePublic" checked />
                                     </label>
@@ -81,7 +284,6 @@
                                         <span class="custom-option-body">
                                             <i class="ti tabler-users-group ti-xl mb-2 text-info"></i>
                                             <span class="custom-option-title">Semi-Private</span>
-                                            <small>Small group (Max 2-4)</small>
                                         </span>
                                         <input name="class_type" class="form-check-input" type="radio" value="semi_private" id="typeSemi" />
                                     </label>
@@ -124,14 +326,6 @@
                                     <option value="America/New_York">America/New_York</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="capacity">Capacity (Per Session)</label>
-                            <div class="input-group">
-                                <button class="btn btn-outline-secondary" type="button" onclick="adjustCapacity(-1)">-</button>
-                                <input type="number" class="form-control text-center" id="capacity" name="capacity" value="8" min="1" max="50">
-                                <button class="btn btn-outline-secondary" type="button" onclick="adjustCapacity(1)">+</button>
-                            </div>
-                        </div>
                     </div>
 
                     <hr class="my-4 mx-n4">
@@ -167,7 +361,7 @@
                                         <span class="input-group-text">Weeks</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-12">
                                     <label class="form-label d-block mb-2">Days of Week</label>
                                     <div class="weekday-selector">
@@ -274,13 +468,7 @@
                                     <span class="fw-bold text-heading fs-6" id="preview_coach_name">Select Coach</span>
                                 </div>
                             </div>
-                            <div class="text-end">
-                                <div class="d-flex align-items-center justify-content-end text-heading">
-                                    <i class="ti tabler-users me-1"></i>
-                                    <span class="fw-bold fs-5" id="preview_capacity">8</span>
-                                </div>
-                                <small class="badge bg-label-success rounded-pill fs-tiny">Open Spots</small>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -311,13 +499,8 @@
         const flatpickrDateConfig = { minDate: 'today', dateFormat: 'Y-m-d' };
         const flatpickrTimeConfig = { enableTime: true, noCalendar: true, dateFormat: "H:i", time_24hr: true };
 
-        // Generator Flatpickrs
-        const genStartPicker = flatpickr("#gen_start_date", flatpickrDateConfig);
-        const genStartTimePicker = flatpickr("#gen_start_time", flatpickrTimeConfig);
-        const genEndTimePicker = flatpickr("#gen_end_time", flatpickrTimeConfig);
-
         // --- 2. Repeater Logic ---
-        
+
         const repeater = $('.class-repeater').repeater({
             show: function () {
                 $(this).slideDown();
@@ -352,7 +535,7 @@
                     $(this).slideUp(deleteElement);
                 }
             },
-            isFirstItemUndeletable: false 
+            isFirstItemUndeletable: false
         });
 
         // Init first row manually
@@ -380,7 +563,7 @@
             const weeks = parseInt(document.getElementById('gen_weeks').value) || 1;
             const startTime = document.getElementById('gen_start_time').value;
             const endTime = document.getElementById('gen_end_time').value;
-            
+
             // دریافت روزهای هفته انتخاب شده (Array of integers: 0=Sun, 1=Mon...)
             const selectedDays = $('input[name="gen_days"]:checked').map(function(){
                 return parseInt($(this).val());
@@ -394,7 +577,7 @@
             // پاک کردن لیست فعلی ریپیتر
             // ترفند: تمام آیتم‌ها را پاک می‌کنیم تا لیست تمیز شود
             $('[data-repeater-item]').addClass('silent-remove'); // برای جلوگیری از کانفرم
-            $('[data-repeater-delete]').click(); 
+            $('[data-repeater-delete]').click();
 
             // محاسبه تاریخ‌ها با Moment.js
             let currentData = [];
@@ -421,7 +604,7 @@
 
             // پر کردن ریپیتر با داده‌های جدید
             repeater.setList(currentData);
-            
+
             // آپدیت پریویو با اولین داده
             updatePreview('date', currentData[0].date);
             updatePreview('start', startTime);
@@ -438,17 +621,17 @@
 // Class Type Change
         $('input[name="class_type"]').on('change', function() {
             const selectedClassType = $(this).val(); // 'public' or 'semi_private'
-            
+
             // --- 1. Logic: Filter Packages ---
             const packageSelect = $('#package_id');
-            
+
             // اول مقدار فعلی را پاک میکنیم تا کاربر اشتباها پکیج نامعتبر انتخاب نکرده باشد
             packageSelect.val(null).trigger('change');
 
             // حلقه روی تمام آپشن‌ها
             packageSelect.find('option').each(function() {
                 const optionType = $(this).data('type'); // گرفتن مقدار data-type
-                
+
                 // اگر آپشن خالی (Placeholder) است، همیشه فعال باشد
                 if (!optionType) return;
 
@@ -471,8 +654,7 @@
             const badge = document.getElementById('preview_type');
             const card = document.getElementById('preview_card');
             const cardHeader = card.querySelector('.card-header');
-            const capacityInput = document.getElementById('capacity');
-            
+
             // کلاس‌های رنگی
             const publicClass = 'border-primary';
             const semiClass = 'border-info';
@@ -482,21 +664,20 @@
             if (selectedClassType === 'public') {
                 badge.innerText = 'Public';
                 badge.className = 'badge bg-white text-primary shadow-sm';
-                
+
                 card.classList.remove(semiClass);
                 card.classList.add(publicClass);
-                
+
                 cardHeader.classList.remove(headerSemi);
                 cardHeader.classList.add(headerPublic);
-                
+
                 // تغییر رنگ آیکون‌ها در هدر
                 cardHeader.querySelector('.text-info')?.classList.replace('text-info', 'text-primary');
 
-                capacityInput.value = 8;
             } else {
                 badge.innerText = 'Semi-Private';
                 badge.className = 'badge bg-white text-info shadow-sm';
-                
+
                 card.classList.remove(publicClass);
                 card.classList.add(semiClass);
 
@@ -507,9 +688,7 @@
                 const headerText = cardHeader.querySelector('.text-primary');
                 if(headerText) headerText.classList.replace('text-primary', 'text-info');
 
-                capacityInput.value = 4;
             }
-            updatePreview('capacity', capacityInput.value);
         });
 
         $('#package_id').on('select2:select', function(e) {
@@ -526,16 +705,9 @@
             setText('preview_timezone', e.params.data.text);
         });
 
-        $('#capacity').on('input', function() {
-            updatePreview('capacity', this.value);
-        });
 
         let state = { date: '---', start: '10:00', end: '11:00' };
         function updatePreview(key, value) {
-            if (key === 'capacity') {
-                setText('preview_capacity', value);
-                return;
-            }
             state[key] = value;
             if (key === 'date' && value) {
                 const d = new Date(value);
@@ -547,13 +719,6 @@
             }
         }
 
-        window.adjustCapacity = function(delta) {
-            const input = document.getElementById('capacity');
-            let val = parseInt(input.value) || 0;
-            val = Math.max(1, Math.min(50, val + delta));
-            input.value = val;
-            updatePreview('capacity', val);
-        };
     });
 </script>
 @endsection

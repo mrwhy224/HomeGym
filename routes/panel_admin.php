@@ -81,6 +81,7 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 		Route::get('list', [Category::class, 'index'])->name('index');
 	});
 	Route::group(['prefix' => 'classes','as' => 'classes.'], function () {
+		Route::post('create', [BookingController::class, 'create'])->name('create');
 		Route::post('process/{id}/approve', [BookingController::class, 'approve'])->name('approve');
 		Route::get('getHeatmapData/{id}', [BookingController::class, 'getHeatmapData'])->name('getHeatmapData');
 	});
