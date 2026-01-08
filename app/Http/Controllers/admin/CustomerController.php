@@ -55,7 +55,7 @@ class CustomerController extends Controller
 					'type'=> 'deposit',
 					'amount' => $request->amount,
 					'original_amount'=>  $this->currencyConverter->fromDefault($request->amount, $wallet->currency->code),
-					'currency_id ' => $wallet->currency->id,
+					'currency_id' => $wallet->currency->id,
 					'exchange_rate'=> $this->currencyConverter->getConversionRateFromDefault($wallet->currency->code),
 					'description'  => $request->note ?? 'Manual recharge by Admin',
 				]);
