@@ -22,8 +22,8 @@
                   @if(isset($schedules[$i]))
                     @foreach($schedules[$i] as $slot)
                       <div class="badge bg-label-primary d-flex align-items-center p-2">
-                        {{ \Carbon\Carbon::parse($slot->start_time)->format('H:i') }} -
-                        {{ \Carbon\Carbon::parse($slot->end_time)->format('H:i') }}
+                        {{ \Carbon\Carbon::parse($slot->start_time)->formatUser('H:i') }} -
+                        {{ \Carbon\Carbon::parse($slot->end_time)->formatUser('H:i') }}
                         <i class="ti tabler-x ms-2 cursor-pointer btn-delete-slot" data-id="{{ $slot->id }}"></i>
                       </div>
                     @endforeach

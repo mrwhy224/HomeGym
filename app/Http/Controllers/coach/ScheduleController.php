@@ -4,6 +4,7 @@ namespace App\Http\Controllers\coach;
 
 use App\Http\Controllers\Controller;
 use App\Models\CoachSchedule;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,6 +22,7 @@ class ScheduleController extends Controller
 		return view('content.coach.schedule', compact('schedules'));
 	}
 
+
 	public function store(Request $request)
 	{
 		$request->validate([
@@ -29,60 +31,54 @@ class ScheduleController extends Controller
 			'end_time'    => 'required|date_format:H:i|after:start_time',
 		]);
 
-		$coachId = Auth::user()->id;
-		$day = $request->day_of_week;
-		$start = $request->start_time;
-		$end = $request->end_time;
+		$user = Auth::user();
+		$userTimezone = $user->timezone ?? 'UTC';
+
+		$startDateTime = Carbon::now($userTimezone)
+			->startOfWeek(Carbon::SATURDAY)
+			->addDays((int) $request->day_of_week)
+			->setTimeFromTimeString($request->start_time);
+
+		$endDateTime = Carbon::now($userTimezone)
+			->startOfWeek(Carbon::SATURDAY)
+			->addDays((int) $request->day_of_week)
+			->setTimeFromTimeString($request->end_time);
+
+		// ۲. تبدیل به UTC
+		$startDateTime->setTimezone('UTC');
+		$endDateTime->setTimezone('UTC');
+		$utcStandardDay = $startDateTime->dayOfWeek;
+		$utcDayForDatabase = ($utcStandardDay + 1) % 7;
+		$utcStart = $startDateTime->format('H:i:s');
+		$utcEnd   = $endDateTime->format('H:i:s');
 
 
-		$exists = CoachSchedule::where('coach_id', $coachId)
-			->where('day_of_week', $day)
-			->where(function ($query) use ($start, $end) {
-				$query->where(function ($q) use ($start, $end) {
-					$q->where('start_time', '<', $end)
-						->where('end_time', '>', $start);
-				});
+		$exists = CoachSchedule::where('coach_id', $user->id)
+			->where('day_of_week', $utcDayForDatabase)
+			->where(function ($query) use ($utcStart, $utcEnd) {
+				$query->where('start_time', '<', $utcEnd)
+					->where('end_time', '>', $utcStart);
 			})
 			->exists();
 
-		if ($exists) {
-			return response()->json([
-				'status' => 'error',
-				'message' => 'Overlap'
-			], 422);
-		}
+		if ($exists)
+			return response()->error(422, 'This time slot overlaps with your existing schedule (UTC shift checked).');
 
-		// ۴. ذخیره در دیتابیس
+
 		CoachSchedule::create([
-			'coach_id'    => $coachId,
-			'day_of_week' => $day,
-			'start_time'  => $start,
-			'end_time'    => $end,
+			'coach_id'    => $user->id,
+			'day_of_week' => $utcDayForDatabase,
+			'start_time'  => $utcStart,
+			'end_time'    => $utcEnd,
 		]);
 
-		return response()->json([
-			'status' => 'success',
-			'message' => 'created'
-		], 201);
+		return response()->success('Schedule saved successfully in UTC.');
 	}
 	public function destroy($id)
 	{
-		$schedule = CoachSchedule::where('id', $id)
-			->where('coach_id', Auth::user()->id)
-			->first();
-
-		if (!$schedule) {
-			return response()->json([
-				'status' => 'error',
-				'message' => 'Schedule not found or access denied.'
-			], 404);
-		}
-
+		$schedule = CoachSchedule::where('id', $id)->where('coach_id', Auth::user()->id)->first();
+		if (!$schedule) return response()->error(404, 'Schedule not found or access denied.');
 		$schedule->delete();
-
-		return response()->json([
-			'status' => 'success',
-			'message' => 'Time slot has been deleted successfully.'
-		]);
+		return response()->success('Time slot has been deleted successfully.');
 	}
 }
