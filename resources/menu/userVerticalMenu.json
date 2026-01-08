@@ -4,7 +4,7 @@
       "url": "/panel",
       "icon": "menu-icon icon-base ti tabler-smart-home",
       "name": "Dashboard",
-      "slug": "user.dashboard"
+      "slug": "dashboard"
     },
     {
       "isHeader": true,

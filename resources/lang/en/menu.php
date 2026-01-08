@@ -4,7 +4,7 @@ return [
 	'admin' => [
 
 		'dashboard' => 'Dashboard',
-		
+
 		'header' => [
 			'app_management' => 'App Management',
 			'system' => 'System',
@@ -12,7 +12,7 @@ return [
 
 		'classes' => [
 			'title' => 'Booking Management',
-			'all' => 'All Bookings',
+			'all' => 'Private Requests',
 			'calendar' => 'Booking Calendar',
 			'services' => 'Class Services',
 			'new_service' => 'New Service',
