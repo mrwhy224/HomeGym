@@ -85,6 +85,7 @@ Route::group(['prefix' => 'api','as' => 'api.'], function () {
 		Route::get('getHeatmapData/{id}', [BookingController::class, 'getHeatmapData'])->name('getHeatmapData');
 	});
 	Route::get('users/search', [CustomerController::class, 'search'])->name('users.search');
+	Route::post('users/recharge', [CustomerController::class, 'recharge'])->name('users.recharge');
 	Route::post('book/{activity}', [BookingController::class, 'enrollUser'])->name('book');
 
 	Route::group(['prefix' => 'customer','as' => 'customer.'], function () {
