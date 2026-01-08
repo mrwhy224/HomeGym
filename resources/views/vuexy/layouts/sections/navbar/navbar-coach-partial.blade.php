@@ -425,11 +425,11 @@ use Illuminate\Support\Facades\Route;
     </li>
     <!--/ Notification -->
     <li class="nav-item d-flex align-items-center me-3 me-xl-2">
-            <a class="nav-link" href="{{-- route('user.wallet.index') --}}" 
-               data-bs-toggle="tooltip" 
-               data-bs-placement="bottom" 
+            <a class="nav-link" href="{{-- route('user.wallet.index') --}}"
+               data-bs-toggle="tooltip"
+               data-bs-placement="bottom"
                title="Your wallet balance">
-                
+
                 <span class="badge bg-label-primary rounded-pill d-flex align-items-center p-2">
                     <i class="icon-base ti tabler-wallet ti-sm me-1"></i>
                     <span class="fw-bold">{{ $user->wallet->getDisplayBalanceAttribute() }}</span>
@@ -473,15 +473,6 @@ use Illuminate\Support\Facades\Route;
           <a class="dropdown-item"
             href="{{ Route::has('profile.show') ? route('profile.show') : url('pages/profile-user') }}">
             <i class="icon-base ti tabler-user me-3 icon-md"></i><span class="align-middle">My Profile</span> </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="{{ url('pages/account-settings-billing') }}">
-            <span class="d-flex align-items-center align-middle">
-              <i class="flex-shrink-0 icon-base ti tabler-file-dollar me-3 icon-md"></i><span
-                class="flex-grow-1 align-middle">Billing</span>
-              <span class="flex-shrink-0 badge bg-danger d-flex align-items-center justify-content-center">4</span>
-            </span>
-          </a>
         </li>
         <li>
           <div class="dropdown-divider my-1 mx-n2"></div>
