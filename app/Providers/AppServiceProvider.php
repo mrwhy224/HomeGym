@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\CurrencyConverterService;
 use Carbon\Carbon;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -28,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
 	 */
 	public function boot(): void
 	{
+		Paginator::useBootstrapFive();
 		Schema::defaultStringLength(191);
 		Vite::useStyleTagAttributes(function (?string $src, string $url, ?array $chunk, ?array $manifest) {
 			if ($src !== null) {
