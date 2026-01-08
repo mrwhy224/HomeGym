@@ -17,7 +17,21 @@ document.addEventListener('DOMContentLoaded', function (e) {
     bodyBg = config.colors.bodyBg;
     headingColor = config.colors.headingColor;
   }
-
+	const notyf = new Notyf({
+		position: { x: 'right', y: 'top' },
+		types: [
+			{
+				type: 'success',
+				background: '#28c76f',
+				icon: { className: 'ti tabler-circle-check text-white', tagName: 'i' }
+			},
+			{
+				type: 'error',
+				background: '#ea5455',
+				icon: { className: 'ti tabler-circle-x text-white', tagName: 'i' }
+			}
+		]
+	});
   // Variable declaration for table
   const dt_user_table = document.querySelector('.datatables-users');
   const userView = '/admin/users/'; // مسیر مشاهده جزئیات کاربر
@@ -31,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   if (dt_user_table) {
     const dt_user = new DataTable(dt_user_table, {
       ajax: {
-        url: route('admin.api.customer.list'), 
+        url: route('admin.api.customer.list'),
         type: 'GET'
       },
       columns: [
@@ -111,16 +125,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
           searchable: false,
           orderable: false,
           render: function (data, type, full, meta) {
-            // data همان ID کاربر است که از کنترلر فرستادیم
             return (
               '<div class="d-flex align-items-center">' +
-              '<a href="javascript:;" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill delete-record" data-id="'+data+'"><i class="ti tabler-trash ti-md"></i></a>' +
-              '<a href="' + userView + data + '" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill"><i class="ti tabler-eye ti-md"></i></a>' +
-              '<a href="javascript:;" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti tabler-dots-vertical ti-md"></i></a>' +
-              '<div class="dropdown-menu dropdown-menu-end m-0">' +
-              '<a href="javascript:;" class="dropdown-item">Edit</a>' +
-              '<a href="javascript:;" class="dropdown-item">Suspend</a>' +
-              '</div>' +
+			  '<button class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill recharge-btn" ' +
+			  'data-id="' + full.id + '" data-bs-toggle="modal" data-bs-target="#rechargeWalletModal">' +
+			  '<i class="ti tabler-wallet ti-md text-primary"></i></button>' +
               '</div>'
             );
           }
@@ -222,54 +231,46 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
 
   // Delete Record Logic
-  $(document).on('click', '.delete-record', function () {
-    var user_id = $(this).data('id');
-    var $row = $(this).parents('tr'); // سطر جدول برای حذف گرافیکی
+	$(document).on('click', '.recharge-btn', function () {
+		const userId = $(this).data('id');
+		$('#recharge_user_id').val(userId);
+		$('#rechargeWalletForm')[0].reset();
+	});
 
-    // SweetAlert Confirm
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      customClass: {
-        confirmButton: 'btn btn-primary me-3',
-        cancelButton: 'btn btn-label-secondary'
-      },
-      buttonsStyling: false
-    }).then(function (result) {
-      if (result.value) {
-        // AJAX Request
-        $.ajax({
-            url: '/admin/users/' + user_id,
-            type: 'DELETE',
-            headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') },
-            success: function(response) {
-                // حذف گرافیکی سطر یا رفرش جدول
-                // dt_user.row($row).remove().draw();
-                // یا:
-                window.location.reload(); 
-                
-                Swal.fire({
-                  icon: 'success',
-                  title: 'Deleted!',
-                  text: 'User has been deleted.',
-                  customClass: { confirmButton: 'btn btn-success' }
-                });
-            },
-            error: function(xhr) {
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Error!',
-                  text: 'Something went wrong.',
-                  customClass: { confirmButton: 'btn btn-success' }
-                });
-            }
-        });
-      }
-    });
-  });
+	// ۴. ارسال درخواست شارژ حساب با AJAX و استفاده از Notyf
+	$('#rechargeWalletForm').on('submit', function (e) {
+		e.preventDefault();
+
+		const form = $(this);
+		const btn = $('#btn-submit-recharge');
+		const originalText = btn.html();
+
+		// غیرفعال کردن دکمه و نمایش لودینگ
+		btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-1"></span> Processing...');
+
+		$.ajax({
+			url: route('admin.api.users.recharge'),
+			method: 'POST',
+			data: form.serialize(),
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			},
+			success: function (res) {
+				notyf.success(res.message || 'Balance updated successfully');
+				$('#rechargeWalletModal').modal('hide');
+				$('.datatables-users').DataTable().ajax.reload();
+
+				// برگرداندن دکمه به حالت اول
+				btn.prop('disabled', false).html(originalText);
+			},
+			error: function (xhr) {
+				const errorMsg = xhr.responseJSON?.message || 'Failed to update balance';
+				notyf.error(errorMsg);
+
+				btn.prop('disabled', false).html(originalText);
+			}
+		});
+	});
 
   // Filter form control to default size
   // ? setTimeout used for user-list table initialization

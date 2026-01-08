@@ -9,7 +9,9 @@
   'resources/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.scss',
   'resources/assets/vendor/libs/select2/select2.scss',
   'resources/assets/vendor/libs/@form-validation/form-validation.scss',
-  'resources/assets/vendor/libs/sweetalert2/sweetalert2.scss'
+  'resources/assets/vendor/libs/sweetalert2/sweetalert2.scss',
+  'resources/assets/vendor/libs/notyf/notyf.scss',
+  'resources/assets/vendor/libs/animate-css/animate.scss'
 ])
 @endsection
 
@@ -22,7 +24,8 @@
   'resources/assets/vendor/libs/@form-validation/bootstrap5.js',
   'resources/assets/vendor/libs/@form-validation/auto-focus.js',
   'resources/assets/vendor/libs/cleave-zen/cleave-zen.js',
-  'resources/assets/vendor/libs/sweetalert2/sweetalert2.js'
+  'resources/assets/vendor/libs/sweetalert2/sweetalert2.js',
+  'resources/assets/vendor/libs/notyf/notyf.js'
 ])
 @endsection
 
@@ -137,7 +140,7 @@
     <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
       <div class="col-md-4 user_plan"></div> <div class="col-md-4 user_status"></div> <div class="col-md-4"></div> </div>
   </div>
-  
+
   <div class="card-datatable table-responsive">
     <table class="datatables-users table">
       <thead class="border-top">
@@ -152,5 +155,32 @@
     </table>
   </div>
 </div>
-
+<div class="modal fade" id="rechargeWalletModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<form id="rechargeWalletForm" class="modal-content" autocomplete="off">
+			@csrf
+			<div class="modal-header">
+				<h5 class="modal-title">Recharge User Wallet</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<input type="hidden" name="user_id" id="recharge_user_id">
+				<div class="row">
+					<div class="col-12 mb-3">
+						<label class="form-label">Amount</label>
+						<input type="number" name="amount" class="form-control" placeholder="Enter amount to add" required>
+					</div>
+					<div class="col-12 mb-0">
+						<label class="form-label">Reference / Note</label>
+						<textarea name="note" class="form-control" placeholder="Reason for deposit..."></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
+				<button type="submit" class="btn btn-primary" id="btn-submit-recharge">Confirm Deposit</button>
+			</div>
+		</form>
+	</div>
+</div>
 @endsection
