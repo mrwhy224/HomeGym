@@ -506,20 +506,28 @@ $(function () {
 
 	// --- Edit Record ---
 	$(document).on('click', '.edit-record', function () {
-		var data = $(this).data('data'); // Get full JSON data
-		console.log(data);
-		// Fill form
+		var data = $(this).data('data'); 
 		$('#package_id').val(data.id);
-		let names = JSON.parse(data.name);
-		$('#add-package-name').val(data.name); // If name is object, handle it (data.name.en)
+		$('#addNewPackageForm')[0].reset();
+		let names = {};
+		try {
+			names = JSON.parse(data.name);
+		} catch (e) {
+			console.error("Parsing names failed", e);
+		}
+
+		Object.keys(names).forEach(lang => {
+			$(`input[name="name[${lang}]"]`).val(names[lang]);
+		});
+
 		$('#add-package-price').val(data.price);
 		$('#add-package-sessions').val(data.total_sessions);
 		$('#add-package-capacity').val(data.capacity);
 		$('#add-package-validity').val(data.validity_days);
 		$('#add-package-type').val(data.type).trigger('change');
-		$('#add-package-status').prop('checked', data.status === 1);
+		$('#add-package-status').prop('checked', data.is_active === 1); // در اکشن اسم فیلد is_active است
 
-		// Update Title
+
 		$('#offcanvasAddPackageLabel').text('Edit Package');
 
 		offCanvasObj.show();

@@ -63,7 +63,7 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body mx-0 flex-grow-0">
-    <form class="add-new-package pt-0" id="addNewPackageForm" onsubmit="return false">
+    <form class="add-new-package pt-0" id="addNewPackageForm" onsubmit="return false" autocomplete="off">
       <input type="hidden" id="package_id" name="id">
 		@foreach($activeLocales as $locale)
       <div class="mb-3">
