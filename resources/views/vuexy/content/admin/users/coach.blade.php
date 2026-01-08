@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', function() {
             if (xhr.responseJSON && xhr.responseJSON.message) {
               errorMsg = xhr.responseJSON.message;
             }
-            
+
             Swal.fire({
               icon: 'error',
               title: 'Error!',
@@ -143,8 +143,8 @@ window.addEventListener('DOMContentLoaded', function() {
 <div class="row g-6 mb-6">
   @php
       // Mock stats for visual representation
-      $totalCoaches = \App\Models\User::role('coach')->count() ?: 156; 
-      $certifiedCoaches = 94; 
+      $totalCoaches = \App\Models\User::role('coach')->count();
+      $certifiedCoaches = 94;
       $activeCoaches = 58;
       $newRequests = 12;
   @endphp
@@ -178,10 +178,10 @@ window.addEventListener('DOMContentLoaded', function() {
     <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
       <div class="col-md-4 coach_specialty"></div>
       <div class="col-md-4 coach_status"></div>
-      <div class="col-md-4"></div> 
+      <div class="col-md-4"></div>
     </div>
   </div>
-  
+
   <div class="card-datatable table-responsive">
     <table class="datatables-users table">
       <thead class="border-top">
@@ -224,7 +224,7 @@ window.addEventListener('DOMContentLoaded', function() {
           <select class="select2 form-select" id="add-coach-country" name="country_id" style="max-width: 130px;">
             <option value=""></option>
             @foreach($countries as $country)
-                    <option value="{{ $country->id }}" 
+                    <option value="{{ $country->id }}"
                             data-code="{{ strtolower($country->code_alpha_3) }}">
                       {{ $country->code_alpha_3 }} (+{{ $country->dialing_code }})
                     </option>
@@ -233,7 +233,7 @@ window.addEventListener('DOMContentLoaded', function() {
           <input type="text" id="add-coach-contact" class="form-control phone-mask" placeholder="912 345 6789" name="phone" />
         </div>
       </div>
-      
+
       <hr class="my-6">
       <div class="mb-4">
         <label class="form-label" for="add-payout-day">Payout Day</label>
@@ -247,7 +247,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <label class="form-label" for="add-coach-commission">Commission Percentage (%)</label>
         <input type="number" id="add-coach-commission" class="form-control" placeholder="70" name="commission_percentage" value="70.00" step="0.01" />
       </div>
-      
+
 
       <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
       <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>

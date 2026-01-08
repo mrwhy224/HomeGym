@@ -506,7 +506,7 @@ $(function () {
 
 	// --- Edit Record ---
 	$(document).on('click', '.edit-record', function () {
-		var data = $(this).data('data'); 
+		var data = $(this).data('data');
 		$('#package_id').val(data.id);
 		$('#addNewPackageForm')[0].reset();
 		let names = {};
@@ -525,7 +525,7 @@ $(function () {
 		$('#add-package-capacity').val(data.capacity);
 		$('#add-package-validity').val(data.validity_days);
 		$('#add-package-type').val(data.type).trigger('change');
-		$('#add-package-status').prop('checked', data.is_active === 1); // در اکشن اسم فیلد is_active است
+		$('#add-package-status').prop('checked', data.is_active === 1);
 
 
 		$('#offcanvasAddPackageLabel').text('Edit Package');
